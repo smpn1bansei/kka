@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP 2.9 Diseminasi Konten Digital — Koding dan KA SMPN 1 Bandar Seikijang</title>
+  <meta name="description" content="Materi TP 2.9 Koding dan Kecerdasan Artifisial Kelas VIII: diseminasi konten melalui platform sekolah dan media sosial edukatif serta etika berkomunikasi online, dilengkapi simulator unggahan, ruang komentar, dan pemeriksa pesan.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="TP 2.9 Menerapkan Diseminasi Konten melalui Platform Digital">
+  <meta property="og:description" content="Publikasi pada platform sekolah dan media sosial edukatif serta etika berkomunikasi online untuk murid Kelas VIII.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs: style.css (umum) + lesson.css (halaman materi) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/lesson.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lesson.js" defer></script>
+</head>
+<body>
+  <kka-header active="atp"><a href="index.html">Beranda</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <main id="konten" data-el="2">
+    <!-- =============================================== JUDUL TP -->
+    <section class="hero hero--tp" aria-labelledby="judul-tp">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Lokasi halaman">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#atp">Alur TP</a></li>
+            <li><a href="index.html#kelas-8">Kelas VIII</a></li>
+            <li><span aria-current="page">TP 2.9</span></li>
+          </ol>
+        </nav>
+        <div class="tp-badges">
+          <span class="tp-badge tp-badge--code">TP 2.9</span>
+          <span class="tp-badge"><i class="bi bi-camera-reels" aria-hidden="true"></i> Elemen 2 · Literasi Digital</span>
+          <span class="tp-badge"><i class="bi bi-calendar-week" aria-hidden="true"></i> Kelas VIII · Semester 1</span>
+        </div>
+        <h1 id="judul-tp">Menerapkan Diseminasi Konten melalui <i lang="en">Platform</i> Digital</h1>
+        <p class="hero-lead">Karyamu sudah jadi. Sekarang saatnya dibagikan agar bermanfaat bagi banyak orang. Di sini kamu belajar memilih tempat yang tepat untuk berbagi, menyiapkan unggahan yang aman, dan berkomunikasi dengan sopan di dunia maya.</p>
+        <ul class="tp-meta">
+          <li><i class="bi bi-building" aria-hidden="true"></i> <span>Platform sekolah</span></li>
+          <li><i class="bi bi-share" aria-hidden="true"></i> <span>Media sosial edukatif</span></li>
+          <li><i class="bi bi-chat-heart" aria-hidden="true"></i> <span>Etika berkomunikasi online</span></li>
+          <li><i class="bi bi-laptop" aria-hidden="true"></i> <span>Tugas berbasis digital</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container lesson">
+      <!-- Daftar isi -->
+      <nav class="toc" aria-labelledby="judul-toc">
+        <p class="toc-title" id="judul-toc">Daftar isi</p>
+        <ol>
+          <li><a href="#tujuan">Tujuan &amp; cara belajar</a></li>
+          <li><a href="#mengingat">Mengingat kembali</a></li>
+          <li><a href="#pemantik">Unggahan yang salah tempat</a></li>
+          <li><a href="#platform">Memilih platform</a></li>
+          <li><a href="#siap-unggah">Menyiapkan unggahan</a></li>
+          <li><a href="#setelah">Setelah konten terbit</a></li>
+          <li><a href="#etika">Etika berkomunikasi online</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+          <li><a href="#tugas-individu">Tugas individu</a></li>
+          <li><a href="#tugas-kelompok">Tugas kelompok</a></li>
+          <li><a href="#rangkuman">Rangkuman &amp; refleksi</a></li>
+        </ol>
+      </nav>
+
+      <div class="lesson-body">
+        <!-- ========================================== 1. TUJUAN -->
+        <section class="lesson-sec" id="tujuan" aria-labelledby="h-tujuan">
+          <p class="sec-no"><span>01</span> Tujuan belajar</p>
+          <h2 id="h-tujuan">Apa yang akan kamu pelajari?</h2>
+          <p>Setelah mempelajari halaman ini, kamu diharapkan mampu:</p>
+          <ol class="goal-list">
+            <li>Memilih platform sekolah atau media sosial edukatif yang sesuai dengan konten dan penontonnya.</li>
+            <li>Menyiapkan unggahan yang menarik, aman, dan bertanggung jawab: judul, deskripsi, tagar, takarir, dan pengaturan privasi.</li>
+            <li>Memantau dan menanggapi konten setelah terbit.</li>
+            <li>Berkomunikasi online dengan sopan: berkomentar, memberi masukan, membalas, dan mengirim pesan.</li>
+          </ol>
+
+          <h3>Cara belajar di halaman ini</h3>
+          <p>Perhatikan label <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em> di setiap bagian.</p>
+          <ul class="deep-principles">
+            <li>
+              <i class="bi bi-bullseye" aria-hidden="true"></i>
+              <h4>Berkesadaran</h4>
+              <p>Kamu berpikir dulu sebelum mengunggah dan mengetik: aman, benar, sopan, dan tidak melukai orang lain.</p>
+            </li>
+            <li>
+              <i class="bi bi-house-heart" aria-hidden="true"></i>
+              <h4>Bermakna</h4>
+              <p>Karyamu sampai ke penonton yang tepat, yaitu teman, guru, dan warga sekolah, sehingga pesannya benar-benar bermanfaat.</p>
+            </li>
+            <li>
+              <i class="bi bi-emoji-laughing" aria-hidden="true"></i>
+              <h4>Menggembirakan</h4>
+              <p>Coba simulator unggahan, jadilah moderator di ruang komentar, dan uji pesanmu dengan pemeriksa 4B.</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 2. MENGINGAT KEMBALI -->
+        <section class="lesson-sec" id="mengingat" aria-labelledby="h-mengingat">
+          <p class="sec-no"><span>02</span> Mengingat kembali <em class="phase">Memahami</em></p>
+          <h2 id="h-mengingat">Bekal yang sudah kamu punya</h2>
+          <div class="card-grid">
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.7 · Kelas VIII</p>
+              <h4>Cerita yang mengajak</h4>
+              <p>Video ajakan dan kisah "pahlawan kecil" yang sudah kamu buat siap dibagikan.</p>
+              <a href="2-7.html#tugas-kelompok">Buka lagi TP 2.7 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.8 · Kelas VIII</p>
+              <h4>Hak cipta dan atribusi</h4>
+              <p>Sebelum diunggah, pastikan semua bahan boleh dipakai dan diberi atribusi JuPeSuLi.</p>
+              <a href="2-8.html#atribusi">Buka lagi TP 2.8 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.6 · Kelas VIII</p>
+              <h4>Pengaturan ekspor</h4>
+              <p>Resolusi, rasio layar, dan ukuran file harus cocok dengan platform tempat konten diunggah.</p>
+              <a href="2-6.html#ekspor">Buka lagi TP 2.6 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ========================================== 3. PEMANTIK -->
+        <section class="lesson-sec" id="pemantik" aria-labelledby="h-pemantik">
+          <p class="sec-no"><span>03</span> Ayo berpikir dulu <em class="phase">Memahami</em></p>
+          <h2 id="h-pemantik">Unggahan yang salah tempat</h2>
+          <div class="story">
+            <p class="story-label"><i class="bi bi-chat-quote" aria-hidden="true"></i> Cerita</p>
+            <p><strong>Tiara</strong> sangat bangga dengan video kelompoknya. Ia langsung mengunggahnya ke akun pribadinya yang terbuka untuk umum, dengan judul "VIDEO TERBAIK SEKELAS!!!" dan menuliskan nomor HP-nya di deskripsi.</p>
+            <p>Beberapa jam kemudian, muncul komentar kasar dari orang yang tidak dikenal. Seorang teman yang tampil di video merasa malu karena tidak diminta izin. Tiara membalas komentar kasar itu dengan marah, dan keributan pun makin besar.</p>
+          </div>
+          <ol class="question-list">
+            <li>Apa saja keputusan Tiara yang kurang tepat sebelum mengunggah?</li>
+            <li>Di mana sebaiknya video kelompok itu dibagikan?</li>
+            <li>Bagaimana seharusnya Tiara menanggapi komentar kasar?</li>
+          </ol>
+          <div class="callout">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Membagikan konten juga ada ilmunya</p>
+              <p>Menyebarkan konten agar sampai ke penonton yang tepat disebut <strong>diseminasi</strong>. Diseminasi yang baik membutuhkan tiga hal: <strong>tempat yang tepat</strong>, <strong>persiapan yang aman</strong>, dan <strong>komunikasi yang sopan</strong>.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 4. PLATFORM -->
+        <section class="lesson-sec" id="platform" aria-labelledby="h-platform">
+          <p class="sec-no"><span>04</span> Memilih platform <em class="phase">Memahami</em></p>
+          <h2 id="h-platform">Memilih platform yang tepat</h2>
+          <p><strong>Platform</strong> adalah tempat di dunia digital untuk membagikan konten, misalnya situs, aplikasi, atau media sosial. Setiap platform punya penonton, bentuk konten, dan aturan yang berbeda.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Platform untuk berbagi karya murid</caption>
+              <thead><tr><th scope="col">Platform</th><th scope="col">Cocok untuk</th><th scope="col">Siapa yang bisa melihat</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Mading digital kelas (misalnya Padlet)</th><td>Pameran karya, saling memberi komentar</td><td>Teman dan guru (terbatas)</td></tr>
+                <tr><th scope="row">Google Classroom atau sistem belajar sekolah</th><td>Mengumpulkan tugas dan berbagi materi</td><td>Anggota kelas</td></tr>
+                <tr><th scope="row">Situs atau blog sekolah</th><td>Artikel, berita kegiatan, dan video yang disematkan</td><td>Warga sekolah atau umum</td></tr>
+                <tr><th scope="row">Kanal video sekolah</th><td>Video mendatar 16:9 yang lebih panjang</td><td>Umum</td></tr>
+                <tr><th scope="row">Akun media sosial resmi sekolah atau OSIS</th><td>Video pendek tegak, poster, dan pengumuman</td><td>Umum</td></tr>
+                <tr><th scope="row">Grup pesan kelas</th><td>Pengumuman singkat dan tautan</td><td>Anggota grup</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout" data-el="3">
+            <i class="bi bi-person-badge" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Lewat akun sekolah, didampingi guru</p>
+              <p>Banyak media sosial mensyaratkan pengguna berusia minimal 13 tahun. Untuk karya sekolah, unggahlah melalui <strong>platform atau akun resmi sekolah/OSIS</strong> dengan persetujuan guru pendamping, bukan akun pribadi yang terbuka untuk umum.</p>
+            </div>
+          </div>
+
+          <h3>Lima pertanyaan sebelum memilih platform</h3>
+          <ol class="steps">
+            <li><h4>Siapa penontonnya?</h4><p>Teman sekelas, seluruh warga sekolah, orang tua, atau masyarakat umum?</p></li>
+            <li><h4>Apa bentuk kontennya?</h4><p>Video tegak, video mendatar, poster, artikel, atau podcast?</p></li>
+            <li><h4>Apa tujuannya?</h4><p>Memamerkan karya, memberi informasi, atau mengajak berbuat sesuatu?</p></li>
+            <li><h4>Siapa yang boleh melihat?</h4><p>Apakah ada wajah atau informasi yang sebaiknya hanya dilihat warga sekolah?</p></li>
+            <li><h4>Apa aturannya?</h4><p>Batas usia, ukuran file, durasi, dan aturan komunitas platform tersebut.</p></li>
+          </ol>
+        </section>
+
+        <!-- ========================================== 5. SIAP UNGGAH -->
+        <section class="lesson-sec" id="siap-unggah" aria-labelledby="h-siap">
+          <p class="sec-no"><span>05</span> Menyiapkan unggahan <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-siap">Menyiapkan unggahan yang aman dan menarik</h2>
+          <p>Penonton melihat <strong>judul, sampul, dan deskripsi</strong> sebelum menonton. Keterangan-keterangan ini disebut <strong>metadata</strong>. Metadata yang baik membuat kontenmu mudah ditemukan dan dipahami.</p>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-type-h1" aria-hidden="true"></i><h4>Judul</h4><p>Singkat dan jelas (10–60 huruf). Kata kunci di depan, dan jangan memakai huruf kapital semua.</p></article>
+            <article class="mini-card"><i class="bi bi-text-paragraph" aria-hidden="true"></i><h4>Deskripsi</h4><p>Isi singkat konten, nama pembuat, dan kredit bahan (musik, foto) sesuai TP 2.8.</p></article>
+            <article class="mini-card"><i class="bi bi-hash" aria-hidden="true"></i><h4>Tagar</h4><p>2–5 tagar yang sesuai, ditulis tanpa spasi, misalnya <code class="fx">#HematAir</code>.</p></article>
+            <article class="mini-card"><i class="bi bi-image" aria-hidden="true"></i><h4>Sampul</h4><p>Gambar menarik dengan judul yang mudah dibaca (prinsip TP 2.4).</p></article>
+            <article class="mini-card"><i class="bi bi-badge-cc" aria-hidden="true"></i><h4>Takarir (<i lang="en">subtitle</i>)</h4><p>Teks ucapan di layar, agar teman tunarungu dan penonton tanpa suara tetap paham.</p></article>
+          </div>
+
+          <h3>Sesuaikan bentuk dengan platformnya</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Bentuk konten untuk setiap platform</caption>
+              <thead><tr><th scope="col">Platform</th><th scope="col">Bentuk yang cocok</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Video pendek</th><td>Tegak 9:16, sekitar 15–60 detik, pancingan kuat di awal</td></tr>
+                <tr><th scope="row">Kanal video</th><td>Mendatar 16:9, sampul 1280 × 720 piksel, deskripsi lengkap</td></tr>
+                <tr><th scope="row">Poster media sosial</th><td>Persegi 1:1 atau tegak 4:5, teks besar dan sedikit</td></tr>
+                <tr><th scope="row">Mading digital</th><td>Gambar atau video dengan keterangan singkat</td></tr>
+                <tr><th scope="row">Blog atau situs sekolah</th><td>Judul, paragraf pendek, gambar beratribusi, dan video yang disematkan</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis siap unggah</h3>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Konten sudah diperiksa</strong>: tidak ada salah ketik, bagian yang mengganggu, atau informasi keliru.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Izin orang yang tampil</strong> sudah didapat (TP 2.5).</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Bahan boleh dipakai</strong> dan atribusinya ditulis (TP 2.8).</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Tidak ada data pribadi</strong> seperti nomor HP, alamat rumah, atau jadwal pribadi.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Pengaturan privasi tepat</strong>: Publik, Terbatas, atau Pribadi.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Komentar disaring</strong>, dan ada yang bertugas memantaunya.</span></li>
+          </ul>
+
+          <h3>Coba sendiri: Simulator Unggahan <em class="phase">Mengaplikasi</em></h3>
+          <p>Unggahan video "Penjaga Air" milik Tiara masih bermasalah. Perbaiki sampai semua tanda menjadi hijau, lalu tekan <strong>Unggah</strong>. Coba juga ganti platformnya dan lihat perubahan tampilannya!</p>
+          <div class="lab post-lab js-only" data-post-lab>
+            <div class="lab-head">
+              <i class="bi bi-cloud-upload" aria-hidden="true"></i>
+              <div>
+                <h3>Simulator Unggahan</h3>
+                <p>Ini hanya simulasi. Tidak ada yang benar-benar diunggah ke internet.</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <div class="ll-fields">
+                  <div class="ll-field ll-field--wide">
+                    <label class="lab-label" for="pp-platform">Platform</label>
+                    <select id="pp-platform" data-pp="platform">
+                      <option value="kanal" selected>Kanal video sekolah (16:9)</option>
+                      <option value="pendek">Video pendek tegak (9:16)</option>
+                      <option value="mading">Mading digital kelas</option>
+                      <option value="blog">Blog atau situs sekolah</option>
+                    </select>
+                  </div>
+                  <div class="ll-field ll-field--wide"><label class="lab-label" for="pp-judul">Judul</label><input id="pp-judul" data-pp="judul" value="VIDEO TERBAIK SEKELAS!!!" autocomplete="off"></div>
+                  <div class="ll-field ll-field--wide"><label class="lab-label" for="pp-deskripsi">Deskripsi</label><textarea id="pp-deskripsi" data-pp="deskripsi">Video tugas kami. Hubungi 081234567890 kalau mau tanya.</textarea></div>
+                  <div class="ll-field ll-field--wide"><label class="lab-label" for="pp-tagar">Tagar (pisahkan dengan spasi)</label><input id="pp-tagar" data-pp="tagar" value="#penjagaair #hemat air #sekolah" autocomplete="off"></div>
+                  <div class="ll-field">
+                    <label class="lab-label" for="pp-vis">Siapa yang bisa melihat</label>
+                    <select id="pp-vis" data-pp="visibilitas">
+                      <option value="publik" selected>Publik</option>
+                      <option value="terbatas">Terbatas (warga sekolah)</option>
+                      <option value="pribadi">Pribadi</option>
+                    </select>
+                  </div>
+                  <div class="ll-field">
+                    <label class="lab-label" for="pp-kom">Komentar</label>
+                    <select id="pp-kom" data-pp="komentar">
+                      <option value="aktif" selected>Terbuka</option>
+                      <option value="moderasi">Disaring dulu</option>
+                      <option value="mati">Dimatikan</option>
+                    </select>
+                  </div>
+                  <div class="ll-field ll-field--wide ll-checks">
+                    <label class="mb-toggle"><input type="checkbox" data-pp-check="guru"> Diunggah lewat akun sekolah dan disetujui guru</label>
+                    <label class="mb-toggle"><input type="checkbox" data-pp-check="izin"> Semua orang yang tampil sudah memberi izin</label>
+                    <label class="mb-toggle"><input type="checkbox" data-pp-check="atribusi"> Musik dan gambar sudah dicek lisensi dan atribusinya</label>
+                    <label class="mb-toggle"><input type="checkbox" data-pp-check="takarir"> <span>Video sudah diberi takarir (<i lang="en">subtitle</i>)</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="lab-controls">
+                <p class="pp-platform"></p>
+                <div class="pp-preview" data-pp-preview aria-live="polite"></div>
+                <div class="tool-actions"><button type="button" class="btn btn-ink" data-pp-publish><i class="bi bi-cloud-upload" aria-hidden="true"></i> Unggah</button></div>
+                <p class="tool-status" data-pp-status aria-live="polite"></p>
+                <p class="dl-score-row">Siap unggah <span class="dl-score" data-pp-score>0 / 10</span></p>
+                <ul class="dl-feedback" data-pp-feedback aria-live="polite"></ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 6. SETELAH TERBIT -->
+        <section class="lesson-sec" id="setelah" aria-labelledby="h-setelah">
+          <p class="sec-no"><span>06</span> Setelah konten terbit <em class="phase">Memahami</em> <em class="phase">Merefleksi</em></p>
+          <h2 id="h-setelah">Tugas belum selesai setelah mengunggah</h2>
+          <ol class="flow">
+            <li data-el="2"><span class="flow-icon" aria-hidden="true"><i class="bi bi-eye"></i></span><p class="flow-step">Langkah 1</p><h4>Pantau</h4><p>Periksa unggahanmu secara rutin, terutama di hari-hari pertama.</p></li>
+            <li data-el="3"><span class="flow-icon" aria-hidden="true"><i class="bi bi-chat-dots"></i></span><p class="flow-step">Langkah 2</p><h4>Tanggapi</h4><p>Balas pertanyaan dan masukan dengan sopan. Saring komentar yang kasar.</p></li>
+            <li data-el="1"><span class="flow-icon" aria-hidden="true"><i class="bi bi-bar-chart"></i></span><p class="flow-step">Langkah 3</p><h4>Ukur</h4><p>Catat jumlah tayangan, suka, komentar, dan bagikan. Buat grafiknya seperti di TP 1.4.</p></li>
+            <li data-el="4"><span class="flow-icon" aria-hidden="true"><i class="bi bi-arrow-repeat"></i></span><p class="flow-step">Langkah 4</p><h4>Perbaiki</h4><p>Pelajari masukan penonton untuk membuat konten berikutnya lebih baik.</p></li>
+          </ol>
+          <div class="callout" data-el="3">
+            <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Angka bukan segalanya</p>
+              <p>Jumlah suka yang sedikit tidak berarti karyamu buruk. Tujuan utamanya adalah pesanmu sampai dan bermanfaat. Jaga perasaanmu: jangan terus-menerus memeriksa jumlah suka, dan jangan membandingkan diri secara berlebihan.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <i class="bi bi-pencil-square" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Jika ternyata ada kesalahan</p>
+              <p>Akui dengan jujur, lalu perbaiki. Tulis ralat di deskripsi atau komentar yang disematkan, misalnya "Ralat: data pada detik ke-20 seharusnya 3 keran, bukan 4." Jika kesalahannya berat, hapus dan unggah ulang versi yang benar.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 7. ETIKA KOMUNIKASI -->
+        <section class="lesson-sec" id="etika" aria-labelledby="h-etika">
+          <p class="sec-no"><span>07</span> Etika berkomunikasi online <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-etika">Etika berkomunikasi online</h2>
+          <p>Di balik setiap akun ada manusia yang punya perasaan. Etika berkomunikasi online, sering disebut <strong>netiket</strong> (etiket di internet), adalah cara bersikap sopan saat mengetik komentar, pesan, dan unggahan.</p>
+
+          <h3>Sebelum mengirim, uji dengan <strong>4B</strong></h3>
+          <div class="card-grid">
+            <article class="mini-card" data-el="1"><i class="bi bi-patch-check" aria-hidden="true"></i><h4>Benar?</h4><p>Apakah isinya fakta, bukan kabar bohong atau tebakan?</p></article>
+            <article class="mini-card" data-el="3"><i class="bi bi-emoji-smile" aria-hidden="true"></i><h4>Baik?</h4><p>Apakah kata-katanya sopan dan tidak menyakiti siapa pun?</p></article>
+            <article class="mini-card" data-el="2"><i class="bi bi-lightbulb" aria-hidden="true"></i><h4>Berguna?</h4><p>Apakah pesan ini bermanfaat bagi yang membacanya?</p></article>
+            <article class="mini-card" data-el="4"><i class="bi bi-question-circle" aria-hidden="true"></i><h4>Butuh?</h4><p>Apakah pesan ini memang perlu dikirim sekarang dan di tempat ini?</p></article>
+          </div>
+
+          <h3>Netiket sehari-hari</h3>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Sapa dan tutup dengan sopan</strong>, terutama kepada guru dan orang yang lebih tua.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Jangan memakai HURUF KAPITAL SEMUA</strong>, karena terbaca seperti berteriak.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Pakai emoji secukupnya</strong> dan pahami artinya.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Hargai perbedaan pendapat.</strong> Kritik idenya, bukan orangnya.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Jaga rahasia orang lain.</strong> Jangan membagikan tangkapan layar obrolan pribadi tanpa izin.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Perhatikan waktu.</strong> Jangan mengirim pesan kepada guru larut malam, kecuali darurat.</span></li>
+          </ul>
+
+          <h3>Memberi masukan dengan cara PSS</h3>
+          <p>Saat mengomentari karya teman, pakai urutan <strong>Puji – Saran – Semangat</strong>.</p>
+          <div class="compare">
+            <div class="compare-card">
+              <p class="compare-label">Kurang tepat</p>
+              <p>"Videonya jelek, suaranya nggak kedengeran."</p>
+            </div>
+            <div class="compare-arrow" aria-hidden="true"><i class="bi bi-arrow-left-right"></i></div>
+            <div class="compare-card compare-card--info">
+              <p class="compare-label">Dengan PSS</p>
+              <p>"Gambar pembukanya keren dan bikin penasaran! <em>(Puji)</em> Mungkin suara narasinya bisa dikeraskan sedikit. <em>(Saran)</em> Ditunggu video berikutnya, semangat! <em>(Semangat)</em>"</p>
+            </div>
+          </div>
+
+          <h3>Menghadapi komentar negatif dan perundungan</h3>
+          <p><strong>Perundungan siber</strong> (<i lang="en">cyberbullying</i>) adalah tindakan menyakiti, mengejek, mengancam, atau mempermalukan seseorang melalui media digital secara berulang.</p>
+          <ol class="steps">
+            <li><h4>Jangan membalas dengan emosi</h4><p>Membalas dengan marah justru membuat keributan makin besar.</p></li>
+            <li><h4>Simpan bukti</h4><p>Ambil tangkapan layar komentar atau pesan yang menyakitkan.</p></li>
+            <li><h4>Sembunyikan, laporkan, atau blokir</h4><p>Gunakan fitur yang tersedia di platform.</p></li>
+            <li><h4>Ceritakan kepada orang dewasa</h4><p>Guru, wali kelas, guru BK, atau orang tua siap membantu. Kamu tidak sendirian.</p></li>
+            <li><h4>Dukung teman yang dirundung</h4><p>Jangan ikut menyukai atau membagikan ejekan. Kirim pesan dukungan kepada temanmu.</p></li>
+          </ol>
+
+          <h3>Coba sendiri: Ruang Komentar <em class="phase">Mengaplikasi</em></h3>
+          <p>Video "Penjaga Air" kelompokmu sudah terbit di kanal sekolah. Kamu bertugas sebagai moderator. Pilih balasan yang paling tepat untuk setiap komentar!</p>
+          <div class="lab reply-lab js-only" data-reply-lab>
+            <script type="application/json" data-rl-data>
+              [
+                {"who": "Kak Dina (alumni)", "icon": "bi-emoji-smile", "text": "Keren banget videonya! Musiknya pas 👍", "options": [
+                  {"t": "Terima kasih banyak, Kak! Senang kalau videonya bermanfaat 😊", "q": "good", "why": "Membalas pujian dengan hangat membuat penonton merasa dihargai."},
+                  {"t": "ok", "q": "meh", "why": "Tidak salah, tetapi terlalu singkat dan terasa dingin."},
+                  {"t": "Iyalah, kelompok kami memang paling hebat se-sekolah.", "q": "bad", "why": "Terdengar sombong dan merendahkan kelompok lain."}
+                ]},
+                {"who": "Raka (VIII-C)", "icon": "bi-question-circle", "text": "Musik latarnya judulnya apa? Boleh aku pakai buat video kelasku?", "options": [
+                  {"t": "Cari sendiri dong.", "q": "bad", "why": "Jawaban ketus tidak membantu. Pertanyaan yang sopan layak dijawab dengan sopan."},
+                  {"t": "Judulnya \"Pagi Cerah\" dari pustaka musik bebas royalti, lisensi CC BY. Boleh dipakai, asalkan nama penciptanya ditulis, ya!", "q": "good", "why": "Jawaban jelas, membantu, dan sekaligus mengajarkan atribusi (TP 2.8)."},
+                  {"t": "Lupa, hehe.", "q": "meh", "why": "Seharusnya kamu mencatat sumber musik, sehingga bisa menjawab dengan tepat."}
+                ]},
+                {"who": "Bu Lestari (guru)", "icon": "bi-chat-left-text", "text": "Pesannya bagus. Suara narasi di awal agak pelan, jadi kurang jelas.", "options": [
+                  {"t": "Menghapus komentar itu supaya tidak terlihat orang lain.", "q": "meh", "why": "Menghapus kritik yang sopan berarti tidak menghargai masukan."},
+                  {"t": "Kalau tidak suka, tidak usah menonton!", "q": "bad", "why": "Kasar dan menolak masukan yang sebenarnya membangun."},
+                  {"t": "Terima kasih atas masukannya, Bu! Kami akan memperbaiki volume narasi di video berikutnya.", "q": "good", "why": "Menerima kritik dengan terbuka menunjukkan kedewasaan."}
+                ]},
+                {"who": "akun_tanpa_nama", "icon": "bi-emoji-angry", "text": "Video apaan nih, jelek banget. Pemerannya juga aneh.", "options": [
+                  {"t": "Tidak membalas, lalu menyembunyikan atau melaporkan komentar itu dan memberi tahu guru pendamping.", "q": "good", "why": "Komentar yang mengejek tidak perlu dibalas. Saring, laporkan, dan libatkan orang dewasa."},
+                  {"t": "Membalas dengan ejekan yang lebih kasar.", "q": "bad", "why": "Membalas kekasaran dengan kekasaran membuat keributan makin besar."},
+                  {"t": "Membalas: \"Kamu siapa sih? Berani ketemu nggak?\"", "q": "bad", "why": "Menantang orang yang tidak dikenal itu berbahaya. Jangan pernah melakukannya."}
+                ]},
+                {"who": "HADIAH_GRATIS_2026", "icon": "bi-gift", "text": "SELAMAT! Kamu menang HP gratis. Klik tautan ini dan isi data dirimu sekarang!", "options": [
+                  {"t": "Mengklik tautannya dan mengisi data supaya dapat hadiah.", "q": "bad", "why": "Ini penipuan (phishing). Data pribadimu bisa dicuri."},
+                  {"t": "Membalas: \"Wah, serius? Aku mau!\"", "q": "meh", "why": "Membalas komentar penipu membuat akunmu jadi sasaran berikutnya."},
+                  {"t": "Tidak mengklik tautannya, lalu melaporkan komentar itu sebagai spam.", "q": "good", "why": "Benar! Jangan pernah mengklik tautan mencurigakan atau memberi data pribadi."}
+                ]},
+                {"who": "Nisa (VIII-B)", "icon": "bi-exclamation-triangle", "text": "Katanya air keran sekolah mengandung racun ya? Makanya harus dihemat??", "options": [
+                  {"t": "Diam saja, lalu membagikan komentar itu ke grup lain supaya heboh.", "q": "bad", "why": "Menyebarkan kabar yang belum jelas berarti ikut menyebarkan hoaks."},
+                  {"t": "Membalas dengan sopan: \"Itu belum benar, ya. Video kami tentang menghemat air, bukan air beracun. Untuk kualitas air, bisa ditanyakan ke pihak sekolah.\"", "q": "good", "why": "Meluruskan informasi dengan sopan dan menunjukkan sumber yang tepat."},
+                  {"t": "Membalas: \"HAHAHA, BODOH!\"", "q": "bad", "why": "Mengejek tidak meluruskan informasi, malah menyakiti."}
+                ]}
+              ]
+            </script>
+            <div class="lab-head">
+              <i class="bi bi-chat-square-heart" aria-hidden="true"></i>
+              <div>
+                <h3>Ruang Komentar: Jadi Moderator yang Bijak</h3>
+                <p>Urutan pilihan jawaban diacak setiap kali komentar muncul.</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <p class="rl-progress" data-rl-progress></p>
+                <div class="rl-thread" data-rl-thread aria-live="polite"></div>
+              </div>
+              <div class="lab-controls">
+                <p class="lab-label">Pilih balasanmu</p>
+                <div class="rl-options" data-rl-options></div>
+                <ul class="dl-feedback" data-rl-feedback aria-live="polite"></ul>
+                <div class="tool-actions"><button type="button" class="btn btn-ink" data-rl-next hidden></button></div>
+                <p class="dl-score-row">Balasan beretika <span class="dl-score" data-rl-score>0 / 6</span></p>
+              </div>
+            </div>
+          </div>
+
+          <h3>Berkirim pesan kepada guru</h3>
+          <p>Pesan kepada guru sebaiknya memuat empat bagian: <strong>salam</strong>, <strong>perkenalan diri</strong> (nama dan kelas), <strong>maksud</strong> yang jelas, dan <strong>terima kasih</strong>. Kirim pada jam yang wajar.</p>
+
+          <h3>Coba sendiri: Pemeriksa Pesan 4B <em class="phase">Mengaplikasi</em></h3>
+          <div class="lab msg-lab js-only" data-msg-lab>
+            <div class="lab-head">
+              <i class="bi bi-chat-text" aria-hidden="true"></i>
+              <div>
+                <h3>Pemeriksa Pesan 4B</h3>
+                <p>Tulis pesan, pilih penerima dan jam kirimnya, lalu lihat saran perbaikannya.</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <div class="ll-fields">
+                  <div class="ll-field">
+                    <label class="lab-label" for="ml-to">Penerima</label>
+                    <select id="ml-to" data-ml="to">
+                      <option value="guru">Guru</option>
+                      <option value="teman">Teman</option>
+                      <option value="grup">Grup kelas</option>
+                    </select>
+                  </div>
+                  <div class="ll-field">
+                    <label class="lab-label" for="ml-jam">Jam kirim</label>
+                    <select id="ml-jam" data-ml="jam">
+                      <option value="5">05.00</option><option value="7">07.00</option><option value="10">10.00</option><option value="13">13.00</option><option value="16" selected>16.00</option><option value="19">19.00</option><option value="21">21.00</option><option value="22">22.00</option><option value="23">23.00</option>
+                    </select>
+                  </div>
+                  <div class="ll-field ll-field--wide"><label class="lab-label" for="ml-input">Pesanmu</label><textarea id="ml-input" data-ml-input placeholder="Tulis pesanmu di sini…"></textarea></div>
+                </div>
+                <p class="lab-label">Coba contoh</p>
+                <div class="cm-presets">
+                  <button type="button" data-ml-preset="PAK TUGASNYA KAPAN DIKUMPUL??!! 😡😡" data-ml-to="guru" data-ml-jam="23">Pesan terburu-buru</button>
+                  <button type="button" data-ml-preset="Selamat sore, Pak Hendra. Mohon maaf mengganggu waktunya. Saya Rina dari kelas VIII-A. Saya ingin bertanya, kapan batas pengumpulan tugas video KKA? Terima kasih, Pak." data-ml-to="guru" data-ml-jam="16">Pesan kepada guru</button>
+                  <button type="button" data-ml-preset="Hai Bayu! Besok jadi kerja kelompok di perpustakaan jam 10? Makasih ya 😊" data-ml-to="teman" data-ml-jam="19">Pesan kepada teman</button>
+                </div>
+              </div>
+              <div class="lab-controls">
+                <div class="ml-phone"><div class="ml-bubble" data-ml-bubble aria-live="polite"></div></div>
+                <p class="dl-score-row">Pesan santun <span class="dl-score" data-ml-score>0 / 0</span></p>
+                <ul class="dl-feedback" data-ml-feedback aria-live="polite"></ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 8. KUIS -->
+        <section class="lesson-sec" id="cek-pemahaman" aria-labelledby="h-kuis">
+          <p class="sec-no"><span>08</span> Cek pemahaman <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kuis">Ayo uji pemahamanmu</h2>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis A · Publikasi konten</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="mading" data-explain="Mading digital kelas bisa diatur agar hanya dilihat teman dan guru.">
+                <p class="quiz-text">Kamu ingin memamerkan karya hanya kepada teman sekelas dan guru. Platform yang paling tepat adalah…</p>
+                <div class="quiz-choices"><button type="button" data-choice="pribadi">Akun pribadi publik</button><button type="button" data-choice="mading">Mading digital kelas</button><button type="button" data-choice="umum">Grup umum</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="pendek" data-explain="Video tegak berdurasi pendek paling cocok untuk platform video pendek 9:16.">
+                <p class="quiz-text">Video tegak berdurasi 50 detik paling cocok diunggah sebagai…</p>
+                <div class="quiz-choices"><button type="button" data-choice="pendek">Video pendek 9:16</button><button type="button" data-choice="artikel">Artikel blog</button><button type="button" data-choice="podcast">Podcast</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="izin" data-explain="Setiap orang berhak memutuskan apakah wajahnya boleh disebarkan.">
+                <p class="quiz-text">Sebelum mengunggah video yang menampilkan teman, kamu wajib…</p>
+                <div class="quiz-choices"><button type="button" data-choice="izin">Meminta izin teman</button><button type="button" data-choice="filter">Memberi filter lucu</button><button type="button" data-choice="tag">Menandai akun teman</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="b" data-explain="Tagar diawali tanda # dan ditulis tanpa spasi.">
+                <p class="quiz-text">Penulisan tagar yang benar adalah…</p>
+                <div class="quiz-choices"><button type="button" data-choice="a"># hemat air</button><button type="button" data-choice="b">#HematAir</button><button type="button" data-choice="c">hematair#</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="semua" data-explain="Takarir membantu teman tunarungu dan penonton yang menonton tanpa suara.">
+                <p class="quiz-text">Takarir (<i lang="en">subtitle</i>) pada video berguna untuk…</p>
+                <div class="quiz-choices"><button type="button" data-choice="hias">Hiasan saja</button><button type="button" data-choice="semua">Teman tunarungu dan penonton tanpa suara</button><button type="button" data-choice="panjang">Memperpanjang durasi</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="ralat" data-explain="Bersikap jujur dan memperbaiki kesalahan adalah tanggung jawab pembuat konten.">
+                <p class="quiz-text">Setelah terbit, ternyata ada data yang salah di videomu. Sebaiknya kamu…</p>
+                <div class="quiz-choices"><button type="button" data-choice="diam">Diam saja</button><button type="button" data-choice="hapuskomentar">Menghapus komentar yang mengkritik</button><button type="button" data-choice="ralat">Mengakui, menulis ralat, dan memperbaiki</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis B · Etika berkomunikasi online</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="kurang" data-explain="Pukul 23.00 adalah waktu istirahat. Pertanyaan yang tidak mendesak bisa dikirim esok hari.">
+                <p class="quiz-text">Mengirim pesan kepada guru pukul 23.00 untuk menanyakan tugas yang dikumpulkan minggu depan.</p>
+                <div class="quiz-choices"><button type="button" data-choice="tepat">Tepat</button><button type="button" data-choice="kurang">Kurang tepat</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="tepat" data-explain="Ini memakai pola Puji – Saran – Semangat.">
+                <p class="quiz-text">Berkomentar: "Videomu menarik! Mungkin suaranya bisa dikeraskan sedikit. Semangat!"</p>
+                <div class="quiz-choices"><button type="button" data-choice="tepat">Tepat</button><button type="button" data-choice="kurang">Kurang tepat</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="kurang" data-explain="Ikut menertawakan dan menyebarkan ejekan termasuk perundungan.">
+                <p class="quiz-text">Ikut menertawakan dan membagikan meme ejekan tentang seorang teman.</p>
+                <div class="quiz-choices"><button type="button" data-choice="tepat">Tepat</button><button type="button" data-choice="kurang">Kurang tepat</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="tepat" data-explain="Menyimpan bukti dan melapor adalah langkah yang benar menghadapi perundungan.">
+                <p class="quiz-text">Menyimpan tangkapan layar komentar perundungan, lalu melaporkannya kepada guru.</p>
+                <div class="quiz-choices"><button type="button" data-choice="tepat">Tepat</button><button type="button" data-choice="kurang">Kurang tepat</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="kurang" data-explain="Obrolan pribadi adalah privasi. Membagikannya tanpa izin melanggar kepercayaan.">
+                <p class="quiz-text">Membagikan tangkapan layar obrolan pribadi teman ke grup kelas tanpa izin.</p>
+                <div class="quiz-choices"><button type="button" data-choice="tepat">Tepat</button><button type="button" data-choice="kurang">Kurang tepat</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="tepat" data-explain="Tidak membalas dengan emosi dan melaporkannya adalah sikap yang bijak.">
+                <p class="quiz-text">Tidak membalas komentar kasar dengan marah, lalu melaporkan komentar itu.</p>
+                <div class="quiz-choices"><button type="button" data-choice="tepat">Tepat</button><button type="button" data-choice="kurang">Kurang tepat</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 9. TUGAS INDIVIDU -->
+        <section class="lesson-sec" id="tugas-individu" aria-labelledby="h-individu">
+          <p class="sec-no"><span>09</span> Tugas individu <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em></p>
+          <h2 id="h-individu">Pamerkan Karya Terbaikku</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan sendiri · berbasis digital</p>
+            <h3>Unggah satu karya ke mading digital kelas, lalu saling menyemangati</h3>
+            <p>Pilih satu karya terbaikmu dari semester ini, misalnya poster, infografis, podcast, atau video. Siapkan unggahannya dengan baik, unggah ke mading digital kelas yang disiapkan guru, lalu beri komentar yang membangun untuk karya teman.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-person" aria-hidden="true"></i> <span>Dikerjakan sendiri</span></li>
+              <li><i class="bi bi-cloud-upload" aria-hidden="true"></i> <span>1 unggahan di mading digital kelas</span></li>
+              <li><i class="bi bi-chat-heart" aria-hidden="true"></i> <span>3 komentar PSS untuk teman</span></li>
+              <li><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> <span>Laporan singkat dalam PDF</span></li>
+            </ul>
+          </div>
+          <ol class="steps">
+            <li><h4>Pilih karya</h4><p>Pilih karya yang paling kamu banggakan, lalu periksa sekali lagi isinya.</p></li>
+            <li><h4>Siapkan metadata</h4><p>Tulis judul (10–60 huruf), deskripsi berisi kredit bahan (TP 2.8), dan 2–5 tagar. Tambahkan takarir jika berupa video.</p></li>
+            <li><h4>Periksa ceklis siap unggah</h4><p>Pastikan ada izin dari orang yang tampil, tidak ada data pribadi, dan pengaturan privasinya "Terbatas".</p></li>
+            <li><h4>Unggah</h4><p>Unggah ke mading digital kelas atau Google Classroom sesuai petunjuk guru.</p></li>
+            <li><h4>Beri komentar PSS</h4><p>Beri komentar Puji – Saran – Semangat untuk minimal 3 karya teman. Balas juga komentar di karyamu dengan sopan.</p></li>
+            <li><h4>Kumpulkan laporan</h4><p>Di Google Docs, tempel tangkapan layar unggahanmu dan ketiga komentarmu, lalu tulis refleksi 3 kalimat. Simpan sebagai <code>2-9_Nama_Kelas_publikasi.pdf</code>.</p></li>
+          </ol>
+          <h3>Periksa tugasmu sendiri</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Judul, deskripsi, dan tagar unggahanku sudah rapi.</span></label></li>
+            <li><label><input type="checkbox"><span>Ada kredit bahan dan tidak ada data pribadi.</span></label></li>
+            <li><label><input type="checkbox"><span>Aku memberi 3 komentar PSS yang sopan dan membangun.</span></label></li>
+            <li><label><input type="checkbox"><span>Aku membalas komentar di karyaku dengan sopan.</span></label></li>
+            <li><label><input type="checkbox"><span>Laporan dan refleksi sudah dikumpulkan.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 10. TUGAS KELOMPOK -->
+        <section class="lesson-sec" id="tugas-kelompok" aria-labelledby="h-kelompok">
+          <p class="sec-no"><span>10</span> Tugas kelompok <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kelompok">Proyek: Kampanye Konten Edukatif Sekolah</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan bersama kelompokmu · berbasis digital</p>
+            <h3>Bagikan video terbaik kelompokmu lewat platform resmi sekolah</h3>
+            <p>Pilih video terbaik kelompok, misalnya "Pahlawan Kecil" (TP 2.7). Susun rencana publikasi, unggah lewat platform resmi sekolah bersama guru pendamping, moderasi komentarnya selama satu minggu, lalu ukur dan laporkan hasilnya.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-people" aria-hidden="true"></i> <span>4–5 orang per kelompok</span></li>
+              <li><i class="bi bi-calendar-week" aria-hidden="true"></i> <span>Kampanye selama 1 minggu</span></li>
+              <li><i class="bi bi-person-badge" aria-hidden="true"></i> <span>Didampingi guru pendamping</span></li>
+              <li><i class="bi bi-graph-up" aria-hidden="true"></i> <span>Laporan dengan grafik</span></li>
+            </ul>
+          </div>
+
+          <h3>Langkah 1 · Bagi peran</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-kanban" aria-hidden="true"></i><h4>Manajer publikasi</h4><p>Menyusun rencana, berkoordinasi dengan guru, dan mengatur jadwal.</p></article>
+            <article class="mini-card"><i class="bi bi-pencil" aria-hidden="true"></i><h4>Penulis metadata</h4><p>Menulis judul, deskripsi, tagar, dan takarir.</p></article>
+            <article class="mini-card"><i class="bi bi-aspect-ratio" aria-hidden="true"></i><h4>Desainer format</h4><p>Membuat sampul dan menyesuaikan rasio video untuk setiap platform.</p></article>
+            <article class="mini-card"><i class="bi bi-shield-check" aria-hidden="true"></i><h4>Moderator komentar</h4><p>Memantau, menyaring, dan membalas komentar dengan sopan.</p></article>
+            <article class="mini-card"><i class="bi bi-bar-chart-line" aria-hidden="true"></i><h4>Analis data</h4><p>Mencatat statistik harian di lembar kerja dan membuat grafiknya (TP 1.4).</p></article>
+          </div>
+
+          <h3>Langkah 2 · Kerjakan bersama</h3>
+          <ol class="steps">
+            <li><h4>Susun rencana publikasi</h4><p>Isi Lembar Rencana Publikasi di bawah: tujuan, penonton, platform, bentuk, jadwal, dan aturan komentar.</p></li>
+            <li><h4>Siapkan versi untuk setiap platform</h4><p>Misalnya video utuh 16:9 untuk kanal sekolah dan potongan 30 detik 9:16 untuk akun OSIS. Lengkapi dengan sampul dan takarir.</p></li>
+            <li><h4>Periksa bersama guru</h4><p>Jalankan ceklis siap unggah, lalu minta persetujuan guru pendamping.</p></li>
+            <li><h4>Unggah dan moderasi</h4><p>Unggah sesuai jadwal. Moderator memantau komentar setiap hari dan membalasnya dengan sopan.</p></li>
+            <li><h4>Ukur hasilnya</h4><p>Analis mencatat tayangan, suka, komentar, dan bagikan setiap hari di Google Spreadsheet, lalu membuat grafik garisnya.</p></li>
+            <li><h4>Laporkan dan refleksikan</h4><p>Buat 4–6 slide: rencana, tampilan unggahan, grafik hasil, contoh komentar dan balasan, serta pelajaran untuk kampanye berikutnya.</p></li>
+          </ol>
+
+          <h3>Langkah 3 · Lembar rencana publikasi</h3>
+          <div class="worksheet" id="lembar-publikasi">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Rencana Publikasi Konten</h3>
+                <p>TP 2.9 Menerapkan Diseminasi Konten melalui <i lang="en">Platform</i> Digital</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-publikasi"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar rencana</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Kelompok / Kelas / Judul konten / Guru pendamping</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Tujuan kampanye dan penonton sasaran</span><span class="ws-line"></span></div>
+            <div class="ws-field">
+              <span class="ws-label">Rencana unggahan</span>
+              <table class="ws-table">
+                <caption class="sr-only">Rencana unggahan per platform</caption>
+                <thead><tr><th scope="col">Platform</th><th scope="col">Bentuk dan rasio</th><th scope="col">Judul</th><th scope="col">Tagar</th><th scope="col">Jadwal</th><th scope="col">Privasi</th></tr></thead>
+                <tbody>
+                  <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ws-field"><span class="ws-label">Aturan komentar dan nama moderator</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Ukuran keberhasilan (misalnya jumlah tayangan atau komentar bermanfaat)</span><span class="ws-line"></span></div>
+          </div>
+
+          <h3>Kriteria penilaian</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Rubrik penilaian tugas kelompok<small>Skor: 4 = sangat baik · 3 = baik · 2 = cukup · 1 = perlu bimbingan</small></caption>
+              <thead><tr><th scope="col">Aspek</th><th scope="col">Yang dinilai</th><th scope="col" class="num">Skor</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Rencana publikasi</th><td>Tujuan, penonton, platform, dan jadwal jelas dan masuk akal.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kesiapan unggahan</th><td>Metadata rapi, format sesuai platform, ada takarir dan kredit.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Keamanan dan etika</th><td>Izin lengkap, tidak ada data pribadi, dan disetujui guru.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Moderasi komentar</th><td>Komentar dipantau dan dibalas dengan sopan dan membantu.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Pengukuran hasil</th><td>Data statistik tercatat rapi dan disajikan dalam grafik yang tepat.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Refleksi dan kerja sama</th><td>Pelajaran yang didapat jelas dan semua anggota berperan.</td><td class="num">1–4</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis sebelum mengumpulkan</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Rencana publikasi sudah disetujui guru pendamping.</span></label></li>
+            <li><label><input type="checkbox"><span>Konten diunggah lewat platform resmi sekolah sesuai jadwal.</span></label></li>
+            <li><label><input type="checkbox"><span>Komentar dimoderasi setiap hari selama kampanye.</span></label></li>
+            <li><label><input type="checkbox"><span>Statistik harian tercatat dan grafiknya sudah dibuat.</span></label></li>
+            <li><label><input type="checkbox"><span>Slide laporan dan refleksi sudah dikumpulkan.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 11. RANGKUMAN & REFLEKSI SEMESTER -->
+        <section class="lesson-sec" id="rangkuman" aria-labelledby="h-rangkuman">
+          <p class="sec-no"><span>11</span> Rangkuman &amp; refleksi <em class="phase">Merefleksi</em></p>
+          <h2 id="h-rangkuman">Yang perlu kamu ingat</h2>
+          <div class="summary-grid">
+            <article class="mini-card">
+              <i class="bi bi-share" aria-hidden="true"></i>
+              <h4>Diseminasi</h4>
+              <p>Menyebarkan konten agar sampai ke penonton yang tepat, lewat platform yang tepat.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-cloud-check" aria-hidden="true"></i>
+              <h4>Siap unggah</h4>
+              <p>Judul, deskripsi, tagar, sampul, takarir, izin, atribusi, tanpa data pribadi, dan privasi yang tepat.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-eye" aria-hidden="true"></i>
+              <h4>Setelah terbit</h4>
+              <p>Pantau, tanggapi, ukur, dan perbaiki. Akui dan ralat jika ada kesalahan.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-chat-heart" aria-hidden="true"></i>
+              <h4>Netiket</h4>
+              <p>Uji 4B (benar, baik, berguna, butuh), beri masukan dengan PSS, dan jangan ikut merundung.</p>
+            </article>
+          </div>
+
+          <h3>Refleksi materi ini</h3>
+          <ol class="question-list">
+            <li><strong>Berkesadaran:</strong> pernahkah kamu menyesal setelah mengirim pesan atau komentar? Apa yang akan kamu lakukan berbeda sekarang?</li>
+            <li><strong>Bermakna:</strong> karya mana yang ingin kamu bagikan agar bermanfaat bagi sekolah atau masyarakat?</li>
+            <li><strong>Menggembirakan:</strong> bagaimana rasanya membaca komentar baik dari teman tentang karyamu?</li>
+          </ol>
+
+          <h3>Refleksi akhir Semester 1 Kelas VIII</h3>
+          <p>Selamat! TP 2.9 adalah materi terakhir Kelas VIII Semester 1. Lihat kembali perjalanan belajarmu:</p>
+          <div class="card-grid" data-tp-links="1.4,1.5,1.6,2.5,2.6,2.7,2.8,2.9"></div>
+          <ol class="question-list">
+            <li>Keterampilan apa yang paling berkembang semester ini: mengolah data, menyusun algoritma, atau membuat konten?</li>
+            <li>Karya mana yang paling kamu banggakan? Apa yang membuatnya istimewa?</li>
+            <li>Apa satu kebiasaan digital yang baik yang akan terus kamu lakukan?</li>
+          </ol>
+
+          <h3>Sampai jumpa di Semester 2</h3>
+          <p>Di Semester 2, kamu akan mendalami kecerdasan artifisial (KA): bagaimana KA membantu manusia dan bagaimana KA belajar dari data. Kemampuan mengolah data, menyusun algoritma, dan bersikap etis yang kamu pelajari akan sangat berguna.</p>
+          <div class="card-grid" data-tp-links="3.4,3.5,4.3"></div>
+
+          <h3>Kamus kecil</h3>
+          <dl class="glossary">
+            <div><dt>Diseminasi</dt><dd>Menyebarluaskan konten agar sampai kepada penonton yang tepat.</dd></div>
+            <div><dt><i lang="en">Platform</i></dt><dd>Tempat di dunia digital untuk berbagi konten, seperti situs, aplikasi, atau media sosial.</dd></div>
+            <div><dt>Metadata</dt><dd>Keterangan tentang konten: judul, deskripsi, tagar, dan sampul.</dd></div>
+            <div><dt>Tagar</dt><dd>Kata kunci yang diawali tanda # agar konten mudah ditemukan.</dd></div>
+            <div><dt>Takarir</dt><dd>Teks ucapan yang tampil di layar video (<i lang="en">subtitle</i>).</dd></div>
+            <div><dt>Moderasi</dt><dd>Kegiatan memantau dan menyaring komentar agar ruang diskusi tetap aman.</dd></div>
+            <div><dt>Netiket</dt><dd>Etika atau sopan santun berkomunikasi di internet.</dd></div>
+            <div><dt>Perundungan siber</dt><dd>Menyakiti atau mempermalukan seseorang melalui media digital secara berulang.</dd></div>
+          </dl>
+        </section>
+
+        <!-- Tombol TP sebelumnya/berikutnya + sumber rujukan, dibuat otomatis dari data.js -->
+        <kka-tp-nav code="2.9"></kka-tp-nav>
+      </div>
+    </div>
+  </main>
+
+  <kka-footer></kka-footer>
+</body>
+</html>

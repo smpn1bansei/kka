@@ -3071,7 +3071,575 @@
     render();
   });
 
-  /* ---------- 37. Navigasi TP sebelumnya/berikutnya: <kka-tp-nav code="1.2"> ----------
+  /* ---------- 37. Perakit narasi persuasif: pancing, masalah, solusi, ajak ----------
+     <div data-narrative-builder> berisi <script type="application/json" data-nb-data>
+     {"parts":[["pancing","Pancingan"],…],"topics":{"air":{"label":"…","options":{"pancing":[{"t":"…","q":"good|weak|bad","why":"…"}]}}}} */
+  $$('[data-narrative-builder]').forEach((box) => {
+    let data;
+    try { data = JSON.parse($('[data-nb-data]', box).textContent); } catch (e) { return; }
+    const topicSel = $('[data-nb-topic]', box);
+    const partsEl = $('[data-nb-parts]', box);
+    const scriptEl = $('[data-nb-script]', box);
+    const fb = $('[data-nb-feedback]', box);
+    const scoreEl = $('[data-nb-score]', box);
+    const metaEl = $('[data-nb-meta]', box);
+    const id = box.id || 'nb';
+    const POINT = { good: 2, weak: 1, bad: 0 };
+    const ICON = { good: 'bi-check-circle-fill', weak: 'bi-exclamation-circle-fill', bad: 'bi-x-circle-fill' };
+    const CLS = { good: 'is-ok', weak: 'is-warn', bad: 'is-bad' };
+    topicSel.innerHTML = Object.entries(data.topics).map(([k, t]) => `<option value="${k}">${escapeHTML(t.label)}</option>`).join('');
+    const buildParts = () => {
+      const topic = data.topics[topicSel.value];
+      partsEl.innerHTML = data.parts.map(([key, label], pi) => `
+        <fieldset class="nb-part">
+          <legend><span class="nb-step">${pi + 1}</span> ${escapeHTML(label)}</legend>
+          ${topic.options[key].map((o, oi) => `<label class="nb-option"><input type="radio" name="${id}-${key}" value="${oi}"><span>${escapeHTML(o.t)}</span></label>`).join('')}
+        </fieldset>`).join('');
+      render();
+    };
+    const render = () => {
+      const topic = data.topics[topicSel.value];
+      let score = 0; let words = 0; let chosen = 0;
+      const lines = []; const notes = [];
+      data.parts.forEach(([key, label]) => {
+        const r = $(`input[name="${id}-${key}"]:checked`, box);
+        if (!r) { lines.push(`<p class="nb-line is-empty"><b>${escapeHTML(label)}</b><span>(belum dipilih)</span></p>`); return; }
+        const o = topic.options[key][Number(r.value)];
+        chosen += 1;
+        score += POINT[o.q];
+        words += o.t.split(/\s+/).filter(Boolean).length;
+        lines.push(`<p class="nb-line ${CLS[o.q]}"><b>${escapeHTML(label)}</b><span>${escapeHTML(o.t)}</span></p>`);
+        notes.push(`<li class="${CLS[o.q]}"><i class="bi ${ICON[o.q]}" aria-hidden="true"></i><span><strong>${escapeHTML(label)}:</strong> ${escapeHTML(o.why)}</span></li>`);
+      });
+      scriptEl.innerHTML = lines.join('');
+      fb.innerHTML = notes.join('') || '<li class="is-warn"><i class="bi bi-hand-index" aria-hidden="true"></i><span>Pilih satu kalimat untuk setiap bagian.</span></li>';
+      const max = data.parts.length * 2;
+      scoreEl.textContent = `${score} / ${max}`;
+      scoreEl.className = `dl-score ${score === max ? 'is-ok' : score >= max / 2 ? 'is-warn' : 'is-bad'}`;
+      metaEl.textContent = chosen ? `${words} kata · perkiraan durasi dibacakan ${Math.max(1, Math.round(words / 2.5))} detik` : '';
+    };
+    topicSel.addEventListener('change', buildParts);
+    partsEl.addEventListener('change', render);
+    buildParts();
+  });
+
+  /* ---------- 38. Penata tempo (pacing): durasi setiap shot ----------
+     <div data-pace-lab> berisi <script type="application/json" data-pl-data>
+     {"min":25,"max":40,"shots":[{"label":"Pembuka","icon":"bi-…","text":"…","dur":12,"role":"hook|isi|ajakan"}]} */
+  $$('[data-pace-lab]').forEach((box) => {
+    let data;
+    try { data = JSON.parse($('[data-pl-data]', box).textContent); } catch (e) { return; }
+    const ctrls = $('[data-pl-controls]', box);
+    const strip = $('[data-pl-strip]', box);
+    const screen = $('[data-pl-screen]', box);
+    const fb = $('[data-pl-feedback]', box);
+    const scoreEl = $('[data-pl-score]', box);
+    const totalEl = $('[data-pl-total]', box);
+    const playBtn = $('[data-pl-play]', box);
+    const words = (t) => (t ? t.split(/\s+/).filter(Boolean).length : 0);
+    const need = (s) => (s.text ? Math.ceil((words(s.text) / 3 + 1) * 2) / 2 : 0);
+    let timer = null;
+    ctrls.innerHTML = data.shots.map((s, i) => `
+      <div class="pl-row">
+        <label for="${box.id || 'pl'}-${i}"><i class="bi ${s.icon}" aria-hidden="true"></i> ${i + 1}. ${escapeHTML(s.label)}</label>
+        <input id="${box.id || 'pl'}-${i}" type="range" min="0.5" max="15" step="0.5" value="${s.dur}" data-pl-dur="${i}">
+        <output data-pl-out="${i}"></output>
+      </div>`).join('');
+    const durs = () => $$('[data-pl-dur]', box).map((r) => Number(r.value));
+    const fmt = (n) => `${numID.format(n)} dtk`;
+    const showShot = (i, left) => {
+      const s = data.shots[i];
+      screen.innerHTML = `<i class="bi ${s.icon}" aria-hidden="true"></i>${s.text ? `<p>${escapeHTML(s.text)}</p>` : ''}<small>Shot ${i + 1} · ${escapeHTML(s.label)}${left != null ? ` · sisa ${Math.ceil(Math.max(0, left))} dtk` : ''}</small>`;
+      $$('.pl-block', strip).forEach((b, k) => b.classList.toggle('is-now', k === i));
+    };
+    const render = () => {
+      const d = durs();
+      const total = d.reduce((a, b) => a + b, 0);
+      d.forEach((v, i) => { $(`[data-pl-out="${i}"]`, box).textContent = fmt(v); });
+      strip.innerHTML = data.shots.map((s, i) => `<span class="pl-block is-${s.role}" style="flex:${d[i]}" title="${escapeHTML(s.label)}: ${fmt(d[i])}"><i class="bi ${s.icon}" aria-hidden="true"></i><small>${numID.format(d[i])}</small></span>`).join('');
+      totalEl.textContent = `${numID.format(total)} detik`;
+      const issues = [];
+      let ok = 0; let checks = 0;
+      data.shots.forEach((s, i) => {
+        const v = d[i];
+        const n = need(s);
+        checks += 1;
+        let msg = null;
+        if (s.role === 'hook' && v > 5) msg = `Pembuka ${fmt(v)} terlalu lama. Pancing penonton dalam 5 detik pertama!`;
+        else if (s.role === 'ajakan' && v < 4) msg = `Ajakan hanya ${fmt(v)}. Beri minimal 4 detik agar ajakan sempat dibaca dan diingat.`;
+        else if (n && v < n) msg = `Teks di shot ${i + 1} ("${s.text}") butuh sekitar ${fmt(n)} untuk dibaca, tetapi hanya tampil ${fmt(v)}.`;
+        else if (v < 1.5) msg = `Shot ${i + 1} hanya ${fmt(v)}, terlalu cepat untuk dipahami.`;
+        else if (v > 8) msg = `Shot ${i + 1} (${s.label}) ${fmt(v)} terlalu lama tanpa perubahan, sehingga penonton mulai bosan.`;
+        if (msg) issues.push(`<li class="is-bad"><i class="bi bi-x-circle-fill" aria-hidden="true"></i><span>${escapeHTML(msg)}</span></li>`);
+        else ok += 1;
+      });
+      checks += 1;
+      if (total < data.min || total > data.max) issues.push(`<li class="is-warn"><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>Durasi total ${numID.format(total)} detik. Targetnya ${data.min}–${data.max} detik.</span></li>`);
+      else ok += 1;
+      fb.innerHTML = issues.length ? issues.join('') : '<li class="is-ok"><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Tempo sudah pas! Pembuka cepat, teks sempat dibaca, tidak ada shot yang membosankan, dan ajakan cukup lama.</span></li>';
+      scoreEl.textContent = `${ok} / ${checks}`;
+      scoreEl.className = `dl-score ${ok === checks ? 'is-ok' : ok >= checks / 2 ? 'is-warn' : 'is-bad'}`;
+      if (!timer) showShot(0);
+    };
+    const stop = () => {
+      clearInterval(timer);
+      timer = null;
+      playBtn.innerHTML = '<i class="bi bi-play-fill" aria-hidden="true"></i> Putar pratinjau';
+      $$('.pl-block', strip).forEach((b) => b.classList.remove('is-now'));
+    };
+    playBtn.addEventListener('click', () => {
+      if (timer) { stop(); showShot(0); return; }
+      const d = durs();
+      const start = performance.now();
+      playBtn.innerHTML = '<i class="bi bi-stop-fill" aria-hidden="true"></i> Berhenti';
+      timer = setInterval(() => {
+        const t = (performance.now() - start) / 1000;
+        let acc = 0; let i = 0;
+        while (i < d.length && t >= acc + d[i]) { acc += d[i]; i += 1; }
+        if (i >= d.length) { stop(); screen.innerHTML = '<i class="bi bi-check2-circle" aria-hidden="true"></i><p>Selesai</p><small>Bagaimana rasanya? Terlalu cepat, terlalu lambat, atau pas?</small>'; return; }
+        showShot(i, acc + d[i] - t);
+      }, 100);
+    });
+    box.addEventListener('input', (e) => { if (e.target.matches('[data-pl-dur]')) { if (timer) stop(); render(); } });
+    $('[data-pl-reset]', box)?.addEventListener('click', () => {
+      stop();
+      $$('[data-pl-dur]', box).forEach((r, i) => { r.value = data.shots[i].dur; });
+      render();
+    });
+    render();
+  });
+
+  /* ---------- 39. Pencocok audio–visual: gambar + suasana musik sesuai narasi ----------
+     <div data-av-lab> berisi <script type="application/json" data-av-data>
+     {"moods":{"ceria":"Ceria"},"scenes":[{"narasi":"…","visuals":[{"icon":"bi-…","label":"…","ok":true}],"moods":["serius"],"why":"…"}]} */
+  const MOOD_TUNES = {
+    ceria: { wave: 'triangle', step: 0.16, notes: [523.3, 659.3, 784, 1046.5, 784, 659.3, 784, 1046.5] },
+    tenang: { wave: 'sine', step: 0.5, notes: [392, 523.3, 659.3, 523.3] },
+    serius: { wave: 'square', step: 0.38, notes: [110, 110, 130.8, 103.8, 110] },
+    sedih: { wave: 'sine', step: 0.55, notes: [440, 392, 349.2, 329.6] },
+  };
+  let moodCtx = null;
+  const playMood = (mood) => {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    const tune = MOOD_TUNES[mood];
+    if (!AC || !tune) return;
+    try {
+      if (moodCtx) moodCtx.close();
+      moodCtx = new AC();
+      const t0 = moodCtx.currentTime + 0.05;
+      tune.notes.forEach((f, i) => {
+        const o = moodCtx.createOscillator(); const g = moodCtx.createGain();
+        o.type = tune.wave; o.frequency.value = f;
+        const st = t0 + i * tune.step;
+        const peak = tune.wave === 'square' ? 0.05 : 0.18;
+        g.gain.setValueAtTime(0.0001, st); g.gain.exponentialRampToValueAtTime(peak, st + 0.03); g.gain.exponentialRampToValueAtTime(0.0001, st + tune.step * 0.95);
+        o.connect(g); g.connect(moodCtx.destination); o.start(st); o.stop(st + tune.step);
+      });
+    } catch (e) { /* abaikan jika suara tidak didukung */ }
+  };
+  $$('[data-av-lab]').forEach((box) => {
+    let data;
+    try { data = JSON.parse($('[data-av-data]', box).textContent); } catch (e) { return; }
+    const list = $('[data-av-scenes]', box);
+    const film = $('[data-av-film]', box);
+    const scoreEl = $('[data-av-score]', box);
+    const id = box.id || 'av';
+    list.innerHTML = data.scenes.map((sc, i) => `
+      <div class="av-scene" data-av-scene="${i}">
+        <p class="av-narasi"><span>Adegan ${i + 1} · Narasi</span>"${escapeHTML(sc.narasi)}"</p>
+        <div class="av-visuals" role="radiogroup" aria-label="Pilih gambar untuk adegan ${i + 1}">
+          ${sc.visuals.map((v, k) => `<label class="av-visual"><input type="radio" name="${id}-v${i}" value="${k}"><i class="bi ${v.icon}" aria-hidden="true"></i><span>${escapeHTML(v.label)}</span></label>`).join('')}
+        </div>
+        <div class="av-mood">
+          <label for="${id}-m${i}">Suasana musik</label>
+          <select id="${id}-m${i}" data-av-mood="${i}"><option value="">Pilih…</option>${Object.entries(data.moods).map(([k, l]) => `<option value="${k}">${escapeHTML(l)}</option>`).join('')}</select>
+          <button type="button" class="link-btn" data-av-listen="${i}"><i class="bi bi-volume-up" aria-hidden="true"></i> Dengar</button>
+        </div>
+        <p class="av-note" data-av-note="${i}" aria-live="polite"></p>
+      </div>`).join('');
+    const render = () => {
+      let score = 0;
+      const frames = data.scenes.map((sc, i) => {
+        const vr = $(`input[name="${id}-v${i}"]:checked`, box);
+        const mood = $(`[data-av-mood="${i}"]`, box).value;
+        const v = vr ? sc.visuals[Number(vr.value)] : null;
+        const okV = !!(v && v.ok);
+        const okM = sc.moods.includes(mood);
+        if (okV) score += 1;
+        if (okM) score += 1;
+        const note = $(`[data-av-note="${i}"]`, box);
+        const parts = [];
+        if (v) parts.push(okV ? '<span class="is-ok"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Gambar selaras dengan narasi.</span>' : `<span class="is-bad"><i class="bi bi-x-circle-fill" aria-hidden="true"></i> Telinga mendengar satu hal, mata melihat hal lain. Penonton bisa bingung.</span>`);
+        if (mood) parts.push(okM ? `<span class="is-ok"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Musik ${escapeHTML(data.moods[mood].toLowerCase())} cocok. ${escapeHTML(sc.why)}</span>` : `<span class="is-bad"><i class="bi bi-x-circle-fill" aria-hidden="true"></i> Suasana musik kurang cocok. ${escapeHTML(sc.why)}</span>`);
+        note.innerHTML = parts.join('');
+        return `<figure class="av-frame${v ? (okV ? ' is-ok' : ' is-bad') : ''}"><span class="av-screen">${v ? `<i class="bi ${v.icon}" aria-hidden="true"></i>` : '<i class="bi bi-question-lg" aria-hidden="true"></i>'}</span><figcaption>${escapeHTML(sc.narasi)}${mood ? `<small><i class="bi bi-music-note-beamed" aria-hidden="true"></i> ${escapeHTML(data.moods[mood])}</small>` : ''}</figcaption></figure>`;
+      });
+      film.innerHTML = frames.join('');
+      const max = data.scenes.length * 2;
+      scoreEl.textContent = `${score} / ${max}`;
+      scoreEl.className = `dl-score ${score === max ? 'is-ok' : score >= max / 2 ? 'is-warn' : 'is-bad'}`;
+    };
+    box.addEventListener('change', render);
+    box.addEventListener('click', (e) => {
+      const b = e.target.closest('[data-av-listen]');
+      if (!b) return;
+      const mood = $(`[data-av-mood="${b.dataset.avListen}"]`, box).value;
+      if (mood) playMood(mood);
+      else $(`[data-av-note="${b.dataset.avListen}"]`, box).textContent = 'Pilih suasana musik dulu, lalu tekan Dengar.';
+    });
+    render();
+  });
+
+  /* ---------- 40. Pemilih lisensi Creative Commons ---------- */
+  const CC_PARTS = {
+    BY: { icon: 'bi-person-check', name: 'BY · Atribusi', text: 'Nama pencipta wajib dicantumkan.' },
+    NC: { icon: 'bi-currency-dollar', name: 'NC · Nonkomersial', text: 'Tidak boleh dipakai untuk mencari uang.' },
+    SA: { icon: 'bi-arrow-repeat', name: 'SA · Berbagi serupa', text: 'Karya hasil ubahan harus memakai lisensi yang sama.' },
+    ND: { icon: 'bi-slash-circle', name: 'ND · Tanpa turunan', text: 'Tidak boleh diubah. Hanya boleh dibagikan apa adanya.' },
+    CC0: { icon: 'bi-globe', name: 'CC0 · Domain publik', text: 'Bebas dipakai untuk apa saja, bahkan tanpa menyebut nama.' },
+  };
+  $$('[data-license-picker]').forEach((box) => {
+    const out = $('[data-lp-out]', box);
+    const val = (n) => ($(`input[name="${n}"]:checked`, box) || {}).value;
+    const render = () => {
+      const name = val('lp-name'); const com = val('lp-com'); const mod = val('lp-mod');
+      const comField = $('[data-lp-group="com"]', box); const modField = $('[data-lp-group="mod"]', box);
+      comField.hidden = name === 'tidak';
+      modField.hidden = name === 'tidak';
+      let code; let parts;
+      if (name === 'tidak') { code = 'CC0 1.0'; parts = ['CC0']; }
+      else {
+        parts = ['BY'];
+        if (com === 'tidak') parts.push('NC');
+        if (mod === 'sa') parts.push('SA');
+        if (mod === 'tidak') parts.push('ND');
+        code = `CC ${parts.join('-')} 4.0`;
+      }
+      const can = (ok, text) => `<li class="${ok === true ? 'is-ok' : ok === false ? 'is-bad' : 'is-warn'}"><i class="bi ${ok === true ? 'bi-check-circle-fill' : ok === false ? 'bi-x-circle-fill' : 'bi-exclamation-circle-fill'}" aria-hidden="true"></i><span>${text}</span></li>`;
+      const cc0 = name === 'tidak';
+      out.innerHTML = `
+        <p class="lp-code">${code}</p>
+        <ul class="lp-parts">${parts.map((p) => `<li><i class="bi ${CC_PARTS[p].icon}" aria-hidden="true"></i><span><strong>${CC_PARTS[p].name}</strong> ${CC_PARTS[p].text}</span></li>`).join('')}</ul>
+        <p class="lab-label">Orang lain boleh…</p>
+        <ul class="dl-feedback">
+          ${can(true, 'Menyimpan, memakai, dan membagikan karyamu, misalnya untuk tugas sekolah.')}
+          ${can(cc0 || mod !== 'tidak' ? (mod === 'sa' && !cc0 ? null : true) : false, cc0 || mod === 'ya' ? 'Mengubah atau menggabungkan karyamu.' : mod === 'sa' ? 'Mengubah karyamu, asalkan hasilnya dibagikan dengan lisensi yang sama.' : 'Tidak boleh mengubah karyamu.')}
+          ${can(cc0 || com === 'ya', cc0 || com === 'ya' ? 'Memakai karyamu untuk tujuan komersial (dijual).' : 'Tidak boleh memakai karyamu untuk mencari uang.')}
+          ${can(cc0 ? true : null, cc0 ? 'Tidak wajib menyebut namamu (tetapi tetap sopan jika disebut).' : 'Wajib menuliskan namamu sebagai pencipta.')}
+        </ul>
+        <p class="lab-label">Tulis di karyamu</p>
+        <p class="lp-note">${cc0 ? 'Karya ini dibagikan ke domain publik dengan CC0 1.0.' : `© 2026 Nama Kamu. Karya ini dilisensikan dengan ${code}.`}</p>`;
+    };
+    box.addEventListener('change', render);
+    render();
+  });
+
+  /* ---------- 41. Pembuat atribusi: Judul, Pencipta, Sumber, Lisensi (JuPeSuLi) ---------- */
+  $$('[data-attribution]').forEach((box) => {
+    const f = (n) => $(`[data-at="${n}"]`, box);
+    const out = $('[data-at-out]', box);
+    const fb = $('[data-at-feedback]', box);
+    const status = $('[data-at-status]', box);
+    const render = () => {
+      const judul = f('judul').value.trim();
+      const pencipta = f('pencipta').value.trim();
+      const sumber = f('sumber').value.trim();
+      const lic = f('lisensi').value;
+      const ubah = f('ubah').checked;
+      const cara = f('cara').value.trim();
+      const tujuan = f('tujuan').value;
+      f('cara').closest('.ll-field').hidden = !ubah;
+      const rows = [];
+      const row = (cls, t) => rows.push(`<li class="${cls}"><i class="bi ${cls === 'is-ok' ? 'bi-check-circle-fill' : cls === 'is-warn' ? 'bi-exclamation-circle-fill' : 'bi-x-circle-fill'}" aria-hidden="true"></i><span>${t}</span></li>`);
+      const missing = [['judul', judul], ['pencipta', pencipta], ['sumber', sumber]].filter(([, v]) => !v).map(([k]) => k);
+      if (missing.length) row('is-bad', `Lengkapi bagian: ${missing.join(', ')}. Jika judul tidak ada, tulis "Tanpa judul".`);
+      else row('is-ok', 'Judul, pencipta, dan sumber sudah lengkap.');
+      if (lic === 'hak-cipta') row('is-bad', 'Bahan ini dilindungi hak cipta penuh atau lisensinya tidak jelas. Jangan dipakai tanpa izin pencipta. Cari bahan lain yang berlisensi bebas, atau buat sendiri.');
+      else {
+        if (lic.includes('ND') && ubah) row('is-bad', 'Lisensi ND (tanpa turunan) tidak membolehkan bahan diubah, dipotong, atau diberi tulisan. Pakai apa adanya, atau cari bahan lain.');
+        if (lic.includes('NC') && tujuan === 'jual') row('is-bad', 'Lisensi NC (nonkomersial) tidak membolehkan bahan dipakai untuk karya yang dijual.');
+        if (lic.includes('SA') && ubah) row('is-warn', 'Lisensi SA: karya hasil ubahanmu harus dibagikan dengan lisensi yang sama.');
+        if (ubah && !cara) row('is-warn', 'Tuliskan perubahan yang kamu lakukan, misalnya "dipotong" atau "diberi teks".');
+        if (lic === 'situs') row('is-warn', 'Lisensi situs (misalnya Pixabay atau Unsplash) membolehkan pemakaian gratis. Bacalah aturannya, dan sebaiknya tetap cantumkan nama pencipta.');
+        if (!rows.some((r) => r.includes('is-bad')) && !missing.length) row('is-ok', 'Pemakaian bahan ini sesuai dengan lisensinya.');
+      }
+      const licText = { CC0: 'domain publik (CC0)', situs: 'lisensi situs, bebas pakai', 'hak-cipta': 'HAK CIPTA PENUH (perlu izin)' }[lic] || `lisensi ${lic} 4.0`;
+      const text = `"${judul || '…'}" oleh ${pencipta || '…'}, dari ${sumber || '…'}, ${licText}.${ubah ? ` Diubah: ${cara || '…'}.` : ''}`;
+      out.textContent = text;
+      fb.innerHTML = rows.join('');
+    };
+    box.addEventListener('input', render);
+    box.addEventListener('change', render);
+    $('[data-at-copy]', box).addEventListener('click', async () => {
+      const ok = await copyText(out.textContent);
+      status.textContent = ok ? 'Atribusi disalin. Tempelkan di bawah gambar, di slide terakhir, atau di deskripsi video.' : 'Gagal menyalin. Blok teksnya, lalu salin secara manual.';
+    });
+    render();
+  });
+
+  /* ---------- 42. Pemeriksa kemiripan teks (cara kerja pendeteksi plagiarisme) ---------- */
+  $$('[data-plagiarism]').forEach((box) => {
+    const source = $('[data-pc-source]', box).textContent;
+    const input = $('[data-pc-input]', box);
+    const marked = $('[data-pc-marked]', box);
+    const pctEl = $('[data-pc-pct]', box);
+    const bar = $('[data-pc-bar]', box);
+    const fb = $('[data-pc-feedback]', box);
+    const N = 3;
+    const norm = (w) => w.toLowerCase().replace(/[^a-z0-9à-ÿ-]/gi, '');
+    const srcWords = source.split(/\s+/).map(norm).filter(Boolean);
+    const grams = new Set();
+    for (let i = 0; i + N <= srcWords.length; i += 1) grams.add(srcWords.slice(i, i + N).join(' '));
+    const cite = new RegExp(box.dataset.cite || 'menurut|sumber', 'i');
+    const render = () => {
+      const raw = input.value;
+      const tokens = raw.split(/(\s+)/);
+      const words = [];
+      tokens.forEach((t, idx) => { if (t.trim()) words.push({ idx, w: norm(t) }); });
+      const hit = new Array(words.length).fill(false);
+      for (let i = 0; i + N <= words.length; i += 1) {
+        const g = words.slice(i, i + N).map((x) => x.w).join(' ');
+        if (grams.has(g)) for (let k = i; k < i + N; k += 1) hit[k] = true;
+      }
+      const real = words.filter((x) => x.w).length;
+      const copied = hit.filter((h, i) => h && words[i].w).length;
+      const pct = real ? Math.round((copied / real) * 100) : 0;
+      const hitIdx = new Set(words.filter((_, i) => hit[i]).map((x) => x.idx));
+      marked.innerHTML = raw.trim() ? tokens.map((t, idx) => (hitIdx.has(idx) ? `<mark>${escapeHTML(t)}</mark>` : escapeHTML(t))).join('') : '<span class="pc-empty">Tulisanmu akan tampil di sini. Bagian yang sama persis dengan sumber akan diberi warna.</span>';
+      pctEl.textContent = `${pct}%`;
+      bar.style.setProperty('--p', `${pct}%`);
+      bar.className = `pc-bar ${pct >= 50 ? 'is-bad' : pct >= 20 ? 'is-warn' : 'is-ok'}`;
+      const rows = [];
+      const row = (cls, t) => rows.push(`<li class="${cls}"><i class="bi ${cls === 'is-ok' ? 'bi-check-circle-fill' : cls === 'is-warn' ? 'bi-exclamation-circle-fill' : 'bi-x-circle-fill'}" aria-hidden="true"></i><span>${t}</span></li>`);
+      if (!real) row('is-warn', 'Tulis ulang isi teks sumber dengan kata-katamu sendiri di kotak sebelah kiri.');
+      else {
+        if (real < 15) row('is-warn', 'Tulisanmu masih terlalu pendek. Coba tulis minimal dua kalimat.');
+        if (pct >= 50) row('is-bad', `${pct}% kata tersusun persis seperti sumber. Ini menyalin, bukan parafrase. Tutup sumbernya, pahami isinya, lalu tulis dengan gayamu sendiri.`);
+        else if (pct >= 20) row('is-warn', `${pct}% masih sama persis dengan sumber. Mengganti satu-dua kata belum cukup. Ubah juga susunan kalimatnya.`);
+        else row('is-ok', `Hanya ${pct}% yang sama. Kamu sudah memakai kata-katamu sendiri.`);
+        if (cite.test(raw)) row('is-ok', 'Kamu menyebutkan sumbernya. Parafrase tetap wajib mencantumkan sumber!');
+        else row('is-bad', 'Belum ada sumber. Tambahkan, misalnya "Menurut buku Pangan Lokal Riau, …".');
+      }
+      fb.innerHTML = rows.join('');
+    };
+    input.addEventListener('input', render);
+    box.addEventListener('click', (e) => {
+      const b = e.target.closest('[data-pc-preset]');
+      if (!b) return;
+      input.value = b.dataset.pcPreset;
+      render();
+    });
+    $('[data-pc-clear]', box)?.addEventListener('click', () => { input.value = ''; render(); input.focus(); });
+    render();
+  });
+
+  /* ---------- 43. Simulator unggahan: pratinjau + pemeriksa siap unggah ---------- */
+  const fbRow = (cls, t) => `<li class="${cls}"><i class="bi ${cls === 'is-ok' ? 'bi-check-circle-fill' : cls === 'is-warn' ? 'bi-exclamation-circle-fill' : 'bi-x-circle-fill'}" aria-hidden="true"></i><span>${t}</span></li>`;
+  const capsRatio = (s) => {
+    const letters = s.replace(/[^a-z]/gi, '');
+    return letters.length ? letters.replace(/[^A-Z]/g, '').length / letters.length : 0;
+  };
+  $$('[data-post-lab]').forEach((box) => {
+    const f = (n) => $(`[data-pp="${n}"]`, box);
+    const chk = (n) => $(`[data-pp-check="${n}"]`, box).checked;
+    const preview = $('[data-pp-preview]', box);
+    const fb = $('[data-pp-feedback]', box);
+    const scoreEl = $('[data-pp-score]', box);
+    const status = $('[data-pp-status]', box);
+    const PLAT = {
+      pendek: 'Video pendek tegak (9:16)',
+      kanal: 'Kanal video sekolah (16:9)',
+      mading: 'Mading digital kelas',
+      blog: 'Blog atau situs sekolah',
+    };
+    const VIS = { publik: 'Publik', terbatas: 'Terbatas (warga sekolah)', pribadi: 'Pribadi' };
+    let checks = [];
+    const render = () => {
+      const plat = f('platform').value;
+      const title = f('judul').value.trim();
+      const desc = f('deskripsi').value.trim();
+      const tags = f('tagar').value.trim().split(/\s+/).filter(Boolean);
+      const vis = f('visibilitas').value;
+      const kom = f('komentar').value;
+      const tagHTML = tags.map((t) => `<span>${escapeHTML(t)}</span>`).join(' ');
+      const visIcon = { publik: 'bi-globe2', terbatas: 'bi-people', pribadi: 'bi-lock' }[vis];
+      const meta = `<p class="pp-meta"><i class="bi ${visIcon}" aria-hidden="true"></i> ${VIS[vis]} · <i class="bi bi-chat-dots" aria-hidden="true"></i> Komentar ${kom === 'moderasi' ? 'disaring' : kom}</p>`;
+      if (plat === 'pendek') {
+        preview.className = 'pp-preview is-pendek';
+        preview.innerHTML = `<div class="pp-phone"><i class="bi bi-droplet-half pp-art" aria-hidden="true"></i><div class="pp-overlay"><p class="pp-user">@osis.smpn1bandarseikijang</p><p class="pp-title">${escapeHTML(title || 'Judul video…')}</p><p class="pp-tags">${tagHTML}</p></div><div class="pp-side" aria-hidden="true"><i class="bi bi-heart"></i><i class="bi bi-chat"></i><i class="bi bi-share"></i></div></div>${meta}`;
+      } else if (plat === 'kanal') {
+        preview.className = 'pp-preview is-kanal';
+        preview.innerHTML = `<div class="pp-thumb"><i class="bi bi-droplet-half" aria-hidden="true"></i><span class="pp-dur">0:58</span></div><p class="pp-title">${escapeHTML(title || 'Judul video…')}</p><p class="pp-user">Kanal SMP Negeri 1 Bandar Seikijang</p><p class="pp-desc">${escapeHTML(desc || 'Deskripsi video…')}</p><p class="pp-tags">${tagHTML}</p>${meta}`;
+      } else if (plat === 'mading') {
+        preview.className = 'pp-preview is-mading';
+        preview.innerHTML = `<div class="pp-note"><p class="pp-user"><i class="bi bi-person-circle" aria-hidden="true"></i> Kelompok 3 · VIII-A</p><p class="pp-title">${escapeHTML(title || 'Judul unggahan…')}</p><div class="pp-thumb is-small"><i class="bi bi-droplet-half" aria-hidden="true"></i></div><p class="pp-desc">${escapeHTML(desc || 'Keterangan…')}</p><p class="pp-tags">${tagHTML}</p></div>${meta}`;
+      } else {
+        preview.className = 'pp-preview is-blog';
+        preview.innerHTML = `<div class="pp-article"><p class="pp-user">Blog SMP Negeri 1 Bandar Seikijang · Karya Murid</p><p class="pp-title">${escapeHTML(title || 'Judul artikel…')}</p><div class="pp-thumb"><i class="bi bi-droplet-half" aria-hidden="true"></i></div><p class="pp-desc">${escapeHTML(desc || 'Isi singkat…')}</p><p class="pp-tags">${tagHTML}</p></div>${meta}`;
+      }
+
+      const rows = [];
+      checks = [];
+      const add = (cls, t) => { checks.push(cls); rows.push(fbRow(cls, t)); };
+      if (title.length < 10) add('is-bad', 'Judul terlalu pendek. Tulis judul yang jelas, 10–60 huruf.');
+      else if (title.length > 60) add('is-warn', `Judul ${title.length} huruf, terlalu panjang. Persingkat sampai paling banyak 60 huruf.`);
+      else add('is-ok', 'Panjang judul pas dan jelas.');
+      if (capsRatio(title) > 0.7 && title.length > 5) add('is-warn', 'Judul memakai HURUF KAPITAL SEMUA, sehingga terkesan berteriak dan sulit dibaca.');
+      else add('is-ok', 'Judul mudah dibaca, tidak berteriak.');
+      if (desc.length < 30) add('is-bad', 'Deskripsi terlalu singkat. Jelaskan isi konten dalam 1–2 kalimat.');
+      else if (!/sumber|musik|kredit|lisensi|oleh/i.test(desc)) add('is-warn', 'Deskripsi belum mencantumkan sumber atau kredit bahan, misalnya musik dan foto (TP 2.8).');
+      else add('is-ok', 'Deskripsi jelas dan mencantumkan kredit.');
+      const badTag = tags.filter((t) => !/^#[\p{L}\p{N}_]+$/u.test(t));
+      if (!tags.length) add('is-warn', 'Belum ada tagar. Tambahkan 2–5 tagar agar konten mudah ditemukan.');
+      else if (badTag.length) add('is-bad', `Tagar harus diawali # dan tanpa spasi atau tanda baca: ${escapeHTML(badTag.join(' '))}`);
+      else if (tags.length > 5) add('is-warn', `${tags.length} tagar terlalu banyak dan terlihat seperti spam. Pilih 2–5 yang paling sesuai.`);
+      else add('is-ok', `${tags.length} tagar yang rapi.`);
+      const text = `${title} ${desc}`;
+      if (/(\+62|\b08)\d[\d\s-]{7,}/.test(text) || /[\w.]+@[\w-]+\.\w+/.test(text) || /\b(jl\.?|jalan)\s+\w+.*\bno\.?\s*\d+/i.test(text) || /alamat rumah/i.test(text)) add('is-bad', 'Ada data pribadi (nomor HP, email, atau alamat rumah). Hapus sebelum diunggah!');
+      else add('is-ok', 'Tidak ada data pribadi yang ikut tersebar.');
+      if (vis === 'publik' && !chk('guru')) add('is-bad', 'Unggahan publik harus lewat akun resmi sekolah dan disetujui guru pendamping.');
+      else if (vis === 'pribadi') add('is-warn', 'Pengaturan "Pribadi" membuat konten hanya bisa dilihat olehmu. Untuk berbagi ke kelas, pilih "Terbatas".');
+      else add('is-ok', `Pengaturan privasi "${VIS[vis]}" sudah sesuai.`);
+      if (kom === 'moderasi') add('is-ok', 'Komentar disaring dulu, jadi ruang komentar tetap aman.');
+      else if (kom === 'aktif') add('is-warn', 'Komentar terbuka. Pastikan ada yang rutin memantau dan menyaring komentar.');
+      else add('is-warn', 'Komentar dimatikan, sehingga penonton tidak bisa bertanya atau memberi masukan. Pilih "disaring dulu".');
+      add(chk('izin') ? 'is-ok' : 'is-bad', chk('izin') ? 'Semua orang yang tampil sudah memberi izin.' : 'Pastikan semua orang yang tampil di konten sudah memberi izin (TP 2.5).');
+      add(chk('atribusi') ? 'is-ok' : 'is-bad', chk('atribusi') ? 'Bahan dari orang lain sudah diberi atribusi.' : 'Periksa lisensi dan atribusi musik serta gambar (TP 2.8).');
+      add(chk('takarir') ? 'is-ok' : 'is-warn', chk('takarir') ? 'Ada takarir (subtitle), sehingga teman tunarungu dan penonton tanpa suara tetap paham.' : 'Tambahkan takarir (subtitle) agar konten bisa dinikmati semua orang.');
+      fb.innerHTML = rows.join('');
+      const ok = checks.filter((c) => c === 'is-ok').length;
+      scoreEl.textContent = `${ok} / ${checks.length}`;
+      scoreEl.className = `dl-score ${ok === checks.length ? 'is-ok' : ok >= checks.length - 3 ? 'is-warn' : 'is-bad'}`;
+      status.textContent = '';
+      status.className = 'tool-status';
+      preview.classList.remove('is-published');
+      $('.pp-platform', box).textContent = PLAT[plat];
+    };
+    box.addEventListener('input', render);
+    box.addEventListener('change', render);
+    $('[data-pp-publish]', box).addEventListener('click', () => {
+      render();
+      const bad = checks.filter((c) => c === 'is-bad').length;
+      const warn = checks.filter((c) => c === 'is-warn').length;
+      if (bad) {
+        status.className = 'tool-status is-bad';
+        status.textContent = `Belum siap unggah: masih ada ${bad} hal penting yang harus diperbaiki (tanda merah).`;
+      } else {
+        preview.classList.add('is-published');
+        status.className = 'tool-status is-ok';
+        status.textContent = warn ? `Terunggah! Masih ada ${warn} saran (tanda kuning) agar unggahan berikutnya lebih baik.` : 'Terunggah! Kontenmu siap dinikmati dengan aman dan bertanggung jawab.';
+      }
+    });
+    render();
+  });
+
+  /* ---------- 44. Ruang komentar: memilih balasan yang beretika ---------- */
+  $$('[data-reply-lab]').forEach((box) => {
+    let data;
+    try { data = JSON.parse($('[data-rl-data]', box).textContent); } catch (e) { return; }
+    const thread = $('[data-rl-thread]', box);
+    const opts = $('[data-rl-options]', box);
+    const fb = $('[data-rl-feedback]', box);
+    const nextBtn = $('[data-rl-next]', box);
+    const progress = $('[data-rl-progress]', box);
+    const scoreEl = $('[data-rl-score]', box);
+    let i = 0; let score = 0;
+    const show = () => {
+      const sc = data[i];
+      progress.textContent = `Komentar ${i + 1} dari ${data.length}`;
+      scoreEl.textContent = `${score} / ${data.length}`;
+      thread.innerHTML = `<div class="rl-bubble is-in"><i class="bi ${sc.icon}" aria-hidden="true"></i><div><p class="rl-who">${escapeHTML(sc.who)}</p><p>${escapeHTML(sc.text)}</p></div></div>`;
+      const order = sc.options.map((o, k) => k).sort(() => Math.random() - 0.5);
+      opts.innerHTML = order.map((k) => `<button type="button" class="rl-option" data-rl-pick="${k}">${escapeHTML(sc.options[k].t)}</button>`).join('');
+      opts.hidden = false;
+      fb.innerHTML = '';
+      nextBtn.hidden = true;
+    };
+    box.addEventListener('click', (e) => {
+      const pick = e.target.closest('[data-rl-pick]');
+      if (pick) {
+        const o = data[i].options[Number(pick.dataset.rlPick)];
+        if (o.q === 'good') score += 1;
+        thread.insertAdjacentHTML('beforeend', `<div class="rl-bubble is-out is-${o.q}"><i class="bi bi-person-circle" aria-hidden="true"></i><div><p class="rl-who">Kamu</p><p>${escapeHTML(o.t)}</p></div></div>`);
+        opts.hidden = true;
+        fb.innerHTML = fbRow(o.q === 'good' ? 'is-ok' : o.q === 'meh' ? 'is-warn' : 'is-bad', escapeHTML(o.why));
+        scoreEl.textContent = `${score} / ${data.length}`;
+        nextBtn.hidden = false;
+        nextBtn.innerHTML = i < data.length - 1 ? 'Komentar berikutnya <i class="bi bi-arrow-right" aria-hidden="true"></i>' : 'Lihat hasil <i class="bi bi-flag" aria-hidden="true"></i>';
+        nextBtn.focus();
+        return;
+      }
+      if (e.target.closest('[data-rl-next]')) {
+        if (i >= data.length) { i = 0; score = 0; show(); return; }
+        if (i < data.length - 1) { i += 1; show(); return; }
+        thread.innerHTML = `<div class="rl-result"><i class="bi bi-trophy" aria-hidden="true"></i><p><strong>${score} dari ${data.length}</strong> balasanmu sudah beretika.</p><p>${score === data.length ? 'Luar biasa! Kamu siap menjadi moderator komentar yang bijak.' : 'Coba lagi dan perhatikan penjelasan di setiap balasan.'}</p></div>`;
+        opts.hidden = true;
+        fb.innerHTML = '';
+        nextBtn.hidden = false;
+        nextBtn.innerHTML = '<i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Main lagi';
+        i = data.length;
+        return;
+      }
+    });
+    show();
+  });
+
+  /* ---------- 45. Pemeriksa pesan 4B: Benar, Baik, Berguna, Butuh ---------- */
+  $$('[data-msg-lab]').forEach((box) => {
+    const input = $('[data-ml-input]', box);
+    const to = $('[data-ml="to"]', box);
+    const jam = $('[data-ml="jam"]', box);
+    const bubble = $('[data-ml-bubble]', box);
+    const fb = $('[data-ml-feedback]', box);
+    const scoreEl = $('[data-ml-score]', box);
+    const KASAR = /\b(bodoh|goblo[kg]|bego|tolol|dungu|idiot|anjing|bangsat|sialan|kampret|jelek lu|norak)\b/i;
+    const render = () => {
+      const t = input.value.trim();
+      const who = to.value;
+      const h = Number(jam.value);
+      bubble.innerHTML = t ? `${escapeHTML(t)}<small>${String(h).padStart(2, '0')}.00 <i class="bi bi-check2-all" aria-hidden="true"></i></small>` : '<span class="pc-empty">Pesanmu akan tampil di sini…</span>';
+      const rows = [];
+      let ok = 0; let n = 0;
+      const add = (cls, msg) => { n += 1; if (cls === 'is-ok') ok += 1; rows.push(fbRow(cls, msg)); };
+      if (!t) { fb.innerHTML = fbRow('is-warn', 'Tulis pesanmu, atau coba salah satu contoh.'); scoreEl.textContent = '0 / 0'; scoreEl.className = 'dl-score'; return; }
+      const words = t.split(/\s+/).length;
+      const emoji = (t.match(/\p{Extended_Pictographic}/gu) || []).length;
+      const formal = who === 'guru';
+      const salam = /(selamat (pagi|siang|sore|malam))|assalamu|halo|hai|permisi|\bsalam\b|om swastiastu|shalom/i.test(t);
+      add(salam || !formal ? 'is-ok' : 'is-bad', salam ? 'Ada salam pembuka.' : formal ? 'Mulai pesan kepada guru dengan salam, misalnya "Selamat sore, Bu".' : 'Pesan untuk teman boleh santai, tetapi sapaan tetap membuatnya ramah.');
+      if (formal) {
+        const intro = /\b(saya|nama saya)\b/i.test(t) && /kelas/i.test(t);
+        add(intro ? 'is-ok' : 'is-bad', intro ? 'Kamu memperkenalkan diri (nama dan kelas).' : 'Perkenalkan diri: nama dan kelas, karena guru mengajar banyak murid.');
+      }
+      const santun = /mohon|maaf|tolong|terima ?kasih|makasih|permisi/i.test(t);
+      add(santun ? 'is-ok' : (formal ? 'is-bad' : 'is-warn'), santun ? 'Ada kata santun seperti "mohon", "maaf", atau "terima kasih".' : 'Tambahkan kata santun, misalnya "mohon" atau "terima kasih".');
+      add(capsRatio(t) > 0.6 && t.replace(/[^a-z]/gi, '').length > 10 ? 'is-bad' : 'is-ok', capsRatio(t) > 0.6 && t.replace(/[^a-z]/gi, '').length > 10 ? 'Pesan HURUF KAPITAL SEMUA terbaca seperti berteriak dan marah.' : 'Tidak berteriak dengan huruf kapital.');
+      const ribut = /[!?]{3,}/.test(t);
+      add(ribut ? 'is-warn' : 'is-ok', ribut ? 'Tanda seru atau tanya yang berderet (!!! ???) terkesan tidak sabar.' : 'Tanda baca wajar.');
+      const emojiMax = formal ? 1 : 3;
+      add(emoji > emojiMax ? 'is-warn' : 'is-ok', emoji > emojiMax ? `${emoji} emoji terlalu banyak${formal ? ' untuk pesan kepada guru' : ''}. Pakai secukupnya.` : 'Emoji dipakai secukupnya.');
+      add(KASAR.test(t) ? 'is-bad' : 'is-ok', KASAR.test(t) ? 'Ada kata kasar atau ejekan. Hapus! Kata-kata di dunia maya bisa melukai dan tersimpan lama.' : 'Tidak ada kata kasar.');
+      add(words < 5 ? 'is-warn' : words > 90 ? 'is-warn' : 'is-ok', words < 5 ? 'Pesan terlalu singkat, maksudnya bisa tidak jelas.' : words > 90 ? 'Pesan terlalu panjang. Sampaikan intinya saja.' : 'Panjang pesan pas dan maksudnya jelas.');
+      const late = (formal && (h < 6 || h >= 21)) || (who === 'grup' && (h < 6 || h >= 22));
+      add(late ? 'is-warn' : 'is-ok', late ? `Pukul ${String(h).padStart(2, '0')}.00 adalah waktu istirahat. Kirim pesan pada jam yang wajar, kecuali darurat.` : 'Waktu mengirim pesan wajar.');
+      fb.innerHTML = rows.join('');
+      scoreEl.textContent = `${ok} / ${n}`;
+      scoreEl.className = `dl-score ${ok === n ? 'is-ok' : ok >= n - 2 ? 'is-warn' : 'is-bad'}`;
+    };
+    box.addEventListener('input', render);
+    box.addEventListener('change', render);
+    box.addEventListener('click', (e) => {
+      const b = e.target.closest('[data-ml-preset]');
+      if (!b) return;
+      input.value = b.dataset.mlPreset;
+      if (b.dataset.mlTo) to.value = b.dataset.mlTo;
+      if (b.dataset.mlJam) jam.value = b.dataset.mlJam;
+      render();
+    });
+    render();
+  });
+
+  /* ---------- 46. Navigasi TP sebelumnya/berikutnya: <kka-tp-nav code="1.2"> ----------
      Dibuat otomatis dari urutan di data.js, jadi tidak perlu ditulis manual. */
   const KKA = window.KKA;
   $$('kka-tp-nav').forEach((nav) => {

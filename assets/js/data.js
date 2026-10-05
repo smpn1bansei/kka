@@ -43,9 +43,9 @@
     ['1.6', 'Menerapkan penyusunan dan perbaikan instruksi yang lebih kompleks', 8, 1, true],
     ['2.5', 'Menerapkan teknik produksi dan <i lang="en">editing</i>', 8, 1, true],
     ['2.6', 'Menerapkan aplikasi dasar untuk produksi konten digital berupa audio dan video', 8, 1, true],
-    ['2.7', 'Menerapkan teknik <i lang="en">storytelling</i> digital', 8, 1, false],
-    ['2.8', 'Memahami aspek etika dan hak cipta', 8, 1, false],
-    ['2.9', 'Menerapkan diseminasi konten melalui <i lang="en">platform</i> digital', 8, 1, false],
+    ['2.7', 'Menerapkan teknik <i lang="en">storytelling</i> digital', 8, 1, true],
+    ['2.8', 'Memahami aspek etika dan hak cipta', 8, 1, true],
+    ['2.9', 'Menerapkan diseminasi konten melalui <i lang="en">platform</i> digital', 8, 1, true],
 
     ['3.4', 'Memahami Kecerdasan Artifisial sebagai alat bantu manusia', 8, 2, false],
     ['3.5', 'Memahami perbedaan cara manusia dan Kecerdasan Artifisial menggabungkan informasi', 8, 2, false],
