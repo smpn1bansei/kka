@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP 2.4 Tata Letak Visual yang Menarik — Koding dan KA SMPN 1 Bandar Seikijang</title>
+  <meta name="description" content="Materi TP 2.4 Koding dan Kecerdasan Artifisial Kelas VII: prinsip desain visual, yaitu hierarki visual, kontras warna, dan keterbacaan tipografi, dilengkapi tes 3 detik, perbaikan poster, pemeriksa kontras, dan lab tipografi.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="TP 2.4 Menerapkan Tata Letak Visual yang Menarik dalam Produksi Konten Digital">
+  <meta property="og:description" content="Hierarki visual, kontras warna, dan keterbacaan tipografi untuk murid Kelas VII.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs: style.css (umum) + lesson.css (halaman materi) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/lesson.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lesson.js" defer></script>
+</head>
+<body>
+  <kka-header active="atp"><a href="index.html">Beranda</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <main id="konten" data-el="2">
+    <!-- =============================================== JUDUL TP -->
+    <section class="hero hero--tp" aria-labelledby="judul-tp">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Lokasi halaman">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#atp">Alur TP</a></li>
+            <li><a href="index.html#kelas-7">Kelas VII</a></li>
+            <li><span aria-current="page">TP 2.4</span></li>
+          </ol>
+        </nav>
+        <div class="tp-badges">
+          <span class="tp-badge tp-badge--code">TP 2.4</span>
+          <span class="tp-badge"><i class="bi bi-camera-reels" aria-hidden="true"></i> Elemen 2 · Literasi Digital</span>
+          <span class="tp-badge"><i class="bi bi-calendar-week" aria-hidden="true"></i> Kelas VII · Semester 1</span>
+        </div>
+        <h1 id="judul-tp">Menerapkan Tata Letak Visual yang Menarik dalam Produksi Konten Digital</h1>
+        <p class="hero-lead">Mengapa ada poster yang langsung dipahami dalam sekejap, sementara yang lain membuat pusing? Rahasianya ada pada tata letak. Kamu akan belajar mengatur hierarki, warna, dan huruf agar kontenmu menarik sekaligus mudah dibaca.</p>
+        <ul class="tp-meta">
+          <li><i class="bi bi-sort-down" aria-hidden="true"></i> <span>Hierarki visual</span></li>
+          <li><i class="bi bi-palette" aria-hidden="true"></i> <span>Kontras warna</span></li>
+          <li><i class="bi bi-fonts" aria-hidden="true"></i> <span>Keterbacaan tipografi</span></li>
+          <li><i class="bi bi-laptop" aria-hidden="true"></i> <span>Tugas berbasis digital</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container lesson">
+      <!-- Daftar isi -->
+      <nav class="toc" aria-labelledby="judul-toc">
+        <p class="toc-title" id="judul-toc">Daftar isi</p>
+        <ol>
+          <li><a href="#tujuan">Tujuan &amp; cara belajar</a></li>
+          <li><a href="#mengingat">Mengingat kembali</a></li>
+          <li><a href="#pemantik">Tes 3 detik</a></li>
+          <li><a href="#hierarki">Hierarki visual</a></li>
+          <li><a href="#kontras">Kontras warna</a></li>
+          <li><a href="#tipografi">Keterbacaan tipografi</a></li>
+          <li><a href="#menerapkan">Menerapkan pada karya</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+          <li><a href="#tugas-individu">Tugas individu</a></li>
+          <li><a href="#tugas-kelompok">Tugas kelompok</a></li>
+          <li><a href="#rangkuman">Rangkuman &amp; refleksi semester</a></li>
+        </ol>
+      </nav>
+
+      <div class="lesson-body">
+        <!-- ========================================== 1. TUJUAN -->
+        <section class="lesson-sec" id="tujuan" aria-labelledby="h-tujuan">
+          <p class="sec-no"><span>01</span> Tujuan belajar</p>
+          <h2 id="h-tujuan">Apa yang akan kamu pelajari?</h2>
+          <p>Setelah mempelajari halaman ini, kamu diharapkan mampu:</p>
+          <ol class="goal-list">
+            <li>Menyusun hierarki visual agar informasi terpenting terlihat lebih dulu.</li>
+            <li>Memilih paduan warna yang kontras, serasi, dan ramah bagi semua pembaca.</li>
+            <li>Mengatur huruf (tipografi) agar teks nyaman dan mudah dibaca.</li>
+            <li>Menerapkan ketiga prinsip tersebut untuk memperbaiki tata letak slide, poster, atau infografis.</li>
+          </ol>
+
+          <h3>Cara belajar di halaman ini</h3>
+          <p>Perhatikan label <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em> di setiap bagian.</p>
+          <ul class="deep-principles">
+            <li>
+              <i class="bi bi-bullseye" aria-hidden="true"></i>
+              <h4>Berkesadaran</h4>
+              <p>Kamu akan menyadari ke mana mata kita melihat lebih dulu, lalu memakai kesadaran itu untuk mendesain.</p>
+            </li>
+            <li>
+              <i class="bi bi-house-heart" aria-hidden="true"></i>
+              <h4>Bermakna</h4>
+              <p>Kamu merancang poster acara nyata dan memperbaiki slide kampanye kelompokmu agar benar-benar dipahami penontonnya.</p>
+            </li>
+            <li>
+              <i class="bi bi-emoji-laughing" aria-hidden="true"></i>
+              <h4>Menggembirakan</h4>
+              <p>Uji ingatanmu dengan tes 3 detik, perbaiki poster yang berantakan, dan bereksperimen dengan warna serta huruf.</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 2. MENGINGAT KEMBALI -->
+        <section class="lesson-sec" id="mengingat" aria-labelledby="h-mengingat">
+          <p class="sec-no"><span>02</span> Mengingat kembali <em class="phase">Memahami</em></p>
+          <h2 id="h-mengingat">Dari desain dasar ke tata letak</h2>
+          <div class="card-grid">
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.3 · Desain dasar</p>
+              <h4>Empat prinsip desain slide</h4>
+              <p>Teks ringkas, huruf jelas, warna kontras, dan gambar relevan. Di TP ini, ketiganya diperdalam menjadi hierarki, kontras warna, dan tipografi.</p>
+              <a href="2-3.html#desain">Buka lagi TP 2.3 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.3 · Tugas kelompok</p>
+              <h4>Slide kampanye kelompokmu</h4>
+              <p>Di tugas kelompok halaman ini, kamu akan memperbaiki tata letak slide yang dibuat di TP 2.3 dan menunjukkan perbedaannya.</p>
+              <a href="2-3.html#tugas-kelompok">Lihat tugasnya <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="1">
+              <p class="recap-tp">TP 1.2 · Abstraksi</p>
+              <h4>Yang penting harus menonjol</h4>
+              <p>Hierarki visual adalah abstraksi dalam bentuk tampilan: informasi terpenting dibuat paling menonjol, yang lain menjadi pendukung.</p>
+              <a href="1-2.html#abstraksi">Buka lagi TP 1.2 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ========================================== 3. PEMANTIK: TES 3 DETIK -->
+        <section class="lesson-sec" id="pemantik" aria-labelledby="h-pemantik">
+          <p class="sec-no"><span>03</span> Ayo berpikir dulu <em class="phase">Memahami</em></p>
+          <h2 id="h-pemantik">Tes 3 detik</h2>
+          <p>Orang yang lewat di depan papan pengumuman biasanya hanya melirik poster selama beberapa detik. Apakah dalam waktu sesingkat itu informasinya tertangkap? Ayo uji sendiri!</p>
+          <div class="glance" data-glance data-seconds="3">
+            <div class="glance-grid">
+              <div class="glance-item" data-glance-item="Poster A">
+                <p>Poster A</p>
+                <div class="poster" aria-label="Poster A: semua tulisan sama kecil, berwarna-warni, dan berlatar garis-garis">
+                  <p class="p-kicker">OSIS SMP Negeri 1 Bandar Seikijang</p>
+                  <h4 class="p-title">Pentas Seni Akhir Semester</h4>
+                  <div class="p-info"><p class="p-when">Sabtu, 19 Desember 2026 · 08.00</p><p class="p-where">Aula sekolah</p></div>
+                  <p class="p-desc">Tari daerah, paduan suara, drama kelas VII, dan pameran karya digital.</p>
+                  <p class="p-cta">Tampilkan bakatmu! Daftar ke wali kelas paling lambat 5 Desember.</p>
+                  <p class="p-contact">Info: Sekretariat OSIS</p>
+                </div>
+              </div>
+              <div class="glance-item" data-glance-item="Poster B">
+                <p>Poster B</p>
+                <div class="poster fix-title fix-contrast fix-font fix-align fix-group fix-space fix-color" aria-label="Poster B: judul besar, tanggal menonjol, rapi rata kiri, dan dua warna utama">
+                  <p class="p-kicker">OSIS SMP Negeri 1 Bandar Seikijang</p>
+                  <h4 class="p-title">Pentas Seni Akhir Semester</h4>
+                  <div class="p-info"><p class="p-when">Sabtu, 19 Desember 2026 · 08.00</p><p class="p-where">Aula sekolah</p></div>
+                  <p class="p-desc">Tari daerah, paduan suara, drama kelas VII, dan pameran karya digital.</p>
+                  <p class="p-cta">Tampilkan bakatmu! Daftar ke wali kelas paling lambat 5 Desember.</p>
+                  <p class="p-contact">Info: Sekretariat OSIS</p>
+                </div>
+              </div>
+            </div>
+            <div class="glance-foot js-only">
+              <button type="button" class="btn btn-ink" data-glance-start><i class="bi bi-stopwatch" aria-hidden="true"></i> Mulai tes 3 detik</button>
+              <button type="button" class="link-btn" data-glance-show hidden><i class="bi bi-eye" aria-hidden="true"></i> Lihat kedua poster</button>
+              <p class="glance-status" data-glance-status aria-live="polite">Tekan tombol untuk mulai. Setiap poster hanya muncul selama 3 detik.</p>
+            </div>
+          </div>
+          <ol class="question-list">
+            <li>Dari poster mana kamu bisa mengingat judul, tanggal, dan tempat acaranya?</li>
+            <li>Bagian apa yang pertama kali kamu lihat di Poster B? Mengapa?</li>
+            <li>Isi kedua poster sama persis. Lalu, apa yang membuatnya berbeda?</li>
+          </ol>
+          <div class="callout">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Isinya sama, tata letaknya berbeda</p>
+              <p>Kedua poster memuat kalimat yang sama persis. Perbedaannya hanya pada <strong>tata letak</strong>: ukuran, warna, huruf, perataan, dan ruang kosong. Itulah tiga prinsip yang akan kita pelajari: <strong>hierarki visual</strong>, <strong>kontras warna</strong>, dan <strong>keterbacaan tipografi</strong>.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 4. HIERARKI VISUAL -->
+        <section class="lesson-sec" id="hierarki" aria-labelledby="h-hierarki">
+          <p class="sec-no"><span>04</span> Hierarki visual <em class="phase">Memahami</em></p>
+          <h2 id="h-hierarki">Hierarki visual: yang penting terlihat lebih dulu</h2>
+          <p><strong>Hierarki visual</strong> adalah cara menyusun tampilan agar mata pembaca melihat informasi sesuai urutan kepentingannya: yang paling penting dilihat pertama, lalu informasi pendukung, kemudian rinciannya.</p>
+
+          <h3>Tiga tingkatan informasi</h3>
+          <div class="ladder">
+            <div class="ladder-row ladder-1"><span>Tingkat 1 · Judul</span><p>Pentas Seni Akhir Semester</p></div>
+            <div class="ladder-row ladder-2"><span>Tingkat 2 · Info utama</span><p>Sabtu, 19 Desember 2026 · Aula sekolah</p></div>
+            <div class="ladder-row ladder-3"><span>Tingkat 3 · Rincian</span><p>Tari daerah, paduan suara, drama, dan pameran karya digital. Daftar ke wali kelas paling lambat 5 Desember.</p></div>
+          </div>
+
+          <h3>Enam cara membuat sesuatu menonjol</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-arrows-angle-expand" aria-hidden="true"></i><h4>Ukuran</h4><p>Yang paling besar dilihat pertama. Judul dibuat jauh lebih besar dari isi.</p></article>
+            <article class="mini-card"><i class="bi bi-type-bold" aria-hidden="true"></i><h4>Ketebalan</h4><p>Huruf tebal (<i lang="en">bold</i>) menarik perhatian. Pakai untuk kata kunci saja.</p></article>
+            <article class="mini-card"><i class="bi bi-palette2" aria-hidden="true"></i><h4>Warna aksen</h4><p>Satu warna mencolok untuk informasi penting, misalnya tanggal atau ajakan.</p></article>
+            <article class="mini-card"><i class="bi bi-layout-text-window" aria-hidden="true"></i><h4>Posisi</h4><p>Bagian atas dan kiri biasanya dilihat lebih dulu. Letakkan judul di sana.</p></article>
+            <article class="mini-card"><i class="bi bi-bounding-box" aria-hidden="true"></i><h4>Ruang kosong</h4><p>Elemen yang dikelilingi ruang kosong terlihat lebih menonjol dan lega.</p></article>
+            <article class="mini-card"><i class="bi bi-collection" aria-hidden="true"></i><h4>Kedekatan</h4><p>Informasi yang berhubungan didekatkan dan dikelompokkan, misalnya tanggal dan tempat.</p></article>
+          </div>
+
+          <h3>Ke mana mata kita bergerak?</h3>
+          <p>Saat melihat sebuah desain, mata pembaca cenderung bergerak mengikuti pola tertentu. Manfaatkan pola ini untuk meletakkan informasi penting.</p>
+          <div class="card-grid">
+            <article class="mini-card">
+              <div class="pattern-box" aria-hidden="true">
+                <svg viewBox="0 0 150 100"><rect class="pb-block" x="10" y="8" width="130" height="14" rx="3"/><rect class="pb-block" x="10" y="42" width="60" height="22" rx="3" opacity=".6"/><rect class="pb-block" x="80" y="42" width="60" height="22" rx="3" opacity=".6"/><rect class="pb-block" x="10" y="78" width="130" height="14" rx="3"/><polyline points="12,15 138,15 12,85 138,85"/></svg>
+              </div>
+              <h4>Pola Z</h4>
+              <p>Untuk desain dengan sedikit teks, seperti <strong>poster dan slide</strong>. Mata bergerak dari kiri atas ke kanan atas, menyilang ke kiri bawah, lalu ke kanan bawah. Letakkan judul di atas dan ajakan di kanan bawah.</p>
+            </article>
+            <article class="mini-card">
+              <div class="pattern-box" aria-hidden="true">
+                <svg viewBox="0 0 150 100"><rect class="pb-block" x="10" y="8" width="130" height="10" rx="3"/><rect class="pb-block" x="10" y="28" width="90" height="8" rx="3" opacity=".6"/><rect class="pb-block" x="10" y="46" width="110" height="8" rx="3" opacity=".6"/><rect class="pb-block" x="10" y="64" width="70" height="8" rx="3" opacity=".6"/><rect class="pb-block" x="10" y="82" width="100" height="8" rx="3" opacity=".6"/><polyline points="12,13 138,13 12,13 12,50 112,50 12,50 12,90"/></svg>
+              </div>
+              <h4>Pola F</h4>
+              <p>Untuk desain dengan banyak teks, seperti <strong>artikel dan situs web</strong>. Mata membaca baris atas, lalu baris berikutnya lebih pendek, kemudian menyusuri sisi kiri ke bawah. Karena itu, kata kunci sebaiknya ada di awal kalimat atau subjudul.</p>
+            </article>
+          </div>
+
+          <h3>Teman setia hierarki: perataan dan konsistensi</h3>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Perataan:</strong> sejajarkan teks dan gambar pada garis yang sama, misalnya semuanya rata kiri. Desain jadi terlihat rapi. Gunakan garis bantu (<i lang="en">guides</i>) yang muncul di aplikasi.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Konsistensi:</strong> judul selalu dengan ukuran dan warna yang sama di setiap slide. Penonton jadi cepat mengenali polanya, seperti pengenalan pola di TP 1.2.</span></li>
+          </ul>
+
+          <h3>Coba sendiri: perbaiki poster ini <em class="phase">Mengaplikasi</em></h3>
+          <div class="fixer js-only" data-fixer>
+            <div class="lab-head">
+              <i class="bi bi-magic" aria-hidden="true"></i>
+              <div>
+                <h3>Perbaiki Poster</h3>
+                <p>Centang satu per satu prinsip di bawah dan lihat bagaimana posternya berubah. Mana yang paling besar pengaruhnya?</p>
+              </div>
+            </div>
+            <div class="fixer-body">
+              <div class="poster" data-poster aria-label="Poster yang sedang diperbaiki">
+                <p class="p-kicker">OSIS SMP Negeri 1 Bandar Seikijang</p>
+                <h4 class="p-title">Pentas Seni Akhir Semester</h4>
+                <div class="p-info"><p class="p-when">Sabtu, 19 Desember 2026 · 08.00</p><p class="p-where">Aula sekolah</p></div>
+                <p class="p-desc">Tari daerah, paduan suara, drama kelas VII, dan pameran karya digital.</p>
+                <p class="p-cta">Tampilkan bakatmu! Daftar ke wali kelas paling lambat 5 Desember.</p>
+                <p class="p-contact">Info: Sekretariat OSIS</p>
+              </div>
+              <div class="lab-controls">
+                <ul class="fix-list">
+                  <li><label><input type="checkbox" data-fix="title"><span><b>Perbesar judul</b><small>Hierarki: judul paling besar dan tebal.</small></span></label></li>
+                  <li><label><input type="checkbox" data-fix="contrast"><span><b>Ganti latar menjadi polos</b><small>Kontras: latar bergaris membuat teks sulit dibaca.</small></span></label></li>
+                  <li><label><input type="checkbox" data-fix="color"><span><b>Batasi warna</b><small>Kontras warna: dua warna utama dan satu aksen.</small></span></label></li>
+                  <li><label><input type="checkbox" data-fix="font"><span><b>Ganti jenis huruf</b><small>Tipografi: huruf sans-serif mudah dibaca.</small></span></label></li>
+                  <li><label><input type="checkbox" data-fix="align"><span><b>Ratakan kiri</b><small>Perataan: teks rata kiri lebih mudah diikuti.</small></span></label></li>
+                  <li><label><input type="checkbox" data-fix="group"><span><b>Kelompokkan info penting</b><small>Kedekatan: tanggal dan tempat disatukan dan ditonjolkan.</small></span></label></li>
+                  <li><label><input type="checkbox" data-fix="space"><span><b>Beri ruang kosong</b><small>Ruang kosong: desain terasa lega dan tidak sesak.</small></span></label></li>
+                </ul>
+                <p class="dl-score-row">Prinsip diterapkan <span class="dl-score is-warn" data-fixer-score>0 / 7</span></p>
+                <p class="tool-status" data-fixer-msg aria-live="polite"></p>
+                <div class="tool-actions">
+                  <button type="button" class="link-btn" data-fixer-all><i class="bi bi-check2-all" aria-hidden="true"></i> Terapkan semua</button>
+                  <button type="button" class="link-btn" data-fixer-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Kembali ke awal</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 5. KONTRAS WARNA -->
+        <section class="lesson-sec" id="kontras" aria-labelledby="h-kontras">
+          <p class="sec-no"><span>05</span> Kontras warna <em class="phase">Memahami</em></p>
+          <h2 id="h-kontras">Kontras warna: jelas dan serasi</h2>
+          <p><strong>Kontras</strong> adalah perbedaan yang mencolok antara dua unsur. Dalam warna, yang paling menentukan keterbacaan adalah perbedaan <strong>terang dan gelap</strong> antara teks dan latarnya. Makin besar perbedaannya, makin mudah teks dibaca.</p>
+
+          <h3>Mengenal roda warna</h3>
+          <div class="color-wrap">
+            <div class="color-wheel" role="img" aria-label="Roda warna berisi dua belas warna: merah, jingga, kuning, hijau, biru, dan ungu beserta warna di antaranya"></div>
+            <div class="card-grid" style="margin:0">
+              <article class="mini-card"><h4>Warna komplementer</h4><p>Warna yang <strong>berseberangan</strong> di roda, misalnya biru–oranye atau ungu–kuning. Kontrasnya kuat, cocok untuk aksen yang ingin ditonjolkan.</p></article>
+              <article class="mini-card"><h4>Warna analog</h4><p>Warna yang <strong>bersebelahan</strong>, misalnya biru–biru kehijauan–hijau. Hasilnya serasi dan tenang, cocok untuk latar.</p></article>
+              <article class="mini-card"><h4>Hangat dan dingin</h4><p>Merah, oranye, dan kuning terasa <strong>hangat</strong> dan bersemangat. Biru, hijau, dan ungu terasa <strong>dingin</strong> dan tenang.</p></article>
+            </div>
+          </div>
+
+          <h3>Aturan 60–30–10</h3>
+          <p>Panduan sederhana agar warna tidak berantakan: <strong>60%</strong> warna dominan (biasanya latar), <strong>30%</strong> warna kedua (judul dan kotak), dan <strong>10%</strong> warna aksen (hal yang paling ingin ditonjolkan).</p>
+          <div class="ratio-bar" role="img" aria-label="Contoh perbandingan warna: 60 persen krem, 30 persen biru dongker, 10 persen oranye"><span>60% krem</span><span>30% dongker</span><span>10%</span></div>
+          <p class="tool-note">Contoh: latar krem, judul dan teks biru dongker, serta tanggal acara berwarna oranye.</p>
+
+          <h3>Kontras yang cukup untuk dibaca</h3>
+          <p>Ada standar internasional untuk keterbacaan di layar, yaitu <strong>WCAG</strong>. Kontras diukur dengan <strong>rasio</strong>, dari 1 : 1 (tidak ada beda sama sekali) sampai 21 : 1 (hitam di atas putih).</p>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Teks biasa:</strong> minimal <strong>4,5 : 1</strong>.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Teks besar dan judul:</strong> minimal <strong>3 : 1</strong>.</span></li>
+          </ul>
+          <div class="callout" data-el="3">
+            <i class="bi bi-universal-access" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Desain untuk semua orang</p>
+              <p>Sebagian orang sulit membedakan warna tertentu, terutama merah dan hijau. Jangan hanya mengandalkan warna untuk menyampaikan pesan penting. Tambahkan juga teks, ikon, atau garis bawah. Ingat juga: konten di proyektor dan di layar ponsel saat terkena sinar matahari tampak lebih pucat, jadi butuh kontras yang lebih kuat.</p>
+            </div>
+          </div>
+          <div class="callout" data-el="2">
+            <i class="bi bi-emoji-smile" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Warna juga membawa rasa</p>
+              <p>Merah sering diartikan penting atau bahaya, hijau berhubungan dengan alam dan keamanan, dan biru terasa tenang serta terpercaya. Pilih warna yang sesuai dengan pesan kontenmu, misalnya hijau dan biru untuk kampanye hemat air.</p>
+            </div>
+          </div>
+
+          <h3>Coba sendiri: Pemeriksa Kontras Warna <em class="phase">Mengaplikasi</em></h3>
+          <div class="lab js-only" data-contrast-checker>
+            <div class="lab-head">
+              <i class="bi bi-circle-half" aria-hidden="true"></i>
+              <div>
+                <h3>Pemeriksa Kontras Warna</h3>
+                <p>Pilih warna teks dan warna latar. Pakai alat ini untuk memeriksa warna poster dan slidemu sebelum dibagikan.</p>
+              </div>
+            </div>
+            <div class="cc-body">
+              <div class="lab-controls">
+                <div class="cc-preview">
+                  <p class="cc-big">Pentas Seni Akhir Semester</p>
+                  <p class="cc-small">Sabtu, 19 Desember 2026 di aula sekolah. Daftar ke wali kelas paling lambat 5 Desember.</p>
+                </div>
+                <p class="cc-ratio">Rasio kontras: <b data-cc-ratio>-</b></p>
+                <div class="cc-badges">
+                  <p class="cc-badge" data-cc-normal></p>
+                  <p class="cc-badge" data-cc-large></p>
+                </div>
+                <p class="tool-status" data-cc-note aria-live="polite"></p>
+              </div>
+              <div class="lab-controls">
+                <div class="cc-pickers">
+                  <label class="cc-picker">Warna teks<input type="color" value="#fcc419" data-cc-fg><code data-cc-fg-code></code></label>
+                  <label class="cc-picker">Warna latar<input type="color" value="#ffffff" data-cc-bg><code data-cc-bg-code></code></label>
+                </div>
+                <button type="button" class="link-btn" data-cc-swap><i class="bi bi-arrow-left-right" aria-hidden="true"></i> Tukar warna teks dan latar</button>
+                <p class="lab-label">Coba paduan berikut</p>
+                <div class="cc-presets">
+                  <button type="button" data-cc-preset="#ffffff,#1a3668"><span style="background:#1a3668"></span> Putih–dongker</button>
+                  <button type="button" data-cc-preset="#212529,#fff8e7"><span style="background:#fff8e7"></span> Hitam–krem</button>
+                  <button type="button" data-cc-preset="#fcc419,#ffffff"><span style="background:#fcc419"></span> Kuning–putih</button>
+                  <button type="button" data-cc-preset="#e03131,#2f9e44"><span style="background:#2f9e44"></span> Merah–hijau</button>
+                  <button type="button" data-cc-preset="#868e96,#ffffff"><span style="background:#868e96"></span> Abu-abu–putih</button>
+                  <button type="button" data-cc-preset="#ffffff,#e8590c"><span style="background:#e8590c"></span> Putih–oranye</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 6. TIPOGRAFI -->
+        <section class="lesson-sec" id="tipografi" aria-labelledby="h-tipografi">
+          <p class="sec-no"><span>06</span> Keterbacaan tipografi <em class="phase">Memahami</em></p>
+          <h2 id="h-tipografi">Tipografi: mengatur huruf agar nyaman dibaca</h2>
+          <p><strong>Tipografi</strong> adalah seni dan teknik mengatur huruf: jenis huruf, ukuran, jarak, dan perataannya. <strong>Keterbacaan</strong> berarti seberapa mudah dan nyaman sebuah teks dibaca.</p>
+
+          <h3>Mengenal jenis huruf</h3>
+          <div class="card-grid">
+            <article class="mini-card"><div class="font-sample fs-serif" aria-hidden="true">Aa</div><h4>Serif (berkait)</h4><p>Ada "kaki" kecil di ujung huruf. Terkesan resmi. Nyaman untuk teks panjang di kertas.</p></article>
+            <article class="mini-card"><div class="font-sample fs-sans" aria-hidden="true">Aa</div><h4>Sans-serif (tanpa kait)</h4><p>Bersih tanpa kaki. Paling jelas di layar, cocok untuk slide, poster, dan situs web.</p></article>
+            <article class="mini-card"><div class="font-sample fs-deco" aria-hidden="true">Aa</div><h4>Dekoratif / tulisan tangan</h4><p>Unik dan penuh gaya, tetapi sulit dibaca. Pakai hanya untuk judul pendek.</p></article>
+            <article class="mini-card"><div class="font-sample fs-mono" aria-hidden="true">Aa</div><h4>Monospace</h4><p>Setiap huruf sama lebarnya. Biasa dipakai untuk menulis kode program.</p></article>
+          </div>
+
+          <h3>Enam kunci keterbacaan</h3>
+          <ol class="steps">
+            <li><h4>Ukuran yang cukup</h4><p>Paragraf di layar minimal sekitar 16 px. Untuk slide yang ditayangkan, minimal 24 pt (TP 2.3).</p></li>
+            <li><h4>Jarak antarbaris yang lega</h4><p>Jarak antarbaris sekitar 1,4–1,8 kali ukuran huruf agar baris tidak berdesakan.</p></li>
+            <li><h4>Panjang baris yang pas</h4><p>Sekitar 45–75 karakter per baris. Baris yang terlalu panjang membuat mata mudah kehilangan awal baris berikutnya.</p></li>
+            <li><h4>Rata kiri untuk paragraf</h4><p>Rata tengah cocok untuk judul pendek saja. Rata kanan-kiri bisa memunculkan celah lebar antarkata.</p></li>
+            <li><h4>Hindari HURUF KAPITAL SEMUA</h4><p>Huruf kapital semua sulit dibaca untuk kalimat panjang. Pakai untuk label pendek saja.</p></li>
+            <li><h4>Maksimal dua jenis huruf</h4><p>Satu untuk judul dan satu untuk isi. Terlalu banyak jenis huruf membuat desain terlihat berantakan.</p></li>
+          </ol>
+          <div class="callout" data-el="2">
+            <i class="bi bi-image" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Teks di atas gambar</p>
+              <p>Tulisan di atas foto yang ramai sulit dibaca. Letakkan teks di bagian foto yang polos, atau beri kotak berwarna semitransparan di belakang tulisan.</p>
+            </div>
+          </div>
+
+          <h3>Coba sendiri: Lab Tipografi <em class="phase">Mengaplikasi</em></h3>
+          <div class="lab js-only" data-type-lab>
+            <div class="lab-head">
+              <i class="bi bi-fonts" aria-hidden="true"></i>
+              <div>
+                <h3>Lab Tipografi</h3>
+                <p>Paragraf di bawah ini sulit dibaca. Atur hurufnya sampai skor keterbacaan mencapai 6/6.</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <div class="tl-sample">
+                  <p>Pentas seni akhir semester akan diadakan pada hari Sabtu di aula sekolah. Setiap kelas boleh menampilkan tari daerah, paduan suara, drama, atau karya digital seperti poster dan video. Pendaftaran dibuka sampai tanggal 5 Desember melalui wali kelas masing-masing.</p>
+                  <p>Panitia mengajak semua murid ikut serta, baik sebagai penampil maupun penonton. Datanglah tepat waktu dan jagalah kebersihan aula bersama-sama.</p>
+                </div>
+                <p class="dl-score-row">Skor keterbacaan <span class="dl-score" data-tl-score aria-live="polite">0 / 6</span></p>
+                <ul class="dl-feedback" data-tl-feedback aria-live="polite"></ul>
+              </div>
+              <div class="lab-controls">
+                <label class="lab-label" for="tl-size">Ukuran huruf: <output data-tl-out="size"></output></label>
+                <input id="tl-size" type="range" min="10" max="24" step="1" value="12" data-tl="size">
+                <label class="lab-label" for="tl-leading">Jarak antarbaris: <output data-tl-out="leading"></output></label>
+                <input id="tl-leading" type="range" min="0.9" max="2.4" step="0.1" value="1" data-tl="leading">
+                <label class="lab-label" for="tl-width">Panjang baris: <output data-tl-out="width"></output></label>
+                <input id="tl-width" type="range" min="20" max="120" step="5" value="120" data-tl="width">
+                <label class="lab-label" for="tl-align">Perataan</label>
+                <select id="tl-align" data-tl="align">
+                  <option value="center">Rata tengah</option>
+                  <option value="justify">Rata kanan-kiri</option>
+                  <option value="left">Rata kiri</option>
+                </select>
+                <label class="lab-label" for="tl-font">Jenis huruf</label>
+                <select id="tl-font" data-tl="font">
+                  <option value="deco">Dekoratif</option>
+                  <option value="mono">Monospace</option>
+                  <option value="serif">Serif</option>
+                  <option value="sans">Sans-serif</option>
+                </select>
+                <label class="mb-toggle"><input type="checkbox" data-tl="caps" checked> HURUF KAPITAL SEMUA</label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 7. MENERAPKAN -->
+        <section class="lesson-sec" id="menerapkan" aria-labelledby="h-terapkan">
+          <p class="sec-no"><span>07</span> Menerapkan pada karya <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-terapkan">Sebelum dan sesudah</h2>
+          <p>Ingat slide kelompok Raka di TP 2.3? Beginilah slide itu sebelum dan sesudah diperbaiki dengan tiga prinsip tata letak.</p>
+          <div class="ba-grid">
+            <div class="ba-item">
+              <p class="ba-label"><i class="bi bi-x-circle" aria-hidden="true"></i> Sebelum</p>
+              <div class="mock-slide mock-slide--before" role="img" aria-label="Slide sebelum diperbaiki: latar hijau, tulisan merah kecil, penuh paragraf">
+                <h4>Hemat Air</h4>
+                <p>Air adalah sumber kehidupan yang sangat penting bagi semua makhluk hidup di bumi ini oleh karena itu kita harus menghemat air setiap hari dengan cara mematikan keran setelah dipakai, tidak membiarkan air mengalir saat menyikat gigi, memakai gayung saat mandi, menampung air hujan untuk menyiram tanaman, dan melaporkan keran yang bocor kepada petugas sekolah agar segera diperbaiki sehingga air tidak terbuang percuma.</p>
+              </div>
+            </div>
+            <div class="ba-item">
+              <p class="ba-label"><i class="bi bi-check-circle" aria-hidden="true"></i> Sesudah</p>
+              <div class="mock-slide mock-slide--after" role="img" aria-label="Slide sesudah diperbaiki: judul besar, tiga poin singkat, ikon tetesan air, warna dongker di atas krem">
+                <h4>Setiap Tetes Berharga</h4>
+                <ul><li>Matikan keran setelah dipakai</li><li>Pakai gelas saat sikat gigi</li><li>Laporkan keran bocor</li></ul>
+                <div class="ms-art" aria-hidden="true"><i class="bi bi-droplet-half"></i></div>
+                <p class="ms-src">Kelas VII-A · Ikon: bawaan aplikasi</p>
+              </div>
+            </div>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Apa saja yang diperbaiki?</caption>
+              <thead><tr><th scope="col">Perbaikan</th><th scope="col">Prinsip</th></tr></thead>
+              <tbody>
+                <tr><td>Judul diperbesar, ditebalkan, dan diberi garis aksen oranye</td><td><span class="tag-pill" data-el="1">Hierarki</span></td></tr>
+                <tr><td>Paragraf panjang diringkas menjadi tiga poin, ditambah satu ikon yang relevan</td><td><span class="tag-pill" data-el="1">Hierarki</span></td></tr>
+                <tr><td>Merah di atas hijau diganti dongker di atas krem, dengan aksen oranye (60–30–10)</td><td><span class="tag-pill" data-el="3">Kontras warna</span></td></tr>
+                <tr><td>Huruf dekoratif diganti sans-serif, ukurannya diperbesar, dan teks dibuat rata kiri</td><td><span class="tag-pill" data-el="4">Tipografi</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis tata letak 3 menit</h3>
+          <p>Sebelum membagikan konten apa pun, periksa enam hal ini:</p>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span><strong>Hierarki:</strong> apakah informasi terpenting langsung terlihat dalam 3 detik?</span></label></li>
+            <li><label><input type="checkbox"><span><strong>Kontras:</strong> apakah rasio kontras teks minimal 4,5 : 1?</span></label></li>
+            <li><label><input type="checkbox"><span><strong>Warna:</strong> apakah memakai paling banyak 2–3 warna dengan pola 60–30–10?</span></label></li>
+            <li><label><input type="checkbox"><span><strong>Huruf:</strong> apakah ukurannya cukup dan memakai paling banyak dua jenis huruf?</span></label></li>
+            <li><label><input type="checkbox"><span><strong>Perataan:</strong> apakah teks dan gambar sejajar dengan rapi?</span></label></li>
+            <li><label><input type="checkbox"><span><strong>Ruang kosong:</strong> apakah desainnya terasa lega dan tidak sesak?</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 8. KUIS -->
+        <section class="lesson-sec" id="cek-pemahaman" aria-labelledby="h-kuis">
+          <p class="sec-no"><span>08</span> Cek pemahaman <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kuis">Ayo uji pemahamanmu</h2>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis A · Prinsip yang mana?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="hierarki" data-explain="Membuat judul paling besar dan tebal adalah cara membangun hierarki visual.">
+                <p class="quiz-text">Judul poster dibuat paling besar dan tebal agar langsung terlihat.</p>
+                <div class="quiz-choices"><button type="button" data-choice="hierarki">Hierarki</button><button type="button" data-choice="kontras">Kontras warna</button><button type="button" data-choice="tipografi">Tipografi</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="kontras" data-explain="Putih di atas biru dongker memiliki perbedaan terang-gelap yang besar.">
+                <p class="quiz-text">Teks putih diletakkan di atas latar biru dongker agar mudah dibaca.</p>
+                <div class="quiz-choices"><button type="button" data-choice="hierarki">Hierarki</button><button type="button" data-choice="kontras">Kontras warna</button><button type="button" data-choice="tipografi">Tipografi</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="tipografi" data-explain="Jarak antarbaris adalah salah satu pengaturan tipografi.">
+                <p class="quiz-text">Jarak antarbaris paragraf diatur sekitar 1,5 kali ukuran huruf.</p>
+                <div class="quiz-choices"><button type="button" data-choice="hierarki">Hierarki</button><button type="button" data-choice="kontras">Kontras warna</button><button type="button" data-choice="tipografi">Tipografi</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="hierarki" data-explain="Posisi dan ukuran dipakai untuk mengurutkan kepentingan informasi.">
+                <p class="quiz-text">Info penting diletakkan di bagian atas, sedangkan kontak panitia di bagian bawah dengan ukuran kecil.</p>
+                <div class="quiz-choices"><button type="button" data-choice="hierarki">Hierarki</button><button type="button" data-choice="kontras">Kontras warna</button><button type="button" data-choice="tipografi">Tipografi</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="kontras" data-explain="Merah dan hijau sulit dibedakan oleh sebagian orang, jadi paduan ini dihindari.">
+                <p class="quiz-text">Poster tidak memakai tulisan merah di atas latar hijau agar teman yang sulit membedakan warna tetap bisa membaca.</p>
+                <div class="quiz-choices"><button type="button" data-choice="hierarki">Hierarki</button><button type="button" data-choice="kontras">Kontras warna</button><button type="button" data-choice="tipografi">Tipografi</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="tipografi" data-explain="Perataan dan pemakaian huruf kapital adalah bagian dari tipografi.">
+                <p class="quiz-text">Paragraf panjang ditulis rata kiri dan tidak memakai huruf kapital semua.</p>
+                <div class="quiz-choices"><button type="button" data-choice="hierarki">Hierarki</button><button type="button" data-choice="kontras">Kontras warna</button><button type="button" data-choice="tipografi">Tipografi</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis B · Mana yang lebih mudah dibaca?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="a" data-explain="Rata kiri membuat awal setiap baris berada di tempat yang sama, sehingga mudah diikuti mata.">
+                <p class="quiz-text"><strong>A:</strong> paragraf rata kiri. <strong>B:</strong> paragraf panjang rata tengah.</p>
+                <div class="quiz-choices"><button type="button" data-choice="a">A</button><button type="button" data-choice="b">B</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="b" data-explain="Abu-abu muda di atas putih kontrasnya rendah. Hitam di atas putih kontrasnya tertinggi.">
+                <p class="quiz-text"><strong>A:</strong> teks abu-abu muda di latar putih. <strong>B:</strong> teks hitam di latar putih.</p>
+                <div class="quiz-choices"><button type="button" data-choice="a">A</button><button type="button" data-choice="b">B</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="a" data-explain="Dua jenis huruf sudah cukup. Lima jenis huruf membuat desain berantakan.">
+                <p class="quiz-text"><strong>A:</strong> satu jenis huruf untuk judul dan satu untuk isi. <strong>B:</strong> lima jenis huruf berbeda di satu poster.</p>
+                <div class="quiz-choices"><button type="button" data-choice="a">A</button><button type="button" data-choice="b">B</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="a" data-explain="Sekitar 45–75 karakter per baris paling nyaman dibaca.">
+                <p class="quiz-text"><strong>A:</strong> baris berisi sekitar 60 karakter. <strong>B:</strong> baris memanjang lebih dari 120 karakter di layar lebar.</p>
+                <div class="quiz-choices"><button type="button" data-choice="a">A</button><button type="button" data-choice="b">B</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="b" data-explain="Kotak polos di belakang tulisan membuat teks tetap kontras walau berada di atas foto.">
+                <p class="quiz-text"><strong>A:</strong> tulisan langsung di atas foto pemandangan yang ramai. <strong>B:</strong> tulisan di atas kotak berwarna polos di dalam foto.</p>
+                <div class="quiz-choices"><button type="button" data-choice="a">A</button><button type="button" data-choice="b">B</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="b" data-explain="Jarak antarbaris 1,5 memberi ruang agar baris tidak berdesakan.">
+                <p class="quiz-text"><strong>A:</strong> jarak antarbaris sangat rapat (1,0). <strong>B:</strong> jarak antarbaris 1,5.</p>
+                <div class="quiz-choices"><button type="button" data-choice="a">A</button><button type="button" data-choice="b">B</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 9. TUGAS INDIVIDU -->
+        <section class="lesson-sec" id="tugas-individu" aria-labelledby="h-individu">
+          <p class="sec-no"><span>09</span> Tugas individu <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em></p>
+          <h2 id="h-individu">Poster Digital Lolos Tes 3 Detik</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan sendiri · berbasis digital</p>
+            <h3>Rancang poster yang dipahami dalam sekejap</h3>
+            <p>Buat poster digital untuk satu acara atau ajakan di sekolah. Terapkan hierarki, kontras warna, dan tipografi, lalu buktikan posternya lolos tes 3 detik.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-person" aria-hidden="true"></i> <span>Dikerjakan sendiri</span></li>
+              <li><i class="bi bi-file-earmark-image" aria-hidden="true"></i> <span>1 poster tegak (ukuran A4)</span></li>
+              <li><i class="bi bi-stopwatch" aria-hidden="true"></i> <span>Diuji tes 3 detik kepada 2 orang</span></li>
+              <li><i class="bi bi-images" aria-hidden="true"></i> <span>Dikumpulkan: versi 1 dan versi 2 (.png)</span></li>
+            </ul>
+          </div>
+
+          <h3>Pilihan tema poster</h3>
+          <ul class="chips-row" aria-label="Pilihan tema poster">
+            <li>Pentas seni atau lomba kelas</li>
+            <li>Jadwal kegiatan ekstrakurikuler</li>
+            <li>Ajakan hemat air atau listrik</li>
+            <li>Ajakan berkunjung ke perpustakaan</li>
+            <li>Kerja bakti di lingkungan sekolah</li>
+          </ul>
+
+          <h3>Langkah mengerjakan</h3>
+          <ol class="steps">
+            <li><h4>Tentukan isi</h4><p>Tulis judul, info utama (apa, kapan, di mana), rincian, dan ajakan. Gunakan Perakit Pesan dari TP 2.2 jika perlu.</p></li>
+            <li><h4>Susun hierarki</h4><p>Buat poster versi 1 di Canva, Google Slides, atau PowerPoint dengan tiga tingkat informasi: judul, info utama, dan rincian.</p></li>
+            <li><h4>Periksa warna</h4><p>Gunakan <a href="#kontras">Pemeriksa Kontras Warna</a> untuk memastikan rasio teks minimal 4,5 : 1. Terapkan aturan 60–30–10.</p></li>
+            <li><h4>Rapikan huruf</h4><p>Pakai paling banyak dua jenis huruf, teks rata kiri, dan ukuran yang cukup besar.</p></li>
+            <li><h4>Uji tes 3 detik</h4><p>Tunjukkan versi 1 kepada 2 orang selama 3 detik saja. Tanyakan judul, tanggal, dan tempatnya. Catat jawabannya.</p></li>
+            <li><h4>Perbaiki dan kumpulkan</h4><p>Perbaiki bagian yang tidak diingat penguji menjadi versi 2. Unduh kedua versi sebagai <code>2-4_Nama_Kelas_v1.png</code> dan <code>2-4_Nama_Kelas_v2.png</code>, lalu kirim bersama catatan singkat: apa yang kamu perbaiki dan mengapa.</p></li>
+          </ol>
+
+          <h3>Periksa tugasmu sendiri</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Posterku punya tiga tingkat informasi yang jelas.</span></label></li>
+            <li><label><input type="checkbox"><span>Rasio kontras teks minimal 4,5 : 1 dan memakai paling banyak 3 warna.</span></label></li>
+            <li><label><input type="checkbox"><span>Memakai paling banyak dua jenis huruf, rata kiri, dan cukup besar.</span></label></li>
+            <li><label><input type="checkbox"><span>Sudah diuji tes 3 detik kepada 2 orang dan hasilnya kucatat.</span></label></li>
+            <li><label><input type="checkbox"><span>Versi 1, versi 2, dan catatan perbaikan sudah dikirim.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 10. TUGAS KELOMPOK -->
+        <section class="lesson-sec" id="tugas-kelompok" aria-labelledby="h-kelompok">
+          <p class="sec-no"><span>10</span> Tugas kelompok <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kelompok">Proyek: Galeri Sebelum dan Sesudah</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan bersama kelompokmu · berbasis digital</p>
+            <h3>Naikkan kelas desain slide kampanyemu!</h3>
+            <p>Audit slide kampanye yang kalian buat di TP 2.3 dengan tiga prinsip tata letak. Perbaiki menjadi versi 2, lalu pamerkan perbedaannya dalam Galeri Sebelum dan Sesudah.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-people" aria-hidden="true"></i> <span>Kelompok yang sama dengan TP 2.3</span></li>
+              <li><i class="bi bi-clipboard-check" aria-hidden="true"></i> <span>Audit setiap slide dengan lembar audit</span></li>
+              <li><i class="bi bi-layers" aria-hidden="true"></i> <span>Slide versi 2 + 1 slide perbandingan</span></li>
+              <li><i class="bi bi-easel" aria-hidden="true"></i> <span>Pameran galeri 3–5 menit</span></li>
+            </ul>
+          </div>
+
+          <h3>Langkah 1 · Bagi peran</h3>
+          <div class="card-grid">
+            <article class="mini-card" data-el="1"><i class="bi bi-sort-down" aria-hidden="true"></i><h4>Auditor hierarki</h4><p>Memeriksa apakah informasi terpenting di setiap slide paling menonjol.</p></article>
+            <article class="mini-card" data-el="3"><i class="bi bi-palette" aria-hidden="true"></i><h4>Auditor warna</h4><p>Memeriksa rasio kontras dan menata paduan warna 60–30–10.</p></article>
+            <article class="mini-card" data-el="4"><i class="bi bi-fonts" aria-hidden="true"></i><h4>Auditor tipografi</h4><p>Memeriksa jenis, ukuran, jarak, dan perataan huruf.</p></article>
+            <article class="mini-card"><i class="bi bi-folder-check" aria-hidden="true"></i><h4>Pengelola file</h4><p>Menyimpan versi 1 sebagai cadangan sebelum mengubah, lalu mengelola versi 2.</p></article>
+            <article class="mini-card"><i class="bi bi-megaphone" aria-hidden="true"></i><h4>Penyaji</h4><p>Menyiapkan cerita perbaikan untuk pameran galeri.</p></article>
+          </div>
+
+          <h3>Langkah 2 · Kerjakan bersama</h3>
+          <ol class="steps">
+            <li><h4>Simpan versi 1</h4><p>Buat salinan file slide dari TP 2.3 (misalnya <strong>File</strong> → <strong>Buat salinan</strong>) dan beri nama <code>..._v1</code>. Kerjakan perbaikan di salinan lain bernama <code>..._v2</code>.</p></li>
+            <li><h4>Audit setiap slide</h4><p>Isi Lembar Audit Tata Letak di bawah. Beri tanda pada setiap slide: sudah baik atau perlu diperbaiki.</p></li>
+            <li><h4>Tetapkan gaya bersama</h4><p>Sepakati satu paduan warna (cek dengan Pemeriksa Kontras) dan satu aturan huruf, misalnya judul 40 pt tebal, isi 28 pt, dan sumber 14 pt.</p></li>
+            <li><h4>Perbaiki menjadi versi 2</h4><p>Terapkan hierarki, kontras warna, dan tipografi di setiap slide.</p></li>
+            <li><h4>Uji tes 3 detik</h4><p>Minta kelompok lain melihat setiap slide versi 2 selama 3 detik. Slide yang pesannya belum tertangkap diperbaiki lagi.</p></li>
+            <li><h4>Buat slide perbandingan</h4><p>Tambahkan satu slide berisi tangkapan layar slide sebelum dan sesudah, beserta tiga perbaikan utama dan prinsipnya.</p></li>
+            <li><h4>Kumpulkan dan pamerkan</h4><p>Unduh versi 2 sebagai PDF, mis. <code>2-4_Kelompok3_VIIA_v2.pdf</code>. Tampilkan slide perbandingan di Galeri Sebelum dan Sesudah.</p></li>
+          </ol>
+
+          <h3>Langkah 3 · Lembar audit tata letak</h3>
+          <div class="worksheet" id="lembar-audit">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Audit Tata Letak</h3>
+                <p>TP 2.4 Menerapkan Tata Letak Visual yang Menarik · Beri tanda ✓ (sudah baik) atau ✗ (perlu diperbaiki)</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-audit"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar audit</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Kelompok / Kelas / Judul</span><span class="ws-line"></span></div>
+            <div class="ws-field">
+              <span class="ws-label">Hasil audit</span>
+              <table class="ws-table">
+                <caption class="sr-only">Tabel audit tata letak setiap slide</caption>
+                <thead><tr><th scope="col">Slide</th><th scope="col">Hierarki</th><th scope="col">Kontras</th><th scope="col">Huruf</th><th scope="col">Rata &amp; rapi</th><th scope="col">Ruang kosong</th><th scope="col">Catatan perbaikan</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ws-field"><span class="ws-label">Paduan warna yang disepakati &amp; rasio kontrasnya</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Aturan huruf (judul / isi / sumber)</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Tiga perbaikan utama</span><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+          </div>
+
+          <h3>Kriteria penilaian</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Rubrik penilaian tugas kelompok<small>Skor: 4 = sangat baik · 3 = baik · 2 = cukup · 1 = perlu bimbingan</small></caption>
+              <thead><tr><th scope="col">Aspek</th><th scope="col">Yang dinilai</th><th scope="col" class="num">Skor</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Audit</th><td>Setiap slide diaudit dengan lengkap dan jujur.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Hierarki visual</th><td>Informasi terpenting di setiap slide paling menonjol dan lolos tes 3 detik.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kontras warna</th><td>Rasio kontras teks minimal 4,5 : 1 dan paduan warna serasi (60–30–10).</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Tipografi</th><td>Maksimal dua jenis huruf, ukuran cukup, rata kiri, dan konsisten.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Slide perbandingan</th><td>Menunjukkan sebelum dan sesudah dengan tiga perbaikan dan prinsipnya.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kerja sama dan pengelolaan file</th><td>Setiap anggota menjalankan perannya; versi 1 dan versi 2 tersimpan rapi.</td><td class="num">1–4</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis sebelum mengumpulkan</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>File versi 1 tersimpan sebagai cadangan.</span></label></li>
+            <li><label><input type="checkbox"><span>Lembar audit sudah diisi untuk setiap slide.</span></label></li>
+            <li><label><input type="checkbox"><span>Semua slide versi 2 memakai paduan warna dan aturan huruf yang sama.</span></label></li>
+            <li><label><input type="checkbox"><span>Setiap slide lolos tes 3 detik oleh kelompok lain.</span></label></li>
+            <li><label><input type="checkbox"><span>Slide perbandingan sebelum–sesudah sudah dibuat.</span></label></li>
+            <li><label><input type="checkbox"><span>File PDF versi 2 diberi nama rapi dan sudah dikirim.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 11. RANGKUMAN & REFLEKSI SEMESTER -->
+        <section class="lesson-sec" id="rangkuman" aria-labelledby="h-rangkuman">
+          <p class="sec-no"><span>11</span> Rangkuman &amp; refleksi <em class="phase">Merefleksi</em></p>
+          <h2 id="h-rangkuman">Yang perlu kamu ingat</h2>
+          <div class="summary-grid">
+            <article class="mini-card" data-el="1">
+              <i class="bi bi-sort-down" aria-hidden="true"></i>
+              <h4>Hierarki visual</h4>
+              <p>Tiga tingkat informasi. Gunakan ukuran, ketebalan, warna aksen, posisi, ruang kosong, dan kedekatan.</p>
+            </article>
+            <article class="mini-card" data-el="3">
+              <i class="bi bi-palette" aria-hidden="true"></i>
+              <h4>Kontras warna</h4>
+              <p>Rasio minimal 4,5 : 1 untuk teks biasa, aturan 60–30–10, dan jangan hanya mengandalkan warna.</p>
+            </article>
+            <article class="mini-card" data-el="4">
+              <i class="bi bi-fonts" aria-hidden="true"></i>
+              <h4>Tipografi</h4>
+              <p>Ukuran cukup, jarak antarbaris lega, baris 45–75 karakter, rata kiri, dan maksimal dua jenis huruf.</p>
+            </article>
+            <article class="mini-card" data-el="2">
+              <i class="bi bi-stopwatch" aria-hidden="true"></i>
+              <h4>Tes 3 detik</h4>
+              <p>Cara cepat menguji tata letak: apakah pesan utamanya tertangkap dalam sekejap?</p>
+            </article>
+          </div>
+
+          <h3>Refleksi materi ini</h3>
+          <ol class="question-list">
+            <li><strong>Berkesadaran:</strong> bagian apa dari sebuah poster yang biasanya pertama kali kamu lihat? Apakah sekarang kamu memperhatikan desain di sekitarmu dengan cara berbeda?</li>
+            <li><strong>Bermakna:</strong> poster atau papan pengumuman mana di sekolah atau lingkunganmu yang perlu diperbaiki tata letaknya? Apa saranmu?</li>
+            <li><strong>Menggembirakan:</strong> perbaikan apa di Perbaiki Poster atau Lab Tipografi yang paling mengejutkanmu?</li>
+          </ol>
+
+          <h3>Refleksi akhir Semester 1</h3>
+          <p>Selamat! TP 2.4 adalah materi terakhir Kelas VII Semester 1. Lihat kembali perjalanan belajarmu selama satu semester:</p>
+          <div class="card-grid" data-tp-links="1.1,1.2,1.3,2.1,2.2,2.3"></div>
+          <ol class="question-list">
+            <li>Dari semua TP di Semester 1, mana yang paling bermanfaat dalam kehidupanmu sehari-hari? Mengapa?</li>
+            <li>Keterampilan apa yang dulu sulit, tetapi sekarang sudah bisa kamu lakukan?</li>
+            <li>Karya apa yang paling kamu banggakan semester ini: survei data, algoritma, storyboard, slide, infografis, atau poster?</li>
+          </ol>
+
+          <h3>Sampai jumpa di Semester 2</h3>
+          <p>Di Semester 2, kamu akan mulai mengenal kecerdasan artifisial (KA). Kemampuan memilih informasi penting (abstraksi) dan menulis pesan yang jelas akan sangat berguna saat menulis perintah untuk KA.</p>
+          <div class="card-grid" data-tp-links="4.1,4.2,3.1"></div>
+
+          <h3>Kamus kecil</h3>
+          <dl class="glossary">
+            <div><dt>Tata letak (<i lang="en">layout</i>)</dt><dd>Susunan teks, gambar, dan ruang dalam sebuah desain.</dd></div>
+            <div><dt>Hierarki visual</dt><dd>Susunan tampilan yang menunjukkan urutan kepentingan informasi.</dd></div>
+            <div><dt>Kontras</dt><dd>Perbedaan mencolok antara dua unsur, misalnya terang dan gelap.</dd></div>
+            <div><dt>Rasio kontras</dt><dd>Angka perbandingan terang-gelap teks dan latar, dari 1 : 1 sampai 21 : 1.</dd></div>
+            <div><dt>Warna komplementer</dt><dd>Warna yang berseberangan di roda warna, misalnya biru dan oranye.</dd></div>
+            <div><dt>Tipografi</dt><dd>Seni dan teknik mengatur huruf: jenis, ukuran, jarak, dan perataan.</dd></div>
+            <div><dt>Keterbacaan</dt><dd>Seberapa mudah dan nyaman sebuah teks dibaca.</dd></div>
+            <div><dt>Ruang kosong</dt><dd>Bagian desain yang sengaja dibiarkan kosong agar terasa lega.</dd></div>
+          </dl>
+        </section>
+
+        <!-- Tombol TP sebelumnya/berikutnya + sumber rujukan, dibuat otomatis dari data.js -->
+        <kka-tp-nav code="2.4"></kka-tp-nav>
+      </div>
+    </div>
+  </main>
+
+  <kka-footer></kka-footer>
+</body>
+</html>

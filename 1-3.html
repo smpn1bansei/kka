@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP 1.3 Pengembangan dan Pengujian Instruksi — Koding dan KA SMPN 1 Bandar Seikijang</title>
+  <meta name="description" content="Materi TP 1.3 Koding dan Kecerdasan Artifisial Kelas VII: algoritma sekuensial sederhana, langkah logis, serta menguji instruksi dan menelusuri kesalahan (debugging awal), dilengkapi simulasi robot, kuis, tugas individu, dan tugas kelompok.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="TP 1.3 Menerapkan Pengembangan dan Pengujian Instruksi">
+  <meta property="og:description" content="Algoritma sekuensial, langkah logis, dan debugging awal untuk murid Kelas VII.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs: style.css (umum) + lesson.css (halaman materi) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/lesson.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lesson.js" defer></script>
+</head>
+<body>
+  <kka-header active="atp"><a href="index.html">Beranda</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <main id="konten" data-el="1">
+    <!-- =============================================== JUDUL TP -->
+    <section class="hero hero--tp" aria-labelledby="judul-tp">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Lokasi halaman">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#atp">Alur TP</a></li>
+            <li><a href="index.html#kelas-7">Kelas VII</a></li>
+            <li><span aria-current="page">TP 1.3</span></li>
+          </ol>
+        </nav>
+        <div class="tp-badges">
+          <span class="tp-badge tp-badge--code">TP 1.3</span>
+          <span class="tp-badge"><i class="bi bi-diagram-3" aria-hidden="true"></i> Elemen 1 · Berpikir Komputasional</span>
+          <span class="tp-badge"><i class="bi bi-calendar-week" aria-hidden="true"></i> Kelas VII · Semester 1</span>
+        </div>
+        <h1 id="judul-tp">Menerapkan Pengembangan dan Pengujian Instruksi</h1>
+        <p class="hero-lead">Di TP 1.2 kamu sudah belajar menyusun algoritma. Sekarang saatnya menjadi pembuat instruksi yang hebat: menulis langkah yang runtut dan logis, mengujinya, lalu menemukan dan memperbaiki kesalahannya.</p>
+        <ul class="tp-meta">
+          <li><i class="bi bi-list-ol" aria-hidden="true"></i> <span>Algoritma sekuensial &amp; langkah logis</span></li>
+          <li><i class="bi bi-bug" aria-hidden="true"></i> <span>Menelusuri kesalahan (<i lang="en">debugging</i>)</span></li>
+          <li><i class="bi bi-robot" aria-hidden="true"></i> <span>Simulasi robot pengantar paket</span></li>
+          <li><i class="bi bi-people" aria-hidden="true"></i> <span>Tugas individu &amp; kelompok</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container lesson">
+      <!-- Daftar isi -->
+      <nav class="toc" aria-labelledby="judul-toc">
+        <p class="toc-title" id="judul-toc">Daftar isi</p>
+        <ol>
+          <li><a href="#tujuan">Tujuan belajar</a></li>
+          <li><a href="#mengingat">Mengingat kembali</a></li>
+          <li><a href="#pemantik">Ayo berpikir dulu</a></li>
+          <li><a href="#sekuensial">Algoritma sekuensial</a></li>
+          <li><a href="#langkah-logis">Langkah logis</a></li>
+          <li><a href="#menguji">Menguji instruksi</a></li>
+          <li><a href="#debugging">Debugging</a></li>
+          <li><a href="#robot">Simulasi robot</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+          <li><a href="#tugas-individu">Tugas individu</a></li>
+          <li><a href="#tugas-kelompok">Tugas kelompok</a></li>
+          <li><a href="#rangkuman">Rangkuman &amp; refleksi</a></li>
+        </ol>
+      </nav>
+
+      <div class="lesson-body">
+        <!-- ========================================== 1. TUJUAN -->
+        <section class="lesson-sec" id="tujuan" aria-labelledby="h-tujuan">
+          <p class="sec-no"><span>01</span> Tujuan belajar</p>
+          <h2 id="h-tujuan">Apa yang akan kamu pelajari?</h2>
+          <p>Setelah mempelajari halaman ini, kamu diharapkan mampu:</p>
+          <ol class="goal-list">
+            <li>Menjelaskan apa itu algoritma sekuensial dan mengapa urutan langkah itu penting.</li>
+            <li>Menulis instruksi yang logis: jelas, lengkap, tepat urutannya, dan bisa diukur.</li>
+            <li>Menguji instruksi dengan menjalankannya langkah demi langkah dan mencatat hasilnya.</li>
+            <li>Menemukan kesalahan (<i lang="en">bug</i>) dalam instruksi, lalu memperbaiki dan mengujinya lagi (<i lang="en">debugging</i>).</li>
+          </ol>
+        </section>
+
+        <!-- ========================================== 2. MENGINGAT KEMBALI -->
+        <section class="lesson-sec" id="mengingat" aria-labelledby="h-mengingat">
+          <p class="sec-no"><span>02</span> Mengingat kembali</p>
+          <h2 id="h-mengingat">Dari data, algoritma, sampai pengujian</h2>
+          <p>Materi ini adalah kelanjutan dari dua TP sebelumnya. Yuk, ingat lagi apa yang sudah kamu pelajari!</p>
+          <div class="card-grid">
+            <article class="mini-card recap-card">
+              <p class="recap-tp">TP 1.1</p>
+              <h4>Mengelola data</h4>
+              <p>Kamu belajar mengumpulkan dan <strong>mencatat data dengan rapi</strong> dalam tabel. Keterampilan ini akan dipakai untuk mencatat hasil uji instruksi.</p>
+              <a href="1-1.html">Buka lagi TP 1.1 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card">
+              <p class="recap-tp">TP 1.2</p>
+              <h4>Memecahkan masalah</h4>
+              <p>Kamu belajar dekomposisi, pola, abstraksi, dan <strong>algoritma</strong>, termasuk menguji algoritma dengan cara berpura-pura menjadi "robot".</p>
+              <a href="1-2.html">Buka lagi TP 1.2 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card recap-card--now">
+              <p class="recap-tp">TP 1.3 · Sekarang</p>
+              <h4>Mengembangkan &amp; menguji instruksi</h4>
+              <p>Kamu akan menulis instruksi yang lebih rapi, <strong>mengujinya</strong>, mencatat hasilnya, lalu <strong>memperbaiki kesalahannya</strong>.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ========================================== 3. PEMANTIK -->
+        <section class="lesson-sec" id="pemantik" aria-labelledby="h-pemantik">
+          <p class="sec-no"><span>03</span> Ayo berpikir dulu</p>
+          <h2 id="h-pemantik">Catatan dari Ibu</h2>
+          <div class="story">
+            <p class="story-label"><i class="bi bi-chat-quote" aria-hidden="true"></i> Cerita</p>
+            <p>Sebelum berangkat kerja, Ibu meninggalkan catatan untuk <strong>Rani</strong>:</p>
+            <p><strong>"1. Tekan tombol masak pada rice cooker. 2. Masukkan beras ke dalam panci. 3. Cuci beras. 4. Tuang air."</strong></p>
+            <p>Rani mengikuti catatan itu persis seperti tertulis. Hasilnya? Rice cooker menyala dalam keadaan kosong, beras dicuci setelah masuk panci, dan nasinya tidak matang dengan baik.</p>
+          </div>
+          <ol class="question-list">
+            <li>Apa yang salah dari catatan Ibu?</li>
+            <li>Bagaimana urutan yang benar?</li>
+            <li>Bagaimana cara memastikan sebuah instruksi sudah benar sebelum diberikan kepada orang lain?</li>
+          </ol>
+          <div class="callout">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Pelajaran dari cerita Rani</p>
+              <p>Langkah-langkahnya sebenarnya sudah lengkap, tetapi <strong>urutannya salah</strong>. Instruksi yang salah urutan bisa membuat hasilnya gagal. Karena itu, instruksi perlu <strong>diuji</strong> dan <strong>diperbaiki</strong>. Itulah yang akan kita pelajari!</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 4. SEKUENSIAL -->
+        <section class="lesson-sec" id="sekuensial" aria-labelledby="h-sekuensial">
+          <p class="sec-no"><span>04</span> Algoritma sekuensial</p>
+          <h2 id="h-sekuensial">Langkah demi langkah, berurutan</h2>
+          <p><strong>Algoritma sekuensial adalah algoritma yang langkah-langkahnya dikerjakan satu per satu secara berurutan, dari langkah pertama sampai langkah terakhir.</strong> Tidak ada langkah yang dilompati dan tidak ada langkah yang diulang.</p>
+          <p>Kata <em>sekuensial</em> berarti "berurutan". Komputer juga bekerja seperti ini: menjalankan instruksi baris demi baris dari atas ke bawah.</p>
+
+          <h3>Contoh: mengirim foto tugas ke grup kelas</h3>
+          <ol class="steps">
+            <li><p>Buka aplikasi kamera.</p></li>
+            <li><p>Foto lembar tugasmu.</p></li>
+            <li><p>Periksa apakah fotonya jelas dan tidak buram.</p></li>
+            <li><p>Buka aplikasi pesan, lalu pilih grup kelas.</p></li>
+            <li><p>Lampirkan foto tugas.</p></li>
+            <li><p>Tulis nama lengkap dan kelasmu.</p></li>
+            <li><p>Tekan tombol kirim. Selesai.</p></li>
+          </ol>
+          <p>Bayangkan jika langkah 7 dilakukan sebelum langkah 5: pesan terkirim tanpa foto! Pada algoritma sekuensial, <strong>urutan menentukan hasil</strong>.</p>
+
+          <div class="callout" data-el="4">
+            <i class="bi bi-diagram-2" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Ingat diagram alir di TP 1.2?</p>
+              <p>Diagram alir menyeberang jalan punya <strong>percabangan</strong> (Ya/Tidak) dan <strong>perulangan</strong> (kembali melihat kanan-kiri). Algoritma sekuensial lebih sederhana: jalurnya lurus dari <em>Mulai</em> ke <em>Selesai</em> tanpa cabang. Inilah dasar dari semua algoritma.</p>
+            </div>
+          </div>
+
+          <h3>Coba sendiri: susun langkahnya</h3>
+          <div class="order js-only" data-order>
+            <div class="order-head">
+              <h3>Mengganti baterai jam dinding</h3>
+              <p>Susun langkah-langkah berikut dengan tombol panah, lalu tekan <strong>Periksa</strong>.</p>
+            </div>
+            <ol class="order-list">
+              <li class="order-item" data-pos="3"><span class="order-text">Keluarkan baterai yang lama.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: keluarkan baterai lama">↑</button><button type="button" data-down aria-label="Turunkan: keluarkan baterai lama">↓</button></span></li>
+              <li class="order-item" data-pos="6"><span class="order-text">Pasang jam kembali di dinding.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: pasang jam di dinding">↑</button><button type="button" data-down aria-label="Turunkan: pasang jam di dinding">↓</button></span></li>
+              <li class="order-item" data-pos="1"><span class="order-text">Turunkan jam dari dinding.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: turunkan jam">↑</button><button type="button" data-down aria-label="Turunkan: turunkan jam">↓</button></span></li>
+              <li class="order-item" data-pos="5"><span class="order-text">Tutup kembali tempat baterai.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: tutup tempat baterai">↑</button><button type="button" data-down aria-label="Turunkan: tutup tempat baterai">↓</button></span></li>
+              <li class="order-item" data-pos="2"><span class="order-text">Buka tutup tempat baterai di bagian belakang jam.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: buka tutup baterai">↑</button><button type="button" data-down aria-label="Turunkan: buka tutup baterai">↓</button></span></li>
+              <li class="order-item" data-pos="4"><span class="order-text">Pasang baterai baru sesuai tanda + dan −.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: pasang baterai baru">↑</button><button type="button" data-down aria-label="Turunkan: pasang baterai baru">↓</button></span></li>
+            </ol>
+            <div class="order-foot">
+              <p class="order-status" data-order-status aria-live="polite"></p>
+              <div class="order-actions">
+                <button type="button" class="link-btn" data-order-shuffle><i class="bi bi-shuffle" aria-hidden="true"></i> Acak lagi</button>
+                <button type="button" class="btn btn-ink" data-order-check><i class="bi bi-check2-circle" aria-hidden="true"></i> Periksa</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 5. LANGKAH LOGIS -->
+        <section class="lesson-sec" id="langkah-logis" aria-labelledby="h-logis">
+          <p class="sec-no"><span>05</span> Langkah logis</p>
+          <h2 id="h-logis">Menulis instruksi yang logis</h2>
+          <p>Instruksi yang logis adalah instruksi yang <strong>masuk akal</strong> dan <strong>bisa diikuti siapa saja</strong> tanpa harus menebak-nebak. Ingat: komputer dan robot tidak bisa menebak maksud kita. Mereka hanya mengerjakan apa yang tertulis.</p>
+
+          <h3>Lima aturan langkah logis</h3>
+          <div class="card-grid">
+            <article class="mini-card">
+              <i class="bi bi-1-circle" aria-hidden="true"></i>
+              <h4>Satu langkah, satu perintah</h4>
+              <p>Jangan menumpuk banyak perintah dalam satu langkah agar mudah diikuti dan diperiksa.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-rulers" aria-hidden="true"></i>
+              <h4>Jelas dan terukur</h4>
+              <p>Gunakan angka atau patokan: "aduk 10 kali", bukan "aduk sebentar".</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-arrow-down-up" aria-hidden="true"></i>
+              <h4>Urutan masuk akal</h4>
+              <p>Pikirkan sebab-akibat: gelas harus diambil dulu sebelum diisi air.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-puzzle" aria-hidden="true"></i>
+              <h4>Lengkap</h4>
+              <p>Tidak ada langkah penting yang terlewat, sekecil apa pun.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-flag" aria-hidden="true"></i>
+              <h4>Ada awal dan akhir</h4>
+              <p>Jelas dari mana mulai dan kapan tugasnya dianggap selesai.</p>
+            </article>
+          </div>
+
+          <h3>Bandingkan: kurang jelas dan lebih jelas</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Memperbaiki instruksi agar lebih logis<small>Kata kerja di awal kalimat (ambil, tuang, tekan, tunggu) membuat instruksi lebih tegas.</small></caption>
+              <thead><tr><th scope="col">Kurang jelas</th><th scope="col">Lebih jelas</th></tr></thead>
+              <tbody>
+                <tr><td>Masak air.</td><td>Masak 1 liter air sampai mendidih, lalu matikan kompor.</td></tr>
+                <tr><td>Belok di dekat sekolah.</td><td>Di perempatan depan gerbang sekolah, belok kiri.</td></tr>
+                <tr><td>Siram tanaman secukupnya.</td><td>Siram setiap pot dengan satu gelas air.</td></tr>
+                <tr><td>Rapikan buku, lalu sapu dan buang sampahnya.</td><td>1. Susun buku di rak. 2. Sapu lantai. 3. Buang sampah ke tempat sampah.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ========================================== 6. MENGUJI -->
+        <section class="lesson-sec" id="menguji" aria-labelledby="h-menguji">
+          <p class="sec-no"><span>06</span> Menguji instruksi</p>
+          <h2 id="h-menguji">Mengapa instruksi harus diuji?</h2>
+          <p>Instruksi yang kita tulis belum tentu benar. Kadang ada langkah yang terlewat atau urutannya tertukar tanpa kita sadari. <strong>Menguji</strong> berarti mencoba menjalankan instruksi untuk melihat apakah hasilnya sesuai dengan tujuan.</p>
+
+          <h3>Cara menguji instruksi</h3>
+          <ol class="steps">
+            <li><h4>Baca ulang langkah demi langkah</h4><p>Bayangkan kamu mengerjakan setiap langkah. Adakah yang membingungkan?</p></li>
+            <li><h4>Jalankan seperti robot</h4><p>Lakukan setiap langkah <strong>persis seperti yang tertulis</strong>, tidak lebih dan tidak kurang, seperti uji robot di TP 1.2.</p></li>
+            <li><h4>Minta orang lain mencoba</h4><p>Orang yang belum tahu tujuannya akan menemukan langkah yang kurang jelas.</p></li>
+            <li><h4>Bandingkan hasil dengan tujuan</h4><p>Apakah hasil akhirnya sama dengan yang diharapkan?</p></li>
+          </ol>
+
+          <h3>Catat hasil uji dalam tabel</h3>
+          <p>Seperti di TP 1.1, catatan yang rapi memudahkan kita melihat masalah. Berikut contoh tabel uji untuk catatan Ibu kepada Rani.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Tabel uji instruksi "memasak nasi"<small>Setiap kali diuji, tulis siapa pengujinya, hasilnya, dan masalah yang ditemukan.</small></caption>
+              <thead><tr><th scope="col">Uji ke-</th><th scope="col">Penguji</th><th scope="col">Hasil</th><th scope="col">Masalah yang ditemukan</th></tr></thead>
+              <tbody>
+                <tr><td class="num">1</td><td>Rani</td><td><span class="tag-pill tag-pill--bug">Gagal</span></td><td>Rice cooker menyala saat masih kosong; beras dicuci di dalam panci.</td></tr>
+                <tr><td class="num">2</td><td>Kakak</td><td><span class="tag-pill" data-el="3">Berhasil</span></td><td>Setelah urutan diperbaiki, nasi matang dengan baik.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ========================================== 7. DEBUGGING -->
+        <section class="lesson-sec" id="debugging" aria-labelledby="h-debugging">
+          <p class="sec-no"><span>07</span> Debugging</p>
+          <h2 id="h-debugging">Menelusuri dan memperbaiki kesalahan</h2>
+          <p>Kesalahan dalam instruksi atau program disebut <strong><i lang="en">bug</i></strong> (dibaca: <em>bag</em>). Kegiatan mencari dan memperbaiki kesalahan itu disebut <strong><i lang="en">debugging</i></strong>. Semua pemrogram, bahkan yang paling hebat sekalipun, pasti pernah membuat <i lang="en">bug</i>. Yang penting adalah tahu cara menemukannya!</p>
+          <div class="callout" data-el="4">
+            <i class="bi bi-bug" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Tahukah kamu?</p>
+              <p>Pada tahun 1947, tim yang bekerja dengan komputer Harvard Mark II menemukan seekor ngengat tersangkut di dalam mesin dan membuat komputer itu bermasalah. Ngengat itu ditempel di buku catatan mereka sebagai "<i lang="en">bug</i> pertama yang benar-benar ditemukan". Kisah ini membuat istilah <i lang="en">bug</i> makin terkenal di dunia komputer.</p>
+            </div>
+          </div>
+
+          <h3>Jenis kesalahan yang sering terjadi</h3>
+          <div class="card-grid">
+            <article class="mini-card" data-el="2">
+              <i class="bi bi-arrow-down-up" aria-hidden="true"></i>
+              <h4>Urutan salah</h4>
+              <p>Langkahnya ada, tetapi posisinya tertukar. Contoh: menekan tombol masak sebelum beras dimasukkan.</p>
+            </article>
+            <article class="mini-card" data-el="4">
+              <i class="bi bi-dash-circle-dotted" aria-hidden="true"></i>
+              <h4>Langkah hilang</h4>
+              <p>Ada langkah penting yang terlewat. Contoh: menelepon tanpa memasukkan nomor tujuan.</p>
+            </article>
+            <article class="mini-card" data-el="3">
+              <i class="bi bi-question-circle" aria-hidden="true"></i>
+              <h4>Langkah tidak jelas</h4>
+              <p>Perintahnya membingungkan atau tidak terukur. Contoh: "masak sebentar" atau "belok di sana".</p>
+            </article>
+          </div>
+
+          <h3>Langkah-langkah debugging</h3>
+          <ol class="steps">
+            <li><h4>Jalankan dan amati</h4><p>Jalankan instruksi dan perhatikan hasilnya.</p></li>
+            <li><h4>Bandingkan dengan tujuan</h4><p>Apakah hasilnya sesuai? Jika tidak, berarti ada <i lang="en">bug</i>.</p></li>
+            <li><h4>Telusuri langkah demi langkah</h4><p>Periksa setiap langkah dari awal sampai kamu menemukan langkah yang membuat hasilnya salah.</p></li>
+            <li><h4>Perbaiki</h4><p>Ubah urutan, tambahkan langkah yang hilang, atau perjelas langkah yang membingungkan.</p></li>
+            <li><h4>Uji ulang</h4><p>Jalankan lagi instruksi yang sudah diperbaiki. Ulangi sampai berhasil.</p></li>
+            <li><h4>Catat perbaikannya</h4><p>Tulis <i lang="en">bug</i> apa yang ditemukan dan bagaimana kamu memperbaikinya, supaya tidak terulang.</p></li>
+          </ol>
+
+          <h3>Contoh menelusuri: algoritma membuat mi instan</h3>
+          <p>Sebuah algoritma dijalankan, tetapi hasilnya mi masih keras dan bumbunya menggumpal. Ayo kita telusuri langkah demi langkah.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Penelusuran langkah<small>Baris berwarna merah adalah langkah yang mengandung bug.</small></caption>
+              <thead><tr><th scope="col">Langkah</th><th scope="col">Instruksi</th><th scope="col">Hasil penelusuran</th></tr></thead>
+              <tbody>
+                <tr><td class="num">1</td><td>Siapkan panci, mangkuk, dan satu bungkus mi.</td><td><span class="tag-pill" data-el="3">Benar</span></td></tr>
+                <tr class="is-bug-row"><td class="num">2</td><td>Masukkan mi ke dalam panci kosong.</td><td><span class="tag-pill tag-pill--bug">Bug: urutan salah</span></td></tr>
+                <tr><td class="num">3</td><td>Rebus 400 ml air sampai mendidih.</td><td><span class="tag-pill" data-el="3">Benar</span></td></tr>
+                <tr class="is-bug-row"><td class="num">4</td><td>Masak sebentar.</td><td><span class="tag-pill tag-pill--bug">Bug: tidak jelas</span></td></tr>
+                <tr><td class="num">5</td><td>Tuang mi beserta kuahnya ke mangkuk.</td><td><span class="tag-pill" data-el="3">Benar</span></td></tr>
+                <tr class="is-bug-row"><td class="num">6</td><td>(tidak ada)</td><td><span class="tag-pill tag-pill--bug">Bug: langkah hilang</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="compare">
+            <div class="compare-card">
+              <p class="compare-label">Sebelum diperbaiki</p>
+              <ul>
+                <li>1. Siapkan alat dan mi</li>
+                <li>2. Masukkan mi ke panci kosong</li>
+                <li>3. Rebus air sampai mendidih</li>
+                <li>4. Masak sebentar</li>
+                <li>5. Tuang ke mangkuk</li>
+              </ul>
+            </div>
+            <div class="compare-arrow" aria-hidden="true"><i class="bi bi-arrow-right-circle"></i></div>
+            <div class="compare-card compare-card--info">
+              <p class="compare-label">Sesudah diperbaiki</p>
+              <ul>
+                <li>1. Siapkan alat dan mi</li>
+                <li>2. Rebus 400 ml air sampai mendidih</li>
+                <li>3. Masukkan mi, masak 3 menit</li>
+                <li>4. Tuang bumbu ke mangkuk</li>
+                <li>5. Tuang mi dan kuah, lalu aduk</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 8. ROBOT -->
+        <section class="lesson-sec" id="robot" aria-labelledby="h-robot">
+          <p class="sec-no"><span>08</span> Simulasi</p>
+          <h2 id="h-robot">Coba sendiri: Robot Pengantar Paket</h2>
+          <p>Robot kurir harus mengantar paket ke rumah tujuan tanpa menabrak pohon. Susun programnya dengan tiga perintah: <strong>Maju 1 kotak</strong>, <strong>Belok kiri</strong>, dan <strong>Belok kanan</strong>. Belok berarti robot berputar di tempat, tidak berpindah kotak. Segitiga oranye menunjukkan arah hadap robot.</p>
+
+          <div class="robot-game js-only" data-robot data-map="..#.T/..#../....#/##.../R..#." data-dir="E">
+            <div class="rb-head">
+              <h3>Pilih misi</h3>
+              <p><strong>Misi 1:</strong> susun program sendiri dari awal. <strong>Misi 2:</strong> program sudah ditulis temanmu, tetapi ada satu <i lang="en">bug</i>. Jalankan, temukan langkah yang salah, lalu perbaiki.</p>
+              <div class="rb-missions" role="group" aria-label="Pilih misi">
+                <button type="button" data-rb-load="" aria-pressed="true" data-rb-message="Misi 1: susun program dari awal.">Misi 1 · Susun program</button>
+                <button type="button" data-rb-load="M,M,L,M,M,R,M,R,M,M,R,M" aria-pressed="false" data-rb-message="Misi 2: tekan Jalankan, amati di mana robot gagal, lalu telusuri langkah sebelumnya.">Misi 2 · Perbaiki bug</button>
+              </div>
+            </div>
+            <div class="rb-body">
+              <div>
+                <div class="rb-board" role="img" aria-label="Peta 5 kali 5 kotak. Robot mulai di pojok kiri bawah menghadap ke kanan. Rumah tujuan di pojok kanan atas. Pohon ada di kolom 3 baris 1 dan 2, kolom 5 baris 3, kolom 1 dan 2 baris 4, serta kolom 4 baris 5."></div>
+                <ul class="rb-legend">
+                  <li><i class="bi bi-robot" aria-hidden="true"></i> Robot</li>
+                  <li><i class="bi bi-house-heart-fill" aria-hidden="true"></i> Rumah tujuan</li>
+                  <li><i class="bi bi-tree-fill" aria-hidden="true"></i> Pohon</li>
+                </ul>
+              </div>
+              <div>
+                <p class="rb-label">Tambah perintah</p>
+                <div class="rb-palette">
+                  <button type="button" data-rb-add="M"><i class="bi bi-arrow-up" aria-hidden="true"></i> Maju</button>
+                  <button type="button" data-rb-add="L"><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Belok kiri</button>
+                  <button type="button" data-rb-add="R"><i class="bi bi-arrow-clockwise" aria-hidden="true"></i> Belok kanan</button>
+                </div>
+                <ol class="rb-program" aria-label="Program robot"></ol>
+                <div class="rb-run-row">
+                  <button type="button" class="btn btn-ink" data-rb-run><i class="bi bi-play-fill" aria-hidden="true"></i> Jalankan</button>
+                  <button type="button" class="link-btn" data-rb-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Robot ke awal</button>
+                  <button type="button" class="link-btn" data-rb-clear><i class="bi bi-trash3" aria-hidden="true"></i> Kosongkan</button>
+                </div>
+                <p class="rb-status" data-rb-status aria-live="polite">Misi 1: susun program dari awal.</p>
+              </div>
+            </div>
+          </div>
+          <div class="callout" data-el="2">
+            <i class="bi bi-search" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Petunjuk debugging untuk Misi 2</p>
+              <p>Robot berhenti di langkah tempat ia menabrak, tetapi <strong>penyebabnya sering berada di langkah sebelumnya</strong>. Telusuri mundur: ke arah mana robot menghadap sebelum menabrak? Kapan arah itu mulai salah? Ubah perintahnya lewat kotak pilihan, lalu jalankan lagi.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 9. KUIS -->
+        <section class="lesson-sec" id="cek-pemahaman" aria-labelledby="h-kuis">
+          <p class="sec-no"><span>09</span> Cek pemahaman</p>
+          <h2 id="h-kuis">Detektif bug: jenis kesalahan apa?</h2>
+          <p>Setiap instruksi di bawah ini mengandung satu <i lang="en">bug</i>. Tentukan jenis kesalahannya.</p>
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis · Temukan jenis bug-nya</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="urutan" data-explain="Pasta gigi harus dioleskan sebelum menyikat gigi.">
+                <p class="quiz-text">Menggosok gigi: 1. Ambil sikat gigi. 2. Sikat gigi selama 2 menit. 3. Oleskan pasta gigi. 4. Berkumur.</p>
+                <div class="quiz-choices"><button type="button" data-choice="urutan">Urutan salah</button><button type="button" data-choice="hilang">Langkah hilang</button><button type="button" data-choice="jelas">Tidak jelas</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="hilang" data-explain="Tidak ada langkah memasukkan nomor tujuan sebelum menekan tombol panggil.">
+                <p class="quiz-text">Menelepon teman: 1. Buka aplikasi telepon. 2. Tekan tombol panggil. 3. Tunggu sampai dijawab.</p>
+                <div class="quiz-choices"><button type="button" data-choice="urutan">Urutan salah</button><button type="button" data-choice="hilang">Langkah hilang</button><button type="button" data-choice="jelas">Tidak jelas</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="jelas" data-explain="&quot;Secukupnya&quot; dan &quot;sebentar&quot; tidak terukur. Lebih baik: 1 sendok makan gula, masak 5 menit.">
+                <p class="quiz-text">Membuat kolak: "Masukkan gula secukupnya, lalu masak sebentar."</p>
+                <div class="quiz-choices"><button type="button" data-choice="urutan">Urutan salah</button><button type="button" data-choice="hilang">Langkah hilang</button><button type="button" data-choice="jelas">Tidak jelas</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="urutan" data-explain="File harus disimpan sebelum aplikasinya ditutup, agar tugasnya tidak hilang.">
+                <p class="quiz-text">Mengetik tugas: 1. Tulis tugas di aplikasi pengolah kata. 2. Tutup aplikasi. 3. Simpan file.</p>
+                <div class="quiz-choices"><button type="button" data-choice="urutan">Urutan salah</button><button type="button" data-choice="hilang">Langkah hilang</button><button type="button" data-choice="jelas">Tidak jelas</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="hilang" data-explain="Tidak ada langkah menggosok piring dengan sabun.">
+                <p class="quiz-text">Mencuci piring: 1. Basahi piring. 2. Bilas dengan air bersih. 3. Letakkan di rak piring.</p>
+                <div class="quiz-choices"><button type="button" data-choice="urutan">Urutan salah</button><button type="button" data-choice="hilang">Langkah hilang</button><button type="button" data-choice="jelas">Tidak jelas</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="jelas" data-explain="Perempatan yang mana? Belok ke kiri atau kanan? Sampai ketemu apa? Semuanya belum jelas.">
+                <p class="quiz-text">Petunjuk arah: "Belok di perempatan, lalu jalan terus sampai ketemu."</p>
+                <div class="quiz-choices"><button type="button" data-choice="urutan">Urutan salah</button><button type="button" data-choice="hilang">Langkah hilang</button><button type="button" data-choice="jelas">Tidak jelas</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 10. TUGAS INDIVIDU -->
+        <section class="lesson-sec" id="tugas-individu" aria-labelledby="h-individu">
+          <p class="sec-no"><span>10</span> Tugas individu</p>
+          <h2 id="h-individu">Instruksi untuk "robot" di rumah</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan sendiri di rumah</p>
+            <h3>Tulis, uji, perbaiki!</h3>
+            <p>Tulis instruksi untuk satu kegiatan sehari-hari. Minta anggota keluargamu menjadi "robot" yang mengikuti instruksimu persis seperti tertulis. Catat hasilnya, perbaiki <i lang="en">bug</i>-nya, lalu uji lagi.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-person" aria-hidden="true"></i> <span>Dikerjakan sendiri</span></li>
+              <li><i class="bi bi-list-ol" aria-hidden="true"></i> <span>Instruksi minimal 8 langkah</span></li>
+              <li><i class="bi bi-house-heart" aria-hidden="true"></i> <span>Diuji oleh anggota keluarga minimal 2 kali</span></li>
+              <li><i class="bi bi-journal-check" aria-hidden="true"></i> <span>Ada tabel uji dan versi perbaikan</span></li>
+            </ul>
+          </div>
+
+          <h3>Pilihan kegiatan</h3>
+          <ul class="chips-row" aria-label="Pilihan kegiatan">
+            <li>Membuat segelas teh manis</li>
+            <li>Menyiapkan tas sesuai jadwal pelajaran</li>
+            <li>Memasak nasi dengan rice cooker</li>
+            <li>Melipat baju seragam</li>
+            <li>Mengikat tali sepatu</li>
+            <li>Menyalakan laptop dan membuka satu aplikasi</li>
+          </ul>
+
+          <h3>Langkah mengerjakan</h3>
+          <ol class="steps">
+            <li><h4>Tulis versi pertama</h4><p>Tulis minimal 8 langkah sekuensial dengan lima aturan langkah logis.</p></li>
+            <li><h4>Uji pertama</h4><p>Minta anggota keluarga mengikuti instruksimu persis seperti tertulis. Jangan membantu atau menjelaskan!</p></li>
+            <li><h4>Catat hasilnya</h4><p>Tulis di tabel uji: siapa pengujinya, berhasil atau gagal, dan <i lang="en">bug</i> apa yang ditemukan.</p></li>
+            <li><h4>Perbaiki</h4><p>Tulis versi kedua yang sudah diperbaiki.</p></li>
+            <li><h4>Uji ulang</h4><p>Uji lagi sampai instruksimu berhasil diikuti tanpa kebingungan.</p></li>
+          </ol>
+
+          <div class="worksheet" id="lembar-individu">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Tugas Individu · Tulis, Uji, Perbaiki</h3>
+                <p>TP 1.3 Menerapkan Pengembangan dan Pengujian Instruksi · Kelas VII</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-individu"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar tugas</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Nama / Kelas</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Kegiatan yang dipilih</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Instruksi versi 1</span><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field">
+              <span class="ws-label">Tabel uji</span>
+              <table class="ws-table">
+                <caption class="sr-only">Tabel uji instruksi</caption>
+                <thead><tr><th scope="col">Uji ke-</th><th scope="col">Penguji</th><th scope="col">Berhasil/Gagal</th><th scope="col">Bug yang ditemukan &amp; jenisnya</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td></td><td></td><td></td></tr>
+                  <tr><td>2</td><td></td><td></td><td></td></tr>
+                  <tr><td>3</td><td></td><td></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ws-field"><span class="ws-label">Instruksi versi 2 (perbaikan)</span><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Apa yang kupelajari dari pengujian ini?</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+          </div>
+
+          <h3>Periksa tugasmu sendiri</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Instruksi versi 1 minimal 8 langkah dan berurutan.</span></label></li>
+            <li><label><input type="checkbox"><span>Setiap langkah berisi satu perintah yang jelas dan terukur.</span></label></li>
+            <li><label><input type="checkbox"><span>Instruksi sudah diuji oleh anggota keluarga minimal 2 kali.</span></label></li>
+            <li><label><input type="checkbox"><span>Tabel uji terisi lengkap, termasuk jenis bug yang ditemukan.</span></label></li>
+            <li><label><input type="checkbox"><span>Instruksi versi 2 sudah memperbaiki semua bug.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 11. TUGAS KELOMPOK -->
+        <section class="lesson-sec" id="tugas-kelompok" aria-labelledby="h-kelompok">
+          <p class="sec-no"><span>11</span> Tugas kelompok</p>
+          <h2 id="h-kelompok">Proyek mini: Pemandu Jalan Sekolah</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan bersama kelompokmu</p>
+            <h3>Bantu tamu dan murid baru menemukan jalan!</h3>
+            <p>Buat instruksi petunjuk jalan dari kelas kalian ke salah satu tempat di sekolah. Instruksi akan diuji oleh kelompok lain dengan berjalan persis mengikuti langkah kalian. Temukan <i lang="en">bug</i>-nya, perbaiki, lalu uji ulang.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-people" aria-hidden="true"></i> <span>4–5 orang per kelompok</span></li>
+              <li><i class="bi bi-signpost-2" aria-hidden="true"></i> <span>Instruksi minimal 8 langkah yang terukur</span></li>
+              <li><i class="bi bi-bug" aria-hidden="true"></i> <span>Diuji kelompok lain + catatan debugging</span></li>
+              <li><i class="bi bi-easel" aria-hidden="true"></i> <span>Kartu Petunjuk Jalan + presentasi 3–5 menit</span></li>
+            </ul>
+          </div>
+
+          <h3>Langkah 1 · Pilih tujuan</h3>
+          <p>Setiap kelompok memilih tujuan yang berbeda. Titik awalnya adalah pintu kelas kalian.</p>
+          <ul class="chips-row" aria-label="Pilihan tujuan">
+            <li>Perpustakaan</li>
+            <li>UKS</li>
+            <li>Kantin</li>
+            <li>Ruang guru</li>
+            <li>Laboratorium</li>
+            <li>Lapangan upacara</li>
+            <li>Tempat ibadah sekolah</li>
+          </ul>
+
+          <h3>Langkah 2 · Bagi peran</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-pencil-square" aria-hidden="true"></i><h4>Penulis instruksi</h4><p>Menulis langkah-langkah petunjuk jalan dengan rapi.</p></article>
+            <article class="mini-card"><i class="bi bi-rulers" aria-hidden="true"></i><h4>Pengukur</h4><p>Menghitung jumlah langkah kaki dan mencatat patokan di sepanjang jalan.</p></article>
+            <article class="mini-card"><i class="bi bi-robot" aria-hidden="true"></i><h4>Penguji</h4><p>Menjadi "robot" saat menguji instruksi milik kelompok lain.</p></article>
+            <article class="mini-card"><i class="bi bi-journal-check" aria-hidden="true"></i><h4>Pencatat bug</h4><p>Mengisi tabel catatan debugging dan versi perbaikan.</p></article>
+            <article class="mini-card"><i class="bi bi-megaphone" aria-hidden="true"></i><h4>Ketua &amp; penyaji</h4><p>Mengatur waktu, memastikan semua bekerja, dan memimpin presentasi.</p></article>
+          </div>
+
+          <h3>Langkah 3 · Kerjakan bersama</h3>
+          <ol class="steps">
+            <li><h4>Amati rutenya (abstraksi)</h4><p>Jalani rute bersama, hitung langkah kaki, dan catat patokan penting seperti tiang bendera, tangga, atau papan nama. Abaikan hal yang tidak membantu, seperti warna pot bunga.</p></li>
+            <li><h4>Tulis instruksi versi 1</h4><p>Tulis minimal 8 langkah sekuensial yang terukur. Contoh: "Keluar dari pintu kelas, lalu belok kanan. Jalan lurus 20 langkah sampai tiang bendera."</p></li>
+            <li><h4>Tukar dan uji</h4><p>Berikan instruksi kalian kepada kelompok lain. Mereka berjalan persis mengikuti instruksi itu, dengan izin dan pendampingan guru.</p></li>
+            <li><h4>Catat bug</h4><p>Penguji memberi tahu langkah yang membingungkan atau membuat mereka salah arah. Catat di tabel debugging.</p></li>
+            <li><h4>Perbaiki dan uji ulang</h4><p>Tulis versi 2, lalu minta diuji lagi sampai penguji tiba di tujuan tanpa bertanya.</p></li>
+            <li><h4>Presentasikan</h4><p>Tampilkan Kartu Petunjuk Jalan (versi akhir), tabel debugging, dan cerita perbaikan kalian.</p></li>
+          </ol>
+          <div class="callout">
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Jika tidak memungkinkan berjalan keliling sekolah</p>
+              <p>Gunakan denah sekolah yang digambar di papan tulis atau kertas. Penguji menggerakkan jari atau bidak di atas denah, persis mengikuti instruksi kalian.</p>
+            </div>
+          </div>
+
+          <h3>Langkah 4 · Isi lembar kerja kelompok</h3>
+          <div class="worksheet" id="lembar-kelompok">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Kerja Kelompok · Pemandu Jalan Sekolah</h3>
+                <p>TP 1.3 Menerapkan Pengembangan dan Pengujian Instruksi · Kelas VII</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-kelompok"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar kerja</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Nama kelompok / Kelas</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Anggota &amp; peran</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Titik awal → tujuan</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Patokan penting di sepanjang rute</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Instruksi versi 1</span><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field">
+              <span class="ws-label">Catatan debugging</span>
+              <table class="ws-table">
+                <caption class="sr-only">Tabel catatan debugging</caption>
+                <thead><tr><th scope="col">Langkah ke-</th><th scope="col">Masalah yang terjadi</th><th scope="col">Jenis bug</th><th scope="col">Perbaikan</th></tr></thead>
+                <tbody>
+                  <tr><td></td><td></td><td></td><td></td></tr>
+                  <tr><td></td><td></td><td></td><td></td></tr>
+                  <tr><td></td><td></td><td></td><td></td></tr>
+                  <tr><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ws-field"><span class="ws-label">Instruksi versi 2 (perbaikan)</span><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Hasil uji ulang</span><span class="ws-options"><span>Berhasil sampai tujuan</span><span>Masih perlu diperbaiki</span></span></div>
+          </div>
+
+          <h3>Kriteria penilaian</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Rubrik penilaian tugas kelompok<small>Skor: 4 = sangat baik · 3 = baik · 2 = cukup · 1 = perlu bimbingan</small></caption>
+              <thead><tr><th scope="col">Aspek</th><th scope="col">Yang dinilai</th><th scope="col" class="num">Skor</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Algoritma sekuensial</th><td>Instruksi minimal 8 langkah, berurutan, dengan awal dan akhir yang jelas.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Langkah logis</th><td>Setiap langkah berisi satu perintah yang jelas dan terukur, memakai patokan.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Pengujian</th><td>Instruksi diuji kelompok lain dan hasilnya dicatat dengan rapi.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Debugging</th><td>Bug ditemukan, jenisnya ditentukan, dan perbaikannya tepat.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Hasil akhir</th><td>Versi 2 berhasil membawa penguji ke tujuan tanpa bertanya.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kerja sama &amp; presentasi</th><td>Setiap anggota berperan aktif; presentasi jelas dan runtut.</td><td class="num">1–4</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis sebelum presentasi</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Instruksi versi 1 dan versi 2 sudah ditulis.</span></label></li>
+            <li><label><input type="checkbox"><span>Setiap langkah memakai ukuran atau patokan yang jelas.</span></label></li>
+            <li><label><input type="checkbox"><span>Instruksi sudah diuji kelompok lain minimal dua kali.</span></label></li>
+            <li><label><input type="checkbox"><span>Tabel catatan debugging sudah terisi.</span></label></li>
+            <li><label><input type="checkbox"><span>Setiap anggota tahu bagiannya saat presentasi.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 12. RANGKUMAN -->
+        <section class="lesson-sec" id="rangkuman" aria-labelledby="h-rangkuman">
+          <p class="sec-no"><span>12</span> Rangkuman &amp; refleksi</p>
+          <h2 id="h-rangkuman">Yang perlu kamu ingat</h2>
+          <div class="summary-grid">
+            <article class="mini-card">
+              <i class="bi bi-list-ol" aria-hidden="true"></i>
+              <h4>Algoritma sekuensial</h4>
+              <p>Langkah dikerjakan satu per satu secara berurutan. Urutan menentukan hasil.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-check2-square" aria-hidden="true"></i>
+              <h4>Langkah logis</h4>
+              <p>Satu langkah satu perintah, jelas dan terukur, urutannya masuk akal, lengkap, serta ada awal dan akhir.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-clipboard-check" aria-hidden="true"></i>
+              <h4>Menguji</h4>
+              <p>Jalankan instruksi persis seperti tertulis, bandingkan hasilnya dengan tujuan, dan catat di tabel uji.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-bug" aria-hidden="true"></i>
+              <h4>Debugging</h4>
+              <p>Temukan bug (urutan salah, langkah hilang, tidak jelas), perbaiki, lalu uji ulang sampai berhasil.</p>
+            </article>
+          </div>
+          <div class="callout">
+            <i class="bi bi-signpost-split" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Perjalananmu di Elemen Berpikir Komputasional</p>
+              <p>Di TP 1.1 kamu belajar mengelola data, di TP 1.2 memecahkan masalah dan menyusun algoritma, dan di TP 1.3 mengembangkan serta menguji instruksi. Bekal ini akan dipakai lagi saat kamu belajar mengolah data dan menulis instruksi yang lebih kompleks di Kelas VIII.</p>
+            </div>
+          </div>
+
+          <h3>Refleksi</h3>
+          <p>Jawab pertanyaan berikut di buku catatanmu:</p>
+          <ol class="question-list">
+            <li>Bug apa yang paling sering kamu temukan saat menguji instruksi? Mengapa itu bisa terjadi?</li>
+            <li>Bagaimana perasaanmu saat instruksimu gagal diikuti orang lain? Apa yang kamu lakukan?</li>
+            <li>Mengapa instruksi perlu diuji oleh orang lain, bukan hanya oleh pembuatnya sendiri?</li>
+            <li>Di mana lagi kamu bisa memakai kebiasaan "tulis, uji, perbaiki" dalam kehidupan sehari-hari?</li>
+          </ol>
+
+          <h3>Kamus kecil</h3>
+          <dl class="glossary">
+            <div><dt>Instruksi</dt><dd>Perintah atau petunjuk untuk melakukan sesuatu.</dd></div>
+            <div><dt>Algoritma sekuensial</dt><dd>Algoritma yang langkahnya dikerjakan berurutan satu per satu tanpa cabang.</dd></div>
+            <div><dt>Langkah logis</dt><dd>Langkah yang masuk akal, jelas, dan urutannya tepat.</dd></div>
+            <div><dt>Menguji</dt><dd>Mencoba menjalankan instruksi untuk melihat apakah hasilnya sesuai tujuan.</dd></div>
+            <div><dt>Bug</dt><dd>Kesalahan dalam instruksi atau program.</dd></div>
+            <div><dt>Debugging</dt><dd>Kegiatan mencari dan memperbaiki bug.</dd></div>
+            <div><dt>Menelusuri</dt><dd>Memeriksa langkah satu per satu untuk menemukan sumber kesalahan.</dd></div>
+            <div><dt>Uji ulang</dt><dd>Menguji lagi instruksi yang sudah diperbaiki.</dd></div>
+          </dl>
+        </section>
+
+        <kka-tp-nav code="1.3"></kka-tp-nav>
+      </div>
+    </div>
+  </main>
+
+  <kka-footer></kka-footer>
+</body>
+</html>

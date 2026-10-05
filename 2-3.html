@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP 2.3 Aplikasi Slide dan Infografis — Koding dan KA SMPN 1 Bandar Seikijang</title>
+  <meta name="description" content="Materi TP 2.3 Koding dan Kecerdasan Artifisial Kelas VII: menggunakan aplikasi presentasi (Canva, Google Slides, PowerPoint) dan prinsip desain visual dasar untuk membuat slide dan infografis.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="TP 2.3 Menerapkan Aplikasi Dasar untuk Produksi Slide dan Infografis">
+  <meta property="og:description" content="Aplikasi presentasi dan desain visual dasar untuk murid Kelas VII.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs: style.css (umum) + lesson.css (halaman materi) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/lesson.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lesson.js" defer></script>
+</head>
+<body>
+  <kka-header active="atp"><a href="index.html">Beranda</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <main id="konten" data-el="2">
+    <!-- =============================================== JUDUL TP -->
+    <section class="hero hero--tp" aria-labelledby="judul-tp">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Lokasi halaman">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#atp">Alur TP</a></li>
+            <li><a href="index.html#kelas-7">Kelas VII</a></li>
+            <li><span aria-current="page">TP 2.3</span></li>
+          </ol>
+        </nav>
+        <div class="tp-badges">
+          <span class="tp-badge tp-badge--code">TP 2.3</span>
+          <span class="tp-badge"><i class="bi bi-camera-reels" aria-hidden="true"></i> Elemen 2 · Literasi Digital</span>
+          <span class="tp-badge"><i class="bi bi-calendar-week" aria-hidden="true"></i> Kelas VII · Semester 1</span>
+        </div>
+        <h1 id="judul-tp">Menerapkan Aplikasi Dasar untuk Produksi Slide dan Infografis</h1>
+        <p class="hero-lead">Storyboard dan ide yang kamu rancang di TP 2.2 siap diwujudkan! Kali ini kamu akan belajar memakai aplikasi presentasi dan prinsip desain visual dasar agar slide dan infografismu jelas, rapi, dan enak dilihat.</p>
+        <ul class="tp-meta">
+          <li><i class="bi bi-easel2" aria-hidden="true"></i> <span>Canva, Google Slides, PowerPoint</span></li>
+          <li><i class="bi bi-palette" aria-hidden="true"></i> <span>Desain visual dasar</span></li>
+          <li><i class="bi bi-bar-chart" aria-hidden="true"></i> <span>Infografis</span></li>
+          <li><i class="bi bi-laptop" aria-hidden="true"></i> <span>Tugas berbasis digital</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container lesson">
+      <!-- Daftar isi -->
+      <nav class="toc" aria-labelledby="judul-toc">
+        <p class="toc-title" id="judul-toc">Daftar isi</p>
+        <ol>
+          <li><a href="#tujuan">Tujuan &amp; cara belajar</a></li>
+          <li><a href="#mengingat">Mengingat kembali</a></li>
+          <li><a href="#pemantik">Ayo berpikir dulu</a></li>
+          <li><a href="#aplikasi">Mengenal aplikasi</a></li>
+          <li><a href="#langkah">Langkah membuat slide</a></li>
+          <li><a href="#desain">Desain visual dasar</a></li>
+          <li><a href="#infografis">Infografis</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+          <li><a href="#tugas-individu">Tugas individu</a></li>
+          <li><a href="#tugas-kelompok">Tugas kelompok</a></li>
+          <li><a href="#rangkuman">Rangkuman &amp; refleksi</a></li>
+        </ol>
+      </nav>
+
+      <div class="lesson-body">
+        <!-- ========================================== 1. TUJUAN -->
+        <section class="lesson-sec" id="tujuan" aria-labelledby="h-tujuan">
+          <p class="sec-no"><span>01</span> Tujuan belajar</p>
+          <h2 id="h-tujuan">Apa yang akan kamu pelajari?</h2>
+          <p>Setelah mempelajari halaman ini, kamu diharapkan mampu:</p>
+          <ol class="goal-list">
+            <li>Mengenal aplikasi presentasi (Canva, Google Slides, PowerPoint) dan memilih yang sesuai dengan perangkatmu.</li>
+            <li>Mengenali bagian-bagian jendela aplikasi presentasi dan langkah dasar membuat slide.</li>
+            <li>Menerapkan prinsip desain visual dasar: teks ringkas, ukuran huruf, warna yang kontras, dan gambar yang relevan.</li>
+            <li>Membuat infografis sederhana dari data.</li>
+          </ol>
+
+          <h3>Cara belajar di halaman ini</h3>
+          <p>Seperti TP sebelumnya, perhatikan label <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em> di setiap bagian.</p>
+          <ul class="deep-principles">
+            <li>
+              <i class="bi bi-bullseye" aria-hidden="true"></i>
+              <h4>Berkesadaran</h4>
+              <p>Kamu memilih aplikasi yang sesuai dengan perangkat dan koneksi internetmu, lalu menilai sendiri desain slidemu.</p>
+            </li>
+            <li>
+              <i class="bi bi-house-heart" aria-hidden="true"></i>
+              <h4>Bermakna</h4>
+              <p>Kamu mengolah data dirimu sendiri menjadi infografis dan mewujudkan storyboard kampanye sekolahmu.</p>
+            </li>
+            <li>
+              <i class="bi bi-emoji-laughing" aria-hidden="true"></i>
+              <h4>Menggembirakan</h4>
+              <p>Kamu bereksperimen di Lab Desain Slide: ganti warna dan huruf, lalu lihat langsung hasilnya.</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 2. MENGINGAT KEMBALI -->
+        <section class="lesson-sec" id="mengingat" aria-labelledby="h-mengingat">
+          <p class="sec-no"><span>02</span> Mengingat kembali <em class="phase">Memahami</em></p>
+          <h2 id="h-mengingat">Dari rencana menjadi karya</h2>
+          <div class="card-grid">
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.2 · Storyboard</p>
+              <h4>Satu kotak = satu slide</h4>
+              <p>Storyboard kampanye yang kamu buat di TP 2.2 akan diwujudkan menjadi slide presentasi di tugas kelompok halaman ini.</p>
+              <a href="2-2.html#storyboard">Buka lagi storyboard <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.1 · Konten digital</p>
+              <h4>Multimedia dan format file</h4>
+              <p>Slide dan infografis adalah konten multimedia yang menggabungkan teks dan gambar. Hasilnya disimpan sebagai <code>.pptx</code>, <code>.pdf</code>, atau <code>.png</code>.</p>
+              <a href="2-1.html#format">Buka lagi TP 2.1 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="1">
+              <p class="recap-tp">TP 1.1 · Data</p>
+              <h4>Data menjadi informasi</h4>
+              <p>Tabel data hasil survei di TP 1.1 bisa diubah menjadi infografis yang lebih mudah dipahami sekilas.</p>
+              <a href="1-1.html#mencatat">Buka lagi TP 1.1 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ========================================== 3. PEMANTIK -->
+        <section class="lesson-sec" id="pemantik" aria-labelledby="h-pemantik">
+          <p class="sec-no"><span>03</span> Ayo berpikir dulu <em class="phase">Memahami</em></p>
+          <h2 id="h-pemantik">Presentasi yang membuat mengantuk</h2>
+          <div class="story">
+            <p class="story-label"><i class="bi bi-chat-quote" aria-hidden="true"></i> Cerita</p>
+            <p>Kelompok Raka menampilkan slide tentang hemat air. Setiap slide penuh tulisan kecil, latarnya hijau terang dengan huruf merah, dan setiap judul memakai jenis huruf yang berbeda. Raka akhirnya membacakan seluruh isi slide. Teman-teman di bangku belakang tidak bisa membaca tulisannya, dan beberapa mulai menguap.</p>
+            <p>Kelompok Nadia membahas topik yang sama. Slidenya hanya berisi judul besar, tiga poin singkat, dan satu foto keran yang menetes. Nadia bercerita sambil menunjuk gambarnya. Semua mendengarkan sampai selesai.</p>
+          </div>
+          <ol class="question-list">
+            <li>Mengapa slide kelompok Raka sulit dibaca?</li>
+            <li>Apa yang membuat slide kelompok Nadia lebih menarik?</li>
+            <li>Menurutmu, apakah slide sebaiknya berisi semua yang ingin kita katakan?</li>
+          </ol>
+          <div class="callout">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Slide adalah pendukung, bukan naskah</p>
+              <p>Slide membantu penonton memahami ceritamu. Yang bercerita tetap kamu. Karena itu, slide cukup berisi kata kunci dan gambar, sedangkan penjelasan lengkapnya kamu sampaikan secara lisan.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 4. MENGENAL APLIKASI -->
+        <section class="lesson-sec" id="aplikasi" aria-labelledby="h-aplikasi">
+          <p class="sec-no"><span>04</span> Mengenal aplikasi <em class="phase">Memahami</em></p>
+          <h2 id="h-aplikasi">Aplikasi presentasi dan desain</h2>
+          <p><strong>Aplikasi presentasi</strong> adalah aplikasi untuk membuat <strong>slide</strong>, yaitu halaman-halaman berisi teks, gambar, dan grafik yang ditampilkan satu per satu. Aplikasi ini juga bisa dipakai untuk membuat <strong>infografis</strong>, poster, dan konten visual lainnya.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Membandingkan tiga aplikasi populer<small>Ketiganya bisa dipakai di komputer maupun ponsel. Pilih yang paling sesuai dengan perangkat dan koneksi internetmu.</small></caption>
+              <thead><tr><th scope="col">Hal</th><th scope="col">Canva</th><th scope="col">Google Slides</th><th scope="col">PowerPoint</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Cara memakai</th><td>Situs web dan aplikasi ponsel</td><td>Situs web dan aplikasi ponsel</td><td>Aplikasi komputer, ponsel, dan versi web</td></tr>
+                <tr><th scope="row">Kelebihan utama</th><td>Banyak templat, ikon, dan elemen grafis siap pakai</td><td>Tersimpan otomatis dan mudah dikerjakan bersama</td><td>Fitur lengkap dan bisa dipakai tanpa internet (aplikasi komputer)</td></tr>
+                <tr><th scope="row">Butuh akun?</th><td>Ya</td><td>Ya, akun Google</td><td>Versi web dan ponsel memakai akun Microsoft</td></tr>
+                <tr><th scope="row">Cocok untuk</th><td>Infografis, poster, dan slide yang menarik</td><td>Kerja kelompok dari perangkat masing-masing</td><td>Presentasi di laboratorium komputer</td></tr>
+                <tr><th scope="row">Format hasil</th><td><code>.png</code> <code>.pdf</code> <code>.pptx</code></td><td><code>.pptx</code> <code>.pdf</code> <code>.png</code></td><td><code>.pptx</code> <code>.pdf</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout" data-el="3">
+            <i class="bi bi-shield-lock" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Soal akun</p>
+              <p>Gunakan akun belajar yang diberikan sekolah, atau akun yang dibuat bersama dan diawasi orang tua. Jangan membagikan kata sandimu kepada siapa pun, termasuk teman satu kelompok.</p>
+            </div>
+          </div>
+
+          <h3>Bagian-bagian jendela aplikasi presentasi</h3>
+          <p>Tampilan ketiga aplikasi berbeda-beda, tetapi bagian utamanya hampir sama.</p>
+          <div class="app-mock-wrap">
+            <div class="app-mock" aria-hidden="true">
+              <div class="am-title"><span class="am-dot"></span><span class="am-dot"></span><span class="am-dot"></span> Kampanye Hemat Air</div>
+              <div class="am-bar am-mark" data-n="1"><span>File</span><span>Edit</span><span>Sisipkan</span><span>Desain</span><span>Transisi</span><span>Bantuan</span></div>
+              <div class="am-tool am-mark" data-n="2"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="am-main">
+                <div class="am-thumbs am-mark" data-n="3"><span></span><span></span><span></span></div>
+                <div class="am-canvas am-mark" data-n="4"><div class="am-slide"><b>Ayo Hemat Air!</b><small>Kelas VII-A</small></div></div>
+              </div>
+              <div class="am-notes am-mark" data-n="5">Klik untuk menambahkan catatan pembicara</div>
+            </div>
+            <ol class="am-legend">
+              <li><span><strong>Menu:</strong> berisi perintah seperti menyimpan, menyisipkan gambar, dan memilih desain.</span></li>
+              <li><span><strong>Bilah alat:</strong> tombol cepat untuk huruf, warna, kotak teks, dan gambar.</span></li>
+              <li><span><strong>Panel slide:</strong> daftar slide kecil untuk berpindah dan mengatur urutan.</span></li>
+              <li><span><strong>Area kerja (kanvas):</strong> tempat menyunting slide yang sedang dipilih.</span></li>
+              <li><span><strong>Catatan pembicara:</strong> catatan untuk penyaji yang tidak terlihat oleh penonton.</span></li>
+            </ol>
+          </div>
+
+          <h3>Istilah yang perlu kamu kenal</h3>
+          <dl class="glossary">
+            <div><dt>Templat</dt><dd>Desain siap pakai yang tinggal diganti isinya.</dd></div>
+            <div><dt>Tema</dt><dd>Paduan warna, huruf, dan latar yang dipakai di semua slide.</dd></div>
+            <div><dt>Tata letak (<i lang="en">layout</i>)</dt><dd>Susunan kotak judul, teks, dan gambar di dalam satu slide.</dd></div>
+            <div><dt>Kotak teks</dt><dd>Wadah untuk menulis teks di slide.</dd></div>
+            <div><dt>Transisi</dt><dd>Efek saat berpindah dari satu slide ke slide berikutnya.</dd></div>
+            <div><dt>Animasi</dt><dd>Efek gerak pada teks atau gambar di dalam slide.</dd></div>
+          </dl>
+        </section>
+
+        <!-- ========================================== 5. LANGKAH -->
+        <section class="lesson-sec" id="langkah" aria-labelledby="h-langkah">
+          <p class="sec-no"><span>05</span> Langkah membuat slide <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-langkah">Langkah dasar di setiap aplikasi</h2>
+          <p>Pilih tab aplikasi yang akan kamu pakai. Langkah-langkahnya mirip, yang berbeda hanya letak tombolnya.</p>
+
+          <div class="tabs" data-tabs>
+            <div class="tab-list" role="tablist" aria-label="Pilih aplikasi">
+              <button type="button" role="tab" id="tab-canva" aria-controls="panel-canva" aria-selected="true"><i class="bi bi-brush" aria-hidden="true"></i> Canva</button>
+              <button type="button" role="tab" id="tab-slides" aria-controls="panel-slides" aria-selected="false"><i class="bi bi-easel2" aria-hidden="true"></i> Google Slides</button>
+              <button type="button" role="tab" id="tab-ppt" aria-controls="panel-ppt" aria-selected="false"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i> PowerPoint</button>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="panel-canva" aria-labelledby="tab-canva">
+              <ol class="steps">
+                <li><h4>Buka Canva</h4><p>Buka situs <code>canva.com</code> atau aplikasi Canva di ponsel, lalu masuk dengan akun belajarmu.</p></li>
+                <li><h4>Buat desain baru</h4><p>Klik <strong>Buat desain</strong>, lalu pilih <strong>Presentasi</strong> (atau <strong>Infografis</strong> untuk infografis).</p></li>
+                <li><h4>Pilih templat atau mulai dari kosong</h4><p>Pilih templat yang sederhana dan sesuai topik. Beri nama desainmu di bagian atas.</p></li>
+                <li><h4>Isi dan hias</h4><p>Ganti teks dan gambar. Gunakan panel <strong>Elemen</strong> untuk ikon, bentuk, dan grafik.</p></li>
+                <li><h4>Tambah halaman</h4><p>Klik <strong>+ Tambah halaman</strong> di bawah area kerja untuk slide berikutnya.</p></li>
+                <li><h4>Tampilkan dan simpan</h4><p>Klik <strong>Presentasikan</strong> untuk melihat hasilnya. Simpan lewat <strong>Bagikan</strong> → <strong>Unduh</strong>, lalu pilih PNG, PDF, atau PPTX.</p></li>
+              </ol>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="panel-slides" aria-labelledby="tab-slides">
+              <ol class="steps">
+                <li><h4>Buka Google Slides</h4><p>Buka situs <code>slides.google.com</code> atau aplikasi Google Slides di ponsel, lalu masuk dengan akun Google belajarmu.</p></li>
+                <li><h4>Buat presentasi baru</h4><p>Klik <strong>Kosong</strong> (tanda +) atau pilih salah satu templat.</p></li>
+                <li><h4>Beri nama file</h4><p>Klik tulisan <strong>Presentasi tanpa judul</strong> di kiri atas, lalu ketik nama yang jelas.</p></li>
+                <li><h4>Pilih tema dan tambah slide</h4><p>Pilih tema di panel <strong>Tema</strong>. Tambah slide dengan tombol + atau tekan <code>Ctrl</code> + <code>M</code>.</p></li>
+                <li><h4>Isi dan sisipkan</h4><p>Gunakan menu <strong>Sisipkan</strong> untuk menambahkan gambar, bentuk, dan diagram.</p></li>
+                <li><h4>Tampilkan, bagikan, dan simpan</h4><p>Klik <strong>Slideshow</strong> untuk menampilkan. Tombol <strong>Bagikan</strong> mengundang teman sekelompok. Unduh lewat <strong>File</strong> → <strong>Download</strong> → PowerPoint atau PDF.</p></li>
+              </ol>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="panel-ppt" aria-labelledby="tab-ppt">
+              <ol class="steps">
+                <li><h4>Buka PowerPoint</h4><p>Buka aplikasi PowerPoint di komputer atau ponsel, atau versi webnya.</p></li>
+                <li><h4>Buat presentasi baru</h4><p>Pilih <strong>Presentasi Kosong</strong> atau salah satu templat.</p></li>
+                <li><h4>Pilih tema</h4><p>Buka tab <strong>Desain</strong>, lalu pilih tema yang sederhana.</p></li>
+                <li><h4>Tambah slide</h4><p>Di tab <strong>Beranda</strong>, klik <strong>Slide Baru</strong> (<code>Ctrl</code> + <code>M</code>) dan pilih tata letaknya.</p></li>
+                <li><h4>Isi dan sisipkan</h4><p>Gunakan tab <strong>Sisipkan</strong> untuk gambar, ikon, dan bagan.</p></li>
+                <li><h4>Tampilkan dan simpan</h4><p>Tekan <code>F5</code> untuk mulai presentasi. Simpan lewat <strong>File</strong> → <strong>Simpan Sebagai</strong> (.pptx), atau ekspor ke PDF.</p></li>
+              </ol>
+            </div>
+          </div>
+          <p class="tool-note"><i class="bi bi-info-circle" aria-hidden="true"></i> Nama menu bisa sedikit berbeda, tergantung versi dan bahasa aplikasi yang kamu pakai.</p>
+
+          <div class="callout" data-el="1">
+            <i class="bi bi-floppy" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Biasakan menyimpan dengan nama yang jelas</p>
+              <p>Beri nama file sejak awal, misalnya <code>2-3_Kelompok3_VIIA_HematAir</code>. Google Slides dan Canva menyimpan otomatis. Di aplikasi PowerPoint komputer, sering-seringlah menekan <code>Ctrl</code> + <code>S</code> agar pekerjaanmu tidak hilang.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 6. DESAIN VISUAL -->
+        <section class="lesson-sec" id="desain" aria-labelledby="h-desain">
+          <p class="sec-no"><span>06</span> Desain visual dasar <em class="phase">Memahami</em></p>
+          <h2 id="h-desain">Empat prinsip desain slide</h2>
+          <p>Desain yang baik membuat pesan mudah ditangkap. Ingat empat prinsip berikut. Penataan letak yang lebih mendalam akan kamu pelajari di TP 2.4.</p>
+          <div class="card-grid">
+            <article class="mini-card" data-el="1">
+              <i class="bi bi-text-paragraph" aria-hidden="true"></i>
+              <h4>1. Teks ringkas</h4>
+              <p>Tulis kata kunci, bukan paragraf. Salah satu panduan yang sering dipakai adalah <strong>aturan 6×6</strong>: paling banyak 6 baris per slide dan 6 kata per baris.</p>
+            </article>
+            <article class="mini-card" data-el="2">
+              <i class="bi bi-type" aria-hidden="true"></i>
+              <h4>2. Huruf jelas</h4>
+              <p>Gunakan ukuran minimal <strong>24 pt</strong> untuk isi dan sekitar <strong>36–44 pt</strong> untuk judul. Cukup pakai 1–2 jenis huruf. Huruf tanpa kait (<i lang="en">sans-serif</i>) lebih mudah dibaca di layar.</p>
+            </article>
+            <article class="mini-card" data-el="3">
+              <i class="bi bi-palette" aria-hidden="true"></i>
+              <h4>3. Warna kontras</h4>
+              <p>Pasangkan teks gelap dengan latar terang, atau sebaliknya. Pakai 2–3 warna utama saja dan gunakan secara konsisten di semua slide.</p>
+            </article>
+            <article class="mini-card" data-el="4">
+              <i class="bi bi-image" aria-hidden="true"></i>
+              <h4>4. Gambar relevan</h4>
+              <p>Satu gambar besar yang sesuai lebih baik daripada banyak gambar kecil. Pilih gambar yang tajam (ingat piksel di TP 2.1) dan cantumkan sumbernya.</p>
+            </article>
+          </div>
+          <div class="callout" data-el="3">
+            <i class="bi bi-c-circle" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Gambar dari mana?</p>
+              <p>Pakai foto buatanmu sendiri, ikon dan gambar bawaan aplikasi, atau gambar yang boleh dipakai ulang. Tulis sumbernya di pojok slide, misalnya "Foto: dokumentasi Kelas VII-A". Kamu akan belajar lebih dalam tentang hak cipta di TP 2.8.</p>
+            </div>
+          </div>
+
+          <h3>Coba sendiri: Lab Desain Slide <em class="phase">Mengaplikasi</em></h3>
+          <div class="lab design-lab js-only" id="lab-desain" data-design-lab>
+            <div class="lab-head">
+              <i class="bi bi-easel2" aria-hidden="true"></i>
+              <div>
+                <h3>Lab Desain Slide</h3>
+                <p>Ubah pengaturan di samping, lalu perhatikan slide dan penilaian keterbacaannya. Bisakah kamu mendapat skor 5/5?</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <div class="dl-slide">
+                  <h4 class="dl-title">Ayo Kurangi Sampah Plastik!</h4>
+                  <div class="dl-body"></div>
+                  <div class="dl-art" aria-hidden="true"><i class="bi bi-recycle"></i></div>
+                </div>
+                <p class="dl-score-row">Skor keterbacaan <span class="dl-score" data-dl-score aria-live="polite">0 / 5</span></p>
+                <ul class="dl-feedback" data-dl-feedback aria-live="polite"></ul>
+              </div>
+              <div class="lab-controls">
+                <fieldset class="tool-field dl-fieldset">
+                  <legend class="lab-label">Paduan warna</legend>
+                  <div class="dl-themes" data-dl-themes></div>
+                </fieldset>
+                <label class="lab-label" for="dl-size">Ukuran huruf isi: <span data-dl-size-out>24 pt</span></label>
+                <input id="dl-size" type="range" min="12" max="40" step="2" value="16" data-dl-size>
+                <fieldset class="tool-field dl-fieldset">
+                  <legend class="lab-label">Jumlah teks</legend>
+                  <div class="dl-radios">
+                    <label><input type="radio" name="dl-text" value="long" checked> Paragraf panjang</label>
+                    <label><input type="radio" name="dl-text" value="short"> Poin singkat</label>
+                  </div>
+                </fieldset>
+                <label class="lab-label" for="dl-font">Jenis huruf</label>
+                <select id="dl-font" data-dl-font>
+                  <option value="deco">Dekoratif</option>
+                  <option value="serif">Serif (berkait)</option>
+                  <option value="sans">Sans-serif (tanpa kait)</option>
+                </select>
+                <label class="mb-toggle"><input type="checkbox" data-dl-image> Tambahkan gambar/ikon yang relevan</label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 7. INFOGRAFIS -->
+        <section class="lesson-sec" id="infografis" aria-labelledby="h-info">
+          <p class="sec-no"><span>07</span> Infografis <em class="phase">Memahami</em></p>
+          <h2 id="h-info">Mengubah data menjadi infografis</h2>
+          <p><strong>Infografis</strong> berasal dari kata <em>informasi</em> dan <em>grafis</em>. Infografis menyajikan informasi atau data dengan gabungan teks singkat, angka, ikon, dan diagram, sehingga mudah dipahami hanya dengan sekali lihat.</p>
+
+          <div class="ig-wrap">
+            <figure class="infografis">
+              <div class="ig-head ig-mark" data-n="1">
+                <p class="ig-kicker">Survei Kelas VII-A</p>
+                <h4>Bagaimana kami berangkat ke sekolah?</h4>
+              </div>
+              <div class="ig-big ig-mark" data-n="2"><b>13</b><p>dari 32 murid diantar dengan sepeda motor</p></div>
+              <ul class="ig-bars ig-mark" data-n="3" aria-label="Diagram batang cara berangkat ke sekolah">
+                <li><i class="bi bi-person-walking" aria-hidden="true"></i><span>Jalan kaki</span><span class="bar" style="--w:62%"></span><b>8</b></li>
+                <li><i class="bi bi-bicycle" aria-hidden="true"></i><span>Bersepeda</span><span class="bar" style="--w:46%"></span><b>6</b></li>
+                <li class="is-top"><i class="bi bi-scooter" aria-hidden="true"></i><span>Diantar motor</span><span class="bar" style="--w:100%"></span><b>13</b></li>
+                <li><i class="bi bi-bus-front" aria-hidden="true"></i><span>Angkutan/mobil</span><span class="bar" style="--w:38%"></span><b>5</b></li>
+              </ul>
+              <p class="ig-insight ig-mark" data-n="4">Hampir separuh murid diantar orang tua. Yuk, yang rumahnya dekat coba berjalan kaki atau bersepeda!</p>
+              <figcaption class="ig-source ig-mark" data-n="5">Sumber: angket Kelas VII-A, 32 responden (contoh data dari TP 1.1)</figcaption>
+            </figure>
+            <div>
+              <ol class="am-legend ig-legend">
+                <li><span><strong>Judul:</strong> menarik dan langsung menyebutkan topiknya.</span></li>
+                <li><span><strong>Angka utama:</strong> satu informasi terpenting ditulis besar agar langsung terlihat.</span></li>
+                <li><span><strong>Diagram dan ikon:</strong> membandingkan data dengan cepat. Ikon membantu pembaca mengenali kategori.</span></li>
+                <li><span><strong>Kesimpulan:</strong> satu atau dua kalimat yang mengubah data menjadi informasi atau ajakan.</span></li>
+                <li><span><strong>Sumber data:</strong> menunjukkan dari mana data berasal, agar infografis bisa dipercaya.</span></li>
+              </ol>
+              <div class="callout" data-el="1">
+                <i class="bi bi-arrow-down" aria-hidden="true"></i>
+                <div>
+                  <p class="callout-title">Alur baca dari atas ke bawah</p>
+                  <p>Susun infografis seperti cerita: judul → angka utama → rincian → kesimpulan → sumber. Ini mirip alur awal–tengah–akhir di TP 2.2.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3>Memilih diagram yang tepat</h3>
+          <div class="card-grid">
+            <article class="mini-card" data-el="1">
+              <div class="chart-mini" aria-hidden="true"><div class="cm-bar"><span style="height:60%"></span><span style="height:90%"></span><span style="height:40%"></span><span style="height:75%"></span></div></div>
+              <h4>Diagram batang</h4>
+              <p>Untuk <strong>membandingkan</strong> jumlah antarkelompok. Contoh: jumlah sampah di tiap kelas.</p>
+            </article>
+            <article class="mini-card" data-el="2">
+              <div class="chart-mini" aria-hidden="true"><div class="cm-pie"></div></div>
+              <h4>Diagram lingkaran</h4>
+              <p>Untuk menunjukkan <strong>bagian dari keseluruhan</strong>. Contoh: persentase cara berangkat ke sekolah.</p>
+            </article>
+            <article class="mini-card" data-el="3">
+              <div class="chart-mini" aria-hidden="true"><svg viewBox="0 0 120 66"><line x1="4" y1="62" x2="116" y2="62"/><polyline points="6,52 30,40 54,46 78,22 104,12"/></svg></div>
+              <h4>Diagram garis</h4>
+              <p>Untuk melihat <strong>perubahan dari waktu ke waktu</strong>. Contoh: tabungan setiap minggu.</p>
+            </article>
+          </div>
+
+          <h3>Langkah membuat infografis</h3>
+          <ol class="steps">
+            <li><h4>Siapkan data</h4><p>Gunakan data yang sudah dicatat rapi, misalnya hasil turus dan tabel seperti di TP 1.1.</p></li>
+            <li><h4>Tentukan pesan utama</h4><p>Apa satu hal terpenting yang ingin pembaca ketahui? Ini adalah abstraksi (TP 1.2).</p></li>
+            <li><h4>Pilih ukuran dan templat</h4><p>Di Canva, pilih jenis desain <strong>Infografis</strong>. Di Google Slides atau PowerPoint, ubah ukuran slide menjadi tegak (<i lang="en">portrait</i>).</p></li>
+            <li><h4>Susun isinya</h4><p>Judul, angka utama, diagram, ikon, kesimpulan, dan sumber, dari atas ke bawah.</p></li>
+            <li><h4>Periksa desainnya</h4><p>Pastikan teks ringkas, huruf terbaca, dan warnanya kontras.</p></li>
+            <li><h4>Unduh dan beri nama</h4><p>Unduh sebagai <code>.png</code> agar mudah dibagikan, atau <code>.pdf</code> untuk dicetak.</p></li>
+          </ol>
+        </section>
+
+        <!-- ========================================== 8. KUIS -->
+        <section class="lesson-sec" id="cek-pemahaman" aria-labelledby="h-kuis">
+          <p class="sec-no"><span>08</span> Cek pemahaman <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kuis">Ayo uji pemahamanmu</h2>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis A · Desain baik atau perlu diperbaiki?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="perbaiki" data-explain="Terlalu banyak teks dan hurufnya terlalu kecil. Ringkas menjadi poin dan perbesar hurufnya.">
+                <p class="quiz-text">Slide berisi 15 baris teks dengan huruf berukuran 12 pt.</p>
+                <div class="quiz-choices"><button type="button" data-choice="baik">Sudah baik</button><button type="button" data-choice="perbaiki">Perlu diperbaiki</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="baik" data-explain="Judul besar dan poin singkat dengan huruf yang cukup besar mudah dibaca.">
+                <p class="quiz-text">Judul berukuran 40 pt dengan tiga poin singkat berukuran 28 pt.</p>
+                <div class="quiz-choices"><button type="button" data-choice="baik">Sudah baik</button><button type="button" data-choice="perbaiki">Perlu diperbaiki</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="perbaiki" data-explain="Kuning dan putih sama-sama terang, sehingga kontrasnya sangat rendah.">
+                <p class="quiz-text">Tulisan berwarna kuning di atas latar putih.</p>
+                <div class="quiz-choices"><button type="button" data-choice="baik">Sudah baik</button><button type="button" data-choice="perbaiki">Perlu diperbaiki</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="perbaiki" data-explain="Desain yang tidak konsisten membuat penonton bingung. Pakai satu tema untuk semua slide.">
+                <p class="quiz-text">Setiap slide memakai jenis huruf dan warna latar yang berbeda-beda.</p>
+                <div class="quiz-choices"><button type="button" data-choice="baik">Sudah baik</button><button type="button" data-choice="perbaiki">Perlu diperbaiki</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="baik" data-explain="Satu gambar besar yang relevan dan disertai sumbernya adalah pilihan yang tepat.">
+                <p class="quiz-text">Satu foto besar yang sesuai topik, dengan keterangan sumber foto di pojok bawah.</p>
+                <div class="quiz-choices"><button type="button" data-choice="baik">Sudah baik</button><button type="button" data-choice="perbaiki">Perlu diperbaiki</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="baik" data-explain="Teks gelap di latar terang kontras, dan dua jenis huruf sudah cukup.">
+                <p class="quiz-text">Teks gelap di atas latar terang, dan hanya memakai dua jenis huruf.</p>
+                <div class="quiz-choices"><button type="button" data-choice="baik">Sudah baik</button><button type="button" data-choice="perbaiki">Perlu diperbaiki</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis B · Diagram apa yang paling cocok?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="batang" data-explain="Membandingkan jumlah antarkelas paling jelas dengan diagram batang.">
+                <p class="quiz-text">Membandingkan jumlah buku yang dipinjam oleh setiap kelas.</p>
+                <div class="quiz-choices"><button type="button" data-choice="batang">Batang</button><button type="button" data-choice="lingkaran">Lingkaran</button><button type="button" data-choice="garis">Garis</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="lingkaran" data-explain="Bagian dari keseluruhan (persentase) cocok dengan diagram lingkaran.">
+                <p class="quiz-text">Menunjukkan persentase murid yang berjalan kaki dari seluruh murid sekolah.</p>
+                <div class="quiz-choices"><button type="button" data-choice="batang">Batang</button><button type="button" data-choice="lingkaran">Lingkaran</button><button type="button" data-choice="garis">Garis</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="garis" data-explain="Perubahan dari waktu ke waktu cocok dengan diagram garis.">
+                <p class="quiz-text">Perubahan tinggi badanmu dari bulan ke bulan.</p>
+                <div class="quiz-choices"><button type="button" data-choice="batang">Batang</button><button type="button" data-choice="lingkaran">Lingkaran</button><button type="button" data-choice="garis">Garis</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="lingkaran" data-explain="Pembagian uang jajan adalah bagian-bagian dari satu keseluruhan.">
+                <p class="quiz-text">Pembagian uang jajan: 50% untuk makan, 30% ditabung, dan 20% untuk keperluan lain.</p>
+                <div class="quiz-choices"><button type="button" data-choice="batang">Batang</button><button type="button" data-choice="lingkaran">Lingkaran</button><button type="button" data-choice="garis">Garis</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="garis" data-explain="Suhu yang berubah setiap hari selama seminggu paling jelas dengan diagram garis.">
+                <p class="quiz-text">Perubahan suhu udara setiap hari selama satu minggu.</p>
+                <div class="quiz-choices"><button type="button" data-choice="batang">Batang</button><button type="button" data-choice="lingkaran">Lingkaran</button><button type="button" data-choice="garis">Garis</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="batang" data-explain="Membandingkan jumlah sampah di lima kelas cocok dengan diagram batang.">
+                <p class="quiz-text">Membandingkan banyaknya sampah plastik di lima kelas.</p>
+                <div class="quiz-choices"><button type="button" data-choice="batang">Batang</button><button type="button" data-choice="lingkaran">Lingkaran</button><button type="button" data-choice="garis">Garis</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 9. TUGAS INDIVIDU -->
+        <section class="lesson-sec" id="tugas-individu" aria-labelledby="h-individu">
+          <p class="sec-no"><span>09</span> Tugas individu <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em></p>
+          <h2 id="h-individu">Infografis "Kebiasaan Digitalku"</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan sendiri · berbasis digital</p>
+            <h3>Ubah data dirimu menjadi infografis</h3>
+            <p>Masih ingat Jurnal Konten Digitalku di TP 2.1? Olah rekap datamu menjadi satu infografis dengan Canva, Google Slides, atau PowerPoint.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-person" aria-hidden="true"></i> <span>Dikerjakan sendiri</span></li>
+              <li><i class="bi bi-journal-text" aria-hidden="true"></i> <span>Data dari Jurnal Konten Digitalku (TP 2.1)</span></li>
+              <li><i class="bi bi-bar-chart" aria-hidden="true"></i> <span>1 infografis tegak berisi diagram</span></li>
+              <li><i class="bi bi-file-earmark-image" aria-hidden="true"></i> <span>Dikumpulkan sebagai file .png</span></li>
+            </ul>
+          </div>
+
+          <h3>Langkah mengerjakan</h3>
+          <ol class="steps">
+            <li><h4>Siapkan data</h4><p>Buka kembali rekap per format dari Jurnal Konten Digitalku: berapa konten teks, gambar, audio, dan video yang kamu catat. Jika belum punya, catat dulu kebiasaan digitalmu selama satu hari.</p></li>
+            <li><h4>Tentukan pesan utama</h4><p>Apa temuan terpenting tentang dirimu? Contoh: "Aku paling sering menonton video."</p></li>
+            <li><h4>Buat infografis</h4><p>Gunakan ukuran tegak. Isi dengan judul, angka utama, diagram yang tepat (batang atau lingkaran), ikon, kesimpulan, dan sumber data, misalnya "Data: Jurnal Konten Digitalku, 12 Oktober".</p></li>
+            <li><h4>Periksa desainnya</h4><p>Pastikan teks ringkas, huruf cukup besar, dan warnanya kontras. Bandingkan dengan Lab Desain Slide di atas.</p></li>
+            <li><h4>Unduh dan kumpulkan</h4><p>Unduh sebagai <code>.png</code> dengan nama file <code>2-3_Nama_Kelas_infografis.png</code>, lalu kirim lewat kanal yang ditentukan guru.</p></li>
+          </ol>
+          <div class="callout">
+            <i class="bi bi-pc-display" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Tidak punya perangkat?</p>
+              <p>Kerjakan di perangkat sekolah saat jam pelajaran, atau buat infografis di kertas lalu potret hasilnya dan kirim sebagai file <code>.jpg</code>.</p>
+            </div>
+          </div>
+
+          <h3>Periksa tugasmu sendiri</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Infografisku punya judul, angka utama, diagram, kesimpulan, dan sumber data.</span></label></li>
+            <li><label><input type="checkbox"><span>Diagram yang kupilih sesuai dengan jenis datanya.</span></label></li>
+            <li><label><input type="checkbox"><span>Teksnya ringkas dan hurufnya mudah dibaca.</span></label></li>
+            <li><label><input type="checkbox"><span>Warna teks dan latar kontras.</span></label></li>
+            <li><label><input type="checkbox"><span>File berformat .png dan diberi nama yang rapi.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 10. TUGAS KELOMPOK -->
+        <section class="lesson-sec" id="tugas-kelompok" aria-labelledby="h-kelompok">
+          <p class="sec-no"><span>10</span> Tugas kelompok <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kelompok">Proyek: Dari Storyboard ke Slide</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan bersama kelompokmu · berbasis digital</p>
+            <h3>Wujudkan storyboard kampanye kalian!</h3>
+            <p>Ubah storyboard Kampanye Sekolah dari TP 2.2 menjadi presentasi digital. Kerjakan bersama di satu file yang dibagikan, terapkan prinsip desain, lalu uji di depan kelompok lain.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-people" aria-hidden="true"></i> <span>Kelompok yang sama dengan TP 2.2</span></li>
+              <li><i class="bi bi-easel2" aria-hidden="true"></i> <span>6–8 slide (1 adegan = 1 slide)</span></li>
+              <li><i class="bi bi-share" aria-hidden="true"></i> <span>Dikerjakan bersama di satu file</span></li>
+              <li><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> <span>Dikumpulkan sebagai PDF/PPTX + presentasi 5 menit</span></li>
+            </ul>
+          </div>
+
+          <h3>Langkah 1 · Bagi peran</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-folder-check" aria-hidden="true"></i><h4>Pengelola file</h4><p>Membuat file, mengundang anggota lewat tombol Bagikan, dan menjaga nama file tetap rapi.</p></article>
+            <article class="mini-card" data-el="1"><i class="bi bi-fonts" aria-hidden="true"></i><h4>Penulis teks</h4><p>Meringkas narasi storyboard menjadi kata kunci dan menulis catatan pembicara.</p></article>
+            <article class="mini-card" data-el="2"><i class="bi bi-palette" aria-hidden="true"></i><h4>Desainer</h4><p>Memilih tema, warna, dan huruf, serta menjaga konsistensinya.</p></article>
+            <article class="mini-card" data-el="3"><i class="bi bi-image" aria-hidden="true"></i><h4>Pencari gambar</h4><p>Memotret sendiri atau mencari gambar yang boleh dipakai, lalu mencatat sumbernya.</p></article>
+            <article class="mini-card" data-el="4"><i class="bi bi-megaphone" aria-hidden="true"></i><h4>Penyaji</h4><p>Berlatih menyampaikan presentasi dengan bantuan catatan pembicara.</p></article>
+          </div>
+
+          <h3>Langkah 2 · Kerjakan bersama</h3>
+          <ol class="steps">
+            <li><h4>Buka kembali storyboard</h4><p>Siapkan file storyboard dari TP 2.2 (PDF, .txt, atau foto storyboard kertas).</p></li>
+            <li><h4>Buat file bersama</h4><p>Pengelola file membuat presentasi di Google Slides atau Canva, lalu mengundang anggota lewat tombol <strong>Bagikan</strong>. Jika memakai PowerPoint di satu komputer, kerjakan secara bergantian.</p></li>
+            <li><h4>Pilih satu tema</h4><p>Gunakan tema yang sama untuk semua slide: 2–3 warna, 1–2 jenis huruf.</p></li>
+            <li><h4>Satu adegan, satu slide</h4><p>Ubah setiap kotak storyboard menjadi satu slide. Ringkas narasinya menjadi judul dan poin singkat. Penjelasan lengkap tulis di catatan pembicara.</p></li>
+            <li><h4>Terapkan prinsip desain</h4><p>Aturan 6×6, huruf minimal 24 pt, warna kontras, dan satu gambar relevan beserta sumbernya.</p></li>
+            <li><h4>Buat slide penutup</h4><p>Isi dengan ajakan bertindak, sumber gambar, dan nama anggota kelompok.</p></li>
+            <li><h4>Uji dan perbaiki</h4><p>Tampilkan presentasi kepada kelompok lain. Mereka menilai dengan Lembar Penilaian Desain di bawah. Perbaiki slide berdasarkan masukannya.</p></li>
+            <li><h4>Simpan dan presentasikan</h4><p>Unduh sebagai PDF atau PPTX, beri nama <code>2-3_Kelompok3_VIIA_slide.pdf</code>, kirim ke guru, lalu presentasikan selama 5 menit.</p></li>
+          </ol>
+          <div class="callout" data-el="3">
+            <i class="bi bi-shield-check" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Aman saat bekerja bersama</p>
+              <ul class="bullets">
+                <li>Bagikan akses hanya kepada anggota kelompok dan guru, bukan ke semua orang yang memiliki tautan.</li>
+                <li>Jangan menghapus atau mengubah bagian milik teman tanpa berdiskusi lebih dulu.</li>
+                <li>Jangan mencantumkan nomor ponsel atau alamat pribadi di slide.</li>
+              </ul>
+            </div>
+          </div>
+          <p>Simpan baik-baik file kalian. Di TP 2.4, kalian akan memperbaiki tata letak visualnya agar lebih menarik.</p>
+
+          <h3>Langkah 3 · Lembar penilaian desain</h3>
+          <div class="worksheet" id="lembar-penilaian">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Penilaian Desain Slide</h3>
+                <p>Diisi oleh kelompok penguji saat melihat presentasi kelompok lain.</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-penilaian"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Kelompok penguji</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Kelompok yang diuji &amp; judul</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Teks ringkas (aturan 6×6)?</span><span class="ws-options"><span>Ya</span><span>Sebagian</span><span>Belum</span></span></div>
+            <div class="ws-field"><span class="ws-label">Huruf terbaca dari belakang kelas?</span><span class="ws-options"><span>Ya</span><span>Sebagian</span><span>Belum</span></span></div>
+            <div class="ws-field"><span class="ws-label">Warna kontras dan konsisten?</span><span class="ws-options"><span>Ya</span><span>Sebagian</span><span>Belum</span></span></div>
+            <div class="ws-field"><span class="ws-label">Gambar relevan dan ada sumbernya?</span><span class="ws-options"><span>Ya</span><span>Sebagian</span><span>Belum</span></span></div>
+            <div class="ws-field"><span class="ws-label">Alur slide sesuai storyboard?</span><span class="ws-options"><span>Ya</span><span>Sebagian</span><span>Belum</span></span></div>
+            <div class="ws-field"><span class="ws-label">Pujian</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Saran perbaikan</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+          </div>
+
+          <h3>Kriteria penilaian</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Rubrik penilaian tugas kelompok<small>Skor: 4 = sangat baik · 3 = baik · 2 = cukup · 1 = perlu bimbingan</small></caption>
+              <thead><tr><th scope="col">Aspek</th><th scope="col">Yang dinilai</th><th scope="col" class="num">Skor</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Penggunaan aplikasi</th><td>Memakai fitur dasar dengan tepat: tema, tata letak, kotak teks, gambar, dan catatan pembicara.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kesesuaian dengan storyboard</th><td>6–8 slide yang mengikuti alur awal–tengah–akhir dari storyboard TP 2.2.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Teks dan huruf</th><td>Teks ringkas (6×6) dan huruf minimal 24 pt.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Warna dan konsistensi</th><td>Warna kontras dan tema sama di semua slide.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Gambar dan sumber</th><td>Gambar relevan, tajam, dan sumbernya dicantumkan.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Uji dan perbaikan</th><td>Masukan kelompok lain dipakai untuk memperbaiki slide.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kerja sama dan presentasi</th><td>Setiap anggota berperan aktif; presentasi jelas dan tidak membacakan slide.</td><td class="num">1–4</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis sebelum mengumpulkan</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Semua adegan storyboard sudah menjadi slide.</span></label></li>
+            <li><label><input type="checkbox"><span>Semua slide memakai tema, warna, dan huruf yang sama.</span></label></li>
+            <li><label><input type="checkbox"><span>Setiap gambar dicantumkan sumbernya.</span></label></li>
+            <li><label><input type="checkbox"><span>Catatan pembicara sudah diisi.</span></label></li>
+            <li><label><input type="checkbox"><span>Presentasi sudah diuji kelompok lain dan diperbaiki.</span></label></li>
+            <li><label><input type="checkbox"><span>File PDF/PPTX diberi nama rapi dan sudah dikirim.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 11. RANGKUMAN -->
+        <section class="lesson-sec" id="rangkuman" aria-labelledby="h-rangkuman">
+          <p class="sec-no"><span>11</span> Rangkuman &amp; refleksi <em class="phase">Merefleksi</em></p>
+          <h2 id="h-rangkuman">Yang perlu kamu ingat</h2>
+          <div class="summary-grid">
+            <article class="mini-card" data-el="1">
+              <i class="bi bi-easel2" aria-hidden="true"></i>
+              <h4>Aplikasi presentasi</h4>
+              <p>Canva, Google Slides, dan PowerPoint dipakai untuk membuat slide dan infografis. Pilih yang sesuai perangkatmu.</p>
+            </article>
+            <article class="mini-card" data-el="2">
+              <i class="bi bi-list-check" aria-hidden="true"></i>
+              <h4>Langkah dasar</h4>
+              <p>Buat file, beri nama, pilih tema, tambah slide, isi, tampilkan, lalu simpan dan bagikan.</p>
+            </article>
+            <article class="mini-card" data-el="3">
+              <i class="bi bi-palette" aria-hidden="true"></i>
+              <h4>Desain dasar</h4>
+              <p>Teks ringkas, huruf jelas, warna kontras, dan gambar relevan bersumber.</p>
+            </article>
+            <article class="mini-card" data-el="4">
+              <i class="bi bi-bar-chart" aria-hidden="true"></i>
+              <h4>Infografis</h4>
+              <p>Judul, angka utama, diagram yang tepat, kesimpulan, dan sumber data.</p>
+            </article>
+          </div>
+
+          <h3>Refleksi</h3>
+          <p>Jawab pertanyaan berikut di buku catatanmu:</p>
+          <ol class="question-list">
+            <li><strong>Berkesadaran:</strong> aplikasi mana yang kamu pilih, dan mengapa cocok untuk perangkat serta koneksi internetmu?</li>
+            <li><strong>Bermakna:</strong> apa yang kamu temukan tentang kebiasaan digitalmu setelah datanya menjadi infografis?</li>
+            <li><strong>Menggembirakan:</strong> pengaturan apa di Lab Desain Slide yang paling mengubah tampilan slide?</li>
+            <li>Masukan apa dari kelompok lain yang paling membantu memperbaiki slide kelompokmu?</li>
+          </ol>
+
+          <h3>Peta perjalanan berikutnya</h3>
+          <p>Keterampilan membuat slide dan infografis akan terus kamu kembangkan:</p>
+          <div class="card-grid" data-tp-links="2.4,2.5,2.9,2.10"></div>
+
+          <h3>Kamus kecil</h3>
+          <dl class="glossary">
+            <div><dt>Slide</dt><dd>Satu halaman dalam presentasi.</dd></div>
+            <div><dt>Aplikasi presentasi</dt><dd>Aplikasi untuk membuat dan menampilkan slide, seperti Canva, Google Slides, dan PowerPoint.</dd></div>
+            <div><dt>Catatan pembicara</dt><dd>Catatan untuk penyaji yang tidak tampil di layar penonton.</dd></div>
+            <div><dt>Kontras</dt><dd>Perbedaan terang-gelap antara teks dan latarnya.</dd></div>
+            <div><dt>Sans-serif</dt><dd>Jenis huruf tanpa kait di ujungnya, mudah dibaca di layar.</dd></div>
+            <div><dt>Aturan 6×6</dt><dd>Panduan maksimal 6 baris per slide dan 6 kata per baris.</dd></div>
+            <div><dt>Infografis</dt><dd>Sajian informasi berupa gabungan teks singkat, angka, ikon, dan diagram.</dd></div>
+            <div><dt>Diagram</dt><dd>Gambar yang menyajikan data, misalnya diagram batang, lingkaran, atau garis.</dd></div>
+          </dl>
+        </section>
+
+        <!-- Tombol TP sebelumnya/berikutnya + sumber rujukan, dibuat otomatis dari data.js -->
+        <kka-tp-nav code="2.3"></kka-tp-nav>
+      </div>
+    </div>
+  </main>
+
+  <kka-footer></kka-footer>
+</body>
+</html>

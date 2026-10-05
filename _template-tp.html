@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--
+  =========================================================================
+  TEMPLAT HALAMAN MATERI TP — salin file ini untuk membuat TP baru.
+
+  Langkah:
+  1. Salin file ini lalu beri nama sesuai kode TP, mis. "2-1.html" untuk TP 2.1.
+  2. Ganti semua tulisan bertanda  ✎  di bawah (judul, kode, kelas, isi materi).
+  3. Isi materi memakai komponen yang sudah ada. Lihat contohnya di
+     1-1.html (kuis, turus, lembar kerja), 1-2.html (pohon masalah,
+     diagram alir, susun langkah), dan 1-3.html (simulasi robot).
+  4. Di assets/js/data.js, ubah "ready: false" menjadi "ready: true" untuk TP ini.
+  5. Hapus semua komentar petunjuk seperti ini jika sudah tidak diperlukan.
+
+  File berawalan "_" tidak ikut diterbitkan oleh GitHub Pages.
+  =========================================================================
+-->
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP 0.0 ✎ Judul Singkat — Koding dan KA SMPN 1 Bandar Seikijang</title>
+  <meta name="description" content="✎ Ringkasan isi materi dalam satu atau dua kalimat.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="TP 0.0 ✎ Judul Lengkap TP">
+  <meta property="og:description" content="✎ Ringkasan isi materi.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs: style.css (umum) + lesson.css (halaman materi) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/lesson.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lesson.js" defer></script>
+</head>
+<body>
+  <!-- Header & menu bersama (isi ada di assets/js/layout.js) -->
+  <kka-header active="atp"><a href="index.html">Beranda</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <!-- data-el = nomor elemen TP ini (1–4), menentukan warna aksen halaman -->
+  <main id="konten" data-el="1">
+    <!-- =============================================== JUDUL TP -->
+    <section class="hero hero--tp" aria-labelledby="judul-tp">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Lokasi halaman">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#atp">Alur TP</a></li>
+            <li><a href="index.html#kelas-7">Kelas VII</a></li><!-- ✎ kelas-7 / kelas-8 / kelas-9 -->
+            <li><span aria-current="page">TP 0.0</span></li><!-- ✎ -->
+          </ol>
+        </nav>
+        <div class="tp-badges">
+          <span class="tp-badge tp-badge--code">TP 0.0</span><!-- ✎ -->
+          <span class="tp-badge"><i class="bi bi-diagram-3" aria-hidden="true"></i> Elemen 1 · Berpikir Komputasional</span><!-- ✎ -->
+          <span class="tp-badge"><i class="bi bi-calendar-week" aria-hidden="true"></i> Kelas VII · Semester 1</span><!-- ✎ -->
+        </div>
+        <h1 id="judul-tp">✎ Judul Lengkap TP</h1>
+        <p class="hero-lead">✎ Satu atau dua kalimat pembuka yang menarik dan dekat dengan kehidupan murid.</p>
+        <ul class="tp-meta">
+          <li><i class="bi bi-book" aria-hidden="true"></i> <span>✎ Ruang lingkup materi</span></li>
+          <li><i class="bi bi-person" aria-hidden="true"></i> <span>Tugas individu</span></li>
+          <li><i class="bi bi-people" aria-hidden="true"></i> <span>Tugas kelompok</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container lesson">
+      <!-- Daftar isi: setiap href harus sama dengan id bagian di bawah -->
+      <nav class="toc" aria-labelledby="judul-toc">
+        <p class="toc-title" id="judul-toc">Daftar isi</p>
+        <ol>
+          <li><a href="#tujuan">Tujuan belajar</a></li>
+          <li><a href="#materi">✎ Materi</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+          <li><a href="#tugas">Tugas</a></li>
+          <li><a href="#rangkuman">Rangkuman &amp; refleksi</a></li>
+        </ol>
+      </nav>
+
+      <div class="lesson-body">
+        <!-- ========================================== 1. TUJUAN -->
+        <section class="lesson-sec" id="tujuan" aria-labelledby="h-tujuan">
+          <p class="sec-no"><span>01</span> Tujuan belajar</p>
+          <h2 id="h-tujuan">Apa yang akan kamu pelajari?</h2>
+          <p>Setelah mempelajari halaman ini, kamu diharapkan mampu:</p>
+          <ol class="goal-list">
+            <li>✎ Tujuan pertama.</li>
+            <li>✎ Tujuan kedua.</li>
+          </ol>
+        </section>
+
+        <!-- ========================================== 2. MATERI -->
+        <section class="lesson-sec" id="materi" aria-labelledby="h-materi">
+          <p class="sec-no"><span>02</span> ✎ Nama bagian</p>
+          <h2 id="h-materi">✎ Judul bagian materi</h2>
+          <p><strong>✎ Definisi singkat.</strong> ✎ Penjelasan dengan bahasa sederhana.</p>
+
+          <!-- Kotak catatan; data-el="2|3|4" untuk warna lain -->
+          <div class="callout" data-el="2">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">✎ Judul catatan</p>
+              <p>✎ Isi catatan, perumpamaan, atau "Tahukah kamu?".</p>
+            </div>
+          </div>
+
+          <!-- Kartu kecil berjajar -->
+          <div class="card-grid">
+            <article class="mini-card">
+              <i class="bi bi-house" aria-hidden="true"></i>
+              <h4>✎ Judul kartu</h4>
+              <p>✎ Isi kartu.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-building" aria-hidden="true"></i>
+              <h4>✎ Judul kartu</h4>
+              <p>✎ Isi kartu.</p>
+            </article>
+          </div>
+
+          <!-- Langkah bernomor -->
+          <ol class="steps">
+            <li><h4>✎ Langkah pertama</h4><p>✎ Penjelasan.</p></li>
+            <li><h4>✎ Langkah kedua</h4><p>✎ Penjelasan.</p></li>
+          </ol>
+        </section>
+
+        <!-- ========================================== 3. KUIS -->
+        <section class="lesson-sec" id="cek-pemahaman" aria-labelledby="h-kuis">
+          <p class="sec-no"><span>03</span> Cek pemahaman</p>
+          <h2 id="h-kuis">Ayo uji pemahamanmu</h2>
+          <!-- Kuis: data-answer = nilai data-choice yang benar; data-explain = penjelasan -->
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis · ✎ Judul kuis</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 2</p><!-- ✎ jumlah soal -->
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="a" data-explain="✎ Penjelasan jawaban.">
+                <p class="quiz-text">✎ Pertanyaan pertama</p>
+                <div class="quiz-choices"><button type="button" data-choice="a">✎ Pilihan A</button><button type="button" data-choice="b">✎ Pilihan B</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="b" data-explain="✎ Penjelasan jawaban.">
+                <p class="quiz-text">✎ Pertanyaan kedua</p>
+                <div class="quiz-choices"><button type="button" data-choice="a">✎ Pilihan A</button><button type="button" data-choice="b">✎ Pilihan B</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 4. TUGAS -->
+        <section class="lesson-sec" id="tugas" aria-labelledby="h-tugas">
+          <p class="sec-no"><span>04</span> Tugas</p>
+          <h2 id="h-tugas">✎ Judul tugas</h2>
+          <div class="task">
+            <p class="task-label">✎ Kerjakan sendiri / bersama kelompokmu</p>
+            <h3>✎ Judul tantangan</h3>
+            <p>✎ Penjelasan singkat tugas.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-people" aria-hidden="true"></i> <span>✎ Jumlah anggota</span></li>
+              <li><i class="bi bi-easel" aria-hidden="true"></i> <span>✎ Produk yang dikumpulkan</span></li>
+            </ul>
+          </div>
+
+          <!-- Lembar kerja yang bisa dicetak: id unik + data-print="#id-yang-sama" -->
+          <div class="worksheet" id="lembar-kerja">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Kerja · ✎ Judul</h3>
+                <p>TP 0.0 ✎ Judul TP · Kelas VII</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-kerja"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar kerja</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Nama / Kelas</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">✎ Isian</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+          </div>
+        </section>
+
+        <!-- ========================================== 5. RANGKUMAN -->
+        <section class="lesson-sec" id="rangkuman" aria-labelledby="h-rangkuman">
+          <p class="sec-no"><span>05</span> Rangkuman &amp; refleksi</p>
+          <h2 id="h-rangkuman">Yang perlu kamu ingat</h2>
+          <div class="summary-grid">
+            <article class="mini-card"><i class="bi bi-star" aria-hidden="true"></i><h4>✎ Poin 1</h4><p>✎ Ringkasan.</p></article>
+            <article class="mini-card"><i class="bi bi-star" aria-hidden="true"></i><h4>✎ Poin 2</h4><p>✎ Ringkasan.</p></article>
+          </div>
+          <h3>Refleksi</h3>
+          <ol class="question-list">
+            <li>✎ Pertanyaan refleksi.</li>
+          </ol>
+        </section>
+
+        <!-- Tombol TP sebelumnya/berikutnya + sumber rujukan, dibuat otomatis dari data.js -->
+        <kka-tp-nav code="0.0"></kka-tp-nav><!-- ✎ kode TP, mis. 2.1 -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer bersama (isi ada di assets/js/layout.js) -->
+  <kka-footer></kka-footer>
+</body>
+</html>

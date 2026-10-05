@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Koding dan Kecerdasan Artifisial — SMP Negeri 1 Bandar Seikijang</title>
+  <meta name="description" content="Kurikulum mata pelajaran Koding dan Kecerdasan Artifisial (KKA) Fase D di SMP Negeri 1 Bandar Seikijang: elemen, capaian pembelajaran, dan alur tujuan pembelajaran Kelas VII sampai IX.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="Koding dan Kecerdasan Artifisial — SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:description" content="Elemen, capaian pembelajaran, dan alur tujuan pembelajaran KKA Fase D untuk Kelas VII, VIII, dan IX.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs (dipakai bersama oleh halaman TP, mis. 1-1.html) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <kka-header home><a href="#konten">Lewati ke konten utama</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <main id="konten">
+    <!-- =============================================== BERANDA -->
+    <section class="hero" id="beranda" aria-labelledby="judul-utama">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Kurikulum Fase D · Kelas VII–IX</p>
+          <h1 id="judul-utama">Koding dan <span class="grad">Kecerdasan Artifisial</span></h1>
+          <p class="hero-lead">Mata pelajaran yang membekali murid <strong>SMP Negeri 1 Bandar Seikijang</strong> untuk berpikir komputasional, berkarya dengan konten digital, serta memanfaatkan kecerdasan artifisial secara kritis, aman, dan beretika.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="#atp"><i class="bi bi-signpost-split" aria-hidden="true"></i> Jelajahi Alur TP</a>
+            <a class="btn btn-ghost-light" href="#elemen"><i class="bi bi-grid-1x2" aria-hidden="true"></i> Elemen &amp; Capaian</a>
+          </div>
+          <dl class="hero-stats">
+            <div><dt>Elemen</dt><dd>4</dd></div>
+            <div><dt>Tujuan Pembelajaran</dt><dd>38</dd></div>
+            <div><dt>Semester</dt><dd>6</dd></div>
+            <div><dt>Tingkat Kelas</dt><dd>3</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="code-card">
+            <div class="code-bar">
+              <span class="code-dots"><span></span><span></span><span></span></span>
+              <span class="code-file">alur_belajar.py</span>
+            </div>
+<pre class="code-body"><code><span class="t-c"># Alur belajar KKA · Fase D</span>
+<span class="t-k">for</span> kelas <span class="t-k">in</span> [<span class="t-s">"VII"</span>, <span class="t-s">"VIII"</span>, <span class="t-s">"IX"</span>]:
+    <span class="t-1">kelola</span>(data)
+    <span class="t-1">tulis</span>(instruksi)
+    <span class="t-2">produksi</span>(konten_digital)
+    <span class="t-3">pahami</span>(KA, etis=<span class="t-b">True</span>)
+    <span class="t-4">gunakan</span>(KA, kritis=<span class="t-b">True</span>)</code></pre>
+            <div class="code-out">
+              <span class="t-p">&gt;&gt;&gt;</span> jalankan()<br>
+              <span class="t-ok">✓ 38 tujuan pembelajaran siap dijelajahi</span><span class="caret"></span>
+            </div>
+          </div>
+          <div class="float-chip chip-a">
+            <span class="chip-ico"><i class="bi bi-stars"></i></span>
+            <span><strong>Input bermakna</strong><small>“Jelaskan grafik ini dengan bahasa yang sederhana.”</small></span>
+          </div>
+          <div class="float-chip chip-b">
+            <span class="chip-ico"><i class="bi bi-shield-check"></i></span>
+            <span><strong>Cek ulang hasil KA</strong><small>KA bisa keliru, bias, atau berhalusinasi.</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================ TENTANG -->
+    <section class="section" id="tentang" aria-labelledby="judul-tentang">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="kicker"><span>01</span> Tentang Mata Pelajaran</p>
+          <h2 id="judul-tentang">Mengenal Koding dan Kecerdasan Artifisial di SMP</h2>
+          <p>Bekal cara berpikir dan keterampilan agar murid mampu hidup, belajar, dan berkarya di tengah perkembangan teknologi digital.</p>
+        </header>
+
+        <div class="about-grid">
+          <div class="prose" data-reveal>
+            <p><strong>Koding dan Kecerdasan Artifisial (KKA)</strong> adalah mata pelajaran yang mengajak murid memahami cara kerja teknologi digital sekaligus belajar menggunakannya secara bijak. Melalui KKA, murid berlatih memecahkan masalah secara sistematis, berkarya dengan teknologi, dan memanfaatkan kecerdasan artifisial (KA) secara kritis, sehingga mereka tidak hanya menjadi pengguna, tetapi juga pencipta solusi.</p>
+            <p>Di jenjang SMP, KKA berada pada <strong>Fase D</strong> yang umumnya ditempuh di Kelas VII, VIII, dan IX. Pembelajarannya disusun bertahap: mulai dari mengelola data dan menuliskan instruksi, memproduksi konten digital seperti <i lang="en">slide</i>, infografis, audio, dan video, hingga memahami cara kerja, manfaat, risiko, dan etika penggunaan KA dalam kehidupan sehari-hari.</p>
+            <p>Murid juga dilatih bersikap kritis: KA adalah <strong>alat bantu</strong>, bukan pengganti berpikir. Karena KA masih mungkin menghasilkan keluaran yang salah, bias, atau berhalusinasi, murid belajar memeriksa ulang hasilnya, menjaga data pribadi, dan mengenali konten <i lang="en">deep fake</i>.</p>
+          </div>
+
+          <aside class="info-card" aria-labelledby="judul-identitas" data-reveal style="--d:1">
+            <h3 id="judul-identitas"><i class="bi bi-card-checklist" aria-hidden="true"></i> Identitas Mata Pelajaran</h3>
+            <dl class="info-list">
+              <div><dt>Mata Pelajaran</dt><dd>Koding dan Kecerdasan Artifisial (KKA)</dd></div>
+              <div><dt>Satuan Pendidikan</dt><dd>SMP Negeri 1 Bandar Seikijang</dd></div>
+              <div><dt>Fase / Jenjang</dt><dd>Fase D / Sekolah Menengah Pertama (SMP/MTs)</dd></div>
+              <div><dt>Kelas</dt><dd>Kelas VII, Kelas VIII, dan Kelas IX</dd></div>
+              <div><dt>Dokumen Rujukan</dt><dd><a href="#rujukan">Panduan Mata Pelajaran Koding dan Kecerdasan Artifisial, Perencanaan Pembelajaran Mendalam</a> (Pusat Kurikulum dan Pembelajaran, 2025, Hal. 70–73)</dd></div>
+            </dl>
+          </aside>
+        </div>
+
+        <div class="concept-grid">
+          <article class="concept" data-el="1" data-reveal>
+            <span class="concept-icon" aria-hidden="true"><i class="bi bi-code-slash"></i></span>
+            <h3>Apa itu koding?</h3>
+            <p>Koding adalah kegiatan menyusun instruksi langkah demi langkah agar komputer dapat menyelesaikan suatu tugas. Di KKA, koding dilatih lewat berpikir komputasional: memecah masalah, mengenali pola, dan merancang algoritma.</p>
+          </article>
+          <article class="concept" data-el="4" data-reveal style="--d:1">
+            <span class="concept-icon" aria-hidden="true"><i class="bi bi-cpu"></i></span>
+            <h3>Apa itu kecerdasan artifisial?</h3>
+            <p>Kecerdasan artifisial (KA) adalah teknologi yang memungkinkan komputer meniru sebagian kemampuan manusia, seperti mengenali gambar dan suara, memahami bahasa, hingga membuat teks atau gambar, dengan belajar dari data.</p>
+          </article>
+          <article class="concept" data-el="2" data-reveal style="--d:2">
+            <span class="concept-icon" aria-hidden="true"><i class="bi bi-lightbulb"></i></span>
+            <h3>Mengapa penting?</h3>
+            <p>Teknologi digital dan KA kini hadir di gawai, media sosial, hingga layanan publik. Bekal KKA membantu murid memanfaatkan peluangnya sekaligus melindungi diri dari dampak negatif seperti hoaks, penyalahgunaan data, dan konten palsu.</p>
+          </article>
+        </div>
+
+        <div class="deep" data-reveal>
+          <div class="deep-intro">
+            <p class="deep-kicker">Pendekatan</p>
+            <h3>Pembelajaran Mendalam</h3>
+            <p>Perencanaan pembelajaran KKA menggunakan pendekatan pembelajaran mendalam dengan tiga prinsip utama.</p>
+          </div>
+          <ul class="deep-items">
+            <li>
+              <i class="bi bi-bullseye" aria-hidden="true"></i>
+              <h4>Berkesadaran</h4>
+              <p>Murid memahami tujuan belajarnya, termotivasi, dan aktif mengatur cara belajarnya.</p>
+            </li>
+            <li>
+              <i class="bi bi-puzzle" aria-hidden="true"></i>
+              <h4>Bermakna</h4>
+              <p>Materi dikaitkan dengan masalah nyata di sekitar murid sehingga dapat langsung diterapkan.</p>
+            </li>
+            <li>
+              <i class="bi bi-emoji-smile" aria-hidden="true"></i>
+              <h4>Menggembirakan</h4>
+              <p>Suasana belajar yang positif, menantang, dan menyenangkan melalui eksplorasi dan kolaborasi.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================= ELEMEN -->
+    <section class="section section-alt" id="elemen" aria-labelledby="judul-elemen">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="kicker"><span>02</span> Capaian Pembelajaran Fase D</p>
+          <h2 id="judul-elemen">Elemen dan Deskripsi Mata Pelajaran</h2>
+          <p>Mata pelajaran KKA terdiri atas empat elemen. Pada akhir Fase D, murid diharapkan memiliki kemampuan berikut pada setiap elemen.</p>
+        </header>
+
+        <div class="element-grid">
+          <article class="element-card" data-el="1" data-reveal>
+            <div class="element-main">
+              <header class="element-head">
+                <span class="element-icon" aria-hidden="true"><i class="bi bi-diagram-3"></i></span>
+                <div>
+                  <p class="element-no">Elemen 1</p>
+                  <h3>Berpikir Komputasional</h3>
+                </div>
+              </header>
+              <div class="element-desc">
+                <p>Menerapkan pengelolaan data, pemecahan masalah sederhana dalam kehidupan masyarakat secara sistematis, dan menuliskan instruksi.</p>
+              </div>
+            </div>
+            <div class="element-side">
+              <p class="element-stat"><b>9</b> tujuan pembelajaran</p>
+              <p class="element-smt"><i class="bi bi-calendar-week" aria-hidden="true"></i> Semester 1 (Ganjil)</p>
+              <ul class="element-path" aria-label="Sebaran TP per kelas">
+                <li><span>Kelas VII</span><b>1.1–1.3</b></li>
+                <li><span>Kelas VIII</span><b>1.4–1.6</b></li>
+                <li><span>Kelas IX</span><b>1.7–1.9</b></li>
+              </ul>
+            </div>
+            <details class="tp-details">
+              <summary><span>Lihat 9 TP elemen ini</span><i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+              <ol class="tp-list">
+                <li><a href="1-1.html"><span class="tp-code">1.1</span><span>Memahami pengelolaan data dalam kehidupan masyarakat</span></a></li>
+                <li><a href="1-2.html"><span class="tp-code">1.2</span><span>Menerapkan pemecahan masalah sederhana dalam kehidupan masyarakat</span></a></li>
+                <li><a href="1-3.html"><span class="tp-code">1.3</span><span>Menerapkan pengembangan dan pengujian instruksi</span></a></li>
+                <li><a href="1-4.html"><span class="tp-code">1.4</span><span>Menerapkan pengolahan dan penyajian data dalam konteks yang lebih luas</span></a></li>
+                <li><a href="1-5.html"><span class="tp-code">1.5</span><span>Menerapkan langkah-langkah sistematis untuk menyelesaikan masalah</span></a></li>
+                <li><a href="1-6.html"><span class="tp-code">1.6</span><span>Menerapkan penyusunan dan perbaikan instruksi yang lebih kompleks</span></a></li>
+                <li><a href="1-7.html"><span class="tp-code">1.7</span><span>Menerapkan teknologi untuk mengolah data</span></a></li>
+                <li><a href="1-8.html"><span class="tp-code">1.8</span><span>Mengembangkan solusi efektif untuk permasalahan yang kompleks</span></a></li>
+                <li><a href="1-9.html"><span class="tp-code">1.9</span><span>Menuliskan instruksi menggunakan teknologi atau pemrograman dasar</span></a></li>
+              </ol>
+            </details>
+          </article>
+
+          <article class="element-card" data-el="2" data-reveal>
+            <div class="element-main">
+              <header class="element-head">
+                <span class="element-icon" aria-hidden="true"><i class="bi bi-camera-reels"></i></span>
+                <div>
+                  <p class="element-no">Elemen 2</p>
+                  <h3>Literasi Digital</h3>
+                </div>
+              </header>
+              <div class="element-desc">
+                <p>Memproduksi dan mendiseminasi konten digital berupa audio, video, slide, dan infografis.</p>
+              </div>
+            </div>
+            <div class="element-side">
+              <p class="element-stat"><b>13</b> tujuan pembelajaran</p>
+              <p class="element-smt"><i class="bi bi-calendar-week" aria-hidden="true"></i> Semester 1 (Ganjil)</p>
+              <ul class="element-path" aria-label="Sebaran TP per kelas">
+                <li><span>Kelas VII</span><b>2.1–2.4</b></li>
+                <li><span>Kelas VIII</span><b>2.5–2.9</b></li>
+                <li><span>Kelas IX</span><b>2.10–2.13</b></li>
+              </ul>
+            </div>
+            <details class="tp-details">
+              <summary><span>Lihat 13 TP elemen ini</span><i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+              <ol class="tp-list">
+                <li><a href="2-1.html"><span class="tp-code">2.1</span><span>Memahami konsep dasar konten digital</span></a></li>
+                <li><a href="2-2.html"><span class="tp-code">2.2</span><span>Menerapkan pengembangan ide dan cerita sederhana</span></a></li>
+                <li><a href="2-3.html"><span class="tp-code">2.3</span><span>Menerapkan penggunaan aplikasi dasar untuk produksi konten digital berupa <i lang="en">slide</i> dan infografis</span></a></li>
+                <li><a href="2-4.html"><span class="tp-code">2.4</span><span>Menerapkan tata letak visual yang menarik dalam produksi konten digital</span></a></li>
+                <li><a href="2-5.html"><span class="tp-code">2.5</span><span>Menerapkan teknik produksi dan <i lang="en">editing</i></span></a></li>
+                <li><a href="2-6.html"><span class="tp-code">2.6</span><span>Menerapkan aplikasi dasar untuk produksi konten digital berupa audio dan video</span></a></li>
+                <li><a href="2-7.html"><span class="tp-code">2.7</span><span>Menerapkan teknik <i lang="en">storytelling</i> digital</span></a></li>
+                <li><a href="2-8.html"><span class="tp-code">2.8</span><span>Memahami aspek etika dan hak cipta</span></a></li>
+                <li><a href="2-9.html"><span class="tp-code">2.9</span><span>Menerapkan diseminasi konten melalui <i lang="en">platform</i> digital</span></a></li>
+                <li><a href="2-10.html"><span class="tp-code">2.10</span><span>Menerapkan produksi konten digital yang kompleks dan inovatif</span></a></li>
+                <li><a href="2-11.html"><span class="tp-code">2.11</span><span>Menerapkan <i lang="en">editing</i> lanjutan</span></a></li>
+                <li><a href="2-12.html"><span class="tp-code">2.12</span><span>Mengevaluasi kualitas konten digital</span></a></li>
+                <li><a href="2-13.html"><span class="tp-code">2.13</span><span>Menerapkan strategi diseminasi konten digital yang efektif</span></a></li>
+              </ol>
+            </details>
+          </article>
+
+          <article class="element-card" data-el="3" data-reveal>
+            <div class="element-main">
+              <header class="element-head">
+                <span class="element-icon" aria-hidden="true"><i class="bi bi-shield-check"></i></span>
+                <div>
+                  <p class="element-no">Elemen 3</p>
+                  <h3>Literasi dan Etika Kecerdasan Artifisial</h3>
+                </div>
+              </header>
+              <div class="element-desc">
+                <p>Memahami perbedaan cara manusia dan KA menggabungkan informasi dari beberapa perangkat penginderaan atau sensor, memahami bagaimana komputer memaknai informasi dari perangkat penginderaan atau sensor, memahami kualitas data, serta manfaat dan dampak KA pada kehidupan masyarakat.</p>
+                <p>Memahami etika penggunaan KA dalam kehidupan sehari-hari seperti menjaga data pribadi dalam menggunakan KA, KA adalah sebagai alat bantu sehingga manusia tidak boleh tergantung dan percaya sepenuhnya pada KA karena KA masih sangat mungkin menghasilkan output yang salah, bias, atau melakukan halusinasi, serta menganalisis konten <i lang="en">deep fake</i> dalam bentuk gambar, audio, atau video.</p>
+              </div>
+            </div>
+            <div class="element-side">
+              <p class="element-stat"><b>9</b> tujuan pembelajaran</p>
+              <p class="element-smt"><i class="bi bi-calendar-week" aria-hidden="true"></i> Semester 2 (Genap)</p>
+              <ul class="element-path" aria-label="Sebaran TP per kelas">
+                <li><span>Kelas VII</span><b>3.1–3.3</b></li>
+                <li><span>Kelas VIII</span><b>3.4–3.6</b></li>
+                <li><span>Kelas IX</span><b>3.7–3.9</b></li>
+              </ul>
+            </div>
+            <details class="tp-details">
+              <summary><span>Lihat 9 TP elemen ini</span><i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+              <ol class="tp-list">
+                <li><a href="3-1.html"><span class="tp-code">3.1</span><span>Memahami konsep dan cara kerja Kecerdasan Artifisial Generatif</span></a></li>
+                <li><a href="3-2.html"><span class="tp-code">3.2</span><span>Memahami risiko Kecerdasan Artifisial Generatif</span></a></li>
+                <li><a href="3-3.html"><span class="tp-code">3.3</span><span>Memahami manfaat dan dampak Kecerdasan Artifisial Generatif</span></a></li>
+                <li><a href="3-4.html"><span class="tp-code">3.4</span><span>Memahami Kecerdasan Artifisial sebagai alat bantu manusia</span></a></li>
+                <li><a href="3-5.html"><span class="tp-code">3.5</span><span>Memahami perbedaan cara manusia dan Kecerdasan Artifisial menggabungkan informasi</span></a></li>
+                <li><a href="3-6.html"><span class="tp-code">3.6</span><span>Memahami pemanfaatan perangkat penginderaan oleh Kecerdasan Artifisial</span></a></li>
+                <li><a href="3-7.html"><span class="tp-code">3.7</span><span>Menganalisis kualitas data</span></a></li>
+                <li><a href="3-8.html"><span class="tp-code">3.8</span><span>Menerapkan keamanan data dalam pemanfaatan Kecerdasan Artifisial</span></a></li>
+                <li><a href="3-9.html"><span class="tp-code">3.9</span><span>Menganalisis artefak hasil Kecerdasan Artifisial berupa konten <i lang="en">deep fake</i> dalam bentuk gambar, audio, atau video</span></a></li>
+              </ol>
+            </details>
+          </article>
+
+          <article class="element-card" data-el="4" data-reveal>
+            <div class="element-main">
+              <header class="element-head">
+                <span class="element-icon" aria-hidden="true"><i class="bi bi-robot"></i></span>
+                <div>
+                  <p class="element-no">Elemen 4</p>
+                  <h3>Pemanfaatan dan Pengembangan Kecerdasan Artifisial</h3>
+                </div>
+              </header>
+              <div class="element-desc">
+                <p>Menggunakan perangkat KA sederhana dengan kritis dan mampu menuliskan input bermakna ke dalam sistem KA.</p>
+              </div>
+            </div>
+            <div class="element-side">
+              <p class="element-stat"><b>7</b> tujuan pembelajaran</p>
+              <p class="element-smt"><i class="bi bi-calendar-week" aria-hidden="true"></i> Semester 2 (Genap)</p>
+              <ul class="element-path" aria-label="Sebaran TP per kelas">
+                <li><span>Kelas VII</span><b>4.1–4.2</b></li>
+                <li><span>Kelas VIII</span><b>4.3–4.5</b></li>
+                <li><span>Kelas IX</span><b>4.6–4.7</b></li>
+              </ul>
+            </div>
+            <details class="tp-details">
+              <summary><span>Lihat 7 TP elemen ini</span><i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+              <ol class="tp-list">
+                <li><a href="4-1.html"><span class="tp-code">4.1</span><span>Memahami perangkat Kecerdasan Artifisial sederhana</span></a></li>
+                <li><a href="4-2.html"><span class="tp-code">4.2</span><span>Menerapkan input bermakna ke dalam sistem Kecerdasan Artifisial</span></a></li>
+                <li><a href="4-3.html"><span class="tp-code">4.3</span><span>Menerapkan data latih dalam pengembangan Kecerdasan Artifisial</span></a></li>
+                <li><a href="4-4.html"><span class="tp-code">4.4</span><span>Menganalisis pemanfaatan Kecerdasan Artifisial pada <i lang="en">platform</i> tertentu</span></a></li>
+                <li><a href="4-5.html"><span class="tp-code">4.5</span><span>Menerapkan eksperimen klasifikasi oleh Kecerdasan Artifisial</span></a></li>
+                <li><a href="4-6.html"><span class="tp-code">4.6</span><span>Memahami pemanfaatan Kecerdasan Artifisial di berbagai bidang</span></a></li>
+                <li><a href="4-7.html"><span class="tp-code">4.7</span><span>Menerapkan pengembangan konten digital dengan memanfaatkan Kecerdasan Artifisial</span></a></li>
+              </ol>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================== PETA TP -->
+    <section class="section" id="peta" aria-labelledby="judul-peta">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="kicker"><span>03</span> Peta Tujuan Pembelajaran</p>
+          <h2 id="judul-peta">Sebaran TP per Elemen dan Semester</h2>
+          <p>Matriks ini memperlihatkan kapan setiap elemen dipelajari selama tiga tahun di SMP. Klik kode TP untuk membuka halamannya.</p>
+        </header>
+
+        <div class="matrix-wrap" role="region" aria-labelledby="judul-peta" tabindex="0" data-reveal>
+          <table class="matrix">
+            <caption class="sr-only">Sebaran kode tujuan pembelajaran menurut elemen, kelas, dan semester</caption>
+            <thead>
+              <tr>
+                <th scope="col" rowspan="2" class="m-corner">Elemen</th>
+                <th scope="colgroup" colspan="2" class="m-kelas">Kelas VII<span>12 TP</span></th>
+                <th scope="colgroup" colspan="2" class="m-kelas">Kelas VIII<span>14 TP</span></th>
+                <th scope="colgroup" colspan="2" class="m-kelas">Kelas IX<span>12 TP</span></th>
+              </tr>
+              <tr>
+                <th scope="col" class="m-smt m-start">Smt 1</th>
+                <th scope="col" class="m-smt">Smt 2</th>
+                <th scope="col" class="m-smt m-start">Smt 1</th>
+                <th scope="col" class="m-smt">Smt 2</th>
+                <th scope="col" class="m-smt m-start">Smt 1</th>
+                <th scope="col" class="m-smt">Smt 2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-el="1">
+                <th scope="row"><span class="m-el"><span>Berpikir Komputasional<small>9 TP</small></span></span></th>
+                <td class="m-start">
+                  <div class="m-chips">
+                    <a class="chip-code" href="1-1.html" title="1.1 Memahami pengelolaan data dalam kehidupan masyarakat">1.1</a>
+                    <a class="chip-code" href="1-2.html" title="1.2 Menerapkan pemecahan masalah sederhana dalam kehidupan masyarakat">1.2</a>
+                    <a class="chip-code" href="1-3.html" title="1.3 Menerapkan pengembangan dan pengujian instruksi">1.3</a>
+                  </div>
+                </td>
+                <td class="is-empty"><span aria-hidden="true">—</span><span class="sr-only">Tidak ada TP</span></td>
+                <td class="m-start">
+                  <div class="m-chips">
+                    <a class="chip-code" href="1-4.html" title="1.4 Menerapkan pengolahan dan penyajian data dalam konteks yang lebih luas">1.4</a>
+                    <a class="chip-code" href="1-5.html" title="1.5 Menerapkan langkah-langkah sistematis untuk menyelesaikan masalah">1.5</a>
+                    <a class="chip-code" href="1-6.html" title="1.6 Menerapkan penyusunan dan perbaikan instruksi yang lebih kompleks">1.6</a>
+                  </div>
+                </td>
+                <td class="is-empty"><span aria-hidden="true">—</span><span class="sr-only">Tidak ada TP</span></td>
+                <td class="m-start">
+                  <div class="m-chips">
+                    <a class="chip-code" href="1-7.html" title="1.7 Menerapkan teknologi untuk mengolah data">1.7</a>
+                    <a class="chip-code" href="1-8.html" title="1.8 Mengembangkan solusi efektif untuk permasalahan yang kompleks">1.8</a>
+                    <a class="chip-code" href="1-9.html" title="1.9 Menuliskan instruksi menggunakan teknologi atau pemrograman dasar">1.9</a>
+                  </div>
+                </td>
+                <td class="is-empty"><span aria-hidden="true">—</span><span class="sr-only">Tidak ada TP</span></td>
+              </tr>
+              <tr data-el="2">
+                <th scope="row"><span class="m-el"><span>Literasi Digital<small>13 TP</small></span></span></th>
+                <td class="m-start">
+                  <div class="m-chips">
+                    <a class="chip-code" href="2-1.html" title="2.1 Memahami konsep dasar konten digital">2.1</a>
+                    <a class="chip-code" href="2-2.html" title="2.2 Menerapkan pengembangan ide dan cerita sederhana">2.2</a>
+                    <a class="chip-code" href="2-3.html" title="2.3 Menerapkan penggunaan aplikasi dasar untuk produksi konten digital berupa slide dan infografis">2.3</a>
+                    <a class="chip-code" href="2-4.html" title="2.4 Menerapkan tata letak visual yang menarik dalam produksi konten digital">2.4</a>
+                  </div>
+                </td>
+                <td class="is-empty"><span aria-hidden="true">—</span><span class="sr-only">Tidak ada TP</span></td>
+                <td class="m-start">
+                  <div class="m-chips">
+                    <a class="chip-code" href="2-5.html" title="2.5 Menerapkan teknik produksi dan editing">2.5</a>
+                    <a class="chip-code" href="2-6.html" title="2.6 Menerapkan aplikasi dasar untuk produksi konten digital berupa audio dan video">2.6</a>
+                    <a class="chip-code" href="2-7.html" title="2.7 Menerapkan teknik storytelling digital">2.7</a>
+                    <a class="chip-code" href="2-8.html" title="2.8 Memahami aspek etika dan hak cipta">2.8</a>
+                    <a class="chip-code" href="2-9.html" title="2.9 Menerapkan diseminasi konten melalui platform digital">2.9</a>
+                  </div>
+                </td>
+                <td class="is-empty"><span aria-hidden="true">—</span><span class="sr-only">Tidak ada TP</span></td>
+                <td class="m-start">
+                  <div class="m-chips">
+                    <a class="chip-code" href="2-10.html" title="2.10 Menerapkan produksi konten digital yang kompleks dan inovatif">2.10</a>
+                    <a class="chip-code" href="2-11.html" title="2.11 Menerapkan editing lanjutan">2.11</a>
+                    <a class="chip-code" href="2-12.html" title="2.12 Mengevaluasi kualitas konten digital">2.12</a>
+                    <a class="chip-code" href="2-13.html" title="2.13 Menerapkan strategi diseminasi konten digital yang efektif">2.13</a>
+                  </div>
+                </td>
+                <td class="is-empty"><span aria-hidden="true">—</span><span class="sr-only">Tidak ada TP</span></td>
+              </tr>
+              <tr data-el="3">
+                <th scope="row"><span class="m-el"><span>Literasi dan Etika Kecerdasan Artifisial<small>9 TP</small></span></span></th>
+                <td class="is-empty m-start"><span aria-hidden="true">—</span><span class="sr-only">Tidak ada TP</span></td>
+                <td>
+                  <div class="m-chips">
+                    <a class="chip-code" href="3-1.html" title="3.1 Memahami konsep dan cara kerja Kecerdasan Artifisial Generatif">3.1</a>
+                    <a class="chip-code" href="3-2.html" title="3.2 Memahami risiko Kecerdasan Artifisial Generatif">3.2</a>
+                    <a class="chip-code" href="3-3.html" title="3.3 Memahami manfaat dan dampak Kecerdasan Artifisial Generatif">3.3</a>
+                  </div>
+                </td>
+                <td class="is-empty m-start"><span aria-hidden="true">—</span><span class="sr-only">Tidak ada TP</span></td>
+                <td>
+                  <div class="m-chips">
+                    <a class="chip-code" href="3-4.html" title="3.4 Memahami Kecerdasan Artifisial sebagai alat bantu manusia">3.4</a>
+                    <a class="chip-code" href="3-5.html" title="3.5 Memahami perbedaan cara manusia dan Kecerdasan Artifisial menggabungkan informasi">3.5</a>
+                    <a class="chip-code" href="3-6.html" title="3.6 Memahami pemanfaatan perangkat penginderaan oleh Kecerdasan Artifisial">3.6</a>
+                  </div>
+                </td>
+                <td class="is-empty m-start"><span aria-hidden="true">—</span><span class="sr-only">Tidak ada TP</span></td>
+                <td>
+                  <div class="m-chips">
+                    <a class="chip-code" href="3-7.html" title="3.7 Menganalisis kualitas data">3.7</a>
+                    <a class="chip-code" href="3-8.html" title="3.8 Menerapkan keamanan data dalam pemanfaatan Kecerdasan Artifisial">3.8</a>
+                    <a class="chip-code" href="3-9.html" title="3.9 Menganalisis artefak hasil Kecerdasan Artifisial berupa konten deep fake dalam bentuk gambar, audio, atau video">3.9</a>
+                  </div>
+                </td>
+              </tr>
+              <tr data-el="4">
+                <th scope="row"><span class="m-el"><span>Pemanfaatan dan Pengembangan Kecerdasan Artifisial<small>7 TP</small></span></span></th>
+                <td class="is-empty m-start"><span aria-hidden="true">—</span><span class="sr-only">Tidak ada TP</span></td>
+                <td>
+                  <div class="m-chips">
+                    <a class="chip-code" href="4-1.html" title="4.1 Memahami perangkat Kecerdasan Artifisial sederhana">4.1</a>
+                    <a class="chip-code" href="4-2.html" title="4.2 Menerapkan input bermakna ke dalam sistem Kecerdasan Artifisial">4.2</a>
+                  </div>
+                </td>
+                <td class="is-empty m-start"><span aria-hidden="true">—</span><span class="sr-only">Tidak ada TP</span></td>
+                <td>
+                  <div class="m-chips">
+                    <a class="chip-code" href="4-3.html" title="4.3 Menerapkan data latih dalam pengembangan Kecerdasan Artifisial">4.3</a>
+                    <a class="chip-code" href="4-4.html" title="4.4 Menganalisis pemanfaatan Kecerdasan Artifisial pada platform tertentu">4.4</a>
+                    <a class="chip-code" href="4-5.html" title="4.5 Menerapkan eksperimen klasifikasi oleh Kecerdasan Artifisial">4.5</a>
+                  </div>
+                </td>
+                <td class="is-empty m-start"><span aria-hidden="true">—</span><span class="sr-only">Tidak ada TP</span></td>
+                <td>
+                  <div class="m-chips">
+                    <a class="chip-code" href="4-6.html" title="4.6 Memahami pemanfaatan Kecerdasan Artifisial di berbagai bidang">4.6</a>
+                    <a class="chip-code" href="4-7.html" title="4.7 Menerapkan pengembangan konten digital dengan memanfaatkan Kecerdasan Artifisial">4.7</a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">Jumlah TP</th>
+                <td class="m-start">7 TP</td>
+                <td>5 TP</td>
+                <td class="m-start">8 TP</td>
+                <td>6 TP</td>
+                <td class="m-start">7 TP</td>
+                <td>5 TP</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="matrix-hint"><i class="bi bi-arrow-left-right" aria-hidden="true"></i> Geser tabel ke samping untuk melihat semua semester.</p>
+
+        <div class="insight-grid">
+          <article class="insight" data-reveal>
+            <p class="insight-label"><span class="insight-dots" aria-hidden="true"><span data-el="1"></span><span data-el="2"></span></span>Semester 1 · Ganjil</p>
+            <h3>Berpikir Komputasional &amp; Literasi Digital</h3>
+            <p>Murid mengasah logika, mengolah data, menyusun instruksi, serta memproduksi dan menyebarkan konten digital.</p>
+          </article>
+          <article class="insight" data-reveal style="--d:1">
+            <p class="insight-label"><span class="insight-dots" aria-hidden="true"><span data-el="3"></span><span data-el="4"></span></span>Semester 2 · Genap</p>
+            <h3>Literasi, Etika, dan Pemanfaatan KA</h3>
+            <p>Murid mengenal cara kerja KA, menimbang manfaat dan risikonya, lalu memanfaatkannya secara kritis dan aman.</p>
+          </article>
+          <article class="insight" data-reveal style="--d:2">
+            <p class="insight-label"><span class="insight-dots" aria-hidden="true"><span data-el="1"></span><span data-el="2"></span><span data-el="3"></span><span data-el="4"></span></span>Kelas VII → IX</p>
+            <h3>Berjenjang setiap tahun</h3>
+            <p>Setiap elemen dipelajari kembali di kelas berikutnya dengan tuntutan yang meningkat: dari memahami dan menerapkan hingga menganalisis, mengevaluasi, dan mengembangkan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================= ALUR TUJUAN PEMBELAJARAN -->
+    <section class="section section-alt" id="atp" aria-labelledby="judul-atp">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="kicker"><span>04</span> Alur Tujuan Pembelajaran</p>
+          <h2 id="judul-atp">Alur TP Kelas VII Semester 1 sampai Kelas IX Semester 2</h2>
+          <p>Alur tujuan pembelajaran (ATP) adalah rangkaian tujuan pembelajaran yang disusun runtut dari awal hingga akhir fase. Klik salah satu TP untuk membuka halamannya. Kode TP berformat <code>Elemen.Urutan</code>; misalnya TP <code>1.1</code> dibuka di halaman <code>1-1.html</code>.</p>
+        </header>
+
+        <div class="atp-tools js-only">
+          <div class="atp-toolbar">
+            <div class="seg" role="group" aria-label="Tampilkan kelas">
+              <button type="button" data-kelas-btn="semua" aria-pressed="true">Semua kelas</button>
+              <button type="button" data-kelas-btn="7" aria-pressed="false">Kelas VII</button>
+              <button type="button" data-kelas-btn="8" aria-pressed="false">Kelas VIII</button>
+              <button type="button" data-kelas-btn="9" aria-pressed="false">Kelas IX</button>
+            </div>
+            <div class="search">
+              <label class="sr-only" for="cari-tp">Cari tujuan pembelajaran</label>
+              <i class="bi bi-search" aria-hidden="true"></i>
+              <input id="cari-tp" type="search" placeholder="Cari TP, mis. data, video, deep fake, 2.10" autocomplete="off">
+            </div>
+          </div>
+          <div class="legend" role="group" aria-label="Saring menurut elemen">
+            <button type="button" class="legend-chip" data-el="1" data-el-btn="1" aria-pressed="false">Berpikir Komputasional</button>
+            <button type="button" class="legend-chip" data-el="2" data-el-btn="2" aria-pressed="false">Literasi Digital</button>
+            <button type="button" class="legend-chip" data-el="3" data-el-btn="3" aria-pressed="false">Literasi &amp; Etika KA</button>
+            <button type="button" class="legend-chip" data-el="4" data-el-btn="4" aria-pressed="false">Pemanfaatan &amp; Pengembangan KA</button>
+          </div>
+          <div class="atp-status">
+            <p data-atp-status aria-live="polite">Menampilkan 38 dari 38 tujuan pembelajaran</p>
+            <button type="button" class="link-btn" data-atp-reset hidden><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Atur ulang</button>
+          </div>
+        </div>
+
+        <div class="years">
+          <section class="year" id="kelas-7" data-kelas="7" aria-labelledby="judul-kelas-7">
+            <div class="year-rail" aria-hidden="true"><span class="year-badge">VII</span></div>
+            <div class="year-body">
+              <header class="year-head">
+                <span class="year-badge-sm" aria-hidden="true">VII</span>
+                <div>
+                  <p class="year-kicker">Tahun ke-1 · 12 TP</p>
+                  <h3 id="judul-kelas-7">Kelas VII</h3>
+                  <p class="year-theme">Fondasi: mengelola data, menyusun dan menguji instruksi, membuat <i lang="en">slide</i> dan infografis, serta mengenal kecerdasan artifisial generatif.</p>
+                </div>
+              </header>
+              <div class="semesters">
+                <div class="semester" data-semester="1">
+                  <h4 class="semester-head"><span>Semester 1 <small>Ganjil</small></span><span class="semester-count" data-total="7">7 TP</span></h4>
+                  <ol class="atp-list">
+                    <li class="atp-item" data-el="1" data-code="1.1">
+                      <a href="1-1.html">
+                        <span class="atp-code">1.1</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Memahami pengelolaan data dalam kehidupan masyarakat</span>
+                          <span class="atp-el">Berpikir Komputasional</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="1" data-code="1.2">
+                      <a href="1-2.html">
+                        <span class="atp-code">1.2</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan pemecahan masalah sederhana dalam kehidupan masyarakat</span>
+                          <span class="atp-el">Berpikir Komputasional</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="1" data-code="1.3">
+                      <a href="1-3.html">
+                        <span class="atp-code">1.3</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan pengembangan dan pengujian instruksi</span>
+                          <span class="atp-el">Berpikir Komputasional</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="2" data-code="2.1">
+                      <a href="2-1.html">
+                        <span class="atp-code">2.1</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Memahami konsep dasar konten digital</span>
+                          <span class="atp-el">Literasi Digital</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="2" data-code="2.2">
+                      <a href="2-2.html">
+                        <span class="atp-code">2.2</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan pengembangan ide dan cerita sederhana</span>
+                          <span class="atp-el">Literasi Digital</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="2" data-code="2.3">
+                      <a href="2-3.html">
+                        <span class="atp-code">2.3</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan penggunaan aplikasi dasar untuk produksi konten digital berupa <i lang="en">slide</i> dan infografis</span>
+                          <span class="atp-el">Literasi Digital</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="2" data-code="2.4">
+                      <a href="2-4.html">
+                        <span class="atp-code">2.4</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan tata letak visual yang menarik dalam produksi konten digital</span>
+                          <span class="atp-el">Literasi Digital</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ol>
+                </div>
+                <div class="semester" data-semester="2">
+                  <h4 class="semester-head"><span>Semester 2 <small>Genap</small></span><span class="semester-count" data-total="5">5 TP</span></h4>
+                  <ol class="atp-list">
+                    <li class="atp-item" data-el="4" data-code="4.1">
+                      <a href="4-1.html">
+                        <span class="atp-code">4.1</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Memahami perangkat Kecerdasan Artifisial sederhana</span>
+                          <span class="atp-el">Pemanfaatan &amp; Pengembangan KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="4" data-code="4.2">
+                      <a href="4-2.html">
+                        <span class="atp-code">4.2</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan input bermakna ke dalam sistem Kecerdasan Artifisial</span>
+                          <span class="atp-el">Pemanfaatan &amp; Pengembangan KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="3" data-code="3.1">
+                      <a href="3-1.html">
+                        <span class="atp-code">3.1</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Memahami konsep dan cara kerja Kecerdasan Artifisial Generatif</span>
+                          <span class="atp-el">Literasi &amp; Etika KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="3" data-code="3.2">
+                      <a href="3-2.html">
+                        <span class="atp-code">3.2</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Memahami risiko Kecerdasan Artifisial Generatif</span>
+                          <span class="atp-el">Literasi &amp; Etika KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="3" data-code="3.3">
+                      <a href="3-3.html">
+                        <span class="atp-code">3.3</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Memahami manfaat dan dampak Kecerdasan Artifisial Generatif</span>
+                          <span class="atp-el">Literasi &amp; Etika KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="year" id="kelas-8" data-kelas="8" aria-labelledby="judul-kelas-8">
+            <div class="year-rail" aria-hidden="true"><span class="year-badge">VIII</span></div>
+            <div class="year-body">
+              <header class="year-head">
+                <span class="year-badge-sm" aria-hidden="true">VIII</span>
+                <div>
+                  <p class="year-kicker">Tahun ke-2 · 14 TP</p>
+                  <h3 id="judul-kelas-8">Kelas VIII</h3>
+                  <p class="year-theme">Pendalaman: mengolah dan menyajikan data, memproduksi audio dan video, <i lang="en">storytelling</i> digital, serta bereksperimen dengan data latih KA.</p>
+                </div>
+              </header>
+              <div class="semesters">
+                <div class="semester" data-semester="1">
+                  <h4 class="semester-head"><span>Semester 1 <small>Ganjil</small></span><span class="semester-count" data-total="8">8 TP</span></h4>
+                  <ol class="atp-list">
+                    <li class="atp-item" data-el="1" data-code="1.4">
+                      <a href="1-4.html">
+                        <span class="atp-code">1.4</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan pengolahan dan penyajian data dalam konteks yang lebih luas</span>
+                          <span class="atp-el">Berpikir Komputasional</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="1" data-code="1.5">
+                      <a href="1-5.html">
+                        <span class="atp-code">1.5</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan langkah-langkah sistematis untuk menyelesaikan masalah</span>
+                          <span class="atp-el">Berpikir Komputasional</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="1" data-code="1.6">
+                      <a href="1-6.html">
+                        <span class="atp-code">1.6</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan penyusunan dan perbaikan instruksi yang lebih kompleks</span>
+                          <span class="atp-el">Berpikir Komputasional</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="2" data-code="2.5">
+                      <a href="2-5.html">
+                        <span class="atp-code">2.5</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan teknik produksi dan <i lang="en">editing</i></span>
+                          <span class="atp-el">Literasi Digital</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="2" data-code="2.6">
+                      <a href="2-6.html">
+                        <span class="atp-code">2.6</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan aplikasi dasar untuk produksi konten digital berupa audio dan video</span>
+                          <span class="atp-el">Literasi Digital</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="2" data-code="2.7">
+                      <a href="2-7.html">
+                        <span class="atp-code">2.7</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan teknik <i lang="en">storytelling</i> digital</span>
+                          <span class="atp-el">Literasi Digital</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="2" data-code="2.8">
+                      <a href="2-8.html">
+                        <span class="atp-code">2.8</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Memahami aspek etika dan hak cipta</span>
+                          <span class="atp-el">Literasi Digital</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="2" data-code="2.9">
+                      <a href="2-9.html">
+                        <span class="atp-code">2.9</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan diseminasi konten melalui <i lang="en">platform</i> digital</span>
+                          <span class="atp-el">Literasi Digital</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ol>
+                </div>
+                <div class="semester" data-semester="2">
+                  <h4 class="semester-head"><span>Semester 2 <small>Genap</small></span><span class="semester-count" data-total="6">6 TP</span></h4>
+                  <ol class="atp-list">
+                    <li class="atp-item" data-el="3" data-code="3.4">
+                      <a href="3-4.html">
+                        <span class="atp-code">3.4</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Memahami Kecerdasan Artifisial sebagai alat bantu manusia</span>
+                          <span class="atp-el">Literasi &amp; Etika KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="3" data-code="3.5">
+                      <a href="3-5.html">
+                        <span class="atp-code">3.5</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Memahami perbedaan cara manusia dan Kecerdasan Artifisial menggabungkan informasi</span>
+                          <span class="atp-el">Literasi &amp; Etika KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="3" data-code="3.6">
+                      <a href="3-6.html">
+                        <span class="atp-code">3.6</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Memahami pemanfaatan perangkat penginderaan oleh Kecerdasan Artifisial</span>
+                          <span class="atp-el">Literasi &amp; Etika KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="4" data-code="4.3">
+                      <a href="4-3.html">
+                        <span class="atp-code">4.3</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan data latih dalam pengembangan Kecerdasan Artifisial</span>
+                          <span class="atp-el">Pemanfaatan &amp; Pengembangan KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="4" data-code="4.4">
+                      <a href="4-4.html">
+                        <span class="atp-code">4.4</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menganalisis pemanfaatan Kecerdasan Artifisial pada <i lang="en">platform</i> tertentu</span>
+                          <span class="atp-el">Pemanfaatan &amp; Pengembangan KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="4" data-code="4.5">
+                      <a href="4-5.html">
+                        <span class="atp-code">4.5</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan eksperimen klasifikasi oleh Kecerdasan Artifisial</span>
+                          <span class="atp-el">Pemanfaatan &amp; Pengembangan KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="year" id="kelas-9" data-kelas="9" aria-labelledby="judul-kelas-9">
+            <div class="year-rail" aria-hidden="true"><span class="year-badge">IX</span></div>
+            <div class="year-body">
+              <header class="year-head">
+                <span class="year-badge-sm" aria-hidden="true">IX</span>
+                <div>
+                  <p class="year-kicker">Tahun ke-3 · 12 TP</p>
+                  <h3 id="judul-kelas-9">Kelas IX</h3>
+                  <p class="year-theme">Penguatan: solusi untuk masalah kompleks, pemrograman dasar, konten digital inovatif, keamanan data, dan analisis <i lang="en">deep fake</i>.</p>
+                </div>
+              </header>
+              <div class="semesters">
+                <div class="semester" data-semester="1">
+                  <h4 class="semester-head"><span>Semester 1 <small>Ganjil</small></span><span class="semester-count" data-total="7">7 TP</span></h4>
+                  <ol class="atp-list">
+                    <li class="atp-item" data-el="1" data-code="1.7">
+                      <a href="1-7.html">
+                        <span class="atp-code">1.7</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan teknologi untuk mengolah data</span>
+                          <span class="atp-el">Berpikir Komputasional</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="1" data-code="1.8">
+                      <a href="1-8.html">
+                        <span class="atp-code">1.8</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Mengembangkan solusi efektif untuk permasalahan yang kompleks</span>
+                          <span class="atp-el">Berpikir Komputasional</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="1" data-code="1.9">
+                      <a href="1-9.html">
+                        <span class="atp-code">1.9</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menuliskan instruksi menggunakan teknologi atau pemrograman dasar</span>
+                          <span class="atp-el">Berpikir Komputasional</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="2" data-code="2.10">
+                      <a href="2-10.html">
+                        <span class="atp-code">2.10</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan produksi konten digital yang kompleks dan inovatif</span>
+                          <span class="atp-el">Literasi Digital</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="2" data-code="2.11">
+                      <a href="2-11.html">
+                        <span class="atp-code">2.11</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan <i lang="en">editing</i> lanjutan</span>
+                          <span class="atp-el">Literasi Digital</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="2" data-code="2.12">
+                      <a href="2-12.html">
+                        <span class="atp-code">2.12</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Mengevaluasi kualitas konten digital</span>
+                          <span class="atp-el">Literasi Digital</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="2" data-code="2.13">
+                      <a href="2-13.html">
+                        <span class="atp-code">2.13</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan strategi diseminasi konten digital yang efektif</span>
+                          <span class="atp-el">Literasi Digital</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ol>
+                </div>
+                <div class="semester" data-semester="2">
+                  <h4 class="semester-head"><span>Semester 2 <small>Genap</small></span><span class="semester-count" data-total="5">5 TP</span></h4>
+                  <ol class="atp-list">
+                    <li class="atp-item" data-el="3" data-code="3.7">
+                      <a href="3-7.html">
+                        <span class="atp-code">3.7</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menganalisis kualitas data</span>
+                          <span class="atp-el">Literasi &amp; Etika KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="3" data-code="3.8">
+                      <a href="3-8.html">
+                        <span class="atp-code">3.8</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan keamanan data dalam pemanfaatan Kecerdasan Artifisial</span>
+                          <span class="atp-el">Literasi &amp; Etika KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="3" data-code="3.9">
+                      <a href="3-9.html">
+                        <span class="atp-code">3.9</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menganalisis artefak hasil Kecerdasan Artifisial berupa konten <i lang="en">deep fake</i> dalam bentuk gambar, audio, atau video</span>
+                          <span class="atp-el">Literasi &amp; Etika KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="4" data-code="4.6">
+                      <a href="4-6.html">
+                        <span class="atp-code">4.6</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Memahami pemanfaatan Kecerdasan Artifisial di berbagai bidang</span>
+                          <span class="atp-el">Pemanfaatan &amp; Pengembangan KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="atp-item" data-el="4" data-code="4.7">
+                      <a href="4-7.html">
+                        <span class="atp-code">4.7</span>
+                        <span class="atp-text">
+                          <span class="atp-title">Menerapkan pengembangan konten digital dengan memanfaatkan Kecerdasan Artifisial</span>
+                          <span class="atp-el">Pemanfaatan &amp; Pengembangan KA</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short atp-go" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="atp-empty" data-atp-empty hidden>
+          <i class="bi bi-search" aria-hidden="true"></i>
+          <p><strong>TP tidak ditemukan.</strong> Coba kata kunci lain atau atur ulang filter.</p>
+          <button type="button" class="btn btn-ink" data-atp-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Atur ulang filter</button>
+        </div>
+
+        <p class="atp-note"><i class="bi bi-info-circle" aria-hidden="true"></i> <span>Materi yang sudah tersedia: <b data-ready-count>3</b> dari 38 TP. Halaman materi lainnya sedang disiapkan dan akan dilengkapi secara bertahap.</span></p>
+      </div>
+    </section>
+
+    <!-- ================================================ RUJUKAN -->
+    <section class="section" id="rujukan" aria-labelledby="judul-rujukan">
+      <div class="container">
+        <div class="ref" data-reveal>
+          <div class="ref-icon" aria-hidden="true"><i class="bi bi-journal-bookmark-fill"></i></div>
+          <div class="ref-body">
+            <p class="kicker"><span>05</span> Rujukan</p>
+            <h2 id="judul-rujukan">Dokumen Rujukan Kurikulum</h2>
+            <p>Elemen, capaian pembelajaran, tujuan pembelajaran (TP), dan alur tujuan pembelajaran (ATP) pada situs ini disusun dengan merujuk pada dokumen berikut.</p>
+
+            <div class="citation">
+              <p class="citation-title"><cite>Panduan Mata Pelajaran Koding dan Kecerdasan Artifisial, Perencanaan Pembelajaran Mendalam</cite></p>
+              <ul class="ref-meta">
+                <li><i class="bi bi-building" aria-hidden="true"></i> Pusat Kurikulum dan Pembelajaran</li>
+                <li><i class="bi bi-calendar3" aria-hidden="true"></i> 2025</li>
+                <li><i class="bi bi-file-earmark-text" aria-hidden="true"></i> Hal. 70–73</li>
+              </ul>
+              <p class="citation-text"><b>Cara mengutip:</b> Panduan Mata Pelajaran Koding dan Kecerdasan Artifisial, Perencanaan Pembelajaran Mendalam (Pusat Kurikulum dan Pembelajaran, 2025, Hal. 70–73)</p>
+            </div>
+
+            <ul class="ref-notes">
+              <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Bagian yang dirujuk: “Contoh Alur Tujuan Pembelajaran Koding dan KA Fase D (Kelas 7–9)” pada hal. 70–73.</span></li>
+              <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Deskripsi setiap elemen sesuai dengan Capaian Pembelajaran Koding dan Kecerdasan Artifisial Fase D.</span></li>
+              <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Urutan TP mengikuti panduan tersebut. Pada situs ini, ATP setiap kelas dibagi ke dalam Semester 1 dan Semester 2, dan setiap TP diberi kode <code>Elemen.Urutan</code> agar mudah dirujuk.</span></li>
+            </ul>
+
+            <button type="button" class="btn btn-ink js-only" data-copy="Panduan Mata Pelajaran Koding dan Kecerdasan Artifisial, Perencanaan Pembelajaran Mendalam (Pusat Kurikulum dan Pembelajaran, 2025, Hal. 70–73)">
+              <i class="bi bi-clipboard" aria-hidden="true"></i> <span data-copy-label aria-live="polite">Salin sitasi</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <kka-footer></kka-footer>
+</body>
+</html>

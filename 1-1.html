@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP 1.1 Memahami Pengelolaan Data — Koding dan KA SMPN 1 Bandar Seikijang</title>
+  <meta name="description" content="Materi TP 1.1 Koding dan Kecerdasan Artifisial Kelas VII: pengenalan data, jenis data di masyarakat, serta cara mengumpulkan dan mencatat data, dilengkapi kuis dan tugas kelompok.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="TP 1.1 Memahami Pengelolaan Data dalam Kehidupan Masyarakat">
+  <meta property="og:description" content="Pengenalan data, jenis data di masyarakat, serta pengumpulan dan pencatatan data untuk murid Kelas VII.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs: style.css (umum) + lesson.css (halaman materi) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/lesson.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lesson.js" defer></script>
+</head>
+<body>
+  <kka-header active="atp"><a href="index.html">Beranda</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <main id="konten" data-el="1">
+    <!-- =============================================== JUDUL TP -->
+    <section class="hero hero--tp" aria-labelledby="judul-tp">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Lokasi halaman">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#atp">Alur TP</a></li>
+            <li><a href="index.html#kelas-7">Kelas VII</a></li>
+            <li><span aria-current="page">TP 1.1</span></li>
+          </ol>
+        </nav>
+        <div class="tp-badges">
+          <span class="tp-badge tp-badge--code">TP 1.1</span>
+          <span class="tp-badge"><i class="bi bi-diagram-3" aria-hidden="true"></i> Elemen 1 · Berpikir Komputasional</span>
+          <span class="tp-badge"><i class="bi bi-calendar-week" aria-hidden="true"></i> Kelas VII · Semester 1</span>
+        </div>
+        <h1 id="judul-tp">Memahami Pengelolaan Data dalam Kehidupan Masyarakat</h1>
+        <p class="hero-lead">Setiap hari kita bertemu data: harga cabai di pasar, jumlah murid di kelas, sampai berat badan adik di posyandu. Di halaman ini kamu akan belajar mengenal data, membedakan jenisnya, lalu mengumpulkan dan mencatatnya dengan rapi.</p>
+        <ul class="tp-meta">
+          <li><i class="bi bi-book" aria-hidden="true"></i> <span>Pengenalan data, jenis data, pengumpulan &amp; pencatatan</span></li>
+          <li><i class="bi bi-patch-question" aria-hidden="true"></i> <span>Kuis dengan jawaban langsung</span></li>
+          <li><i class="bi bi-people" aria-hidden="true"></i> <span>Tugas kelompok: Detektif Data Sekolah</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container lesson">
+      <!-- Daftar isi -->
+      <nav class="toc" aria-labelledby="judul-toc">
+        <p class="toc-title" id="judul-toc">Daftar isi</p>
+        <ol>
+          <li><a href="#tujuan">Tujuan belajar</a></li>
+          <li><a href="#pemantik">Ayo berpikir dulu</a></li>
+          <li><a href="#apa-itu-data">Apa itu data?</a></li>
+          <li><a href="#jenis-data">Jenis data</a></li>
+          <li><a href="#mengumpulkan">Mengumpulkan data</a></li>
+          <li><a href="#mencatat">Mencatat data</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+          <li><a href="#tugas-kelompok">Tugas kelompok</a></li>
+          <li><a href="#rangkuman">Rangkuman &amp; refleksi</a></li>
+        </ol>
+      </nav>
+
+      <div class="lesson-body">
+        <!-- ========================================== 1. TUJUAN -->
+        <section class="lesson-sec" id="tujuan" aria-labelledby="h-tujuan">
+          <p class="sec-no"><span>01</span> Tujuan belajar</p>
+          <h2 id="h-tujuan">Apa yang akan kamu pelajari?</h2>
+          <p>Setelah mempelajari halaman ini, kamu diharapkan mampu:</p>
+          <ol class="goal-list">
+            <li>Menjelaskan apa itu data dengan kata-katamu sendiri dan memberi contoh data di sekitarmu.</li>
+            <li>Membedakan data dengan informasi.</li>
+            <li>Membedakan jenis data: kualitatif dan kuantitatif, serta primer dan sekunder.</li>
+            <li>Memilih cara mengumpulkan data yang tepat: pengamatan, wawancara, angket, atau membaca dokumen.</li>
+            <li>Mencatat data dengan rapi menggunakan turus dan tabel.</li>
+          </ol>
+        </section>
+
+        <!-- ========================================== 2. PEMANTIK -->
+        <section class="lesson-sec" id="pemantik" aria-labelledby="h-pemantik">
+          <p class="sec-no"><span>02</span> Ayo berpikir dulu</p>
+          <h2 id="h-pemantik">Masalah di kantin Bu Sari</h2>
+          <div class="story">
+            <p class="story-label"><i class="bi bi-chat-quote" aria-hidden="true"></i> Cerita</p>
+            <p><strong>Bu Sari</strong>, pemilik kantin sekolah, sering bingung. Kadang gorengan sudah habis sebelum istirahat kedua, tetapi nasi bungkus malah banyak yang tersisa dan akhirnya terbuang. Bu Sari ingin tahu makanan apa yang paling disukai murid supaya tidak ada lagi makanan yang terbuang sia-sia.</p>
+          </div>
+          <p>Coba pikirkan pertanyaan berikut:</p>
+          <ol class="question-list">
+            <li>Keterangan apa yang perlu Bu Sari ketahui?</li>
+            <li>Bagaimana cara Bu Sari mendapatkan keterangan itu?</li>
+            <li>Setelah keterangan terkumpul, bagaimana cara mencatatnya agar tidak lupa?</li>
+          </ol>
+          <div class="callout">
+            <i class="bi bi-people" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Diskusi berpasangan (5 menit)</p>
+              <p>Tulis jawabanmu di buku catatan, lalu bandingkan dengan teman sebangku. Simpan jawaban kalian, karena materi di bawah ini akan membantu menjawabnya!</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 3. APA ITU DATA -->
+        <section class="lesson-sec" id="apa-itu-data" aria-labelledby="h-data">
+          <p class="sec-no"><span>03</span> Pengenalan data</p>
+          <h2 id="h-data">Apa itu data?</h2>
+          <p><strong>Data adalah kumpulan fakta atau keterangan tentang sesuatu.</strong> Data bisa berupa angka, kata, gambar, atau suara.</p>
+          <p>Contohnya, saat guru memanggil nama kalian satu per satu ketika absen, guru sedang mengumpulkan <strong>data kehadiran</strong>. Hasilnya ditulis di daftar hadir: siapa yang hadir, sakit, izin, atau tidak ada keterangan.</p>
+
+          <h3>Data dan informasi itu berbeda</h3>
+          <p>Data masih berupa bahan mentah. Setelah data diolah, misalnya dihitung, dibandingkan, atau disimpulkan, kita mendapatkan <strong>informasi</strong> yang bermakna dan bisa dipakai.</p>
+          <div class="compare">
+            <div class="compare-card">
+              <p class="compare-label">Data (bahan mentah)</p>
+              <ul>
+                <li>Hadir: 28 murid</li>
+                <li>Sakit: 2 murid</li>
+                <li>Izin: 1 murid</li>
+                <li>Tanpa keterangan: 1 murid</li>
+              </ul>
+            </div>
+            <div class="compare-arrow" aria-hidden="true"><i class="bi bi-arrow-right-circle"></i></div>
+            <div class="compare-card compare-card--info">
+              <p class="compare-label">Informasi (sudah diolah)</p>
+              <p>Hari ini hampir semua murid kelas VII-A hadir. Hanya <strong>4 dari 32 murid</strong> yang tidak masuk sekolah.</p>
+            </div>
+          </div>
+          <div class="callout" data-el="2">
+            <i class="bi bi-egg-fried" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Ibaratnya memasak</p>
+              <p>Data itu seperti bahan masakan: beras, telur, dan bawang. Informasi itu seperti nasi goreng yang sudah matang dan siap disantap. Bahan saja belum bisa dimakan, harus diolah dulu!</p>
+            </div>
+          </div>
+
+          <h3>Data ada di mana-mana</h3>
+          <p>Tanpa kita sadari, data ada di sekitar kita setiap hari.</p>
+          <div class="card-grid">
+            <article class="mini-card">
+              <i class="bi bi-house" aria-hidden="true"></i>
+              <h4>Di rumah</h4>
+              <p>Tagihan listrik, daftar belanja, jadwal piket keluarga.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-building" aria-hidden="true"></i>
+              <h4>Di sekolah</h4>
+              <p>Daftar hadir, nilai rapor, jumlah murid tiap kelas.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-shop" aria-hidden="true"></i>
+              <h4>Di pasar</h4>
+              <p>Harga barang, barang yang paling laku, jumlah pembeli.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+              <h4>Di posyandu &amp; puskesmas</h4>
+              <p>Berat dan tinggi badan balita, jadwal imunisasi.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-houses" aria-hidden="true"></i>
+              <h4>Di kantor desa/kelurahan</h4>
+              <p>Jumlah penduduk, jumlah keluarga, data kelahiran.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-phone" aria-hidden="true"></i>
+              <h4>Di gawai</h4>
+              <p>Jumlah langkah kaki, prakiraan cuaca, jumlah penonton video.</p>
+            </article>
+          </div>
+
+          <h3>Mengapa data penting?</h3>
+          <p>Data membantu kita mengambil keputusan yang tepat, bukan hanya menebak-nebak. Contohnya:</p>
+          <ul class="bullets">
+            <li>Posyandu tahu balita mana yang perlu tambahan gizi dari catatan berat badannya.</li>
+            <li>Pedagang tahu barang apa yang perlu ditambah stoknya.</li>
+            <li>Sekolah bisa menyiapkan bangku dan buku sesuai jumlah murid.</li>
+            <li>Bu Sari bisa memasak makanan yang paling disukai murid sehingga tidak ada yang terbuang.</li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 4. JENIS DATA -->
+        <section class="lesson-sec" id="jenis-data" aria-labelledby="h-jenis">
+          <p class="sec-no"><span>04</span> Jenis data di masyarakat</p>
+          <h2 id="h-jenis">Mengenal jenis-jenis data</h2>
+          <p>Data bisa dikelompokkan dengan beberapa cara. Dua cara yang paling sering dipakai adalah berdasarkan <strong>bentuknya</strong> dan berdasarkan <strong>cara mendapatkannya</strong>.</p>
+
+          <h3>1. Berdasarkan bentuknya</h3>
+          <div class="type-grid">
+            <article class="type-card" data-el="4">
+              <h4><i class="bi bi-chat-square-text" aria-hidden="true"></i> Data kualitatif</h4>
+              <p>Data berupa <strong>kata, sifat, atau kelompok</strong> (kategori). Data ini tidak didapat dari menghitung atau mengukur.</p>
+              <ul class="chips-row" aria-label="Contoh data kualitatif">
+                <li>Warna favorit</li>
+                <li>Cara berangkat ke sekolah</li>
+                <li>Pendapat tentang rasa makanan</li>
+                <li>Jenis pekerjaan orang tua</li>
+                <li>Nama jajanan di kantin</li>
+              </ul>
+            </article>
+            <article class="type-card" data-el="1">
+              <h4><i class="bi bi-123" aria-hidden="true"></i> Data kuantitatif</h4>
+              <p>Data berupa <strong>angka</strong> yang didapat dari <strong>menghitung atau mengukur</strong>.</p>
+              <ul class="chips-row" aria-label="Contoh data kuantitatif">
+                <li>Jumlah murid di kelas</li>
+                <li>Tinggi badan (cm)</li>
+                <li>Harga beras per kg</li>
+                <li>Suhu udara (°C)</li>
+                <li>Lama tidur (jam)</li>
+              </ul>
+            </article>
+          </div>
+          <div class="callout" data-el="2">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Trik cepat membedakannya</p>
+              <p>Tanyakan "berapa banyak?" atau "berapa ukurannya?". Jika jawabannya angka hasil menghitung atau mengukur, itu data kuantitatif.</p>
+              <p><strong>Hati-hati:</strong> nomor rumah, nomor HP, dan NISN memang berupa angka, tetapi hanya sebagai tanda pengenal. Angka-angka itu tidak untuk dihitung atau dijumlahkan, jadi termasuk data kualitatif.</p>
+            </div>
+          </div>
+          <div class="callout" data-el="4">
+            <i class="bi bi-stars" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Tahukah kamu?</p>
+              <p>Data kuantitatif masih dibagi dua. <strong>Data diskrit</strong> didapat dari menghitung, jadi hasilnya bilangan bulat. Contohnya jumlah saudara: 2 orang (tidak mungkin 2,5 orang). <strong>Data kontinu</strong> didapat dari mengukur dan boleh berupa pecahan. Contohnya tinggi badan 152,5 cm.</p>
+            </div>
+          </div>
+
+          <h3>2. Berdasarkan cara mendapatkannya</h3>
+          <div class="type-grid">
+            <article class="type-card" data-el="3">
+              <h4><i class="bi bi-person-raised-hand" aria-hidden="true"></i> Data primer</h4>
+              <p>Data yang <strong>kamu kumpulkan sendiri</strong> secara langsung dari sumbernya.</p>
+              <ul class="chips-row" aria-label="Contoh data primer">
+                <li>Hasil wawancara dengan pedagang</li>
+                <li>Hasil angket teman sekelas</li>
+                <li>Menghitung kendaraan sendiri</li>
+              </ul>
+            </article>
+            <article class="type-card" data-el="2">
+              <h4><i class="bi bi-journal-text" aria-hidden="true"></i> Data sekunder</h4>
+              <p>Data yang <strong>sudah dikumpulkan orang atau lembaga lain</strong>, lalu kamu gunakan.</p>
+              <ul class="chips-row" aria-label="Contoh data sekunder">
+                <li>Jumlah penduduk dari Badan Pusat Statistik (BPS)</li>
+                <li>Jumlah murid dari tata usaha sekolah</li>
+                <li>Data dari buku atau berita</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Contoh mengenali jenis data<small>Satu data bisa dilihat dari bentuk dan cara mendapatkannya sekaligus.</small></caption>
+              <thead>
+                <tr><th scope="col">Data</th><th scope="col">Bentuk</th><th scope="col">Cara mendapatkan</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Tinggi badan teman sekelas yang kamu ukur sendiri</td><td><span class="tag-pill" data-el="1">Kuantitatif</span></td><td><span class="tag-pill" data-el="3">Primer</span></td></tr>
+                <tr><td>Jajanan favorit hasil angket di kelasmu</td><td><span class="tag-pill" data-el="4">Kualitatif</span></td><td><span class="tag-pill" data-el="3">Primer</span></td></tr>
+                <tr><td>Jumlah penduduk kecamatan dari situs BPS</td><td><span class="tag-pill" data-el="1">Kuantitatif</span></td><td><span class="tag-pill" data-el="2">Sekunder</span></td></tr>
+                <tr><td>Jenis pekerjaan warga dari catatan kantor desa</td><td><span class="tag-pill" data-el="4">Kualitatif</span></td><td><span class="tag-pill" data-el="2">Sekunder</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ========================================== 5. MENGUMPULKAN -->
+        <section class="lesson-sec" id="mengumpulkan" aria-labelledby="h-kumpul">
+          <p class="sec-no"><span>05</span> Pengumpulan data</p>
+          <h2 id="h-kumpul">Bagaimana cara mengumpulkan data?</h2>
+          <p>Ada beberapa cara mengumpulkan data. Pilih cara yang paling cocok dengan data yang ingin kamu ketahui. Orang yang memberikan jawaban disebut <strong>responden</strong>, sedangkan orang yang kita wawancarai disebut <strong>narasumber</strong>.</p>
+          <div class="card-grid">
+            <article class="mini-card">
+              <i class="bi bi-eye" aria-hidden="true"></i>
+              <h4>Pengamatan (observasi)</h4>
+              <p>Melihat, mendengar, atau menghitung langsung tanpa bertanya.</p>
+              <dl>
+                <dt>Contoh</dt><dd>Menghitung jenis sampah di tempat sampah kelas.</dd>
+                <dt>Cocok untuk</dt><dd>Data yang bisa dilihat langsung.</dd>
+              </dl>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-mic" aria-hidden="true"></i>
+              <h4>Wawancara</h4>
+              <p>Bertanya langsung kepada narasumber secara lisan.</p>
+              <dl>
+                <dt>Contoh</dt><dd>Bertanya kepada pedagang tentang barang yang paling laku.</dd>
+                <dt>Cocok untuk</dt><dd>Mengetahui alasan atau cerita secara mendalam.</dd>
+              </dl>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-ui-checks" aria-hidden="true"></i>
+              <h4>Angket (kuesioner)</h4>
+              <p>Daftar pertanyaan tertulis yang diisi responden, di kertas atau formulir daring seperti Google Formulir.</p>
+              <dl>
+                <dt>Contoh</dt><dd>Survei jajanan favorit satu kelas.</dd>
+                <dt>Cocok untuk</dt><dd>Mengumpulkan data dari banyak orang sekaligus.</dd>
+              </dl>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-folder2-open" aria-hidden="true"></i>
+              <h4>Studi dokumen</h4>
+              <p>Membaca catatan atau dokumen yang sudah ada.</p>
+              <dl>
+                <dt>Contoh</dt><dd>Melihat daftar hadir untuk mengetahui jumlah murid yang sakit bulan ini.</dd>
+                <dt>Cocok untuk</dt><dd>Data yang sudah pernah dicatat orang lain (data sekunder).</dd>
+              </dl>
+            </article>
+          </div>
+
+          <h3>Langkah-langkah mengumpulkan data</h3>
+          <ol class="steps">
+            <li><h4>Tentukan tujuan</h4><p>Apa yang ingin kamu ketahui? Tuliskan dalam satu pertanyaan, misalnya "Jajanan apa yang paling disukai murid kelas VII?"</p></li>
+            <li><h4>Tentukan sumber data</h4><p>Siapa atau apa yang menjadi sumber datanya, dan berapa banyak? Misalnya 30 murid kelas VII.</p></li>
+            <li><h4>Pilih cara mengumpulkan</h4><p>Pengamatan, wawancara, angket, atau studi dokumen.</p></li>
+            <li><h4>Siapkan alat</h4><p>Buat lembar pencatatan atau daftar pertanyaan, lalu siapkan alat tulis.</p></li>
+            <li><h4>Kumpulkan data</h4><p>Lakukan dengan sopan, teliti, dan jujur.</p></li>
+            <li><h4>Periksa kembali</h4><p>Pastikan tidak ada data yang terlewat atau tercatat dua kali.</p></li>
+          </ol>
+
+          <div class="callout" data-el="3">
+            <i class="bi bi-shield-check" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Etika mengumpulkan data</p>
+              <ul class="bullets">
+                <li><strong>Minta izin</strong> dan jelaskan tujuanmu sebelum bertanya.</li>
+                <li><strong>Jujur:</strong> catat apa adanya, jangan mengarang atau mengubah data.</li>
+                <li><strong>Jaga data pribadi:</strong> jangan menyebarkan nama, alamat, atau nomor HP responden. Gunakan inisial jika perlu.</li>
+                <li><strong>Hormati</strong> orang yang tidak mau menjawab.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 6. MENCATAT -->
+        <section class="lesson-sec" id="mencatat" aria-labelledby="h-catat">
+          <p class="sec-no"><span>06</span> Pencatatan data</p>
+          <h2 id="h-catat">Mencatat data dengan rapi</h2>
+          <p>Data yang sudah dikumpulkan harus dicatat dengan rapi agar tidak hilang, tidak lupa, dan mudah diolah menjadi informasi.</p>
+
+          <h3>Mencatat dengan turus</h3>
+          <p><strong>Turus</strong> adalah garis-garis kecil untuk menghitung dengan cepat. Setiap ada satu data, buat satu garis tegak. Garis kelima dibuat miring dan mencoret empat garis sebelumnya, sehingga satu kelompok berisi 5. Dengan begitu, kita tinggal menghitung per lima.</p>
+          <ul class="tally-demo">
+            <li><span class="tally" data-tally="1">1</span> = <b>1</b></li>
+            <li><span class="tally" data-tally="3">3</span> = <b>3</b></li>
+            <li><span class="tally" data-tally="5">5</span> = <b>5</b></li>
+            <li><span class="tally" data-tally="8">8</span> = <b>8</b></li>
+            <li><span class="tally" data-tally="12">12</span> = <b>12</b></li>
+          </ul>
+
+          <h3>Memindahkan turus ke tabel</h3>
+          <p>Setelah semua data terkumpul, hitung turusnya dan tulis jumlahnya di tabel. Perhatikan contoh hasil angket berikut.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Cara Berangkat ke Sekolah Murid Kelas VII-A<small>Contoh data · dikumpulkan dengan angket · 32 responden</small></caption>
+              <thead>
+                <tr><th scope="col">Cara berangkat</th><th scope="col">Turus</th><th scope="col" class="num">Jumlah murid</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Jalan kaki</td><td><span class="tally" data-tally="8">8</span></td><td class="num">8</td></tr>
+                <tr><td>Bersepeda</td><td><span class="tally" data-tally="6">6</span></td><td class="num">6</td></tr>
+                <tr><td>Diantar sepeda motor</td><td><span class="tally" data-tally="13">13</span></td><td class="num">13</td></tr>
+                <tr><td>Naik angkutan atau mobil</td><td><span class="tally" data-tally="5">5</span></td><td class="num">5</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><th scope="row" colspan="2">Jumlah</th><td class="num">32</td></tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="callout">
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Informasi yang didapat</p>
+              <p>Cara berangkat yang paling banyak dipilih adalah <strong>diantar sepeda motor</strong> (13 dari 32 murid). Yang paling sedikit adalah <strong>naik angkutan atau mobil</strong> (5 murid).</p>
+            </div>
+          </div>
+
+          <h3>Tips mencatat data dengan rapi</h3>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Beri <strong>judul</strong> yang jelas: data apa dan dari siapa.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Tulis <strong>tanggal dan tempat</strong> pengambilan data.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Tulis <strong>satuannya</strong>, misalnya cm, kg, rupiah, atau orang.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Hitung ulang.</strong> Jumlah semua kategori harus sama dengan jumlah responden.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Simpan</strong> catatan di tempat yang aman, misalnya buku khusus atau lembar kerja (<i lang="en">spreadsheet</i>) seperti Google Spreadsheet atau Microsoft Excel.</span></li>
+          </ul>
+
+          <h3>Coba sendiri: penghitung turus digital</h3>
+          <div class="counter js-only" data-tally-counter>
+            <div class="counter-head">
+              <i class="bi bi-hand-index-thumb" aria-hidden="true"></i>
+              <div>
+                <h4>Penghitung Turus</h4>
+                <p>Ganti nama kategori sesuai topikmu, lalu tekan <strong>+</strong> setiap ada satu jawaban. Alat ini bisa kalian pakai saat tugas kelompok.</p>
+              </div>
+            </div>
+            <ul class="counter-list">
+              <li class="counter-row" data-count="0">
+                <input class="counter-name" type="text" value="Jalan kaki" aria-label="Nama kategori">
+                <span class="counter-tally tally" aria-hidden="true"></span>
+                <output class="counter-num">0</output>
+                <button type="button" class="counter-btn" data-dec>−</button>
+                <button type="button" class="counter-btn counter-btn--plus" data-inc>+</button>
+              </li>
+              <li class="counter-row" data-count="0">
+                <input class="counter-name" type="text" value="Bersepeda" aria-label="Nama kategori">
+                <span class="counter-tally tally" aria-hidden="true"></span>
+                <output class="counter-num">0</output>
+                <button type="button" class="counter-btn" data-dec>−</button>
+                <button type="button" class="counter-btn counter-btn--plus" data-inc>+</button>
+              </li>
+              <li class="counter-row" data-count="0">
+                <input class="counter-name" type="text" value="Diantar sepeda motor" aria-label="Nama kategori">
+                <span class="counter-tally tally" aria-hidden="true"></span>
+                <output class="counter-num">0</output>
+                <button type="button" class="counter-btn" data-dec>−</button>
+                <button type="button" class="counter-btn counter-btn--plus" data-inc>+</button>
+              </li>
+              <li class="counter-row" data-count="0">
+                <input class="counter-name" type="text" value="Naik angkutan atau mobil" aria-label="Nama kategori">
+                <span class="counter-tally tally" aria-hidden="true"></span>
+                <output class="counter-num">0</output>
+                <button type="button" class="counter-btn" data-dec>−</button>
+                <button type="button" class="counter-btn counter-btn--plus" data-inc>+</button>
+              </li>
+            </ul>
+            <div class="counter-foot">
+              <p class="counter-total" aria-live="polite">Jumlah semua: <b data-total>0</b></p>
+              <div class="counter-actions">
+                <button type="button" class="link-btn" data-add-row><i class="bi bi-plus-lg" aria-hidden="true"></i> Tambah kategori</button>
+                <button type="button" class="link-btn" data-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Mulai dari nol</button>
+              </div>
+            </div>
+            <p class="counter-note">Hasil hitungan tidak disimpan. Salin ke lembar kerja sebelum menutup halaman.</p>
+          </div>
+        </section>
+
+        <!-- ========================================== 7. KUIS -->
+        <section class="lesson-sec" id="cek-pemahaman" aria-labelledby="h-kuis">
+          <p class="sec-no"><span>07</span> Cek pemahaman</p>
+          <h2 id="h-kuis">Ayo uji pemahamanmu</h2>
+          <p>Pilih jawaban yang menurutmu tepat. Penjelasannya akan langsung muncul.</p>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis A · Kualitatif atau kuantitatif?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 8</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="kualitatif" data-explain="Warna berupa kata atau kategori, bukan hasil menghitung.">
+                <p class="quiz-text">Warna seragam olahraga kelasmu</p>
+                <div class="quiz-choices"><button type="button" data-choice="kualitatif">Kualitatif</button><button type="button" data-choice="kuantitatif">Kuantitatif</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="kuantitatif" data-explain="Didapat dari menghitung, dan hasilnya berupa angka.">
+                <p class="quiz-text">Jumlah murid di kelas VII-A</p>
+                <div class="quiz-choices"><button type="button" data-choice="kualitatif">Kualitatif</button><button type="button" data-choice="kuantitatif">Kuantitatif</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="kuantitatif" data-explain="Didapat dari mengukur dengan meteran.">
+                <p class="quiz-text">Tinggi badan teman sebangkumu</p>
+                <div class="quiz-choices"><button type="button" data-choice="kualitatif">Kualitatif</button><button type="button" data-choice="kuantitatif">Kuantitatif</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="kualitatif" data-explain="Jawabannya berupa nama makanan.">
+                <p class="quiz-text">Jajanan favorit di kantin</p>
+                <div class="quiz-choices"><button type="button" data-choice="kualitatif">Kualitatif</button><button type="button" data-choice="kuantitatif">Kuantitatif</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="kuantitatif" data-explain="Harga berupa angka yang bisa dibandingkan dan dijumlahkan.">
+                <p class="quiz-text">Harga 1 kilogram beras di pasar</p>
+                <div class="quiz-choices"><button type="button" data-choice="kualitatif">Kualitatif</button><button type="button" data-choice="kuantitatif">Kuantitatif</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="kualitatif" data-explain="Pendapat berupa kata-kata, misalnya bersih, cukup bersih, atau kotor.">
+                <p class="quiz-text">Pendapat warga tentang kebersihan taman desa</p>
+                <div class="quiz-choices"><button type="button" data-choice="kualitatif">Kualitatif</button><button type="button" data-choice="kuantitatif">Kuantitatif</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="kualitatif" data-explain="Angka NISN hanya tanda pengenal, tidak untuk dihitung atau dijumlahkan.">
+                <p class="quiz-text">Nomor Induk Siswa Nasional (NISN)</p>
+                <div class="quiz-choices"><button type="button" data-choice="kualitatif">Kualitatif</button><button type="button" data-choice="kuantitatif">Kuantitatif</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="kuantitatif" data-explain="Didapat dari mengukur dengan termometer.">
+                <p class="quiz-text">Suhu udara siang ini</p>
+                <div class="quiz-choices"><button type="button" data-choice="kualitatif">Kualitatif</button><button type="button" data-choice="kuantitatif">Kuantitatif</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis B · Cara mengumpulkan data yang paling tepat</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 4</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="pengamatan" data-explain="Kendaraan bisa dilihat dan dihitung langsung tanpa perlu bertanya.">
+                <p class="quiz-text">Kamu ingin tahu berapa banyak kendaraan yang lewat di jalan depan sekolah selama 15 menit.</p>
+                <div class="quiz-choices"><button type="button" data-choice="pengamatan">Pengamatan</button><button type="button" data-choice="wawancara">Wawancara</button><button type="button" data-choice="angket">Angket</button><button type="button" data-choice="dokumen">Studi dokumen</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="wawancara" data-explain="Alasan adalah cerita yang paling baik digali lewat tanya jawab langsung.">
+                <p class="quiz-text">Kamu ingin tahu alasan Pak Budi memilih berjualan sayur di pasar pagi.</p>
+                <div class="quiz-choices"><button type="button" data-choice="pengamatan">Pengamatan</button><button type="button" data-choice="wawancara">Wawancara</button><button type="button" data-choice="angket">Angket</button><button type="button" data-choice="dokumen">Studi dokumen</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="angket" data-explain="Angket bisa diisi banyak orang sekaligus dengan cepat.">
+                <p class="quiz-text">Kamu ingin tahu olahraga favorit dari 120 murid kelas VII.</p>
+                <div class="quiz-choices"><button type="button" data-choice="pengamatan">Pengamatan</button><button type="button" data-choice="wawancara">Wawancara</button><button type="button" data-choice="angket">Angket</button><button type="button" data-choice="dokumen">Studi dokumen</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="dokumen" data-explain="Data itu sudah tercatat di bagian tata usaha sekolah, jadi cukup dibaca dari dokumennya.">
+                <p class="quiz-text">Kamu ingin tahu jumlah murid baru di sekolahmu selama tiga tahun terakhir.</p>
+                <div class="quiz-choices"><button type="button" data-choice="pengamatan">Pengamatan</button><button type="button" data-choice="wawancara">Wawancara</button><button type="button" data-choice="angket">Angket</button><button type="button" data-choice="dokumen">Studi dokumen</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 8. TUGAS KELOMPOK -->
+        <section class="lesson-sec" id="tugas-kelompok" aria-labelledby="h-tugas">
+          <p class="sec-no"><span>08</span> Tugas kelompok</p>
+          <h2 id="h-tugas">Proyek mini: Detektif Data Sekolah</h2>
+
+          <div class="task">
+            <p class="task-label">Kerjakan bersama kelompokmu</p>
+            <h3>Jadilah detektif data!</h3>
+            <p>Bersama kelompokmu, kumpulkan data dari warga sekolah, catat dengan rapi, lalu ubah menjadi informasi yang berguna. Siapa tahu hasil kalian bisa membantu sekolah atau kantin mengambil keputusan!</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-people" aria-hidden="true"></i> <span>4–5 orang per kelompok</span></li>
+              <li><i class="bi bi-person-check" aria-hidden="true"></i> <span>Minimal 20 responden atau 15 menit pengamatan</span></li>
+              <li><i class="bi bi-file-earmark-text" aria-hidden="true"></i> <span>Produk: lembar kerja + poster atau slide sederhana</span></li>
+              <li><i class="bi bi-easel" aria-hidden="true"></i> <span>Presentasi 3–5 menit</span></li>
+            </ul>
+          </div>
+
+          <h3>Langkah 1 · Pilih satu topik</h3>
+          <p>Setiap kelompok memilih topik yang berbeda. Kelompok boleh mengusulkan topik lain asalkan disetujui guru.</p>
+          <div class="card-grid">
+            <article class="mini-card topic-card">
+              <span class="topic-code" aria-hidden="true">A</span>
+              <h4>Jajanan favorit di kantin</h4>
+              <ul class="topic-tags"><li>Angket</li><li>Kualitatif</li><li>Primer</li></ul>
+            </article>
+            <article class="mini-card topic-card">
+              <span class="topic-code" aria-hidden="true">B</span>
+              <h4>Cara berangkat ke sekolah</h4>
+              <ul class="topic-tags"><li>Angket</li><li>Kualitatif</li><li>Primer</li></ul>
+            </article>
+            <article class="mini-card topic-card">
+              <span class="topic-code" aria-hidden="true">C</span>
+              <h4>Lama tidur malam murid (jam)</h4>
+              <ul class="topic-tags"><li>Angket</li><li>Kuantitatif</li><li>Primer</li></ul>
+            </article>
+            <article class="mini-card topic-card">
+              <span class="topic-code" aria-hidden="true">D</span>
+              <h4>Kegiatan favorit sepulang sekolah</h4>
+              <ul class="topic-tags"><li>Wawancara</li><li>Kualitatif</li><li>Primer</li></ul>
+            </article>
+            <article class="mini-card topic-card">
+              <span class="topic-code" aria-hidden="true">E</span>
+              <h4>Jenis sampah di tempat sampah kelas</h4>
+              <ul class="topic-tags"><li>Pengamatan</li><li>Kualitatif</li><li>Primer</li></ul>
+            </article>
+            <article class="mini-card topic-card">
+              <span class="topic-code" aria-hidden="true">F</span>
+              <h4>Jumlah buku yang dipinjam di perpustakaan seminggu terakhir</h4>
+              <ul class="topic-tags"><li>Studi dokumen</li><li>Kuantitatif</li><li>Sekunder</li></ul>
+            </article>
+          </div>
+
+          <h3>Langkah 2 · Bagi peran</h3>
+          <p>Semua anggota ikut mengumpulkan data, tetapi setiap orang punya tanggung jawab utama. Jika kelompokmu berisi 4 orang, gabungkan peran ketua dan penyaji.</p>
+          <div class="card-grid">
+            <article class="mini-card">
+              <i class="bi bi-flag" aria-hidden="true"></i>
+              <h4>Ketua</h4>
+              <p>Memimpin diskusi, membagi tugas, dan memastikan semua anggota ikut bekerja.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-pencil-square" aria-hidden="true"></i>
+              <h4>Perancang pertanyaan</h4>
+              <p>Menyusun pertanyaan angket atau wawancara, atau lembar pengamatan, bersama kelompok.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-journal-check" aria-hidden="true"></i>
+              <h4>Pencatat</h4>
+              <p>Mencatat data dengan turus, lalu memindahkannya ke tabel.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-search" aria-hidden="true"></i>
+              <h4>Pemeriksa data</h4>
+              <p>Mengecek kelengkapan dan kejujuran data, lalu menghitung ulang jumlahnya.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-megaphone" aria-hidden="true"></i>
+              <h4>Penyaji</h4>
+              <p>Menyiapkan poster atau slide dan memimpin presentasi kelompok.</p>
+            </article>
+          </div>
+
+          <h3>Langkah 3 · Kerjakan bersama</h3>
+          <ol class="steps">
+            <li><h4>Rencanakan</h4><p>Tuliskan pertanyaan data, sumber data, cara mengumpulkan, dan jenis data kelompok kalian di lembar kerja.</p></li>
+            <li><h4>Siapkan lembar catat</h4><p>Buat tabel dengan kolom kategori, turus, dan jumlah. Jangan lupa judul, tanggal, dan tempat.</p></li>
+            <li><h4>Kumpulkan data</h4><p>Lakukan pada waktu yang diizinkan guru, misalnya saat jam istirahat. Minta izin, bersikap sopan, dan catat apa adanya.</p></li>
+            <li><h4>Hitung dan periksa</h4><p>Ubah turus menjadi angka. Pastikan jumlah totalnya sama dengan jumlah responden.</p></li>
+            <li><h4>Ubah menjadi informasi</h4><p>Tulis 2–3 kalimat kesimpulan, misalnya "Jajanan yang paling disukai murid kelas VII adalah …". Kalian boleh menambahkan diagram batang sederhana.</p></li>
+            <li><h4>Presentasikan</h4><p>Ceritakan topik kalian, cara mengumpulkan data, tabel hasil, kesimpulan, dan kesulitan yang kalian hadapi.</p></li>
+          </ol>
+
+          <h3>Langkah 4 · Isi lembar kerja kelompok</h3>
+          <p>Cetak lembar kerja di bawah ini, atau salin ke buku tugas kelompok.</p>
+          <div class="worksheet" id="lembar-kerja">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Kerja Kelompok · Detektif Data Sekolah</h3>
+                <p>TP 1.1 Memahami Pengelolaan Data dalam Kehidupan Masyarakat · Koding dan Kecerdasan Artifisial · Kelas VII</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-kerja"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar kerja</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Nama kelompok / Kelas</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Anggota &amp; peran</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Topik</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Pertanyaan data</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Sumber data (siapa/apa, berapa banyak?)</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Cara mengumpulkan</span><span class="ws-options"><span>Pengamatan</span><span>Wawancara</span><span>Angket</span><span>Studi dokumen</span></span></div>
+            <div class="ws-field"><span class="ws-label">Jenis data</span><span class="ws-options"><span>Kualitatif</span><span>Kuantitatif</span><span>Primer</span><span>Sekunder</span></span></div>
+            <div class="ws-field"><span class="ws-label">Tanggal &amp; tempat</span><span class="ws-line"></span></div>
+            <div class="ws-field">
+              <span class="ws-label">Tabel hasil</span>
+              <table class="ws-table">
+                <caption class="sr-only">Tabel hasil pengumpulan data kelompok</caption>
+                <thead><tr><th scope="col">Kategori</th><th scope="col">Turus</th><th scope="col">Jumlah</th></tr></thead>
+                <tbody>
+                  <tr><td></td><td></td><td></td></tr>
+                  <tr><td></td><td></td><td></td></tr>
+                  <tr><td></td><td></td><td></td></tr>
+                  <tr><td></td><td></td><td></td></tr>
+                  <tr><td></td><td></td><td></td></tr>
+                  <tr><td></td><td></td><td></td></tr>
+                </tbody>
+                <tfoot><tr><th scope="row" colspan="2">Jumlah</th><td></td></tr></tfoot>
+              </table>
+            </div>
+            <div class="ws-field"><span class="ws-label">Kesimpulan (informasi)</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Kesulitan &amp; cara mengatasinya</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+          </div>
+
+          <h3>Kriteria penilaian</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Rubrik penilaian tugas kelompok<small>Skor: 4 = sangat baik · 3 = baik · 2 = cukup · 1 = perlu bimbingan</small></caption>
+              <thead><tr><th scope="col">Aspek</th><th scope="col">Yang dinilai</th><th scope="col" class="num">Skor</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Perencanaan</th><td>Pertanyaan data jelas dan cara mengumpulkan sesuai dengan topik.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Pengumpulan data</th><td>Jumlah responden cukup; dilakukan dengan sopan, meminta izin, dan jujur.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Pencatatan</th><td>Tabel rapi dengan judul, tanggal, dan tempat; turus dan jumlahnya benar.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kesimpulan</th><td>Informasi yang ditulis sesuai dengan data di tabel.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kerja sama</th><td>Setiap anggota menjalankan perannya dan saling membantu.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Presentasi</th><td>Jelas, runtut, dan mampu menjawab pertanyaan.</td><td class="num">1–4</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis sebelum presentasi</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Topik dan pertanyaan data sudah jelas.</span></label></li>
+            <li><label><input type="checkbox"><span>Data dikumpulkan dengan izin dan dicatat dengan jujur.</span></label></li>
+            <li><label><input type="checkbox"><span>Semua turus sudah dihitung menjadi angka.</span></label></li>
+            <li><label><input type="checkbox"><span>Jumlah total sama dengan jumlah responden.</span></label></li>
+            <li><label><input type="checkbox"><span>Tabel punya judul, tanggal, dan tempat.</span></label></li>
+            <li><label><input type="checkbox"><span>Kesimpulan sudah ditulis.</span></label></li>
+            <li><label><input type="checkbox"><span>Setiap anggota tahu bagiannya saat presentasi.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 9. RANGKUMAN -->
+        <section class="lesson-sec" id="rangkuman" aria-labelledby="h-rangkuman">
+          <p class="sec-no"><span>09</span> Rangkuman &amp; refleksi</p>
+          <h2 id="h-rangkuman">Yang perlu kamu ingat</h2>
+          <div class="summary-grid">
+            <article class="mini-card">
+              <i class="bi bi-database" aria-hidden="true"></i>
+              <h4>Data</h4>
+              <p>Kumpulan fakta atau keterangan. Setelah diolah, data menjadi informasi yang bermakna.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-tags" aria-hidden="true"></i>
+              <h4>Jenis data</h4>
+              <p>Kualitatif (kata/kategori) dan kuantitatif (angka hasil menghitung atau mengukur); primer dan sekunder.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-binoculars" aria-hidden="true"></i>
+              <h4>Mengumpulkan</h4>
+              <p>Pengamatan, wawancara, angket, atau studi dokumen, dilakukan dengan izin dan jujur.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-table" aria-hidden="true"></i>
+              <h4>Mencatat</h4>
+              <p>Gunakan turus dan tabel lengkap dengan judul, tanggal, dan satuan, lalu periksa ulang.</p>
+            </article>
+          </div>
+
+          <h3>Refleksi</h3>
+          <p>Jawab pertanyaan berikut di buku catatanmu:</p>
+          <ol class="question-list">
+            <li>Hal baru apa yang kamu pelajari hari ini?</li>
+            <li>Bagian mana yang masih membingungkan bagimu?</li>
+            <li>Data apa di rumah atau lingkunganmu yang ingin kamu kumpulkan, dan dengan cara apa?</li>
+            <li>Apa yang berjalan baik dalam kerja kelompokmu, dan apa yang bisa diperbaiki?</li>
+          </ol>
+
+          <h3>Kamus kecil</h3>
+          <dl class="glossary">
+            <div><dt>Data</dt><dd>Kumpulan fakta atau keterangan tentang sesuatu.</dd></div>
+            <div><dt>Informasi</dt><dd>Data yang sudah diolah sehingga bermakna dan bisa dipakai.</dd></div>
+            <div><dt>Responden</dt><dd>Orang yang memberikan jawaban saat kita mengumpulkan data.</dd></div>
+            <div><dt>Narasumber</dt><dd>Orang yang kita wawancarai untuk mendapatkan keterangan.</dd></div>
+            <div><dt>Turus</dt><dd>Garis-garis kecil untuk menghitung data dengan cepat, dikelompokkan per lima.</dd></div>
+            <div><dt>Angket</dt><dd>Daftar pertanyaan tertulis yang diisi oleh responden.</dd></div>
+            <div><dt>Data primer</dt><dd>Data yang dikumpulkan sendiri langsung dari sumbernya.</dd></div>
+            <div><dt>Data sekunder</dt><dd>Data yang sudah dikumpulkan pihak lain, lalu kita gunakan.</dd></div>
+          </dl>
+        </section>
+
+        <kka-tp-nav code="1.1"></kka-tp-nav>
+      </div>
+    </div>
+  </main>
+
+  <kka-footer></kka-footer>
+</body>
+</html>

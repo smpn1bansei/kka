@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP 1.5 Percabangan dan Perulangan — Koding dan KA SMPN 1 Bandar Seikijang</title>
+  <meta name="description" content="Materi TP 1.5 Koding dan Kecerdasan Artifisial Kelas VIII: langkah-langkah sistematis menyelesaikan masalah dengan struktur percabangan (kondisional) dan perulangan (looping), dilengkapi mesin percabangan, pelacak perulangan, dan robot penyiram tanaman.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="TP 1.5 Menerapkan Langkah-Langkah Sistematis untuk Menyelesaikan Masalah">
+  <meta property="og:description" content="Struktur percabangan dan perulangan dalam pemecahan masalah untuk murid Kelas VIII.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs: style.css (umum) + lesson.css (halaman materi) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/lesson.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lesson.js" defer></script>
+</head>
+<body>
+  <kka-header active="atp"><a href="index.html">Beranda</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <main id="konten" data-el="1">
+    <!-- =============================================== JUDUL TP -->
+    <section class="hero hero--tp" aria-labelledby="judul-tp">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Lokasi halaman">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#atp">Alur TP</a></li>
+            <li><a href="index.html#kelas-8">Kelas VIII</a></li>
+            <li><span aria-current="page">TP 1.5</span></li>
+          </ol>
+        </nav>
+        <div class="tp-badges">
+          <span class="tp-badge tp-badge--code">TP 1.5</span>
+          <span class="tp-badge"><i class="bi bi-diagram-3" aria-hidden="true"></i> Elemen 1 · Berpikir Komputasional</span>
+          <span class="tp-badge"><i class="bi bi-calendar-week" aria-hidden="true"></i> Kelas VIII · Semester 1</span>
+        </div>
+        <h1 id="judul-tp">Menerapkan Langkah-Langkah Sistematis untuk Menyelesaikan Masalah</h1>
+        <p class="hero-lead">Algoritma tidak selalu berjalan lurus dari atas ke bawah. Kadang ia harus <strong>memilih</strong> langkah sesuai keadaan, kadang harus <strong>mengulang</strong> langkah yang sama berkali-kali. Dengan percabangan dan perulangan, algoritmamu menjadi lebih ringkas, cerdas, dan siap menghadapi berbagai keadaan.</p>
+        <ul class="tp-meta">
+          <li><i class="bi bi-signpost-split" aria-hidden="true"></i> <span>Percabangan (kondisional)</span></li>
+          <li><i class="bi bi-arrow-repeat" aria-hidden="true"></i> <span>Perulangan (<i lang="en">looping</i>)</span></li>
+          <li><i class="bi bi-diagram-2" aria-hidden="true"></i> <span>Diagram alir &amp; pseudokode</span></li>
+          <li><i class="bi bi-laptop" aria-hidden="true"></i> <span>Tugas berbasis digital</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container lesson">
+      <!-- Daftar isi -->
+      <nav class="toc" aria-labelledby="judul-toc">
+        <p class="toc-title" id="judul-toc">Daftar isi</p>
+        <ol>
+          <li><a href="#tujuan">Tujuan &amp; cara belajar</a></li>
+          <li><a href="#mengingat">Mengingat kembali</a></li>
+          <li><a href="#pemantik">Robot penyiram yang boros</a></li>
+          <li><a href="#struktur">Tiga struktur algoritma</a></li>
+          <li><a href="#percabangan">Percabangan</a></li>
+          <li><a href="#perulangan">Perulangan</a></li>
+          <li><a href="#gabungan">Perulangan + percabangan</a></li>
+          <li><a href="#sistematis">Langkah sistematis</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+          <li><a href="#tugas-individu">Tugas individu</a></li>
+          <li><a href="#tugas-kelompok">Tugas kelompok</a></li>
+          <li><a href="#rangkuman">Rangkuman &amp; refleksi</a></li>
+        </ol>
+      </nav>
+
+      <div class="lesson-body">
+        <!-- ========================================== 1. TUJUAN -->
+        <section class="lesson-sec" id="tujuan" aria-labelledby="h-tujuan">
+          <p class="sec-no"><span>01</span> Tujuan belajar</p>
+          <h2 id="h-tujuan">Apa yang akan kamu pelajari?</h2>
+          <p>Setelah mempelajari halaman ini, kamu diharapkan mampu:</p>
+          <ol class="goal-list">
+            <li>Menjelaskan tiga struktur dasar algoritma: urutan, percabangan, dan perulangan.</li>
+            <li>Menyusun percabangan JIKA–MAKA–JIKA TIDAK dengan kondisi yang tepat.</li>
+            <li>Menyusun perulangan ULANGI dan SELAMA yang berhenti pada saat yang benar.</li>
+            <li>Menyelesaikan masalah secara sistematis: memahami, memecah, menyusun algoritma dalam diagram alir dan pseudokode, lalu mengujinya.</li>
+          </ol>
+
+          <h3>Cara belajar di halaman ini</h3>
+          <p>Perhatikan label <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em> di setiap bagian.</p>
+          <ul class="deep-principles">
+            <li>
+              <i class="bi bi-bullseye" aria-hidden="true"></i>
+              <h4>Berkesadaran</h4>
+              <p>Kamu menyadari bahwa setiap hari kamu sudah mengambil keputusan ("jika… maka…") dan mengulang kegiatan tanpa disadari.</p>
+            </li>
+            <li>
+              <i class="bi bi-house-heart" aria-hidden="true"></i>
+              <h4>Bermakna</h4>
+              <p>Kamu merancang algoritma untuk rutinitasmu sendiri dan sistem pintar yang bisa membantu sekolah.</p>
+            </li>
+            <li>
+              <i class="bi bi-emoji-laughing" aria-hidden="true"></i>
+              <h4>Menggembirakan</h4>
+              <p>Telusuri mesin percabangan, jalankan perulangan putaran demi putaran, dan program robot penyiram tanaman.</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 2. MENGINGAT KEMBALI -->
+        <section class="lesson-sec" id="mengingat" aria-labelledby="h-mengingat">
+          <p class="sec-no"><span>02</span> Mengingat kembali <em class="phase">Memahami</em></p>
+          <h2 id="h-mengingat">Bekal yang sudah kamu punya</h2>
+          <div class="card-grid">
+            <article class="mini-card recap-card" data-el="1">
+              <p class="recap-tp">TP 1.2 · Kelas VII</p>
+              <h4>Pola dan diagram alir</h4>
+              <p>Kamu sudah mengenal pengenalan pola dan diagram alir menyeberang jalan. Ingat belah ketupat "Jalan sudah sepi?" dan panah yang kembali ke atas? Itulah percabangan dan perulangan!</p>
+              <a href="1-2.html#algoritma">Buka lagi TP 1.2 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="1">
+              <p class="recap-tp">TP 1.3 · Kelas VII</p>
+              <h4>Algoritma sekuensial dan <i lang="en">debugging</i></h4>
+              <p>Robot kurir hanya bisa menjalankan perintah satu per satu secara berurutan. Kini robotnya bisa mengulang dan mengambil keputusan.</p>
+              <a href="1-3.html#robot">Buka lagi TP 1.3 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="1">
+              <p class="recap-tp">TP 1.4 · Kelas VIII</p>
+              <h4>Formula dan isi otomatis</h4>
+              <p>Isi otomatis di lembar kerja sebenarnya adalah perulangan: satu formula dijalankan untuk setiap baris data.</p>
+              <a href="1-4.html#formula">Buka lagi TP 1.4 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ========================================== 3. PEMANTIK -->
+        <section class="lesson-sec" id="pemantik" aria-labelledby="h-pemantik">
+          <p class="sec-no"><span>03</span> Ayo berpikir dulu <em class="phase">Memahami</em></p>
+          <h2 id="h-pemantik">Robot penyiram yang boros</h2>
+          <div class="story">
+            <p class="story-label"><i class="bi bi-chat-quote" aria-hidden="true"></i> Cerita</p>
+            <p>OSIS SMP Negeri 1 Bandar Seikijang membuat <strong>robot penyiram</strong> untuk 30 pot tanaman di depan kelas. Raka menulis programnya seperti di TP 1.3, satu perintah per langkah:</p>
+            <p><strong>"Maju, siram, maju, siram, maju, siram, …"</strong> sampai 60 baris!</p>
+            <p>Setelah dicoba, muncul dua masalah. Programnya sangat panjang sehingga Raka sering salah ketik. Selain itu, robot tetap menyiram walaupun tadi malam hujan deras dan tanahnya sudah basah. Air terbuang dan beberapa tanaman malah busuk.</p>
+          </div>
+          <ol class="question-list">
+            <li>Bagian mana dari program Raka yang terus berulang? Bagaimana cara menulisnya lebih singkat?</li>
+            <li>Keputusan apa yang seharusnya diambil robot sebelum menyiram?</li>
+            <li>Dalam kehidupan sehari-hari, kegiatan apa yang kamu lakukan berulang-ulang, dan keputusan apa yang kamu ambil berdasarkan keadaan?</li>
+          </ol>
+          <div class="callout">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Dua jurus baru</p>
+              <p>Masalah pertama diselesaikan dengan <strong>perulangan</strong>: "Ulangi 30 kali: maju, siram". Masalah kedua diselesaikan dengan <strong>percabangan</strong>: "Jika tanah kering, siram. Jika tidak, lewati." Ayo kita pelajari keduanya!</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 4. TIGA STRUKTUR -->
+        <section class="lesson-sec" id="struktur" aria-labelledby="h-struktur">
+          <p class="sec-no"><span>04</span> Struktur algoritma <em class="phase">Memahami</em></p>
+          <h2 id="h-struktur">Tiga struktur dasar algoritma</h2>
+          <p>Semua algoritma, dari resep masakan sampai aplikasi di ponselmu, disusun dari tiga struktur dasar berikut.</p>
+          <div class="card-grid">
+            <article class="mini-card">
+              <div class="struct-fig" aria-hidden="true">
+                <svg viewBox="0 0 120 110"><defs><marker id="pnh-s1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="fc-head" d="M0 0 10 5 0 10z"/></marker></defs>
+                  <rect class="fc-shape" x="30" y="4" width="60" height="22" rx="4"/><rect class="fc-shape" x="30" y="44" width="60" height="22" rx="4"/><rect class="fc-shape" x="30" y="84" width="60" height="22" rx="4"/>
+                  <line class="fc-line" x1="60" y1="26" x2="60" y2="42" marker-end="url(#pnh-s1)"/><line class="fc-line" x1="60" y1="66" x2="60" y2="82" marker-end="url(#pnh-s1)"/></svg>
+              </div>
+              <h4>Urutan (sekuensial)</h4>
+              <p>Langkah dijalankan satu per satu dari atas ke bawah, seperti di TP 1.3.</p>
+            </article>
+            <article class="mini-card">
+              <div class="struct-fig" aria-hidden="true">
+                <svg viewBox="0 0 120 110"><defs><marker id="pnh-s2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="fc-head" d="M0 0 10 5 0 10z"/></marker></defs>
+                  <polygon class="fc-shape fc-decision" points="60,4 92,30 60,56 28,30"/>
+                  <path class="fc-line" d="M28 30 H18 V74" marker-end="url(#pnh-s2)"/><path class="fc-line" d="M92 30 H102 V74" marker-end="url(#pnh-s2)"/>
+                  <rect class="fc-shape" x="2" y="76" width="40" height="24" rx="4"/><rect class="fc-shape" x="78" y="76" width="40" height="24" rx="4"/></svg>
+              </div>
+              <h4>Percabangan (kondisional)</h4>
+              <p>Algoritma <strong>memilih</strong> langkah berdasarkan sebuah kondisi.</p>
+            </article>
+            <article class="mini-card">
+              <div class="struct-fig" aria-hidden="true">
+                <svg viewBox="0 0 120 110"><defs><marker id="pnh-s3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="fc-head" d="M0 0 10 5 0 10z"/></marker></defs>
+                  <polygon class="fc-shape fc-decision" points="60,4 90,26 60,48 30,26"/>
+                  <line class="fc-line" x1="60" y1="48" x2="60" y2="64" marker-end="url(#pnh-s3)"/>
+                  <rect class="fc-shape" x="30" y="66" width="60" height="22" rx="4"/>
+                  <path class="fc-line" d="M30 77 H12 V26 H28" marker-end="url(#pnh-s3)"/>
+                  <path class="fc-line" d="M90 26 H114 V104" marker-end="url(#pnh-s3)"/></svg>
+              </div>
+              <h4>Perulangan (<i lang="en">looping</i>)</h4>
+              <p>Algoritma <strong>mengulang</strong> langkah yang sama sampai syaratnya terpenuhi.</p>
+            </article>
+          </div>
+
+          <h3>Alat untuk menuliskan algoritma</h3>
+          <p>Algoritma bisa ditulis dengan dua cara yang saling melengkapi.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Simbol diagram alir yang dipakai di halaman ini</caption>
+              <thead><tr><th scope="col">Bentuk</th><th scope="col">Nama</th><th scope="col">Kegunaan</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Oval</th><td>Terminal</td><td>Tanda mulai dan selesai</td></tr>
+                <tr><th scope="row">Jajar genjang</th><td>Masukan/keluaran</td><td>Memasukkan data atau menampilkan hasil</td></tr>
+                <tr><th scope="row">Persegi panjang</th><td>Proses</td><td>Langkah yang dikerjakan, misalnya menghitung</td></tr>
+                <tr><th scope="row">Belah ketupat</th><td>Keputusan</td><td>Pertanyaan ya/tidak untuk percabangan dan perulangan</td></tr>
+                <tr><th scope="row">Panah</th><td>Garis alir</td><td>Menunjukkan arah urutan langkah</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Pseudokode</strong> adalah algoritma yang ditulis mirip bahasa pemrograman, tetapi memakai bahasa sehari-hari. Kata kunci ditulis dengan huruf kapital, dan langkah di dalam percabangan atau perulangan ditulis menjorok ke dalam. Tanda <code class="fx">←</code> berarti "simpan nilai ke dalam".</p>
+          <div class="pseudo" role="figure" aria-label="Contoh pseudokode">
+            <span class="pl"><b>MASUKKAN</b> nilai</span>
+            <span class="pl"><b>JIKA</b> nilai ≥ 75 <b>MAKA</b></span>
+            <span class="pl">    <b>TAMPILKAN</b> <i>"Tuntas"</i></span>
+            <span class="pl"><b>AKHIR JIKA</b></span>
+          </div>
+        </section>
+
+        <!-- ========================================== 5. PERCABANGAN -->
+        <section class="lesson-sec" id="percabangan" aria-labelledby="h-cabang">
+          <p class="sec-no"><span>05</span> Percabangan <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-cabang">Percabangan: memilih langkah sesuai kondisi</h2>
+          <p><strong>Percabangan</strong> (kondisional) adalah struktur algoritma yang memilih langkah berdasarkan sebuah <strong>kondisi</strong>. Kondisi adalah pernyataan yang hanya bernilai <strong>benar (ya)</strong> atau <strong>salah (tidak)</strong>, misalnya "hari ini hujan" atau "nilai ≥ 75".</p>
+          <ul class="chips-row" aria-label="Contoh percabangan sehari-hari">
+            <li>Jika hujan, bawa payung</li>
+            <li>Jika lampu merah, berhenti</li>
+            <li>Jika baterai &lt; 20%, nyalakan hemat daya</li>
+            <li>Jika uang cukup, beli; jika tidak, menabung dulu</li>
+          </ul>
+
+          <h3>Operator perbandingan</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Operator untuk membuat kondisi</caption>
+              <thead><tr><th scope="col">Operator</th><th scope="col">Artinya</th><th scope="col">Contoh kondisi</th><th scope="col">Jika nilai = 75</th></tr></thead>
+              <tbody>
+                <tr><th scope="row"><code class="fx">=</code></th><td>sama dengan</td><td>nilai = 75</td><td>benar</td></tr>
+                <tr><th scope="row"><code class="fx">≠</code></th><td>tidak sama dengan</td><td>nilai ≠ 75</td><td>salah</td></tr>
+                <tr><th scope="row"><code class="fx">&lt;</code></th><td>kurang dari</td><td>nilai &lt; 75</td><td>salah</td></tr>
+                <tr><th scope="row"><code class="fx">&gt;</code></th><td>lebih dari</td><td>nilai &gt; 75</td><td>salah</td></tr>
+                <tr><th scope="row"><code class="fx">≤</code></th><td>kurang dari atau sama dengan</td><td>nilai ≤ 75</td><td>benar</td></tr>
+                <tr><th scope="row"><code class="fx">≥</code></th><td>lebih dari atau sama dengan</td><td>nilai ≥ 75</td><td>benar</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout" data-el="3">
+            <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Hati-hati dengan &gt; dan ≥</p>
+              <p>Jika KKM 75 dan kondisinya ditulis "nilai &gt; 75", murid yang mendapat tepat 75 dianggap belum tuntas. Selisih satu tanda bisa mengubah hasil! Karena itu, selalu uji algoritmamu dengan <strong>nilai batas</strong>, seperti 74, 75, dan 76.</p>
+            </div>
+          </div>
+
+          <h3>Tiga bentuk percabangan</h3>
+          <div class="card-grid">
+            <article class="mini-card">
+              <h4>1. JIKA–MAKA</h4>
+              <p>Satu pilihan. Jika kondisinya salah, langkahnya dilewati.</p>
+              <div class="pseudo"><span class="pl"><b>JIKA</b> hujan <b>MAKA</b></span><span class="pl">    bawa payung</span><span class="pl"><b>AKHIR JIKA</b></span></div>
+            </article>
+            <article class="mini-card">
+              <h4>2. JIKA–MAKA–JIKA TIDAK</h4>
+              <p>Dua pilihan. Salah satunya pasti dijalankan.</p>
+              <div class="pseudo"><span class="pl"><b>JIKA</b> nilai ≥ 75 <b>MAKA</b></span><span class="pl">    <b>TAMPILKAN</b> <i>"Tuntas"</i></span><span class="pl"><b>JIKA TIDAK</b></span><span class="pl">    <b>TAMPILKAN</b> <i>"Remedial"</i></span><span class="pl"><b>AKHIR JIKA</b></span></div>
+            </article>
+            <article class="mini-card">
+              <h4>3. Bertingkat</h4>
+              <p>Banyak pilihan. Kondisi diperiksa satu per satu dari atas.</p>
+              <div class="pseudo"><span class="pl"><b>JIKA</b> lampu = merah <b>MAKA</b></span><span class="pl">    berhenti</span><span class="pl"><b>JIKA TIDAK, JIKA</b> lampu = kuning <b>MAKA</b></span><span class="pl">    bersiap</span><span class="pl"><b>JIKA TIDAK</b></span><span class="pl">    jalan</span><span class="pl"><b>AKHIR JIKA</b></span></div>
+            </article>
+          </div>
+
+          <h3>Menggabungkan kondisi dengan DAN serta ATAU</h3>
+          <div class="compare">
+            <div class="compare-card">
+              <p class="compare-label">DAN</p>
+              <p><strong>Semua</strong> kondisi harus benar.</p>
+              <p>"JIKA hari = Minggu <b>DAN</b> cuaca cerah MAKA bermain ke taman." Jika hari Minggu tetapi hujan, tidak jadi ke taman.</p>
+            </div>
+            <div class="compare-arrow" aria-hidden="true"><i class="bi bi-arrow-left-right"></i></div>
+            <div class="compare-card compare-card--info">
+              <p class="compare-label">ATAU</p>
+              <p>Cukup <strong>salah satu</strong> kondisi benar.</p>
+              <p>"JIKA hujan <b>ATAU</b> panas terik MAKA bawa payung." Hujan saja atau panas saja sudah cukup alasan membawa payung.</p>
+            </div>
+          </div>
+
+          <h3>Coba sendiri: Mesin Percabangan <em class="phase">Mengaplikasi</em></h3>
+          <p>Kolam renang desa memasang harga tiket berdasarkan umur: <strong>di bawah 5 tahun gratis</strong>, <strong>5 sampai 12 tahun Rp5.000</strong>, dan <strong>di atas 12 tahun Rp10.000</strong>. Geser umurnya dan perhatikan jalur yang dilewati algoritma.</p>
+          <div class="lab branch-lab js-only" data-branch-lab data-unit="tahun" data-rules='[{"test":"<","value":5,"key":"a","ask":"Apakah {v} < 5?","out":"Gratis"},{"test":"<=","value":12,"key":"b","ask":"Apakah {v} ≤ 12?","out":"Rp5.000"},{"key":"c","out":"Rp10.000"}]'>
+            <div class="lab-head">
+              <i class="bi bi-signpost-split" aria-hidden="true"></i>
+              <div>
+                <h3>Mesin Percabangan: Tiket Kolam Renang</h3>
+                <p>Bagian yang menyala adalah langkah yang benar-benar dijalankan. Bagian yang redup dilewati.</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <label class="lab-label" for="bl-umur">Umur pengunjung: <output data-bl-value></output></label>
+                <input id="bl-umur" type="range" min="0" max="70" step="1" value="8" data-bl-input>
+                <p class="lab-label">Uji nilai batas</p>
+                <div class="cm-presets">
+                  <button type="button" data-bl-set="4">4 tahun</button>
+                  <button type="button" data-bl-set="5">5 tahun</button>
+                  <button type="button" data-bl-set="12">12 tahun</button>
+                  <button type="button" data-bl-set="13">13 tahun</button>
+                </div>
+                <div class="bl-out"><span>Harga tiket</span><strong data-bl-out aria-live="polite"></strong></div>
+                <ul class="dl-feedback" data-bl-trace aria-live="polite"></ul>
+                <div class="pseudo" role="figure" aria-label="Pseudokode tiket kolam renang">
+                  <span class="pl" data-path="a b c"><b>MASUKKAN</b> umur</span>
+                  <span class="pl" data-path="a b c"><b>JIKA</b> umur &lt; 5 <b>MAKA</b></span>
+                  <span class="pl" data-path="a">    harga ← <i>"Gratis"</i></span>
+                  <span class="pl" data-path="b c"><b>JIKA TIDAK, JIKA</b> umur ≤ 12 <b>MAKA</b></span>
+                  <span class="pl" data-path="b">    harga ← <i>"Rp5.000"</i></span>
+                  <span class="pl" data-path="c"><b>JIKA TIDAK</b></span>
+                  <span class="pl" data-path="c">    harga ← <i>"Rp10.000"</i></span>
+                  <span class="pl" data-path="a b c"><b>AKHIR JIKA</b></span>
+                  <span class="pl" data-path="a b c"><b>TAMPILKAN</b> harga</span>
+                </div>
+              </div>
+              <figure class="flowchart">
+                <svg viewBox="0 0 520 485" role="img" aria-labelledby="bl-judul bl-isi">
+                  <title id="bl-judul">Diagram alir harga tiket kolam renang</title>
+                  <desc id="bl-isi">Mulai, masukkan umur. Jika umur kurang dari 5, harga gratis. Jika tidak, periksa apakah umur paling banyak 12: jika ya harga Rp5.000, jika tidak harga Rp10.000. Tampilkan harga, selesai.</desc>
+                  <defs><marker id="pnh-bl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="fc-head" d="M0 0 10 5 0 10z"/></marker></defs>
+                  <g data-path="a b c"><rect class="fc-shape fc-term" x="100" y="8" width="140" height="40" rx="20"/><text class="fc-text" x="170" y="28">Mulai</text></g>
+                  <line class="fc-line" data-path="a b c" x1="170" y1="48" x2="170" y2="72" marker-end="url(#pnh-bl)"/>
+                  <g data-path="a b c"><polygon class="fc-shape" points="95,74 265,74 245,118 75,118"/><text class="fc-text" x="170" y="96">Masukkan umur</text></g>
+                  <line class="fc-line" data-path="a b c" x1="170" y1="118" x2="170" y2="144" marker-end="url(#pnh-bl)"/>
+                  <g data-path="a b c"><polygon class="fc-shape fc-decision" points="170,146 265,190 170,234 75,190"/><text class="fc-text" x="170" y="190">umur &lt; 5?</text></g>
+
+                  <line class="fc-line" data-path="a" x1="265" y1="190" x2="298" y2="190" marker-end="url(#pnh-bl)"/>
+                  <text class="fc-label" data-path="a" x="268" y="180">Ya</text>
+                  <g data-path="a"><rect class="fc-shape" x="300" y="168" width="160" height="44" rx="6"/><text class="fc-text" x="380" y="190">harga ← Gratis</text></g>
+                  <path class="fc-line" data-path="a" d="M460 190 H500 V400 H462" marker-end="url(#pnh-bl)"/>
+
+                  <line class="fc-line" data-path="b c" x1="170" y1="234" x2="170" y2="254" marker-end="url(#pnh-bl)"/>
+                  <text class="fc-label" data-path="b c" x="178" y="250">Tidak</text>
+                  <g data-path="b c"><polygon class="fc-shape fc-decision" points="170,256 265,300 170,344 75,300"/><text class="fc-text" x="170" y="300">umur ≤ 12?</text></g>
+
+                  <line class="fc-line" data-path="b" x1="265" y1="300" x2="298" y2="300" marker-end="url(#pnh-bl)"/>
+                  <text class="fc-label" data-path="b" x="268" y="290">Ya</text>
+                  <g data-path="b"><rect class="fc-shape" x="300" y="278" width="160" height="44" rx="6"/><text class="fc-text" x="380" y="300">harga ← Rp5.000</text></g>
+                  <line class="fc-line" data-path="b" x1="380" y1="322" x2="380" y2="376" marker-end="url(#pnh-bl)"/>
+
+                  <line class="fc-line" data-path="c" x1="170" y1="344" x2="170" y2="372" marker-end="url(#pnh-bl)"/>
+                  <text class="fc-label" data-path="c" x="178" y="362">Tidak</text>
+                  <g data-path="c"><rect class="fc-shape" x="85" y="374" width="170" height="44" rx="6"/><text class="fc-text" x="170" y="396">harga ← Rp10.000</text></g>
+                  <path class="fc-line" data-path="c" d="M255 396 H298" marker-end="url(#pnh-bl)"/>
+
+                  <g data-path="a b c"><polygon class="fc-shape" points="310,378 470,378 450,422 290,422"/><text class="fc-text" x="380" y="400">Tampilkan harga</text></g>
+                  <line class="fc-line" data-path="a b c" x1="380" y1="422" x2="380" y2="436" marker-end="url(#pnh-bl)"/>
+                  <g data-path="a b c"><rect class="fc-shape fc-term" x="320" y="438" width="120" height="38" rx="19"/><text class="fc-text" x="380" y="457">Selesai</text></g>
+                </svg>
+              </figure>
+            </div>
+          </div>
+
+          <div class="callout" data-el="2">
+            <i class="bi bi-table" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Percabangan di lembar kerja (lanjutan TP 1.4)</p>
+              <p>Lembar kerja punya fungsi percabangan, yaitu <code class="fx">IF</code> (di Excel bahasa Indonesia: <code class="fx">JIKA</code>). Contoh: <code class="fx">=IF(C2&gt;=75;"Tuntas";"Remedial")</code>. Artinya: jika isi C2 ≥ 75, tampilkan "Tuntas"; jika tidak, tampilkan "Remedial". Jika diisi otomatis ke bawah, rumus ini memeriksa nilai setiap murid. Itu perulangan dan percabangan sekaligus!</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 6. PERULANGAN -->
+        <section class="lesson-sec" id="perulangan" aria-labelledby="h-ulang">
+          <p class="sec-no"><span>06</span> Perulangan <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-ulang">Perulangan: menulis sekali, menjalankan berkali-kali</h2>
+          <p><strong>Perulangan</strong> (<i lang="en">looping</i>) adalah struktur algoritma yang menjalankan langkah yang sama berulang kali. Saat menemukan <strong>pola berulang</strong> (ingat pengenalan pola di TP 1.2), kita cukup menuliskannya sekali di dalam perulangan.</p>
+          <div class="compare">
+            <div class="compare-card">
+              <p class="compare-label">Tanpa perulangan · 8 baris</p>
+              <div class="pseudo"><span class="pl">maju</span><span class="pl">siram</span><span class="pl">maju</span><span class="pl">siram</span><span class="pl">maju</span><span class="pl">siram</span><span class="pl">maju</span><span class="pl">siram</span></div>
+            </div>
+            <div class="compare-arrow" aria-hidden="true"><i class="bi bi-arrow-left-right"></i></div>
+            <div class="compare-card compare-card--info">
+              <p class="compare-label">Dengan perulangan · 4 baris</p>
+              <div class="pseudo"><span class="pl"><b>ULANGI</b> 4 <b>KALI</b></span><span class="pl">    maju</span><span class="pl">    siram</span><span class="pl"><b>AKHIR ULANGI</b></span></div>
+              <p>Untuk 30 pot pun tetap 4 baris. Cukup ganti angka 4 menjadi 30!</p>
+            </div>
+          </div>
+
+          <h3>Dua jenis perulangan</h3>
+          <div class="card-grid">
+            <article class="mini-card">
+              <i class="bi bi-123" aria-hidden="true"></i>
+              <h4>ULANGI n KALI</h4>
+              <p>Dipakai jika <strong>jumlah ulangannya sudah diketahui</strong>. Contoh: lompat tali 20 kali, menyiram 30 pot, mencetak rapor untuk 32 murid.</p>
+              <div class="pseudo"><span class="pl"><b>ULANGI</b> 20 <b>KALI</b></span><span class="pl">    lompat</span><span class="pl"><b>AKHIR ULANGI</b></span></div>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-hourglass-split" aria-hidden="true"></i>
+              <h4>SELAMA kondisi benar</h4>
+              <p>Dipakai jika <strong>jumlah ulangannya belum diketahui</strong>. Perulangan berjalan selama kondisinya benar. Contoh: mengaduk selama gula belum larut, menabung selama uang belum cukup.</p>
+              <div class="pseudo"><span class="pl"><b>SELAMA</b> gula belum larut <b>LAKUKAN</b></span><span class="pl">    aduk</span><span class="pl"><b>AKHIR SELAMA</b></span></div>
+            </article>
+          </div>
+
+          <h3>Tiga bagian penting setiap perulangan</h3>
+          <ol class="steps">
+            <li><h4>Nilai awal</h4><p>Keadaan sebelum perulangan dimulai, misalnya <code class="fx">tabungan ← 0</code>.</p></li>
+            <li><h4>Kondisi berhenti</h4><p>Kapan perulangan selesai, misalnya setelah 5 kali atau saat tabungan sudah cukup.</p></li>
+            <li><h4>Perubahan setiap putaran</h4><p>Sesuatu harus berubah di setiap putaran, misalnya <code class="fx">tabungan ← tabungan + 20000</code>. Tanpa perubahan, kondisi berhenti tidak akan pernah tercapai.</p></li>
+          </ol>
+          <div class="callout" data-el="3">
+            <i class="bi bi-infinity" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Awas, perulangan tanpa akhir!</p>
+              <p>Jika kondisi berhentinya tidak pernah tercapai, perulangan berjalan terus tanpa henti (<i lang="en">infinite loop</i>). Aplikasi bisa macet atau ponsel menjadi panas. Contoh: "SELAMA tabungan &lt; 100.000 LAKUKAN: tunggu" tidak akan pernah berhenti, karena tabungannya tidak pernah bertambah.</p>
+            </div>
+          </div>
+
+          <h3>Perulangan dalam diagram alir</h3>
+          <div class="flowchart-wrap">
+            <figure class="flowchart">
+              <svg viewBox="0 0 460 560" role="img" aria-labelledby="lp-judul lp-isi">
+                <title id="lp-judul">Diagram alir menabung sampai target tercapai</title>
+                <desc id="lp-isi">Mulai. Tabungan dan minggu diisi nol. Selama tabungan kurang dari target: tabungan ditambah setoran dan minggu ditambah satu, lalu kembali memeriksa kondisi. Jika tidak lagi kurang dari target, tampilkan minggu, lalu selesai.</desc>
+                <defs><marker id="pnh-lp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="fc-head" d="M0 0 10 5 0 10z"/></marker></defs>
+                <rect class="fc-shape fc-term" x="150" y="10" width="140" height="44" rx="22"/><text class="fc-text" x="220" y="32">Mulai</text>
+                <line class="fc-line" x1="220" y1="54" x2="220" y2="80" marker-end="url(#pnh-lp)"/>
+                <rect class="fc-shape" x="100" y="82" width="240" height="48" rx="6"/><text class="fc-text" x="220" y="106">tabungan ← 0, minggu ← 0</text>
+                <line class="fc-line" x1="220" y1="130" x2="220" y2="160" marker-end="url(#pnh-lp)"/>
+                <polygon class="fc-shape fc-decision" points="220,162 335,212 220,262 105,212"/><text class="fc-text" x="220" y="212">tabungan &lt; target?</text>
+                <line class="fc-line" x1="220" y1="262" x2="220" y2="292" marker-end="url(#pnh-lp)"/><text class="fc-label" x="228" y="282">Ya</text>
+                <rect class="fc-shape" x="85" y="294" width="270" height="48" rx="6"/><text class="fc-text" x="220" y="318">tabungan ← tabungan + setoran</text>
+                <line class="fc-line" x1="220" y1="342" x2="220" y2="372" marker-end="url(#pnh-lp)"/>
+                <rect class="fc-shape" x="115" y="374" width="210" height="46" rx="6"/><text class="fc-text" x="220" y="397">minggu ← minggu + 1</text>
+                <path class="fc-line" d="M115 397 H40 V212 H103" marker-end="url(#pnh-lp)"/><text class="fc-label" x="46" y="306">ulangi</text>
+                <path class="fc-line" d="M335 212 H420 V453 H318" marker-end="url(#pnh-lp)"/><text class="fc-label" x="342" y="202">Tidak</text>
+                <polygon class="fc-shape" points="140,430 330,430 300,476 110,476"/><text class="fc-text" x="220" y="453">Tampilkan minggu</text>
+                <line class="fc-line" x1="220" y1="476" x2="220" y2="500" marker-end="url(#pnh-lp)"/>
+                <rect class="fc-shape fc-term" x="150" y="502" width="140" height="44" rx="22"/><text class="fc-text" x="220" y="524">Selesai</text>
+              </svg>
+            </figure>
+            <ol class="fc-legend am-legend">
+              <li><span>Perulangan di diagram alir ditandai dengan <strong>panah yang kembali ke atas</strong> menuju belah ketupat.</span></li>
+              <li><span>Belah ketupat memeriksa <strong>kondisi berhenti</strong> sebelum setiap putaran.</span></li>
+              <li><span>Selama jawabannya <strong>Ya</strong>, langkah di dalam perulangan dijalankan lagi.</span></li>
+              <li><span>Jika jawabannya <strong>Tidak</strong>, algoritma keluar dari perulangan dan melanjutkan ke langkah berikutnya.</span></li>
+            </ol>
+          </div>
+
+          <h3>Coba sendiri: Pelacak Perulangan <em class="phase">Mengaplikasi</em></h3>
+          <p>Sinta ingin membeli sepatu seharga Rp150.000 dan menabung Rp20.000 setiap minggu. Telusuri perulangannya putaran demi putaran. Coba juga ubah setorannya menjadi 0 dan lihat apa yang terjadi!</p>
+          <div class="lab loop-lab js-only" data-loop-lab>
+            <div class="lab-head">
+              <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+              <div>
+                <h3>Pelacak Perulangan: Tabungan Sinta</h3>
+                <p>Pilih jenis perulangan, tekan "Satu putaran" untuk menelusuri, atau "Jalankan semua".</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <div class="ll-fields">
+                  <div class="ll-field ll-field--wide">
+                    <label class="lab-label" for="ll-mode">Jenis perulangan</label>
+                    <select id="ll-mode" data-ll="mode">
+                      <option value="while">SELAMA tabungan &lt; target</option>
+                      <option value="for">ULANGI n KALI</option>
+                    </select>
+                  </div>
+                  <div class="ll-field">
+                    <label class="lab-label" for="ll-add">Setoran per minggu (Rp)</label>
+                    <input id="ll-add" type="number" min="0" max="100000" step="5000" value="20000" data-ll="add">
+                  </div>
+                  <div class="ll-field">
+                    <label class="lab-label" for="ll-target">Target (Rp)</label>
+                    <input id="ll-target" type="number" min="0" max="1000000" step="10000" value="150000" data-ll="target">
+                  </div>
+                  <div class="ll-field">
+                    <label class="lab-label" for="ll-n">Banyak ulangan (n)</label>
+                    <input id="ll-n" type="number" min="1" max="12" step="1" value="5" data-ll="n">
+                  </div>
+                </div>
+                <div class="pseudo" data-ll-code role="figure" aria-label="Pseudokode perulangan"></div>
+                <div class="tool-actions">
+                  <button type="button" class="btn btn-ink" data-ll-step><i class="bi bi-skip-end-fill" aria-hidden="true"></i> Satu putaran</button>
+                  <button type="button" class="link-btn" data-ll-run><i class="bi bi-play-fill" aria-hidden="true"></i> Jalankan semua</button>
+                  <button type="button" class="link-btn" data-ll-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulang dari awal</button>
+                </div>
+              </div>
+              <div class="lab-controls">
+                <p class="tool-status" data-ll-status aria-live="polite"></p>
+                <div class="ll-table">
+                  <table class="data-table">
+                    <caption class="sr-only">Jejak setiap putaran</caption>
+                    <thead><tr><th scope="col" class="num">Putaran</th><th scope="col">Pemeriksaan</th><th scope="col" class="num">Tabungan</th></tr></thead>
+                    <tbody data-ll-rows></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 7. GABUNGAN -->
+        <section class="lesson-sec" id="gabungan" aria-labelledby="h-gabungan">
+          <p class="sec-no"><span>07</span> Perulangan + percabangan <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-gabungan">Perulangan yang berisi percabangan</h2>
+          <p>Kekuatan sebenarnya muncul saat keduanya digabung: <strong>perulangan</strong> mengerjakan banyak data, sedangkan <strong>percabangan</strong> memutuskan apa yang dilakukan pada setiap data. Contohnya, guru memeriksa nilai seluruh murid:</p>
+          <div class="pseudo" role="figure" aria-label="Pseudokode memeriksa nilai setiap murid">
+            <span class="pl"><b>ULANGI</b> untuk setiap murid di kelas</span>
+            <span class="pl">    <b>JIKA</b> nilai ≥ 75 <b>MAKA</b></span>
+            <span class="pl">        <b>TAMPILKAN</b> nama, <i>"Tuntas"</i></span>
+            <span class="pl">    <b>JIKA TIDAK</b></span>
+            <span class="pl">        <b>TAMPILKAN</b> nama, <i>"Remedial"</i></span>
+            <span class="pl">    <b>AKHIR JIKA</b></span>
+            <span class="pl"><b>AKHIR ULANGI</b></span>
+          </div>
+          <p class="pseudo-caption">Perhatikan jorokannya: percabangan berada <em>di dalam</em> perulangan, sehingga diperiksa ulang untuk setiap murid.</p>
+
+          <h3>Coba sendiri: Robot Penyiram Tanaman <em class="phase">Mengaplikasi</em></h3>
+          <p>Program robot penyiram dari cerita di awal. Setiap baris program bisa berupa satu perintah, <strong>Ulangi n kali</strong>, atau <strong>Ulangi sampai tiba di bendera</strong>. Di dalam perulangan kamu boleh memasukkan dua perintah, termasuk perintah bersyarat (percabangan).</p>
+
+          <div class="robot-game js-only" data-garden>
+            <div class="rb-head">
+              <h3>Pilih misi</h3>
+              <p>Setiap misi membatasi jumlah baris program. Tanpa perulangan dan percabangan, misinya mustahil diselesaikan!</p>
+              <div class="rb-missions" role="group" aria-label="Pilih misi">
+                <button type="button" aria-pressed="true" data-gd-mission='{"map":["RPPPPPF"],"dir":"E","rows":2}' data-gd-message="Misi 1: siram kelima tanaman, lalu berhenti di bendera. Kamu hanya boleh memakai 2 baris program.">Misi 1 · Perulangan</button>
+                <button type="button" aria-pressed="false" data-gd-mission='{"map":["R?????F"],"dir":"E","rows":2,"random":true}' data-gd-message="Misi 2: letak tanaman diacak setiap kali program dijalankan. Siram hanya tanaman, jangan buang air! Paling banyak 2 baris.">Misi 2 · Percabangan</button>
+                <button type="button" aria-pressed="false" data-gd-mission='{"map":["..P..",".###.","P###P",".###.","R###F"],"dir":"N","rows":2}' data-gd-message="Misi 3: jalannya berbelok dua kali. Buat robot berbelok sendiri saat terhalang, siram ketiga tanaman, lalu tiba di bendera. Paling banyak 2 baris.">Misi 3 · Ulangi sampai tiba</button>
+              </div>
+            </div>
+            <div class="rb-body">
+              <div>
+                <div class="gd-board" role="img" aria-label="Peta kebun"></div>
+                <ul class="rb-legend gd-legend">
+                  <li><i class="bi bi-robot" aria-hidden="true"></i> Robot</li>
+                  <li><i class="bi bi-flower1" aria-hidden="true"></i> Tanaman kering</li>
+                  <li><i class="bi bi-droplet-fill" aria-hidden="true"></i> Sudah disiram</li>
+                  <li><i class="bi bi-flag-fill" aria-hidden="true"></i> Bendera tujuan</li>
+                  <li><i class="bi bi-tree-fill" aria-hidden="true"></i> Pohon</li>
+                </ul>
+              </div>
+              <div>
+                <p class="rb-label">Tambah baris program</p>
+                <div class="rb-palette">
+                  <button type="button" data-gd-add="cmd"><i class="bi bi-plus-lg" aria-hidden="true"></i> Satu perintah</button>
+                  <button type="button" data-gd-add="rep"><i class="bi bi-arrow-repeat" aria-hidden="true"></i> Ulangi n kali</button>
+                  <button type="button" data-gd-add="while"><i class="bi bi-flag" aria-hidden="true"></i> Ulangi sampai tiba</button>
+                </div>
+                <ol class="rb-program" aria-label="Program robot penyiram"></ol>
+                <div class="rb-run-row">
+                  <button type="button" class="btn btn-ink" data-rb-run><i class="bi bi-play-fill" aria-hidden="true"></i> Jalankan</button>
+                  <button type="button" class="link-btn" data-rb-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Robot ke awal</button>
+                  <button type="button" class="link-btn" data-rb-clear><i class="bi bi-trash3" aria-hidden="true"></i> Kosongkan</button>
+                </div>
+                <p class="rb-status" data-rb-status aria-live="polite"></p>
+              </div>
+            </div>
+          </div>
+          <details class="accordion gd-hint">
+            <summary><span><i class="bi bi-key" aria-hidden="true"></i> Lihat petunjuk jawaban (coba sendiri dulu!)</span><i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="accordion-body">
+              <ul class="check-list">
+                <li><i class="bi bi-1-circle-fill" aria-hidden="true"></i><span><strong>Misi 1:</strong> "Ulangi 5 kali: Maju 1 kotak, Siram", lalu satu perintah "Maju 1 kotak".</span></li>
+                <li><i class="bi bi-2-circle-fill" aria-hidden="true"></i><span><strong>Misi 2:</strong> "Ulangi 6 kali: Maju 1 kotak, Jika ada tanaman kering: siram". Percabangan membuat robot hanya menyiram jika ada tanaman.</span></li>
+                <li><i class="bi bi-3-circle-fill" aria-hidden="true"></i><span><strong>Misi 3:</strong> "Ulangi sampai tiba: Jika depan terhalang: belok kanan, jika tidak: maju, lalu Jika ada tanaman kering: siram". Satu baris saja sudah cukup!</span></li>
+              </ul>
+            </div>
+          </details>
+        </section>
+
+        <!-- ========================================== 8. LANGKAH SISTEMATIS -->
+        <section class="lesson-sec" id="sistematis" aria-labelledby="h-sistematis">
+          <p class="sec-no"><span>08</span> Langkah sistematis <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em></p>
+          <h2 id="h-sistematis">Enam langkah sistematis menyelesaikan masalah</h2>
+          <p><strong>Sistematis</strong> berarti bekerja secara teratur, langkah demi langkah, tanpa ada yang terlewat. Mari terapkan pada masalah nyata di perpustakaan sekolah.</p>
+          <div class="story">
+            <p class="story-label"><i class="bi bi-book" aria-hidden="true"></i> Masalah</p>
+            <p>Perpustakaan sekolah mengenakan denda keterlambatan <strong>Rp500 per hari</strong> untuk setiap buku, tetapi <strong>paling banyak Rp5.000</strong> per buku. Bu Rina, petugas perpustakaan, ingin menghitung denda semua buku yang dikembalikan hari ini dengan cepat dan tepat.</p>
+          </div>
+          <ol class="steps">
+            <li><h4>Pahami masalahnya</h4><p><strong>Masukan:</strong> banyak hari terlambat setiap buku. <strong>Keluaran:</strong> denda setiap buku dan total denda. <strong>Batasan:</strong> tidak terlambat berarti tidak didenda, dan denda paling banyak Rp5.000.</p></li>
+            <li><h4>Pecah menjadi bagian kecil (dekomposisi)</h4><p>Hitung denda satu buku, lakukan untuk semua buku, lalu jumlahkan.</p></li>
+            <li><h4>Temukan pola dan kondisi</h4><p>Langkah yang sama dilakukan untuk setiap buku, jadi pakai <strong>perulangan</strong>. Ada dua keputusan, yaitu "terlambat atau tidak?" dan "lebih dari Rp5.000?", jadi pakai <strong>percabangan</strong>.</p></li>
+            <li><h4>Susun algoritmanya</h4><p>Tulis dalam pseudokode atau diagram alir, seperti di bawah ini.</p></li>
+            <li><h4>Uji dengan kasus uji</h4><p>Coba beberapa data, termasuk <strong>nilai batas</strong>, lalu bandingkan hasilnya dengan hasil yang seharusnya.</p></li>
+            <li><h4>Perbaiki dan tingkatkan</h4><p>Jika ada hasil yang salah, telusuri dan perbaiki (<i lang="en">debugging</i>). Pikirkan juga keadaan yang belum tertangani.</p></li>
+          </ol>
+          <div class="pseudo" role="figure" aria-label="Pseudokode menghitung denda perpustakaan">
+            <span class="pl">total ← 0</span>
+            <span class="pl"><b>ULANGI</b> untuk setiap buku yang dikembalikan</span>
+            <span class="pl">    <b>MASUKKAN</b> hari_terlambat</span>
+            <span class="pl">    <b>JIKA</b> hari_terlambat ≤ 0 <b>MAKA</b></span>
+            <span class="pl">        denda ← 0</span>
+            <span class="pl">    <b>JIKA TIDAK</b></span>
+            <span class="pl">        denda ← hari_terlambat × 500</span>
+            <span class="pl">        <b>JIKA</b> denda &gt; 5000 <b>MAKA</b></span>
+            <span class="pl">            denda ← 5000</span>
+            <span class="pl">        <b>AKHIR JIKA</b></span>
+            <span class="pl">    <b>AKHIR JIKA</b></span>
+            <span class="pl">    total ← total + denda</span>
+            <span class="pl"><b>AKHIR ULANGI</b></span>
+            <span class="pl"><b>TAMPILKAN</b> total</span>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Kasus uji algoritma denda<small>Hari ini ada empat buku yang dikembalikan</small></caption>
+              <thead><tr><th scope="col">Buku</th><th scope="col" class="num">Hari terlambat</th><th scope="col">Alasan diuji</th><th scope="col" class="num">Denda seharusnya</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">1</th><td class="num">0</td><td>tidak terlambat</td><td class="num">Rp0</td></tr>
+                <tr><th scope="row">2</th><td class="num">3</td><td>keadaan biasa</td><td class="num">Rp1.500</td></tr>
+                <tr><th scope="row">3</th><td class="num">10</td><td>nilai batas, tepat Rp5.000</td><td class="num">Rp5.000</td></tr>
+                <tr><th scope="row">4</th><td class="num">14</td><td>melebihi batas</td><td class="num">Rp5.000</td></tr>
+                <tr><th scope="row">Total</th><td class="num"></td><td></td><td class="num">Rp11.500</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ol class="question-list">
+            <li>Telusuri pseudokode di atas untuk buku nomor 4. Langkah mana saja yang dijalankan?</li>
+            <li>Bagaimana jika perpustakaan tutup pada hari Minggu dan hari Minggu tidak dihitung terlambat? Bagian mana yang perlu diubah?</li>
+          </ol>
+        </section>
+
+        <!-- ========================================== 9. KUIS -->
+        <section class="lesson-sec" id="cek-pemahaman" aria-labelledby="h-kuis">
+          <p class="sec-no"><span>09</span> Cek pemahaman <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kuis">Ayo uji pemahamanmu</h2>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis A · Urutan, percabangan, atau perulangan?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="urutan" data-explain="Langkahnya dijalankan satu per satu sesuai urutan di bungkus.">
+                <p class="quiz-text">Memasak mi instan sesuai langkah di bungkusnya.</p>
+                <div class="quiz-choices"><button type="button" data-choice="urutan">Urutan</button><button type="button" data-choice="cabang">Percabangan</button><button type="button" data-choice="ulang">Perulangan</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="cabang" data-explain="Mode hemat daya menyala hanya jika kondisi baterai di bawah 20% benar.">
+                <p class="quiz-text">Jika baterai ponsel di bawah 20%, mode hemat daya menyala.</p>
+                <div class="quiz-choices"><button type="button" data-choice="urutan">Urutan</button><button type="button" data-choice="cabang">Percabangan</button><button type="button" data-choice="ulang">Perulangan</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="ulang" data-explain="Mengocok diulang terus selama telurnya belum mengembang.">
+                <p class="quiz-text">Mengocok telur sampai mengembang.</p>
+                <div class="quiz-choices"><button type="button" data-choice="urutan">Urutan</button><button type="button" data-choice="cabang">Percabangan</button><button type="button" data-choice="ulang">Perulangan</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="cabang" data-explain="Tindakan pengendara dipilih berdasarkan warna lampu.">
+                <p class="quiz-text">Lampu merah berhenti, lampu kuning bersiap, lampu hijau jalan.</p>
+                <div class="quiz-choices"><button type="button" data-choice="urutan">Urutan</button><button type="button" data-choice="cabang">Percabangan</button><button type="button" data-choice="ulang">Perulangan</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="ulang" data-explain="Langkah mencetak yang sama dilakukan untuk setiap murid.">
+                <p class="quiz-text">Mencetak rapor untuk setiap murid di kelas.</p>
+                <div class="quiz-choices"><button type="button" data-choice="urutan">Urutan</button><button type="button" data-choice="cabang">Percabangan</button><button type="button" data-choice="ulang">Perulangan</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="urutan" data-explain="Kaus kaki, sepatu, lalu tali, dikerjakan berurutan dan tidak boleh ditukar.">
+                <p class="quiz-text">Memakai kaus kaki, lalu sepatu, lalu mengikat tali.</p>
+                <div class="quiz-choices"><button type="button" data-choice="urutan">Urutan</button><button type="button" data-choice="cabang">Percabangan</button><button type="button" data-choice="ulang">Perulangan</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis B · Telusuri algoritmanya</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="11" data-explain="x bertambah 2 sebanyak 4 kali: 3 + 2 + 2 + 2 + 2 = 11.">
+                <div class="quiz-text"><p>Berapa nilai x di akhir?</p><div class="pseudo"><span class="pl">x ← 3</span><span class="pl"><b>ULANGI</b> 4 <b>KALI</b></span><span class="pl">    x ← x + 2</span><span class="pl"><b>AKHIR ULANGI</b></span></div></div>
+                <div class="quiz-choices"><button type="button" data-choice="9">9</button><button type="button" data-choice="11">11</button><button type="button" data-choice="14">14</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="remedial" data-explain="75 > 75 bernilai salah, jadi yang dijalankan bagian JIKA TIDAK. Seharusnya kondisinya nilai ≥ 75.">
+                <div class="quiz-text"><p>Apa yang ditampilkan?</p><div class="pseudo"><span class="pl">nilai ← 75</span><span class="pl"><b>JIKA</b> nilai &gt; 75 <b>MAKA</b></span><span class="pl">    <b>TAMPILKAN</b> <i>"Tuntas"</i></span><span class="pl"><b>JIKA TIDAK</b></span><span class="pl">    <b>TAMPILKAN</b> <i>"Remedial"</i></span><span class="pl"><b>AKHIR JIKA</b></span></div></div>
+                <div class="quiz-choices"><button type="button" data-choice="tuntas">Tuntas</button><button type="button" data-choice="remedial">Remedial</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="32" data-explain="n menjadi 2, 4, 8, 16, lalu 32. Saat n = 32, kondisi n < 20 salah dan perulangan berhenti.">
+                <div class="quiz-text"><p>Berapa nilai n di akhir?</p><div class="pseudo"><span class="pl">n ← 1</span><span class="pl"><b>SELAMA</b> n &lt; 20 <b>LAKUKAN</b></span><span class="pl">    n ← n × 2</span><span class="pl"><b>AKHIR SELAMA</b></span></div></div>
+                <div class="quiz-choices"><button type="button" data-choice="16">16</button><button type="button" data-choice="20">20</button><button type="button" data-choice="32">32</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="1" data-explain="Perulangan berjalan 5 kali, tetapi kondisi jumlah = 3 hanya benar pada putaran ketiga.">
+                <div class="quiz-text"><p>Berapa kali "Hore" ditampilkan?</p><div class="pseudo"><span class="pl">jumlah ← 0</span><span class="pl"><b>ULANGI</b> 5 <b>KALI</b></span><span class="pl">    jumlah ← jumlah + 1</span><span class="pl">    <b>JIKA</b> jumlah = 3 <b>MAKA</b></span><span class="pl">        <b>TAMPILKAN</b> <i>"Hore"</i></span><span class="pl">    <b>AKHIR JIKA</b></span><span class="pl"><b>AKHIR ULANGI</b></span></div></div>
+                <div class="quiz-choices"><button type="button" data-choice="1">1 kali</button><button type="button" data-choice="3">3 kali</button><button type="button" data-choice="5">5 kali</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="tak" data-explain="a terus bertambah, sehingga a > 0 selalu benar. Ini perulangan tanpa akhir.">
+                <div class="quiz-text"><p>Apa yang terjadi?</p><div class="pseudo"><span class="pl">a ← 10</span><span class="pl"><b>SELAMA</b> a &gt; 0 <b>LAKUKAN</b></span><span class="pl">    a ← a + 1</span><span class="pl"><b>AKHIR SELAMA</b></span></div></div>
+                <div class="quiz-choices"><button type="button" data-choice="nol">Berhenti saat a = 0</button><button type="button" data-choice="sepuluh">Berhenti setelah 10 putaran</button><button type="button" data-choice="tak">Tidak pernah berhenti</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="mati" data-explain="Dengan DAN, kedua kondisi harus benar. Karena sedang hujan, kondisi kedua salah.">
+                <div class="quiz-text"><p>Suhu 31 °C dan sedang hujan. Apakah kipas menyala?</p><div class="pseudo"><span class="pl"><b>JIKA</b> suhu ≥ 30 <b>DAN</b> tidak hujan <b>MAKA</b></span><span class="pl">    nyalakan kipas</span><span class="pl"><b>AKHIR JIKA</b></span></div></div>
+                <div class="quiz-choices"><button type="button" data-choice="nyala">Menyala</button><button type="button" data-choice="mati">Tidak menyala</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 10. TUGAS INDIVIDU -->
+        <section class="lesson-sec" id="tugas-individu" aria-labelledby="h-individu">
+          <p class="sec-no"><span>10</span> Tugas individu <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em></p>
+          <h2 id="h-individu">Algoritma Pintar untuk Rutinitasku</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan sendiri · berbasis digital</p>
+            <h3>Ubah satu kebiasaan sehari-hari menjadi algoritma</h3>
+            <p>Pilih satu kegiatan rutin, lalu rancang algoritmanya dalam diagram alir digital dan pseudokode. Algoritmamu wajib memuat minimal <strong>satu percabangan</strong> dan <strong>satu perulangan</strong>.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-person" aria-hidden="true"></i> <span>Dikerjakan sendiri</span></li>
+              <li><i class="bi bi-diagram-2" aria-hidden="true"></i> <span>1 diagram alir digital + pseudokode</span></li>
+              <li><i class="bi bi-clipboard-check" aria-hidden="true"></i> <span>Tabel uji 3 kasus</span></li>
+              <li><i class="bi bi-file-earmark-image" aria-hidden="true"></i> <span>Dikumpulkan: .png atau .pdf</span></li>
+            </ul>
+          </div>
+
+          <h3>Pilihan kegiatan</h3>
+          <ul class="chips-row" aria-label="Pilihan kegiatan">
+            <li>Menyiapkan isi tas sesuai jadwal</li>
+            <li>Mengatur waktu belajar dan istirahat</li>
+            <li>Menyiram tanaman di rumah</li>
+            <li>Memilih pakaian sesuai cuaca</li>
+            <li>Mengisi botol minum sampai penuh</li>
+            <li>Kegiatan lain pilihanmu</li>
+          </ul>
+
+          <h3>Langkah mengerjakan</h3>
+          <ol class="steps">
+            <li><h4>Pahami kegiatannya</h4><p>Tulis masukan (apa yang diperiksa), keluaran (hasil akhirnya), dan kapan kegiatannya selesai.</p></li>
+            <li><h4>Cari pola dan kondisi</h4><p>Tandai langkah yang berulang (perulangan) dan keputusan yang diambil (percabangan).</p></li>
+            <li><h4>Gambar diagram alirnya</h4><p>Gunakan <strong>diagrams.net</strong> (app.diagrams.net), Google Drawings, Canva, atau bentuk-bentuk di Google Slides. Pakai simbol yang benar: oval, jajar genjang, persegi panjang, belah ketupat, dan panah.</p></li>
+            <li><h4>Tulis pseudokodenya</h4><p>Ketik di Google Docs atau di bawah diagram alirmu. Gunakan kata kunci JIKA, MAKA, JIKA TIDAK, ULANGI, atau SELAMA, dan buat jorokan dengan rapi.</p></li>
+            <li><h4>Uji algoritmamu</h4><p>Buat tabel uji berisi 3 kasus, termasuk satu <strong>nilai batas</strong>. Telusuri algoritmanya dan tulis apakah hasilnya sesuai.</p></li>
+            <li><h4>Simpan dan kumpulkan</h4><p>Unduh sebagai .png atau .pdf dengan nama <code>1-5_Nama_Kelas_algoritma</code>, lalu kirim ke Google Classroom atau media yang ditentukan gurumu.</p></li>
+          </ol>
+          <div class="callout" data-el="4">
+            <i class="bi bi-puzzle" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Tantangan tambahan (tidak wajib)</p>
+              <p>Wujudkan algoritmamu di <strong>Scratch</strong> (scratch.mit.edu) dengan blok <strong>ulangi</strong>, <strong>ulangi sampai</strong>, dan <strong>jika–maka–jika tidak</strong>. Kamu akan melihat sendiri bahwa pseudokode bisa langsung diubah menjadi program.</p>
+            </div>
+          </div>
+
+          <h3>Periksa tugasmu sendiri</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Diagram alirku memakai simbol yang benar dan arah panahnya jelas.</span></label></li>
+            <li><label><input type="checkbox"><span>Ada minimal satu percabangan dengan jalur Ya dan Tidak yang lengkap.</span></label></li>
+            <li><label><input type="checkbox"><span>Ada minimal satu perulangan dengan kondisi berhenti yang pasti tercapai.</span></label></li>
+            <li><label><input type="checkbox"><span>Pseudokodenya sesuai dengan diagram alir dan jorokannya rapi.</span></label></li>
+            <li><label><input type="checkbox"><span>Ada tabel uji 3 kasus, termasuk satu nilai batas.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 11. TUGAS KELOMPOK -->
+        <section class="lesson-sec" id="tugas-kelompok" aria-labelledby="h-kelompok">
+          <p class="sec-no"><span>11</span> Tugas kelompok <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kelompok">Proyek: Rancang Sistem Pintar Sekolah</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan bersama kelompokmu · berbasis digital</p>
+            <h3>Algoritma untuk mesin yang membantu sekolah</h3>
+            <p>Bayangkan sekolah akan memasang sebuah sistem otomatis. Tugas kelompokmu adalah merancang "otak" sistem itu: algoritmanya. Uji dengan bermain peran, perbaiki, lalu presentasikan.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-people" aria-hidden="true"></i> <span>4–5 orang per kelompok</span></li>
+              <li><i class="bi bi-diagram-2" aria-hidden="true"></i> <span>Diagram alir + pseudokode bersama</span></li>
+              <li><i class="bi bi-person-video3" aria-hidden="true"></i> <span>Uji bermain peran dengan 5 kasus</span></li>
+              <li><i class="bi bi-easel" aria-hidden="true"></i> <span>Presentasi 3–5 slide</span></li>
+            </ul>
+          </div>
+
+          <h3>Pilihan sistem</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-moisture" aria-hidden="true"></i><h4>Penyiram tanaman otomatis</h4><p>Setiap pagi memeriksa setiap pot. Jika tanah kering, siram. Jika hujan, lewati.</p></article>
+            <article class="mini-card"><i class="bi bi-lightbulb" aria-hidden="true"></i><h4>Lampu kelas hemat energi</h4><p>Menyala jika ada orang dan ruangan gelap. Padam jika kelas kosong selama 10 menit.</p></article>
+            <article class="mini-card"><i class="bi bi-bell" aria-hidden="true"></i><h4>Bel sekolah otomatis</h4><p>Berbunyi sesuai jadwal. Jadwal hari Jumat berbeda dengan hari lain.</p></article>
+            <article class="mini-card"><i class="bi bi-person-check" aria-hidden="true"></i><h4>Absensi kelas</h4><p>Memeriksa setiap murid, lalu menghitung jumlah yang hadir, sakit, izin, dan alfa.</p></article>
+            <article class="mini-card"><i class="bi bi-cup-hot" aria-hidden="true"></i><h4>Antrean kantin</h4><p>Memanggil nomor antrean satu per satu selama masih ada pembeli.</p></article>
+            <article class="mini-card"><i class="bi bi-calendar-check" aria-hidden="true"></i><h4>Pengingat piket</h4><p>Setiap hari mengingatkan kelompok piket sesuai harinya, kecuali hari libur.</p></article>
+          </div>
+
+          <h3>Langkah 1 · Bagi peran</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-search" aria-hidden="true"></i><h4>Analis masalah</h4><p>Memimpin pengisian Lembar Analisis Masalah: masukan, keluaran, kondisi, dan perulangan.</p></article>
+            <article class="mini-card"><i class="bi bi-diagram-2" aria-hidden="true"></i><h4>Perancang diagram alir</h4><p>Menggambar diagram alir digital dengan simbol yang benar.</p></article>
+            <article class="mini-card"><i class="bi bi-code-square" aria-hidden="true"></i><h4>Penulis pseudokode</h4><p>Menulis pseudokode yang sesuai dengan diagram alir.</p></article>
+            <article class="mini-card"><i class="bi bi-bug" aria-hidden="true"></i><h4>Penguji</h4><p>Menyiapkan kasus uji dan memimpin uji bermain peran.</p></article>
+            <article class="mini-card"><i class="bi bi-megaphone" aria-hidden="true"></i><h4>Penyaji</h4><p>Menyusun slide dan menyajikan hasil kerja kelompok.</p></article>
+          </div>
+
+          <h3>Langkah 2 · Kerjakan bersama</h3>
+          <ol class="steps">
+            <li><h4>Analisis masalah</h4><p>Isi Lembar Analisis Masalah di bawah: apa masukannya, apa keluarannya, keputusan apa yang diambil, dan apa yang diulang.</p></li>
+            <li><h4>Gambar diagram alir bersama</h4><p>Gunakan diagrams.net, Google Drawings, atau papan tulis Canva yang dibagikan ke semua anggota.</p></li>
+            <li><h4>Tulis pseudokode bersama</h4><p>Ketik di satu Google Docs bersama agar semua anggota bisa memberi komentar.</p></li>
+            <li><h4>Uji dengan bermain peran</h4><p>Satu anggota menjadi "komputer" yang <strong>hanya boleh mengikuti algoritma persis seperti tertulis</strong>. Anggota lain memberikan 5 kasus uji, termasuk nilai batas. Catat setiap hasil yang tidak sesuai.</p></li>
+            <li><h4>Perbaiki menjadi versi 2</h4><p>Perbaiki bug yang ditemukan. Simpan versi 1 dan versi 2 agar perbaikannya terlihat.</p></li>
+            <li><h4>Presentasikan</h4><p>Buat 3–5 slide dengan prinsip desain TP 2.3 dan 2.4: masalah, diagram alir, kasus uji dan bug yang ditemukan, serta manfaat sistemnya. Kumpulkan file PDF slide dan gambar diagram alir, misalnya <code>1-5_Kelompok1_VIIIA.pdf</code>.</p></li>
+          </ol>
+
+          <h3>Langkah 3 · Lembar analisis masalah</h3>
+          <div class="worksheet" id="lembar-analisis">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Analisis Masalah</h3>
+                <p>TP 1.5 Menerapkan Langkah-Langkah Sistematis untuk Menyelesaikan Masalah</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-analisis"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar analisis</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Kelompok / Kelas / Nama sistem</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Masalah yang ingin diselesaikan</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Masukan (data yang diperiksa) dan keluaran (hasil)</span><span class="ws-line"></span></div>
+            <div class="ws-field">
+              <span class="ws-label">Percabangan</span>
+              <table class="ws-table">
+                <caption class="sr-only">Daftar kondisi percabangan</caption>
+                <thead><tr><th scope="col">Kondisi</th><th scope="col">Jika ya</th><th scope="col">Jika tidak</th></tr></thead>
+                <tbody><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody>
+              </table>
+            </div>
+            <div class="ws-field"><span class="ws-label">Perulangan: apa yang diulang dan kapan berhenti?</span><span class="ws-line"></span></div>
+            <div class="ws-field">
+              <span class="ws-label">Kasus uji</span>
+              <table class="ws-table">
+                <caption class="sr-only">Daftar kasus uji</caption>
+                <thead><tr><th scope="col">No</th><th scope="col">Masukan</th><th scope="col">Hasil seharusnya</th><th scope="col">Hasil uji</th><th scope="col">Sesuai?</th></tr></thead>
+                <tbody><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td><td></td></tr><tr><td>4</td><td></td><td></td><td></td><td></td></tr><tr><td>5</td><td></td><td></td><td></td><td></td></tr></tbody>
+              </table>
+            </div>
+            <div class="ws-field"><span class="ws-label">Bug yang ditemukan dan cara memperbaikinya</span><span class="ws-line"></span></div>
+          </div>
+
+          <h3>Kriteria penilaian</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Rubrik penilaian tugas kelompok<small>Skor: 4 = sangat baik · 3 = baik · 2 = cukup · 1 = perlu bimbingan</small></caption>
+              <thead><tr><th scope="col">Aspek</th><th scope="col">Yang dinilai</th><th scope="col" class="num">Skor</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Analisis masalah</th><td>Masukan, keluaran, kondisi, dan perulangan teridentifikasi dengan tepat.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Percabangan</th><td>Kondisi tepat, jalur Ya dan Tidak lengkap, nilai batas tertangani.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Perulangan</th><td>Yang diulang tepat dan kondisi berhentinya pasti tercapai.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Diagram alir dan pseudokode</th><td>Simbol benar, rapi, dan keduanya saling sesuai.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Pengujian dan perbaikan</th><td>Lima kasus uji dijalankan, bug dicatat, dan versi 2 lebih baik.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Presentasi dan kerja sama</th><td>Slide jelas dan setiap anggota menjalankan perannya.</td><td class="num">1–4</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis sebelum mengumpulkan</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Lembar analisis masalah sudah diisi bersama.</span></label></li>
+            <li><label><input type="checkbox"><span>Diagram alir memuat percabangan dan perulangan dengan simbol yang benar.</span></label></li>
+            <li><label><input type="checkbox"><span>Pseudokode sesuai dengan diagram alir.</span></label></li>
+            <li><label><input type="checkbox"><span>Lima kasus uji sudah dijalankan dengan bermain peran.</span></label></li>
+            <li><label><input type="checkbox"><span>Bug sudah diperbaiki dan versi 1 serta versi 2 tersimpan.</span></label></li>
+            <li><label><input type="checkbox"><span>Slide dan diagram alir sudah dikirim dengan nama file yang rapi.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 12. RANGKUMAN -->
+        <section class="lesson-sec" id="rangkuman" aria-labelledby="h-rangkuman">
+          <p class="sec-no"><span>12</span> Rangkuman &amp; refleksi <em class="phase">Merefleksi</em></p>
+          <h2 id="h-rangkuman">Yang perlu kamu ingat</h2>
+          <div class="summary-grid">
+            <article class="mini-card">
+              <i class="bi bi-list-ol" aria-hidden="true"></i>
+              <h4>Tiga struktur</h4>
+              <p>Algoritma tersusun dari urutan, percabangan, dan perulangan.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-signpost-split" aria-hidden="true"></i>
+              <h4>Percabangan</h4>
+              <p>JIKA kondisi benar MAKA lakukan sesuatu, JIKA TIDAK lakukan yang lain. Uji dengan nilai batas.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+              <h4>Perulangan</h4>
+              <p>ULANGI n KALI jika jumlahnya pasti, SELAMA jika belum pasti. Pastikan kondisi berhentinya tercapai.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-list-check" aria-hidden="true"></i>
+              <h4>Langkah sistematis</h4>
+              <p>Pahami, pecah, temukan pola dan kondisi, susun algoritma, uji, lalu perbaiki.</p>
+            </article>
+          </div>
+
+          <h3>Refleksi</h3>
+          <ol class="question-list">
+            <li><strong>Berkesadaran:</strong> keputusan "jika… maka…" apa saja yang kamu ambil sejak bangun tidur pagi ini?</li>
+            <li><strong>Bermakna:</strong> masalah apa di rumah atau di sekolah yang bisa diselesaikan lebih cepat dengan perulangan dan percabangan?</li>
+            <li><strong>Menggembirakan:</strong> misi robot mana yang paling menantang? Bagaimana kamu akhirnya menyelesaikannya?</li>
+          </ol>
+
+          <h3>Materi yang berhubungan</h3>
+          <p>Materi ini adalah lanjutan dari:</p>
+          <div class="card-grid" data-tp-links="1.2,1.3,1.4"></div>
+          <p>Percabangan dan perulangan akan kamu pakai lagi untuk menyusun instruksi yang lebih kompleks, mengenal cara KA mengelompokkan data, dan menulis program di Kelas IX:</p>
+          <div class="card-grid" data-tp-links="1.6,4.5,1.9"></div>
+
+          <h3>Kamus kecil</h3>
+          <dl class="glossary">
+            <div><dt>Algoritma</dt><dd>Langkah-langkah logis dan berurutan untuk menyelesaikan masalah.</dd></div>
+            <div><dt>Kondisi</dt><dd>Pernyataan yang hanya bernilai benar atau salah.</dd></div>
+            <div><dt>Percabangan (kondisional)</dt><dd>Struktur algoritma yang memilih langkah berdasarkan kondisi.</dd></div>
+            <div><dt>Perulangan (<i lang="en">looping</i>)</dt><dd>Struktur algoritma yang menjalankan langkah yang sama berulang kali.</dd></div>
+            <div><dt>Perulangan tanpa akhir</dt><dd>Perulangan yang kondisi berhentinya tidak pernah tercapai (<i lang="en">infinite loop</i>).</dd></div>
+            <div><dt>Pseudokode</dt><dd>Algoritma yang ditulis mirip bahasa pemrograman dengan bahasa sehari-hari.</dd></div>
+            <div><dt>Diagram alir</dt><dd>Gambar algoritma yang memakai simbol dan panah.</dd></div>
+            <div><dt>Nilai batas</dt><dd>Nilai tepat di batas kondisi, seperti 75 pada "nilai ≥ 75", yang paling sering memunculkan bug.</dd></div>
+          </dl>
+        </section>
+
+        <!-- Tombol TP sebelumnya/berikutnya + sumber rujukan, dibuat otomatis dari data.js -->
+        <kka-tp-nav code="1.5"></kka-tp-nav>
+      </div>
+    </div>
+  </main>
+
+  <kka-footer></kka-footer>
+</body>
+</html>

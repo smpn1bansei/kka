@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP 2.6 Aplikasi Editor Audio dan Video — Koding dan KA SMPN 1 Bandar Seikijang</title>
+  <meta name="description" content="Materi TP 2.6 Koding dan Kecerdasan Artifisial Kelas VIII: mengenal dan menggunakan aplikasi editor audio dan video seperti CapCut, Audacity, dan alat berbasis web, dilengkapi pemilih aplikasi, penjelajah tampilan, dan kalkulator ekspor.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="TP 2.6 Menerapkan Aplikasi Dasar untuk Produksi Konten Audio dan Video">
+  <meta property="og:description" content="CapCut, Audacity, dan alat berbasis web untuk murid Kelas VIII.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs: style.css (umum) + lesson.css (halaman materi) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/lesson.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lesson.js" defer></script>
+</head>
+<body>
+  <kka-header active="atp"><a href="index.html">Beranda</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <main id="konten" data-el="2">
+    <!-- =============================================== JUDUL TP -->
+    <section class="hero hero--tp" aria-labelledby="judul-tp">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Lokasi halaman">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#atp">Alur TP</a></li>
+            <li><a href="index.html#kelas-8">Kelas VIII</a></li>
+            <li><span aria-current="page">TP 2.6</span></li>
+          </ol>
+        </nav>
+        <div class="tp-badges">
+          <span class="tp-badge tp-badge--code">TP 2.6</span>
+          <span class="tp-badge"><i class="bi bi-camera-reels" aria-hidden="true"></i> Elemen 2 · Literasi Digital</span>
+          <span class="tp-badge"><i class="bi bi-calendar-week" aria-hidden="true"></i> Kelas VIII · Semester 1</span>
+        </div>
+        <h1 id="judul-tp">Menerapkan Aplikasi Dasar untuk Produksi Konten Digital Berupa Audio dan Video</h1>
+        <p class="hero-lead">Di TP 2.5 kamu sudah belajar memangkas, memotong, dan memadukan suara. Sekarang saatnya mengenal "alat tempurnya": aplikasi editor di HP, di komputer, dan di peramban. Kamu akan belajar memilih aplikasi yang cocok, mengenali tombol-tombolnya, dan memakainya dengan aman.</p>
+        <ul class="tp-meta">
+          <li><i class="bi bi-phone" aria-hidden="true"></i> <span>CapCut</span></li>
+          <li><i class="bi bi-soundwave" aria-hidden="true"></i> <span>Audacity</span></li>
+          <li><i class="bi bi-globe" aria-hidden="true"></i> <span>Alat berbasis web</span></li>
+          <li><i class="bi bi-laptop" aria-hidden="true"></i> <span>Tugas berbasis digital</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container lesson">
+      <!-- Daftar isi -->
+      <nav class="toc" aria-labelledby="judul-toc">
+        <p class="toc-title" id="judul-toc">Daftar isi</p>
+        <ol>
+          <li><a href="#tujuan">Tujuan &amp; cara belajar</a></li>
+          <li><a href="#mengingat">Mengingat kembali</a></li>
+          <li><a href="#pemantik">Tiga teman, tiga perangkat</a></li>
+          <li><a href="#jenis">Jenis aplikasi editor</a></li>
+          <li><a href="#capcut">Mengenal CapCut</a></li>
+          <li><a href="#audacity">Mengenal Audacity</a></li>
+          <li><a href="#web">Alat berbasis web</a></li>
+          <li><a href="#ekspor">Alur kerja &amp; ekspor</a></li>
+          <li><a href="#aman">Aman &amp; bijak</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+          <li><a href="#tugas-individu">Tugas individu</a></li>
+          <li><a href="#tugas-kelompok">Tugas kelompok</a></li>
+          <li><a href="#rangkuman">Rangkuman &amp; refleksi</a></li>
+        </ol>
+      </nav>
+
+      <div class="lesson-body">
+        <!-- ========================================== 1. TUJUAN -->
+        <section class="lesson-sec" id="tujuan" aria-labelledby="h-tujuan">
+          <p class="sec-no"><span>01</span> Tujuan belajar</p>
+          <h2 id="h-tujuan">Apa yang akan kamu pelajari?</h2>
+          <p>Setelah mempelajari halaman ini, kamu diharapkan mampu:</p>
+          <ol class="goal-list">
+            <li>Menyebutkan jenis aplikasi editor: di HP, di komputer, dan berbasis web.</li>
+            <li>Memilih aplikasi yang cocok dengan perangkat dan kebutuhanmu.</li>
+            <li>Mengenali bagian tampilan dan fitur penting CapCut, Audacity, dan alat berbasis web.</li>
+            <li>Membuat konten audio dan video dari awal sampai ekspor dengan aman dan bijak.</li>
+          </ol>
+
+          <h3>Cara belajar di halaman ini</h3>
+          <p>Perhatikan label <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em> di setiap bagian.</p>
+          <ul class="deep-principles">
+            <li>
+              <i class="bi bi-bullseye" aria-hidden="true"></i>
+              <h4>Berkesadaran</h4>
+              <p>Kamu memilih aplikasi dengan sadar: dari sumber resmi, sesuai usia, hemat kuota, dan menjaga data pribadi.</p>
+            </li>
+            <li>
+              <i class="bi bi-house-heart" aria-hidden="true"></i>
+              <h4>Bermakna</h4>
+              <p>Kamu memakai perangkat yang ada di sekitarmu, seperti HP, laptop sekolah, atau komputer lab, untuk membuat karya yang berguna.</p>
+            </li>
+            <li>
+              <i class="bi bi-emoji-laughing" aria-hidden="true"></i>
+              <h4>Menggembirakan</h4>
+              <p>Temukan aplikasi yang cocok, tebak bagian-bagian tampilannya, dan hitung ukuran video sebelum diekspor.</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 2. MENGINGAT KEMBALI -->
+        <section class="lesson-sec" id="mengingat" aria-labelledby="h-mengingat">
+          <p class="sec-no"><span>02</span> Mengingat kembali <em class="phase">Memahami</em></p>
+          <h2 id="h-mengingat">Bekal yang sudah kamu punya</h2>
+          <div class="card-grid">
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.5 · Kelas VIII</p>
+              <h4>Teknik <i lang="en">editing</i></h4>
+              <p><i lang="en">Trimming</i>, <i lang="en">cutting</i>, dan <i lang="en">mixing</i>. Di sini kamu mempraktikkannya di aplikasi sungguhan.</p>
+              <a href="2-5.html#trimming-cutting">Buka lagi TP 2.5 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.3 · Kelas VII</p>
+              <h4>Mengenal tampilan aplikasi</h4>
+              <p>Aplikasi presentasi punya menu, panel, dan area kerja. Aplikasi editor juga begitu, hanya namanya yang berbeda.</p>
+              <a href="2-3.html#aplikasi">Buka lagi TP 2.3 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.1 · Kelas VII</p>
+              <h4>Format dan ukuran file</h4>
+              <p>MP4, MP3, dan WAV. Semakin banyak data, semakin besar ukuran filenya. Ini penting saat ekspor.</p>
+              <a href="2-1.html#format">Buka lagi TP 2.1 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ========================================== 3. PEMANTIK -->
+        <section class="lesson-sec" id="pemantik" aria-labelledby="h-pemantik">
+          <p class="sec-no"><span>03</span> Ayo berpikir dulu <em class="phase">Memahami</em></p>
+          <h2 id="h-pemantik">Tiga teman, tiga perangkat</h2>
+          <div class="story">
+            <p class="story-label"><i class="bi bi-chat-quote" aria-hidden="true"></i> Cerita</p>
+            <p>Guru meminta setiap murid membuat <strong>podcast</strong> dan <strong>video pendek</strong>. Tiga sahabat punya keadaan yang berbeda:</p>
+            <p><strong>Rina</strong> hanya punya HP Android dengan kuota terbatas. <strong>Bayu</strong> boleh memakai laptop Windows milik kakaknya. <strong>Sari</strong> hanya bisa memakai komputer di laboratorium sekolah, dan di sana tidak boleh memasang aplikasi.</p>
+            <p>Sari sempat tergoda mengunduh aplikasi editor "versi mod" dari situs tidak jelas karena katanya gratis dan tanpa tanda air.</p>
+          </div>
+          <ol class="question-list">
+            <li>Menurutmu, aplikasi apa yang cocok untuk Rina, Bayu, dan Sari?</li>
+            <li>Apakah satu aplikasi pasti cocok untuk semua orang? Mengapa?</li>
+            <li>Apa bahayanya mengunduh aplikasi "versi mod"?</li>
+          </ol>
+        </section>
+
+        <!-- ========================================== 4. JENIS APLIKASI -->
+        <section class="lesson-sec" id="jenis" aria-labelledby="h-jenis">
+          <p class="sec-no"><span>04</span> Jenis aplikasi <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-jenis">Jenis-jenis aplikasi editor</h2>
+          <p><strong>Aplikasi editor</strong> adalah aplikasi untuk mengolah bahan menjadi karya. <strong>Editor video</strong> mengolah gambar bergerak beserta suaranya. <strong>Editor audio</strong> khusus mengolah suara.</p>
+          <div class="card-grid">
+            <article class="mini-card">
+              <i class="bi bi-phone" aria-hidden="true"></i>
+              <h4>Aplikasi di HP</h4>
+              <p>Dipasang dari Play Store atau App Store. Praktis dan bisa dibawa ke mana-mana.</p>
+              <ul class="chips-row" aria-label="Contoh aplikasi HP"><li>CapCut</li><li>Perekam suara bawaan</li></ul>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-laptop" aria-hidden="true"></i>
+              <h4>Aplikasi di komputer</h4>
+              <p>Dipasang di laptop atau komputer. Layarnya lebar, sehingga lebih leluasa untuk karya yang panjang.</p>
+              <ul class="chips-row" aria-label="Contoh aplikasi komputer"><li>CapCut versi komputer</li><li>Audacity</li><li>Clipchamp</li></ul>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-globe" aria-hidden="true"></i>
+              <h4>Alat berbasis web</h4>
+              <p>Dibuka langsung di peramban (Chrome, Edge) tanpa dipasang. Proyek tersimpan di akun daring.</p>
+              <ul class="chips-row" aria-label="Contoh alat web"><li>Clipchamp web</li><li>Canva</li></ul>
+            </article>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Membandingkan ketiga jenis aplikasi</caption>
+              <thead><tr><th scope="col">Hal</th><th scope="col">Di HP</th><th scope="col">Di komputer</th><th scope="col">Berbasis web</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Perlu dipasang?</th><td>Ya</td><td>Ya</td><td>Tidak</td></tr>
+                <tr><th scope="row">Perlu internet?</th><td>Saat memasang dan memakai fitur daring</td><td>Saat memasang dan memakai fitur daring</td><td>Selalu</td></tr>
+                <tr><th scope="row">Layar</th><td>Kecil</td><td>Lebar</td><td>Lebar</td></tr>
+                <tr><th scope="row">Penyimpanan</th><td>Memori HP</td><td>Memori komputer</td><td>Akun daring (<i lang="en">cloud</i>)</td></tr>
+                <tr><th scope="row">Cocok untuk</th><td>Video pendek, merekam di tempat</td><td>Karya panjang, audio detail</td><td>Komputer yang tidak boleh dipasangi aplikasi</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Tidak ada aplikasi yang "paling hebat"</p>
+              <p>Aplikasi terbaik adalah yang <strong>cocok dengan perangkat, kebutuhan, dan keadaanmu</strong>. Memilih aplikasi juga memakai percabangan bersarang seperti di TP 1.6: jika karyamu video, jika perangkatmu HP, maka pilih….</p>
+            </div>
+          </div>
+
+          <h3>Coba sendiri: Pemilih Aplikasi <em class="phase">Mengaplikasi</em></h3>
+          <p>Bantu Rina, Bayu, dan Sari! Pilih keadaannya, lalu lihat saran aplikasinya.</p>
+          <div class="lab app-picker js-only" data-app-picker>
+            <div class="lab-head">
+              <i class="bi bi-signpost-split" aria-hidden="true"></i>
+              <div>
+                <h3>Pemilih Aplikasi</h3>
+                <p>Saran ini berdasarkan keadaan umum. Fitur aplikasi bisa berubah setiap ada pembaruan.</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <div class="ap-group">
+                  <p class="lab-label" id="ap-kind-l">1. Karya yang ingin dibuat</p>
+                  <div class="dl-radios" role="radiogroup" aria-labelledby="ap-kind-l">
+                    <label><input type="radio" name="ap-kind" value="video" checked> Video</label>
+                    <label><input type="radio" name="ap-kind" value="audio"> Audio saja (podcast)</label>
+                  </div>
+                </div>
+                <div class="ap-group">
+                  <p class="lab-label" id="ap-device-l">2. Perangkat yang tersedia</p>
+                  <div class="dl-radios dl-radios--stack" role="radiogroup" aria-labelledby="ap-device-l">
+                    <label><input type="radio" name="ap-device" value="hp" checked> HP atau tablet</label>
+                    <label><input type="radio" name="ap-device" value="laptop"> Laptop atau komputer Windows</label>
+                    <label><input type="radio" name="ap-device" value="web"> Komputer lab atau Chromebook (tidak boleh memasang aplikasi)</label>
+                  </div>
+                </div>
+                <div class="ap-group">
+                  <p class="lab-label" id="ap-net-l">3. Keadaan internet</p>
+                  <div class="dl-radios" role="radiogroup" aria-labelledby="ap-net-l">
+                    <label><input type="radio" name="ap-net" value="lancar" checked> Lancar</label>
+                    <label><input type="radio" name="ap-net" value="terbatas"> Terbatas</label>
+                  </div>
+                </div>
+                <p class="lab-label">Jalur keputusan</p>
+                <div class="pseudo" data-ap-path role="figure" aria-label="Jalur keputusan pemilihan aplikasi"></div>
+              </div>
+              <div class="lab-controls" data-ap-out aria-live="polite"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 5. CAPCUT -->
+        <section class="lesson-sec" id="capcut" aria-labelledby="h-capcut">
+          <p class="sec-no"><span>05</span> Editor video <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-capcut">Mengenal CapCut, editor video</h2>
+          <p><strong>CapCut</strong> adalah aplikasi editor video yang tersedia untuk HP dan komputer. Tampilannya mirip dengan editor video lain, jadi jika sudah paham CapCut, kamu akan cepat belajar aplikasi lain.</p>
+
+          <h3>Coba sendiri: Kenali Tampilan Editor Video <em class="phase">Mengaplikasi</em></h3>
+          <p>Gambar di bawah adalah tiruan sederhana tampilan editor video di komputer. Klik setiap bagian untuk mengenalnya. Setelah itu, coba <strong>Mode tantangan</strong>!</p>
+          <div class="lab ui-explorer js-only" data-ui-explorer data-ui-tasks='[{"ask":"Di mana kamu menonton hasil video sementara?","part":"pratinjau"},{"ask":"Di mana klip disusun berurutan menurut waktu?","part":"linimasa"},{"ask":"Klik bagian yang berisi bahan yang sudah diimpor.","part":"media"},{"ask":"Tombol gunting untuk membelah klip ada di bagian mana?","part":"alat"},{"ask":"Di mana kamu mengatur volume dan kecepatan klip yang dipilih?","part":"properti"},{"ask":"Di mana kamu memilih menu Audio, Teks, atau Transisi?","part":"kategori"},{"ask":"Klik bagian untuk menyimpan video jadi.","part":"ekspor"}]'>
+            <div class="lab-head">
+              <i class="bi bi-window-sidebar" aria-hidden="true"></i>
+              <div>
+                <h3>Tampilan Editor Video</h3>
+                <p>Nama dan letak tombol bisa sedikit berbeda di setiap aplikasi dan versi, tetapi bagian-bagiannya mirip.</p>
+              </div>
+            </div>
+            <div class="lab-body lab-body--single">
+              <div class="ui-modes">
+                <button type="button" data-ui-mode="explore" aria-pressed="true"><i class="bi bi-compass" aria-hidden="true"></i> Mode jelajah</button>
+                <button type="button" data-ui-mode="quiz" aria-pressed="false"><i class="bi bi-controller" aria-hidden="true"></i> Mode tantangan</button>
+                <span class="dl-score" data-ui-score hidden>0 / 7</span>
+              </div>
+              <p class="ui-prompt" data-ui-prompt hidden aria-live="polite"></p>
+              <div class="ui-scroll">
+                <div class="ui-mock ui-mock--video">
+                  <button type="button" class="ui-part ui-top" data-ui-part="ekspor" data-ui-name="Bilah atas dan tombol Ekspor" data-ui-desc="Berisi nama proyek dan tombol Ekspor. Tekan Ekspor untuk mengubah proyek menjadi file video jadi (MP4) yang bisa ditonton dan dibagikan."><span><i class="bi bi-film" aria-hidden="true"></i> Proyek: Profil Kantin</span><span class="ui-pill">Ekspor</span></button>
+                  <button type="button" class="ui-part ui-cat" data-ui-part="kategori" data-ui-name="Menu kategori" data-ui-desc="Deretan ikon untuk berpindah jenis bahan: Media, Audio, Teks, Stiker, Efek, Transisi, dan Filter."><i class="bi bi-collection-play" aria-hidden="true"></i><i class="bi bi-music-note-beamed" aria-hidden="true"></i><i class="bi bi-fonts" aria-hidden="true"></i><i class="bi bi-stars" aria-hidden="true"></i><i class="bi bi-arrow-left-right" aria-hidden="true"></i><i class="bi bi-palette" aria-hidden="true"></i></button>
+                  <button type="button" class="ui-part ui-media" data-ui-part="media" data-ui-name="Panel media" data-ui-desc="Tempat semua bahan yang sudah diimpor, seperti video, foto, dan suara. Seret bahan dari sini ke linimasa."><span class="ui-dim">Media · Impor</span><span class="ui-thumbs"><span></span><span></span><span></span><span></span></span></button>
+                  <button type="button" class="ui-part ui-prev" data-ui-part="pratinjau" data-ui-name="Layar pratinjau" data-ui-desc="Tempat menonton hasil sementara. Tekan Spasi untuk memutar atau menjeda. Yang tampil di sini adalah isi linimasa di posisi playhead."><span class="ui-screen"><i class="bi bi-play-circle" aria-hidden="true"></i></span><span class="ui-dim">00:12 / 01:00 · 16:9</span></button>
+                  <button type="button" class="ui-part ui-props" data-ui-part="properti" data-ui-name="Panel pengaturan (properti)" data-ui-desc="Muncul saat sebuah klip dipilih. Di sini kamu mengatur volume, kecepatan, posisi, ukuran, dan efek fade untuk klip itu."><span>Volume<span class="ui-bar" style="--w:70%"></span></span><span>Kecepatan<span class="ui-bar" style="--w:40%"></span></span><span>Fade<span class="ui-bar" style="--w:25%"></span></span></button>
+                  <button type="button" class="ui-part ui-tool" data-ui-part="alat" data-ui-name="Bilah alat" data-ui-desc="Tombol untuk membatalkan (undo), mengulang (redo), membelah klip (ikon gunting, Pisahkan), dan menghapus klip."><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i><i class="bi bi-arrow-clockwise" aria-hidden="true"></i><i class="bi bi-scissors" aria-hidden="true"></i><i class="bi bi-trash3" aria-hidden="true"></i><span class="ui-dim">Pisahkan · Hapus</span></button>
+                  <button type="button" class="ui-part ui-tl" data-ui-part="linimasa" data-ui-name="Linimasa (timeline)" data-ui-desc="Tempat menyusun klip dari kiri (awal) ke kanan (akhir). Ada beberapa jalur: video, teks, dan audio. Garis merah adalah playhead."><span class="ui-ruler"><span>0:00</span><span>0:15</span><span>0:30</span><span>0:45</span><span>1:00</span></span><span class="ui-track"><span class="ui-clip" style="--f:3"></span><span class="ui-clip" style="--f:2"></span><span class="ui-clip" style="--f:4"></span><span class="ui-ph"></span></span><span class="ui-track ui-track--text"><span class="ui-gap" style="--f:1"></span><span class="ui-clip" style="--f:2"></span><span class="ui-gap" style="--f:6"></span></span><span class="ui-track ui-track--audio"><span class="ui-clip" style="--f:9"></span></span></button>
+                </div>
+              </div>
+              <div class="ui-info" data-ui-info aria-live="polite"></div>
+            </div>
+          </div>
+
+          <h3>Fitur penting di editor video</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Fitur yang paling sering dipakai</caption>
+              <thead><tr><th scope="col">Fitur</th><th scope="col">Gunanya</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Pisahkan (<i lang="en">Split</i>)</th><td>Membelah klip di posisi playhead (<i lang="en">cutting</i>).</td></tr>
+                <tr><th scope="row">Teks</th><td>Menambahkan judul, nama narasumber, atau keterangan.</td></tr>
+                <tr><th scope="row">Teks otomatis (<i lang="en">caption</i>)</th><td>Mengubah ucapan menjadi tulisan secara otomatis. Selalu periksa ejaannya!</td></tr>
+                <tr><th scope="row">Audio</th><td>Menambahkan musik, efek suara, atau merekam narasi langsung.</td></tr>
+                <tr><th scope="row">Volume</th><td>Mengatur keras-lemah suara setiap klip (<i lang="en">mixing</i>).</td></tr>
+                <tr><th scope="row">Kecepatan</th><td>Membuat gerak lambat atau gerak cepat.</td></tr>
+                <tr><th scope="row">Transisi</th><td>Efek peralihan antarklip. Pakai seperlunya saja.</td></tr>
+                <tr><th scope="row">Rasio</th><td>Mengubah bentuk layar: mendatar 16:9, tegak 9:16, atau persegi 1:1.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Langkah membuat video di CapCut</h3>
+          <div class="tabs" data-tabs>
+            <div class="tab-list" role="tablist" aria-label="Pilih versi CapCut">
+              <button type="button" role="tab" id="tab-cc-hp" aria-controls="panel-cc-hp" aria-selected="true"><i class="bi bi-phone" aria-hidden="true"></i> CapCut di HP</button>
+              <button type="button" role="tab" id="tab-cc-pc" aria-controls="panel-cc-pc" aria-selected="false"><i class="bi bi-laptop" aria-hidden="true"></i> CapCut di komputer</button>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="panel-cc-hp" aria-labelledby="tab-cc-hp">
+              <ol class="steps">
+                <li><h4>Buat proyek baru</h4><p>Buka CapCut, lalu ketuk <strong>Proyek baru</strong>.</p></li>
+                <li><h4>Pilih bahan</h4><p>Pilih video dan foto sesuai urutan cerita, lalu ketuk <strong>Tambah</strong>.</p></li>
+                <li><h4>Potong dan pangkas</h4><p>Ketuk klip, geser tepinya untuk memangkas, atau ketuk <strong>Pisahkan</strong> untuk membelah.</p></li>
+                <li><h4>Tambah teks dan suara</h4><p>Ketuk <strong>Teks</strong> untuk judul dan <strong>Audio</strong> untuk musik atau narasi.</p></li>
+                <li><h4>Atur volume</h4><p>Ketuk klip suara, pilih <strong>Volume</strong>. Narasi harus paling jelas.</p></li>
+                <li><h4>Ekspor</h4><p>Ketuk tombol ekspor di kanan atas, pilih resolusi, lalu simpan ke galeri.</p></li>
+              </ol>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="panel-cc-pc" aria-labelledby="tab-cc-pc">
+              <ol class="steps">
+                <li><h4>Buat proyek baru</h4><p>Buka CapCut di komputer, lalu klik <strong>Buat proyek</strong>.</p></li>
+                <li><h4>Impor bahan</h4><p>Klik <strong>Impor</strong> atau seret file dari folder ke panel media.</p></li>
+                <li><h4>Susun di linimasa</h4><p>Seret bahan dari panel media ke linimasa sesuai urutan <i lang="en">storyboard</i>.</p></li>
+                <li><h4>Potong dan pangkas</h4><p>Letakkan playhead di titik potong, lalu klik ikon gunting (<strong>Pisahkan</strong>). Pilih bagian yang tidak perlu, lalu tekan <code>Delete</code>.</p></li>
+                <li><h4>Tambah teks, suara, dan atur volume</h4><p>Pakai menu <strong>Teks</strong> dan <strong>Audio</strong> di atas panel media. Atur volume di panel pengaturan sebelah kanan.</p></li>
+                <li><h4>Ekspor</h4><p>Klik <strong>Ekspor</strong> di kanan atas, beri nama file, pilih resolusi, lalu klik <strong>Ekspor</strong> lagi.</p></li>
+              </ol>
+            </div>
+          </div>
+          <div class="callout" data-el="1">
+            <i class="bi bi-keyboard" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Pintasan papan ketik yang berguna di komputer</p>
+              <p><code>Spasi</code> = putar atau jeda · <code>Ctrl</code> + <code>Z</code> = batalkan langkah terakhir · <code>Delete</code> = hapus klip yang dipilih. Jangan takut salah, karena hampir semua langkah bisa dibatalkan!</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 6. AUDACITY -->
+        <section class="lesson-sec" id="audacity" aria-labelledby="h-audacity">
+          <p class="sec-no"><span>06</span> Editor audio <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-audacity">Mengenal Audacity, editor audio</h2>
+          <p><strong>Audacity</strong> adalah aplikasi gratis di komputer untuk merekam dan mengolah suara. Cocok untuk membuat podcast, narasi video, atau rekaman wawancara. Suara ditampilkan sebagai <strong>gelombang</strong>: makin tinggi gelombangnya, makin keras suaranya.</p>
+
+          <h3>Coba sendiri: Kenali Tampilan Audacity <em class="phase">Mengaplikasi</em></h3>
+          <div class="lab ui-explorer js-only" data-ui-explorer data-ui-tasks='[{"ask":"Tombol merah untuk mulai merekam ada di mana?","part":"transport"},{"ask":"Di mana kamu melihat bentuk gelombang suara?","part":"gelombang"},{"ask":"Di mana menu Effect untuk Fade In dan pengurangan derau?","part":"menu"},{"ask":"Bagian mana yang menunjukkan suaramu terlalu keras (sampai merah)?","part":"meter"},{"ask":"Di mana kamu mengatur volume (gain) satu jalur dan tombol bisukan?","part":"kontrol"},{"ask":"Di mana alat untuk memilih bagian suara?","part":"alat"}]'>
+            <div class="lab-head">
+              <i class="bi bi-soundwave" aria-hidden="true"></i>
+              <div>
+                <h3>Tampilan Audacity</h3>
+                <p>Nama menu di bawah memakai bahasa Inggris. Jika bahasa Audacity diatur ke Indonesia, namanya ikut berubah.</p>
+              </div>
+            </div>
+            <div class="lab-body lab-body--single">
+              <div class="ui-modes">
+                <button type="button" data-ui-mode="explore" aria-pressed="true"><i class="bi bi-compass" aria-hidden="true"></i> Mode jelajah</button>
+                <button type="button" data-ui-mode="quiz" aria-pressed="false"><i class="bi bi-controller" aria-hidden="true"></i> Mode tantangan</button>
+                <span class="dl-score" data-ui-score hidden>0 / 6</span>
+              </div>
+              <p class="ui-prompt" data-ui-prompt hidden aria-live="polite"></p>
+              <div class="ui-scroll">
+                <div class="ui-mock ui-mock--audio">
+                  <button type="button" class="ui-part ui-menu" data-ui-part="menu" data-ui-name="Bilah menu" data-ui-desc="Berisi menu File (buka, simpan, ekspor), Edit, Select, dan Effect. Menu Effect berisi Fade In, Fade Out, Noise Reduction (pengurang derau), dan Normalize."><span>File</span><span>Edit</span><span>Select</span><span>View</span><span>Transport</span><span>Tracks</span><span>Generate</span><span>Effect</span><span>Analyze</span><span>Help</span></button>
+                  <button type="button" class="ui-part ui-trans" data-ui-part="transport" data-ui-name="Tombol transport" data-ui-desc="Tombol putar (hijau), jeda, berhenti, lompat ke awal atau akhir, dan rekam (lingkaran merah)."><span class="ui-icons"><i class="bi bi-pause-fill" aria-hidden="true"></i><i class="bi bi-play-fill" aria-hidden="true"></i><i class="bi bi-stop-fill" aria-hidden="true"></i><i class="bi bi-skip-start-fill" aria-hidden="true"></i><i class="bi bi-skip-end-fill" aria-hidden="true"></i><i class="bi bi-record-fill" aria-hidden="true"></i></span></button>
+                  <button type="button" class="ui-part ui-tools2" data-ui-part="alat" data-ui-name="Alat pilih dan sunting" data-ui-desc="Alat untuk memilih bagian suara (ikon kursor teks), memotong, menyalin, dan menempel. Blok bagian suara dulu sebelum memberi efek."><span class="ui-icons"><i class="bi bi-cursor-text" aria-hidden="true"></i><i class="bi bi-scissors" aria-hidden="true"></i><i class="bi bi-files" aria-hidden="true"></i><i class="bi bi-clipboard" aria-hidden="true"></i><i class="bi bi-zoom-in" aria-hidden="true"></i></span></button>
+                  <button type="button" class="ui-part ui-meter" data-ui-part="meter" data-ui-name="Pengukur suara (meter)" data-ui-desc="Menunjukkan kerasnya suara saat merekam atau memutar. Hijau aman, kuning hampir penuh, merah berarti suara pecah (clipping)."><span class="ui-dim">Rekam</span><span class="ui-bar"></span><span class="ui-dim">Putar</span><span class="ui-bar" style="--w:55%"></span></button>
+                  <button type="button" class="ui-part ui-ctrl" data-ui-part="kontrol" data-ui-name="Panel kontrol jalur" data-ui-desc="Ada di kiri setiap jalur suara. Berisi nama jalur, tombol Mute (bisukan) dan Solo (dengarkan jalur ini saja), serta penggeser Gain untuk mengatur volume."><span>Narasi</span><span class="ui-dim">Mute · Solo</span><span>Gain<span class="ui-bar" style="--w:65%"></span></span></button>
+                  <button type="button" class="ui-part ui-wave" data-ui-part="gelombang" data-ui-name="Jalur gelombang suara" data-ui-desc="Gambar gelombang suara dari kiri (awal) ke kanan (akhir). Bagian yang tinggi berarti suara keras, sedangkan bagian datar berarti hening. Seret mouse untuk memblok bagian yang ingin diolah."><svg viewBox="0 0 300 70" preserveAspectRatio="none" aria-hidden="true"><rect class="ui-sel" x="120" y="0" width="60" height="70"/><path d="M0 35 L10 33 L14 20 L18 50 L22 28 L26 42 L30 35 L40 34 L44 12 L48 58 L52 18 L56 52 L60 25 L64 45 L68 35 L80 35 L84 22 L88 48 L92 15 L96 55 L100 30 L104 40 L110 35 L130 35 L134 30 L138 40 L142 35 L160 35 L164 10 L168 60 L172 14 L176 56 L180 24 L184 46 L188 35 L200 35 L204 18 L208 52 L212 22 L216 48 L220 35 L240 34 L244 26 L248 44 L252 30 L256 40 L260 35 L300 35 L300 36 L0 36Z"/></svg></button>
+                </div>
+              </div>
+              <div class="ui-info" data-ui-info aria-live="polite"></div>
+            </div>
+          </div>
+
+          <h3>Fitur penting di Audacity</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-record-circle" aria-hidden="true"></i><h4>Rekam</h4><p>Klik tombol merah untuk merekam lewat mikrofon. Klik berhenti jika selesai.</p></article>
+            <article class="mini-card"><i class="bi bi-scissors" aria-hidden="true"></i><h4>Hapus bagian</h4><p>Blok bagian yang salah ucap, lalu tekan <code>Delete</code>.</p></article>
+            <article class="mini-card"><i class="bi bi-volume-mute" aria-hidden="true"></i><h4>Pengurang derau</h4><p><strong>Effect</strong> → <strong>Noise Reduction</strong>. Mengurangi desis atau dengung di latar.</p></article>
+            <article class="mini-card"><i class="bi bi-graph-up" aria-hidden="true"></i><h4>Fade In / Fade Out</h4><p>Blok awal atau akhir musik, lalu pilih efek <strong>Fade In</strong> atau <strong>Fade Out</strong>.</p></article>
+            <article class="mini-card"><i class="bi bi-bar-chart-steps" aria-hidden="true"></i><h4>Normalize</h4><p>Menyamakan kerasnya suara agar tidak terlalu pelan dan tidak pecah.</p></article>
+            <article class="mini-card"><i class="bi bi-speedometer2" aria-hidden="true"></i><h4>Ubah tempo</h4><p>Mempercepat atau memperlambat suara. Coba juga ubah nadanya untuk suara lucu!</p></article>
+          </div>
+          <div class="callout" data-el="3">
+            <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Simpan proyek berbeda dengan ekspor</p>
+              <p><strong>Save Project</strong> menyimpan file proyek Audacity (<code>.aup3</code>) yang masih bisa diedit, tetapi hanya bisa dibuka di Audacity. <strong>Export</strong> menghasilkan file suara jadi (<code>.mp3</code> atau <code>.wav</code>) yang bisa diputar di mana saja.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 7. ALAT WEB -->
+        <section class="lesson-sec" id="web" aria-labelledby="h-web">
+          <p class="sec-no"><span>07</span> Alat berbasis web <em class="phase">Memahami</em></p>
+          <h2 id="h-web">Alat editor berbasis web</h2>
+          <p>Alat berbasis web dibuka lewat peramban, seperti membuka situs biasa. Contohnya <strong>Clipchamp</strong> dan <strong>Canva</strong>. Kamu cukup masuk dengan akun, lalu mulai mengedit.</p>
+          <div class="compare">
+            <div class="compare-card compare-card--info">
+              <p class="compare-label">Kelebihan</p>
+              <ul>
+                <li>Tidak perlu memasang aplikasi.</li>
+                <li>Bisa dipakai di komputer lab atau Chromebook.</li>
+                <li>Proyek tersimpan di akun, bisa dilanjutkan di komputer lain.</li>
+                <li>Banyak templat siap pakai.</li>
+              </ul>
+            </div>
+            <div class="compare-arrow" aria-hidden="true"><i class="bi bi-arrow-left-right"></i></div>
+            <div class="compare-card">
+              <p class="compare-label">Kekurangan</p>
+              <ul>
+                <li>Harus selalu terhubung ke internet.</li>
+                <li>Mengunggah video besar memakan kuota dan waktu.</li>
+                <li>Sebagian fitur atau templat hanya untuk pengguna berbayar.</li>
+                <li>Perlu akun, jadi jaga kata sandimu.</li>
+              </ul>
+            </div>
+          </div>
+          <h3>Langkah umum di alat berbasis web</h3>
+          <ol class="steps">
+            <li><h4>Masuk ke akun</h4><p>Buka situsnya di peramban, lalu masuk dengan akun belajar dari sekolah.</p></li>
+            <li><h4>Buat proyek video</h4><p>Pilih <strong>Buat video</strong> atau ukuran desain video (16:9 untuk mendatar).</p></li>
+            <li><h4>Unggah bahan</h4><p>Seret file video, foto, dan suara ke jendela peramban. Tunggu sampai unggahan selesai.</p></li>
+            <li><h4>Sunting</h4><p>Susun di linimasa, pangkas, potong, tambah teks, dan atur volume, sama seperti di aplikasi lain.</p></li>
+            <li><h4>Ekspor dan keluar</h4><p>Ekspor videonya, periksa hasil unduhan, lalu <strong>keluar dari akun</strong> jika memakai komputer bersama.</p></li>
+          </ol>
+          <div class="callout" data-el="4">
+            <i class="bi bi-cloud-check" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Jangan buru-buru menutup tab!</p>
+              <p>Pastikan unggahan dan ekspor sudah selesai sebelum menutup tab peramban. Jika tab ditutup terlalu cepat, pekerjaanmu bisa hilang.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 8. ALUR KERJA & EKSPOR -->
+        <section class="lesson-sec" id="ekspor" aria-labelledby="h-ekspor">
+          <p class="sec-no"><span>08</span> Alur kerja &amp; ekspor <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-ekspor">Alur kerja di semua aplikasi editor</h2>
+          <p>Apa pun aplikasinya, langkah besarnya selalu sama. Ini juga algoritma, seperti yang kamu pelajari di Elemen Berpikir Komputasional!</p>
+          <div class="order js-only" data-order>
+            <div class="order-head">
+              <h3>Susun alur kerja membuat video</h3>
+              <p>Langkah-langkah di bawah ini masih acak. Gunakan tombol panah untuk menyusunnya, lalu tekan <strong>Periksa</strong>.</p>
+            </div>
+            <ol class="order-list">
+              <li class="order-item" data-pos="5"><span class="order-text">Tambahkan teks, musik, dan narasi.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: tambah teks dan suara">↑</button><button type="button" data-down aria-label="Turunkan: tambah teks dan suara">↓</button></span></li>
+              <li class="order-item" data-pos="2"><span class="order-text">Impor bahan video, foto, dan suara.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: impor bahan">↑</button><button type="button" data-down aria-label="Turunkan: impor bahan">↓</button></span></li>
+              <li class="order-item" data-pos="8"><span class="order-text">Ekspor dan beri nama file yang jelas.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: ekspor">↑</button><button type="button" data-down aria-label="Turunkan: ekspor">↓</button></span></li>
+              <li class="order-item" data-pos="4"><span class="order-text">Pangkas dan potong bagian yang tidak perlu.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: pangkas dan potong">↑</button><button type="button" data-down aria-label="Turunkan: pangkas dan potong">↓</button></span></li>
+              <li class="order-item" data-pos="1"><span class="order-text">Buat proyek baru.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: buat proyek">↑</button><button type="button" data-down aria-label="Turunkan: buat proyek">↓</button></span></li>
+              <li class="order-item" data-pos="7"><span class="order-text">Tonton pratinjau dari awal sampai akhir.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: tonton pratinjau">↑</button><button type="button" data-down aria-label="Turunkan: tonton pratinjau">↓</button></span></li>
+              <li class="order-item" data-pos="3"><span class="order-text">Susun klip di linimasa sesuai <i lang="en">storyboard</i>.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: susun klip">↑</button><button type="button" data-down aria-label="Turunkan: susun klip">↓</button></span></li>
+              <li class="order-item" data-pos="6"><span class="order-text">Atur volume setiap suara agar seimbang.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: atur volume">↑</button><button type="button" data-down aria-label="Turunkan: atur volume">↓</button></span></li>
+            </ol>
+            <div class="order-foot">
+              <p class="order-status" data-order-status aria-live="polite"></p>
+              <div class="order-actions">
+                <button type="button" class="link-btn" data-order-shuffle><i class="bi bi-shuffle" aria-hidden="true"></i> Acak lagi</button>
+                <button type="button" class="btn btn-ink" data-order-check><i class="bi bi-check2-circle" aria-hidden="true"></i> Periksa</button>
+              </div>
+            </div>
+          </div>
+
+          <h3>Proyek bukan video jadi</h3>
+          <div class="compare">
+            <div class="compare-card">
+              <p class="compare-label">File proyek</p>
+              <p>Berisi "resep": urutan klip, potongan, teks, dan volume. Masih bisa diedit, tetapi hanya bisa dibuka di aplikasi yang sama. <strong>Tidak bisa ditonton orang lain.</strong></p>
+            </div>
+            <div class="compare-arrow" aria-hidden="true"><i class="bi bi-arrow-left-right"></i></div>
+            <div class="compare-card compare-card--info">
+              <p class="compare-label">File hasil ekspor</p>
+              <p>"Masakan" yang sudah jadi: file MP4 atau MP3. Bisa diputar di HP atau komputer mana saja dan siap dibagikan. Proses mengubah proyek menjadi file jadi disebut <strong>ekspor</strong> atau <strong><i lang="en">rendering</i></strong>.</p>
+            </div>
+          </div>
+
+          <h3>Pengaturan saat ekspor</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-aspect-ratio" aria-hidden="true"></i><h4>Resolusi</h4><p>Ketajaman gambar: 480p, 720p (HD), 1080p (Full HD), dan 4K. Makin tinggi, makin tajam, dan makin besar filenya.</p></article>
+            <article class="mini-card"><i class="bi bi-film" aria-hidden="true"></i><h4><i lang="en">Frame rate</i> (fps)</h4><p>Jumlah gambar per detik. 30 fps sudah halus. 60 fps lebih halus untuk gerakan cepat, tetapi filenya lebih besar.</p></article>
+            <article class="mini-card"><i class="bi bi-file-earmark-play" aria-hidden="true"></i><h4>Format</h4><p>Video: <strong>MP4</strong> (paling umum). Audio: <strong>MP3</strong> (kecil) atau <strong>WAV</strong> (besar, kualitas asli).</p></article>
+          </div>
+
+          <h3>Coba sendiri: Kalkulator Ekspor <em class="phase">Mengaplikasi</em></h3>
+          <div class="lab export-calc js-only" data-export-calc>
+            <div class="lab-head">
+              <i class="bi bi-calculator" aria-hidden="true"></i>
+              <div>
+                <h3>Kalkulator Ekspor</h3>
+                <p>Atur pilihan ekspor dan lihat perkiraan ukuran filenya. Ukuran sebenarnya bisa sedikit berbeda, tergantung isi video.</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <div class="ll-fields">
+                  <div class="ll-field ll-field--wide">
+                    <label class="lab-label" for="ex-goal">Video ini akan…</label>
+                    <select id="ex-goal" data-ex="goal">
+                      <option value="grup">Dikirim ke grup kelas atau Classroom</option>
+                      <option value="proyektor">Ditayangkan di proyektor atau TV</option>
+                      <option value="arsip">Disimpan sebagai arsip kualitas tinggi</option>
+                    </select>
+                  </div>
+                  <div class="ll-field">
+                    <label class="lab-label" for="ex-res">Resolusi</label>
+                    <select id="ex-res" data-ex="res">
+                      <option value="480">480p</option>
+                      <option value="720">720p (HD)</option>
+                      <option value="1080" selected>1080p (Full HD)</option>
+                      <option value="2160">4K</option>
+                    </select>
+                  </div>
+                  <div class="ll-field">
+                    <label class="lab-label" for="ex-fps">Frame rate</label>
+                    <select id="ex-fps" data-ex="fps">
+                      <option value="24">24 fps</option>
+                      <option value="30">30 fps</option>
+                      <option value="60" selected>60 fps</option>
+                    </select>
+                  </div>
+                  <div class="ll-field ll-field--wide">
+                    <label class="lab-label" for="ex-dur">Durasi video (detik)</label>
+                    <input id="ex-dur" type="number" min="1" max="1200" step="1" value="90" data-ex="dur">
+                  </div>
+                </div>
+              </div>
+              <div class="lab-controls">
+                <dl class="nl-stats">
+                  <div class="nl-stat"><dt>Perkiraan ukuran</dt><dd data-ex-out="size">-</dd></div>
+                  <div class="nl-stat"><dt>Waktu kirim*</dt><dd data-ex-out="send">-</dd></div>
+                  <div class="nl-stat"><dt>Bitrate</dt><dd data-ex-out="rate">-</dd></div>
+                </dl>
+                <ul class="dl-feedback" data-ex-feedback aria-live="polite"></ul>
+                <p class="tool-note">*Perkiraan dengan internet berkecepatan 5 Mbps. Bitrate adalah banyaknya data setiap detik.</p>
+              </div>
+            </div>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Perkiraan ukuran audio satu menit<small>Lanjutan TP 2.1: lebih banyak data, lebih besar ukuran file</small></caption>
+              <thead><tr><th scope="col">Format</th><th scope="col">Ukuran per menit</th><th scope="col">Cocok untuk</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">WAV (kualitas CD, stereo)</th><td>sekitar 10 MB</td><td>Menyimpan rekaman asli sebelum diedit</td></tr>
+                <tr><th scope="row">MP3 128 kbps</th><td>sekitar 1 MB</td><td>Podcast dan berbagi di grup</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ========================================== 9. AMAN & BIJAK -->
+        <section class="lesson-sec" id="aman" aria-labelledby="h-aman">
+          <p class="sec-no"><span>09</span> Aman &amp; bijak <em class="phase">Merefleksi</em></p>
+          <h2 id="h-aman">Memakai aplikasi dengan aman dan bijak</h2>
+          <p>Aplikasi editor menyimpan foto, video, dan suaramu. Karena itu, kita harus memakainya dengan sadar dan hati-hati.</p>
+          <div class="card-grid">
+            <article class="mini-card" data-el="3"><i class="bi bi-shop" aria-hidden="true"></i><h4>Unduh dari sumber resmi</h4><p>Pasang aplikasi hanya dari Play Store, App Store, Microsoft Store, atau situs resmi pembuatnya.</p></article>
+            <article class="mini-card" data-el="3"><i class="bi bi-bug" aria-hidden="true"></i><h4>Tolak versi "mod"</h4><p>Aplikasi mod atau bajakan bisa berisi virus dan pencuri data. Selain itu, memakainya melanggar hak pembuat aplikasi.</p></article>
+            <article class="mini-card" data-el="3"><i class="bi bi-person-badge" aria-hidden="true"></i><h4>Perhatikan batas usia</h4><p>Banyak aplikasi menetapkan usia minimal pengguna. Jika belum cukup umur, pakai akun sekolah atau minta pendampingan orang tua dan guru.</p></article>
+            <article class="mini-card" data-el="3"><i class="bi bi-shield-lock" aria-hidden="true"></i><h4>Atur izin aplikasi</h4><p>Beri izin kamera, mikrofon, dan galeri hanya jika diperlukan. Tolak izin yang tidak berhubungan, misalnya kontak.</p></article>
+            <article class="mini-card" data-el="3"><i class="bi bi-hdd" aria-hidden="true"></i><h4>Buat cadangan</h4><p>Simpan salinan bahan dan hasil ekspor di tempat lain, misalnya Google Drive atau flashdisk.</p></article>
+            <article class="mini-card" data-el="3"><i class="bi bi-eye" aria-hidden="true"></i><h4>Jaga mata dan waktu</h4><p>Setiap 20 menit, lihat benda yang jauh selama 20 detik. Beri batas waktu agar tugas lain tidak terlupa.</p></article>
+          </div>
+          <ol class="question-list">
+            <li>Aplikasi apa saja yang ada di HP-mu? Apakah semuanya diunduh dari sumber resmi?</li>
+            <li>Coba buka pengaturan izin salah satu aplikasi. Adakah izin yang sebenarnya tidak diperlukan?</li>
+          </ol>
+        </section>
+
+        <!-- ========================================== 10. KUIS -->
+        <section class="lesson-sec" id="cek-pemahaman" aria-labelledby="h-kuis">
+          <p class="sec-no"><span>10</span> Cek pemahaman <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kuis">Ayo uji pemahamanmu</h2>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis A · Aplikasi atau fitur apa?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="audacity" data-explain="Audacity adalah editor audio di komputer, lengkap dengan pengurang derau.">
+                <p class="quiz-text">Kamu ingin merekam podcast di laptop dan mengurangi suara desis di latar.</p>
+                <div class="quiz-choices"><button type="button" data-choice="capcut">CapCut di HP</button><button type="button" data-choice="audacity">Audacity</button><button type="button" data-choice="canva">Canva</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="capcut" data-explain="CapCut tersedia di HP dan cukup lengkap untuk membuat video.">
+                <p class="quiz-text">Kamu hanya punya HP dan ingin membuat video pendek.</p>
+                <div class="quiz-choices"><button type="button" data-choice="capcut">CapCut</button><button type="button" data-choice="audacity">Audacity</button><button type="button" data-choice="wav">File WAV</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="web" data-explain="Alat berbasis web tidak perlu dipasang, cukup dibuka di peramban.">
+                <p class="quiz-text">Komputer lab tidak boleh dipasangi aplikasi baru, tetapi internetnya lancar.</p>
+                <div class="quiz-choices"><button type="button" data-choice="mod">Aplikasi versi mod</button><button type="button" data-choice="web">Alat berbasis web</button><button type="button" data-choice="pc">Aplikasi komputer</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="caption" data-explain="Teks otomatis (caption) mengubah ucapan menjadi tulisan. Periksa lagi ejaannya!">
+                <p class="quiz-text">Fitur yang mengubah ucapan narator menjadi tulisan di layar adalah…</p>
+                <div class="quiz-choices"><button type="button" data-choice="filter">Filter</button><button type="button" data-choice="caption">Teks otomatis</button><button type="button" data-choice="transisi">Transisi</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="speed" data-explain="Fitur kecepatan bisa membuat gerak lambat atau gerak cepat.">
+                <p class="quiz-text">Kamu ingin membuat gerak lambat saat bola ditendang. Fitur yang dipakai adalah…</p>
+                <div class="quiz-choices"><button type="button" data-choice="speed">Kecepatan</button><button type="button" data-choice="volume">Volume</button><button type="button" data-choice="rasio">Rasio</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="rasio" data-explain="Rasio mengatur bentuk layar, misalnya 16:9 (mendatar) atau 9:16 (tegak).">
+                <p class="quiz-text">Kamu ingin mengubah video tegak menjadi mendatar 16:9. Fitur yang dipakai adalah…</p>
+                <div class="quiz-choices"><button type="button" data-choice="rasio">Rasio</button><button type="button" data-choice="filter">Filter</button><button type="button" data-choice="split">Pisahkan</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis B · Benar atau salah?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="salah" data-explain="File proyek hanya bisa dibuka di aplikasinya. Yang dikirim untuk ditonton adalah file hasil ekspor (MP4).">
+                <p class="quiz-text">File proyek CapCut bisa langsung dikirim ke teman untuk ditonton.</p>
+                <div class="quiz-choices"><button type="button" data-choice="benar">Benar</button><button type="button" data-choice="salah">Salah</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="salah" data-explain="Aplikasi mod bisa berisi virus atau pencuri data, dan melanggar hak pembuatnya.">
+                <p class="quiz-text">Aplikasi "versi mod" aman dipakai karena gratis dan tanpa tanda air.</p>
+                <div class="quiz-choices"><button type="button" data-choice="benar">Benar</button><button type="button" data-choice="salah">Salah</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="benar" data-explain="Resolusi tinggi berarti lebih banyak piksel, jadi datanya lebih banyak.">
+                <p class="quiz-text">Semakin tinggi resolusi video, semakin besar ukuran filenya.</p>
+                <div class="quiz-choices"><button type="button" data-choice="benar">Benar</button><button type="button" data-choice="salah">Salah</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="salah" data-explain="Alat berbasis web selalu membutuhkan internet.">
+                <p class="quiz-text">Alat editor berbasis web bisa dipakai tanpa internet.</p>
+                <div class="quiz-choices"><button type="button" data-choice="benar">Benar</button><button type="button" data-choice="salah">Salah</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="benar" data-explain="Untuk merekam narasi, aplikasi memang perlu izin memakai mikrofon.">
+                <p class="quiz-text">Aplikasi editor perlu izin mikrofon jika kita ingin merekam narasi di dalamnya.</p>
+                <div class="quiz-choices"><button type="button" data-choice="benar">Benar</button><button type="button" data-choice="salah">Salah</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="benar" data-explain="Menutup tab sebelum ekspor atau unggahan selesai bisa membuat pekerjaan hilang.">
+                <p class="quiz-text">Sebelum menutup tab alat web, pastikan ekspor dan unggahan sudah selesai.</p>
+                <div class="quiz-choices"><button type="button" data-choice="benar">Benar</button><button type="button" data-choice="salah">Salah</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 11. TUGAS INDIVIDU -->
+        <section class="lesson-sec" id="tugas-individu" aria-labelledby="h-individu">
+          <p class="sec-no"><span>11</span> Tugas individu <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em></p>
+          <h2 id="h-individu">Podcast Mini 60 Detik</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan sendiri · berbasis digital</p>
+            <h3>Ceritakan satu hal yang kamu sukai dengan suaramu sendiri</h3>
+            <p>Buat podcast pendek berdurasi sekitar 60 detik. Temanya bebas, misalnya tips belajar, makanan khas daerahmu, atau tokoh yang kamu kagumi.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-person" aria-hidden="true"></i> <span>Dikerjakan sendiri</span></li>
+              <li><i class="bi bi-soundwave" aria-hidden="true"></i> <span>Audacity, atau CapCut di HP</span></li>
+              <li><i class="bi bi-stopwatch" aria-hidden="true"></i> <span>Durasi 50–70 detik</span></li>
+              <li><i class="bi bi-file-earmark-music" aria-hidden="true"></i> <span>Dikumpulkan: MP3 + 2 tangkapan layar</span></li>
+            </ul>
+          </div>
+          <ol class="steps">
+            <li><h4>Tulis naskah</h4><p>Tulis pembuka (salam dan nama), isi (2–3 hal menarik), dan penutup (ajakan atau terima kasih).</p></li>
+            <li><h4>Rekam</h4><p>Rekam di tempat tenang dengan tombol rekam di Audacity, atau dengan perekam suara di HP.</p></li>
+            <li><h4>Sunting</h4><p>Hapus bagian salah ucap dan jeda yang terlalu panjang. Pakai <strong>Noise Reduction</strong> jika ada desis.</p></li>
+            <li><h4>Tambah musik pembuka</h4><p>Tambahkan musik bebas royalti di awal dengan <strong>Fade In</strong> dan <strong>Fade Out</strong>. Musik harus lebih pelan daripada suaramu.</p></li>
+            <li><h4>Ekspor</h4><p>Ekspor sebagai MP3 dengan nama <code>2-6_Nama_Kelas_podcast.mp3</code>. Di CapCut, tambahkan gambar sampul lalu ekspor sebagai video MP4.</p></li>
+            <li><h4>Dokumentasikan</h4><p>Ambil 2 tangkapan layar: saat menyunting dan saat mengekspor. Tulis 2 kalimat tentang fitur yang paling membantumu.</p></li>
+          </ol>
+          <h3>Periksa tugasmu sendiri</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Podcast punya pembuka, isi, dan penutup.</span></label></li>
+            <li><label><input type="checkbox"><span>Suaraku jelas, tanpa salah ucap yang mengganggu.</span></label></li>
+            <li><label><input type="checkbox"><span>Musik pembuka memakai fade dan tidak menutupi suaraku.</span></label></li>
+            <li><label><input type="checkbox"><span>File diekspor sebagai MP3 (atau MP4) dengan nama yang benar.</span></label></li>
+            <li><label><input type="checkbox"><span>Aku melampirkan 2 tangkapan layar dan catatan fitur yang membantu.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 12. TUGAS KELOMPOK -->
+        <section class="lesson-sec" id="tugas-kelompok" aria-labelledby="h-kelompok">
+          <p class="sec-no"><span>12</span> Tugas kelompok <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kelompok">Proyek: Satu Karya, Tiga Alat</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan bersama kelompokmu · berbasis digital</p>
+            <h3>Video tutorial 60 detik dan ulasan aplikasi</h3>
+            <p>Buat video tutorial singkat, misalnya "Cara memilah sampah di kelas" atau "Cara meminjam buku di perpustakaan". Gunakan <strong>tiga jenis alat</strong>: editor audio untuk narasi, editor video untuk menyunting, dan alat web untuk sampul (<i lang="en">thumbnail</i>). Lalu tulis ulasan tentang ketiga alat itu.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-people" aria-hidden="true"></i> <span>4–5 orang per kelompok</span></li>
+              <li><i class="bi bi-tools" aria-hidden="true"></i> <span>3 jenis alat yang berbeda</span></li>
+              <li><i class="bi bi-film" aria-hidden="true"></i> <span>Video MP4 60 detik + sampul</span></li>
+              <li><i class="bi bi-star-half" aria-hidden="true"></i> <span>Lembar ulasan aplikasi</span></li>
+            </ul>
+          </div>
+
+          <h3>Langkah 1 · Bagi peran</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-kanban" aria-hidden="true"></i><h4>Manajer proyek</h4><p>Mengatur jadwal, membuat folder bersama, dan memastikan semua file terkumpul.</p></article>
+            <article class="mini-card"><i class="bi bi-soundwave" aria-hidden="true"></i><h4>Editor audio</h4><p>Merekam dan merapikan narasi di Audacity atau aplikasi audio di HP.</p></article>
+            <article class="mini-card"><i class="bi bi-film" aria-hidden="true"></i><h4>Editor video</h4><p>Menyunting video di CapCut atau Clipchamp.</p></article>
+            <article class="mini-card"><i class="bi bi-image" aria-hidden="true"></i><h4>Desainer</h4><p>Membuat sampul video di Canva atau alat web lain dengan prinsip TP 2.4.</p></article>
+            <article class="mini-card"><i class="bi bi-star-half" aria-hidden="true"></i><h4>Pengulas</h4><p>Mencatat pengalaman memakai setiap alat dan menyusun lembar ulasan.</p></article>
+          </div>
+
+          <h3>Langkah 2 · Kerjakan bersama</h3>
+          <ol class="steps">
+            <li><h4>Rencanakan</h4><p>Tentukan topik tutorial, tulis naskah, dan buat <i lang="en">storyboard</i> sederhana (TP 2.2).</p></li>
+            <li><h4>Rekam bahan</h4><p>Rekam video langkah-langkahnya dan narasinya. Terapkan teknik pengambilan gambar dari TP 2.5.</p></li>
+            <li><h4>Olah narasi</h4><p>Editor audio merapikan narasi, lalu mengekspornya sebagai MP3 ke folder bersama.</p></li>
+            <li><h4>Sunting video</h4><p>Editor video menyusun klip, menambahkan narasi, teks, dan musik, lalu mengatur volumenya.</p></li>
+            <li><h4>Buat sampul</h4><p>Desainer membuat gambar sampul berukuran 1280 × 720 piksel dengan judul yang jelas.</p></li>
+            <li><h4>Ulas dan kumpulkan</h4><p>Isi Lembar Ulasan Aplikasi, lalu kumpulkan video <code>2-6_Kelompok1_VIIIA_tutorial.mp4</code>, sampulnya, dan lembar ulasan.</p></li>
+          </ol>
+
+          <h3>Langkah 3 · Lembar ulasan aplikasi</h3>
+          <div class="worksheet" id="lembar-ulasan">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Ulasan Aplikasi</h3>
+                <p>TP 2.6 Menerapkan Aplikasi Dasar untuk Produksi Konten Audio dan Video</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-ulasan"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar ulasan</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Kelompok / Kelas / Judul tutorial</span><span class="ws-line"></span></div>
+            <div class="ws-field">
+              <span class="ws-label">Ulasan setiap alat</span>
+              <table class="ws-table">
+                <caption class="sr-only">Ulasan aplikasi yang dipakai</caption>
+                <thead><tr><th scope="col">Nama alat</th><th scope="col">Perangkat</th><th scope="col">Fitur yang dipakai</th><th scope="col">Kelebihan</th><th scope="col">Kesulitan</th><th scope="col">Nilai (1–5 ★)</th></tr></thead>
+                <tbody>
+                  <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ws-field"><span class="ws-label">Pengaturan ekspor (resolusi, fps, ukuran file)</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Saran untuk teman yang baru mulai memakai alat-alat ini</span><span class="ws-line"></span></div>
+          </div>
+
+          <h3>Kriteria penilaian</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Rubrik penilaian tugas kelompok<small>Skor: 4 = sangat baik · 3 = baik · 2 = cukup · 1 = perlu bimbingan</small></caption>
+              <thead><tr><th scope="col">Aspek</th><th scope="col">Yang dinilai</th><th scope="col" class="num">Skor</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Penggunaan alat</th><td>Tiga jenis alat dipakai sesuai fungsinya.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kualitas audio</th><td>Narasi jelas dan rapi, musik seimbang.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kualitas video</th><td>Langkah tutorial runtut, potongan rapi, dan teks terbaca.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Sampul</th><td>Judul jelas, kontras, dan sesuai ukuran.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Ekspor</th><td>Format, resolusi, dan nama file sesuai; ukuran file wajar.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Ulasan dan kerja sama</th><td>Ulasan jujur dan bermanfaat, dan semua anggota berperan.</td><td class="num">1–4</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis sebelum mengumpulkan</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Narasi sudah diolah di editor audio dan diekspor sebagai MP3.</span></label></li>
+            <li><label><input type="checkbox"><span>Video sudah disunting dan ditonton ulang dari awal sampai akhir.</span></label></li>
+            <li><label><input type="checkbox"><span>Sampul berukuran 1280 × 720 piksel sudah dibuat.</span></label></li>
+            <li><label><input type="checkbox"><span>Lembar ulasan sudah diisi untuk ketiga alat.</span></label></li>
+            <li><label><input type="checkbox"><span>Semua aplikasi diunduh dari sumber resmi, dan akun di komputer bersama sudah dikeluarkan.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 13. RANGKUMAN -->
+        <section class="lesson-sec" id="rangkuman" aria-labelledby="h-rangkuman">
+          <p class="sec-no"><span>13</span> Rangkuman &amp; refleksi <em class="phase">Merefleksi</em></p>
+          <h2 id="h-rangkuman">Yang perlu kamu ingat</h2>
+          <div class="summary-grid">
+            <article class="mini-card">
+              <i class="bi bi-grid" aria-hidden="true"></i>
+              <h4>Tiga jenis aplikasi</h4>
+              <p>Di HP, di komputer, dan berbasis web. Pilih yang cocok dengan perangkat dan kebutuhanmu.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-film" aria-hidden="true"></i>
+              <h4>CapCut</h4>
+              <p>Editor video: panel media, pratinjau, linimasa, alat, pengaturan, dan ekspor.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-soundwave" aria-hidden="true"></i>
+              <h4>Audacity</h4>
+              <p>Editor audio: rekam, hapus bagian, pengurang derau, fade, dan ekspor MP3.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-shield-check" aria-hidden="true"></i>
+              <h4>Aman dan bijak</h4>
+              <p>Sumber resmi, sesuai usia, izin seperlunya, simpan cadangan, dan ekspor dengan ukuran wajar.</p>
+            </article>
+          </div>
+
+          <h3>Refleksi</h3>
+          <ol class="question-list">
+            <li><strong>Berkesadaran:</strong> apakah ada aplikasi di perangkatmu yang ternyata tidak berasal dari sumber resmi atau meminta izin berlebihan? Apa yang akan kamu lakukan?</li>
+            <li><strong>Bermakna:</strong> karya audio atau video apa yang ingin kamu buat untuk keluarga, sekolah, atau lingkunganmu?</li>
+            <li><strong>Menggembirakan:</strong> aplikasi mana yang paling menyenangkan untuk kamu pakai? Fitur apa yang paling kamu sukai?</li>
+          </ol>
+
+          <h3>Materi yang berhubungan</h3>
+          <p>Materi ini adalah lanjutan dari:</p>
+          <div class="card-grid" data-tp-links="2.5,2.3,2.1"></div>
+          <p>Aplikasi ini akan kamu pakai lagi untuk bercerita secara digital, memahami hak cipta, dan menyebarkan karyamu:</p>
+          <div class="card-grid" data-tp-links="2.7,2.8,2.9"></div>
+
+          <h3>Kamus kecil</h3>
+          <dl class="glossary">
+            <div><dt>Editor video</dt><dd>Aplikasi untuk menyunting gambar bergerak beserta suaranya.</dd></div>
+            <div><dt>Editor audio</dt><dd>Aplikasi khusus untuk merekam dan mengolah suara.</dd></div>
+            <div><dt>Alat berbasis web</dt><dd>Aplikasi yang dibuka di peramban tanpa dipasang.</dd></div>
+            <div><dt>Proyek</dt><dd>File kerja yang masih bisa diedit dan hanya dibuka di aplikasinya.</dd></div>
+            <div><dt>Ekspor (<i lang="en">rendering</i>)</dt><dd>Mengubah proyek menjadi file jadi seperti MP4 atau MP3.</dd></div>
+            <div><dt>Resolusi</dt><dd>Ketajaman gambar video, misalnya 720p atau 1080p.</dd></div>
+            <div><dt><i lang="en">Frame rate</i> (fps)</dt><dd>Jumlah gambar yang ditampilkan setiap detik.</dd></div>
+            <div><dt>Bitrate</dt><dd>Banyaknya data video atau audio setiap detik.</dd></div>
+            <div><dt>Tanda air (<i lang="en">watermark</i>)</dt><dd>Logo atau tulisan yang ditempelkan aplikasi pada hasil karya.</dd></div>
+          </dl>
+        </section>
+
+        <!-- Tombol TP sebelumnya/berikutnya + sumber rujukan, dibuat otomatis dari data.js -->
+        <kka-tp-nav code="2.6"></kka-tp-nav>
+      </div>
+    </div>
+  </main>
+
+  <kka-footer></kka-footer>
+</body>
+</html>

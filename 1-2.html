@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP 1.2 Pemecahan Masalah Sederhana — Koding dan KA SMPN 1 Bandar Seikijang</title>
+  <meta name="description" content="Materi TP 1.2 Koding dan Kecerdasan Artifisial Kelas VII: berpikir komputasional untuk masalah sehari-hari, yaitu dekomposisi, pengenalan pola, abstraksi, dan algoritma, dilengkapi kuis, tugas individu, dan tugas kelompok.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="TP 1.2 Menerapkan Pemecahan Masalah Sederhana dalam Kehidupan Masyarakat">
+  <meta property="og:description" content="Dekomposisi, pengenalan pola, abstraksi, dan algoritma untuk memecahkan masalah sehari-hari.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs: style.css (umum) + lesson.css (halaman materi) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/lesson.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lesson.js" defer></script>
+</head>
+<body>
+  <kka-header active="atp"><a href="index.html">Beranda</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <main id="konten" data-el="1">
+    <!-- =============================================== JUDUL TP -->
+    <section class="hero hero--tp" aria-labelledby="judul-tp">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Lokasi halaman">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#atp">Alur TP</a></li>
+            <li><a href="index.html#kelas-7">Kelas VII</a></li>
+            <li><span aria-current="page">TP 1.2</span></li>
+          </ol>
+        </nav>
+        <div class="tp-badges">
+          <span class="tp-badge tp-badge--code">TP 1.2</span>
+          <span class="tp-badge"><i class="bi bi-diagram-3" aria-hidden="true"></i> Elemen 1 · Berpikir Komputasional</span>
+          <span class="tp-badge"><i class="bi bi-calendar-week" aria-hidden="true"></i> Kelas VII · Semester 1</span>
+        </div>
+        <h1 id="judul-tp">Menerapkan Pemecahan Masalah Sederhana dalam Kehidupan Masyarakat</h1>
+        <p class="hero-lead">Masalah besar terasa sulit? Tenang! Dengan berpikir komputasional, kita bisa memecah masalah menjadi bagian kecil, menemukan pola, fokus pada hal yang penting, lalu menyusun langkah penyelesaian yang jelas.</p>
+        <ul class="tp-meta">
+          <li><i class="bi bi-puzzle" aria-hidden="true"></i> <span>Dekomposisi, pola, abstraksi, algoritma</span></li>
+          <li><i class="bi bi-arrow-down-up" aria-hidden="true"></i> <span>Aktivitas menyusun algoritma</span></li>
+          <li><i class="bi bi-person" aria-hidden="true"></i> <span>Tugas individu</span></li>
+          <li><i class="bi bi-people" aria-hidden="true"></i> <span>Tugas kelompok</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container lesson">
+      <!-- Daftar isi -->
+      <nav class="toc" aria-labelledby="judul-toc">
+        <p class="toc-title" id="judul-toc">Daftar isi</p>
+        <ol>
+          <li><a href="#tujuan">Tujuan belajar</a></li>
+          <li><a href="#pemantik">Ayo berpikir dulu</a></li>
+          <li><a href="#berpikir-komputasional">Berpikir komputasional</a></li>
+          <li><a href="#dekomposisi">Dekomposisi</a></li>
+          <li><a href="#pola">Pengenalan pola</a></li>
+          <li><a href="#abstraksi">Abstraksi</a></li>
+          <li><a href="#algoritma">Algoritma</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+          <li><a href="#tugas-individu">Tugas individu</a></li>
+          <li><a href="#tugas-kelompok">Tugas kelompok</a></li>
+          <li><a href="#rangkuman">Rangkuman &amp; refleksi</a></li>
+        </ol>
+      </nav>
+
+      <div class="lesson-body">
+        <!-- ========================================== 1. TUJUAN -->
+        <section class="lesson-sec" id="tujuan" aria-labelledby="h-tujuan">
+          <p class="sec-no"><span>01</span> Tujuan belajar</p>
+          <h2 id="h-tujuan">Apa yang akan kamu pelajari?</h2>
+          <p>Setelah mempelajari halaman ini, kamu diharapkan mampu:</p>
+          <ol class="goal-list">
+            <li>Menjelaskan apa itu berpikir komputasional dan empat bagiannya.</li>
+            <li>Memecah masalah besar menjadi bagian-bagian kecil (dekomposisi).</li>
+            <li>Menemukan kesamaan atau hal yang berulang dari beberapa masalah (pengenalan pola).</li>
+            <li>Memilih informasi yang penting dan mengabaikan yang tidak penting (abstraksi).</li>
+            <li>Menyusun langkah penyelesaian yang jelas dan berurutan (algoritma), termasuk dalam bentuk diagram alir.</li>
+            <li>Menerapkan keempatnya untuk menyelesaikan masalah di rumah, sekolah, dan masyarakat.</li>
+          </ol>
+        </section>
+
+        <!-- ========================================== 2. PEMANTIK -->
+        <section class="lesson-sec" id="pemantik" aria-labelledby="h-pemantik">
+          <p class="sec-no"><span>02</span> Ayo berpikir dulu</p>
+          <h2 id="h-pemantik">Lomba kebersihan kelas</h2>
+          <div class="story">
+            <p class="story-label"><i class="bi bi-chat-quote" aria-hidden="true"></i> Cerita</p>
+            <p>Besok kelas VII-A akan ikut <strong>lomba kebersihan kelas</strong>. Waktu yang tersedia hanya <strong>60 menit</strong> dan ada <strong>32 murid</strong>. Keadaan kelas sedang kacau: lantai berdebu, sampah berserakan, meja penuh coretan, kaca jendela buram, dan mading masih kosong.</p>
+            <p>Wali kelas bertanya, <strong>"Bagaimana caranya supaya semua beres tepat waktu?"</strong></p>
+          </div>
+          <p>Coba pikirkan bersama teman sebangkumu:</p>
+          <ol class="question-list">
+            <li>Pekerjaan apa saja yang harus dilakukan?</li>
+            <li>Adakah pekerjaan yang caranya mirip satu sama lain?</li>
+            <li>Hal apa yang paling penting diperhatikan, dan apa yang tidak terlalu penting?</li>
+            <li>Pekerjaan mana yang harus dikerjakan lebih dulu, dan mana yang belakangan?</li>
+          </ol>
+          <div class="callout">
+            <i class="bi bi-stars" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Tahukah kamu?</p>
+              <p>Saat menjawab empat pertanyaan di atas, kamu sebenarnya sudah memakai <strong>empat cara berpikir komputasional</strong>. Ayo kita pelajari satu per satu!</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 3. BERPIKIR KOMPUTASIONAL -->
+        <section class="lesson-sec" id="berpikir-komputasional" aria-labelledby="h-bk">
+          <p class="sec-no"><span>03</span> Berpikir komputasional</p>
+          <h2 id="h-bk">Apa itu berpikir komputasional?</h2>
+          <p><strong>Berpikir komputasional adalah cara berpikir untuk memecahkan masalah secara runtut dan teratur</strong>, mirip dengan cara komputer menyelesaikan tugas.</p>
+          <p>Eits, ini bukan berarti kita harus selalu memakai komputer! Cara berpikir ini bisa dipakai untuk masalah apa saja: membereskan kamar, mengatur uang jajan, sampai merencanakan acara di lingkungan rumah. Berpikir komputasional terdiri atas empat bagian berikut.</p>
+          <ol class="flow">
+            <li data-el="1">
+              <span class="flow-icon" aria-hidden="true"><i class="bi bi-grid-3x3-gap"></i></span>
+              <p class="flow-step">Bagian 1</p>
+              <h4>Dekomposisi</h4>
+              <p>Memecah masalah besar menjadi bagian-bagian kecil.</p>
+              <p class="flow-key">"Apa saja bagiannya?"</p>
+            </li>
+            <li data-el="2">
+              <span class="flow-icon" aria-hidden="true"><i class="bi bi-arrow-repeat"></i></span>
+              <p class="flow-step">Bagian 2</p>
+              <h4>Pengenalan pola</h4>
+              <p>Mencari kesamaan atau hal yang berulang.</p>
+              <p class="flow-key">"Apa yang mirip atau berulang?"</p>
+            </li>
+            <li data-el="3">
+              <span class="flow-icon" aria-hidden="true"><i class="bi bi-funnel"></i></span>
+              <p class="flow-step">Bagian 3</p>
+              <h4>Abstraksi</h4>
+              <p>Fokus pada informasi penting, abaikan yang tidak perlu.</p>
+              <p class="flow-key">"Apa yang benar-benar penting?"</p>
+            </li>
+            <li data-el="4">
+              <span class="flow-icon" aria-hidden="true"><i class="bi bi-list-ol"></i></span>
+              <p class="flow-step">Bagian 4</p>
+              <h4>Algoritma</h4>
+              <p>Menyusun langkah penyelesaian yang jelas dan berurutan.</p>
+              <p class="flow-key">"Apa langkah-langkahnya?"</p>
+            </li>
+          </ol>
+        </section>
+
+        <!-- ========================================== 4. DEKOMPOSISI -->
+        <section class="lesson-sec" id="dekomposisi" data-el="1" aria-labelledby="h-dekomposisi">
+          <p class="sec-no"><span>04</span> Bagian 1</p>
+          <h2 id="h-dekomposisi">Dekomposisi: memecah masalah besar</h2>
+          <p><strong>Dekomposisi adalah memecah masalah yang besar dan rumit menjadi bagian-bagian kecil yang lebih mudah diselesaikan.</strong></p>
+          <div class="callout" data-el="2">
+            <i class="bi bi-cup-straw" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Ibaratnya makan semangka</p>
+              <p>Kita tidak mungkin memakan satu buah semangka utuh sekaligus. Semangka dipotong-potong dulu menjadi bagian kecil, baru bisa dimakan dengan mudah. Begitu juga dengan masalah besar!</p>
+            </div>
+          </div>
+
+          <h3>Contoh: membersihkan kelas untuk lomba</h3>
+          <p>Masalah "kelas harus bersih dalam 60 menit" bisa dipecah menjadi lima bagian. Setiap bagian dipecah lagi menjadi pekerjaan yang lebih kecil.</p>
+          <div class="tree">
+            <p class="tree-root"><i class="bi bi-trophy" aria-hidden="true"></i> Kelas bersih untuk lomba</p>
+            <ul class="tree-branches">
+              <li>
+                <p class="tree-node">Sampah</p>
+                <ul class="tree-leaves"><li>Memungut sampah</li><li>Membuang ke tempat sampah besar</li></ul>
+              </li>
+              <li>
+                <p class="tree-node">Lantai</p>
+                <ul class="tree-leaves"><li>Menyapu</li><li>Mengepel</li></ul>
+              </li>
+              <li>
+                <p class="tree-node">Meja &amp; kursi</p>
+                <ul class="tree-leaves"><li>Menghapus coretan</li><li>Merapikan barisan</li></ul>
+              </li>
+              <li>
+                <p class="tree-node">Jendela</p>
+                <ul class="tree-leaves"><li>Mengelap kaca</li><li>Merapikan gorden</li></ul>
+              </li>
+              <li>
+                <p class="tree-node">Mading</p>
+                <ul class="tree-leaves"><li>Membuat hiasan</li><li>Menempel karya</li></ul>
+              </li>
+            </ul>
+          </div>
+          <p>Setelah dipecah, pekerjaan jadi lebih ringan karena bisa dibagi: 32 murid dibagi menjadi lima kelompok kecil, dan setiap kelompok mengerjakan satu bagian.</p>
+
+          <div class="callout" data-el="1">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Contoh lain di masyarakat</p>
+              <p>Warga satu RT ingin mengadakan lomba 17 Agustus. Masalah besar ini bisa dipecah menjadi: <strong>jenis lomba</strong>, <strong>hadiah</strong>, <strong>konsumsi</strong>, <strong>dana</strong>, dan <strong>panitia</strong>. Setiap bagian lalu diurus oleh orang yang berbeda.</p>
+              <p><strong>Tips:</strong> jika satu bagian masih terasa sulit, pecah lagi menjadi bagian yang lebih kecil.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 5. POLA -->
+        <section class="lesson-sec" id="pola" data-el="2" aria-labelledby="h-pola">
+          <p class="sec-no"><span>05</span> Bagian 2</p>
+          <h2 id="h-pola">Pengenalan pola: mencari yang mirip dan berulang</h2>
+          <p><strong>Pengenalan pola adalah mencari kesamaan, kemiripan, atau hal yang berulang dari beberapa masalah.</strong> Jika kita menemukan pola, kita bisa memakai cara yang sama untuk masalah yang mirip, sehingga pekerjaan lebih cepat. Pola juga membantu kita memperkirakan apa yang akan terjadi.</p>
+
+          <h3>Pola di sekitar kita</h3>
+          <div class="card-grid">
+            <article class="mini-card">
+              <i class="bi bi-shop" aria-hidden="true"></i>
+              <h4>Di pasar</h4>
+              <p>Pasar biasanya paling ramai pada pagi hari. Karena tahu polanya, pedagang datang lebih awal dan menyiapkan barang lebih banyak.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-cup-hot" aria-hidden="true"></i>
+              <h4>Di kantin</h4>
+              <p>Antrean selalu panjang di menit-menit awal istirahat. Murid yang tahu polanya bisa memilih datang sedikit lebih lambat.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-cloud-rain" aria-hidden="true"></i>
+              <h4>Di lingkungan rumah</h4>
+              <p>Saat musim hujan, jalan tertentu sering tergenang. Warga yang mengenali pola ini bisa membersihkan selokan sebelum hujan deras datang.</p>
+            </article>
+          </div>
+          <div class="callout" data-el="2">
+            <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Kembali ke lomba kebersihan</p>
+              <p>Mengelap meja, mengelap kaca jendela, dan membersihkan papan tulis ternyata polanya sama: <strong>basahi lap → usap → keringkan</strong>. Satu cara bisa dipakai untuk tiga pekerjaan sekaligus!</p>
+            </div>
+          </div>
+
+          <h3>Coba temukan polanya</h3>
+          <p>Tebak isi kotak yang kosong, lalu buka jawabannya.</p>
+          <div class="puzzle-grid">
+            <article class="puzzle">
+              <h4>Barisan angka</h4>
+              <ul class="puzzle-seq" aria-label="3, 6, 9, 12, lalu kosong">
+                <li>3</li><li>6</li><li>9</li><li>12</li><li class="is-blank">?</li>
+              </ul>
+              <details>
+                <summary>Lihat jawaban</summary>
+                <p><strong>15.</strong> Polanya: setiap angka bertambah 3.</p>
+              </details>
+            </article>
+            <article class="puzzle">
+              <h4>Tabungan Dimas</h4>
+              <ul class="puzzle-seq" aria-label="Minggu 1 Rp2.000, minggu 2 Rp4.000, minggu 3 Rp6.000, minggu 6 kosong">
+                <li>M1: 2.000</li><li>M2: 4.000</li><li>M3: 6.000</li><li class="is-blank">M6: ?</li>
+              </ul>
+              <details>
+                <summary>Lihat jawaban</summary>
+                <p><strong>Rp12.000.</strong> Polanya: setiap minggu tabungannya bertambah Rp2.000 (M4 = 8.000, M5 = 10.000, M6 = 12.000).</p>
+              </details>
+            </article>
+            <article class="puzzle">
+              <h4>Jadwal ronda</h4>
+              <ul class="puzzle-seq" aria-label="Senin Ali, Selasa Beni, Rabu Candra, Kamis Ali, Jumat Beni, Sabtu kosong">
+                <li>Sen: Ali</li><li>Sel: Beni</li><li>Rab: Candra</li><li>Kam: Ali</li><li>Jum: Beni</li><li class="is-blank">Sab: ?</li>
+              </ul>
+              <details>
+                <summary>Lihat jawaban</summary>
+                <p><strong>Pak Candra.</strong> Polanya: giliran berulang setiap tiga hari (Ali → Beni → Candra).</p>
+              </details>
+            </article>
+          </div>
+        </section>
+
+        <!-- ========================================== 6. ABSTRAKSI -->
+        <section class="lesson-sec" id="abstraksi" data-el="3" aria-labelledby="h-abstraksi">
+          <p class="sec-no"><span>06</span> Bagian 3</p>
+          <h2 id="h-abstraksi">Abstraksi: fokus pada yang penting</h2>
+          <p><strong>Abstraksi adalah memilih informasi yang penting untuk menyelesaikan masalah dan mengabaikan informasi yang tidak diperlukan.</strong> Dengan begitu, kita tidak bingung oleh hal-hal kecil yang tidak berhubungan.</p>
+          <div class="callout" data-el="3">
+            <i class="bi bi-map" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Ibaratnya menggambar denah</p>
+              <p>Denah menuju rumah temanmu cukup berisi jalan, belokan, dan patokan seperti masjid atau sekolah. Kamu tidak perlu menggambar setiap pohon atau warna atap rumah. Itulah abstraksi!</p>
+            </div>
+          </div>
+
+          <h3>Contoh: soal cerita</h3>
+          <div class="abstract-demo" id="demo-abstraksi">
+            <p class="abstract-text">Rina membeli <span class="hl-keep">3 buku tulis</span> <span class="hl-skip">bergambar kucing berwarna merah muda</span> <span class="hl-skip">di toko dekat masjid</span>. Harga satu buku <span class="hl-keep">Rp5.000</span>. Rina membayar dengan uang <span class="hl-keep">Rp20.000</span>. <span class="hl-keep">Berapa uang kembalian Rina?</span></p>
+            <button type="button" class="btn btn-ink js-only" data-toggle="#demo-abstraksi" aria-pressed="false" data-label-on="Sembunyikan abstraksi" data-label-off="Tampilkan abstraksi">
+              <i class="bi bi-funnel" aria-hidden="true"></i> <span data-toggle-label>Tampilkan abstraksi</span>
+            </button>
+            <div class="abstract-answer">
+              <p><strong>Informasi penting</strong> (ditandai hijau): jumlah buku, harga satu buku, uang yang dibayarkan, dan pertanyaannya. Gambar kucing, warna sampul, dan letak toko tidak memengaruhi jawaban, jadi boleh diabaikan.</p>
+              <p>Penyelesaian: 3 × Rp5.000 = Rp15.000, lalu Rp20.000 − Rp15.000 = <strong>Rp5.000</strong>.</p>
+            </div>
+          </div>
+
+          <h3>Kembali ke lomba kebersihan</h3>
+          <div class="compare">
+            <div class="compare-card compare-card--info">
+              <p class="compare-label">Informasi penting</p>
+              <ul>
+                <li>Waktu: 60 menit</li>
+                <li>Jumlah murid: 32</li>
+                <li>Daftar pekerjaan</li>
+                <li>Alat yang tersedia</li>
+              </ul>
+            </div>
+            <div class="compare-arrow" aria-hidden="true"><i class="bi bi-arrow-left-right"></i></div>
+            <div class="compare-card compare-card--skip">
+              <p class="compare-label">Boleh diabaikan</p>
+              <ul>
+                <li>Warna cat dinding</li>
+                <li>Merek sapu</li>
+                <li>Siapa yang paling tinggi</li>
+                <li>Lagu yang diputar</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Coba sendiri: pilah informasinya</h3>
+          <p><strong>Masalah:</strong> kamu ingin memperkirakan berapa lama waktu bersepeda dari rumah ke sekolah. Informasi mana yang penting?</p>
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Penting atau tidak penting?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="penting" data-explain="Makin jauh jaraknya, makin lama waktunya.">
+                <p class="quiz-text">Jarak rumah ke sekolah</p>
+                <div class="quiz-choices"><button type="button" data-choice="penting">Penting</button><button type="button" data-choice="tidak">Tidak penting</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="tidak" data-explain="Warna sepeda tidak membuat sepeda lebih cepat atau lambat.">
+                <p class="quiz-text">Warna sepedamu</p>
+                <div class="quiz-choices"><button type="button" data-choice="penting">Penting</button><button type="button" data-choice="tidak">Tidak penting</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="penting" data-explain="Kecepatan bersepeda menentukan berapa cepat kamu sampai.">
+                <p class="quiz-text">Seberapa cepat kamu biasa bersepeda</p>
+                <div class="quiz-choices"><button type="button" data-choice="penting">Penting</button><button type="button" data-choice="tidak">Tidak penting</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="tidak" data-explain="Merek sepatu tidak berhubungan dengan lama perjalanan.">
+                <p class="quiz-text">Merek sepatu yang kamu pakai</p>
+                <div class="quiz-choices"><button type="button" data-choice="penting">Penting</button><button type="button" data-choice="tidak">Tidak penting</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="penting" data-explain="Tanjakan dan jalan rusak membuat perjalanan lebih lambat.">
+                <p class="quiz-text">Ada tanjakan atau jalan rusak di rute</p>
+                <div class="quiz-choices"><button type="button" data-choice="penting">Penting</button><button type="button" data-choice="tidak">Tidak penting</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="tidak" data-explain="Isi tas tidak perlu diperhitungkan untuk perkiraan sederhana ini.">
+                <p class="quiz-text">Nama buku pelajaran yang ada di tasmu</p>
+                <div class="quiz-choices"><button type="button" data-choice="penting">Penting</button><button type="button" data-choice="tidak">Tidak penting</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 7. ALGORITMA -->
+        <section class="lesson-sec" id="algoritma" data-el="4" aria-labelledby="h-algoritma">
+          <p class="sec-no"><span>07</span> Bagian 4</p>
+          <h2 id="h-algoritma">Algoritma: menyusun langkah penyelesaian</h2>
+          <p><strong>Algoritma adalah urutan langkah-langkah yang jelas dan berurutan untuk menyelesaikan suatu masalah.</strong> Resep masakan, petunjuk arah, dan cara mencuci tangan adalah contoh algoritma dalam kehidupan sehari-hari.</p>
+
+          <h3>Ciri algoritma yang baik</h3>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Jelas:</strong> setiap langkah mudah dipahami dan tidak membingungkan.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Berurutan:</strong> langkahnya tersusun dari awal sampai akhir dengan urutan yang benar.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Ada awal dan akhir:</strong> jelas kapan mulai dan kapan selesai.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Mencapai tujuan:</strong> jika diikuti, masalahnya benar-benar terselesaikan.</span></li>
+          </ul>
+
+          <h3>Contoh: algoritma mencuci tangan</h3>
+          <ol class="steps">
+            <li><p>Basahi kedua tangan dengan air mengalir.</p></li>
+            <li><p>Tuangkan sabun secukupnya ke telapak tangan.</p></li>
+            <li><p>Gosok telapak tangan, punggung tangan, sela-sela jari, dan kuku sekitar 20 detik.</p></li>
+            <li><p>Bilas tangan dengan air mengalir sampai bersih dari sabun.</p></li>
+            <li><p>Keringkan tangan dengan lap bersih atau tisu. Selesai.</p></li>
+          </ol>
+          <div class="callout" data-el="2">
+            <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Perintah harus jelas</p>
+              <p>Perintah "masak air" kurang jelas: sampai kapan? Perintah "masak air sampai mendidih, lalu matikan kompor" jauh lebih jelas. Komputer, dan juga orang lain, hanya bisa mengikuti langkah yang kita tulis.</p>
+            </div>
+          </div>
+
+          <h3>Menulis algoritma dengan diagram alir</h3>
+          <p>Selain ditulis dengan kalimat bernomor, algoritma juga bisa digambar dengan <strong>diagram alir</strong> (<i lang="en">flowchart</i>). Diagram alir memakai simbol-simbol khusus yang dihubungkan dengan tanda panah.</p>
+          <div class="flowchart-wrap">
+            <figure class="flowchart">
+              <svg viewBox="0 0 480 545" role="img" aria-labelledby="fc-judul fc-isi">
+                <title id="fc-judul">Diagram alir menyeberang jalan</title>
+                <desc id="fc-isi">Mulai. Berdiri di tepi jalan. Lihat kanan, kiri, lalu kanan lagi. Jalan sudah sepi? Jika tidak, tunggu sebentar lalu kembali melihat kanan dan kiri. Jika ya, menyeberang dengan hati-hati. Selesai.</desc>
+                <defs>
+                  <marker id="panah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path class="fc-head" d="M0 0 10 5 0 10z"/>
+                  </marker>
+                </defs>
+                <rect class="fc-shape fc-term" x="110" y="12" width="140" height="46" rx="23"/>
+                <text class="fc-text" x="180" y="35">Mulai</text>
+                <line class="fc-line" x1="180" y1="58" x2="180" y2="90" marker-end="url(#panah)"/>
+
+                <rect class="fc-shape" x="50" y="92" width="260" height="50" rx="6"/>
+                <text class="fc-text" x="180" y="117">Berdiri di tepi jalan</text>
+                <line class="fc-line" x1="180" y1="142" x2="180" y2="172" marker-end="url(#panah)"/>
+
+                <rect class="fc-shape" x="50" y="174" width="260" height="50" rx="6"/>
+                <text class="fc-text" x="180" y="199">Lihat kanan, kiri, lalu kanan lagi</text>
+                <line class="fc-line" x1="180" y1="224" x2="180" y2="254" marker-end="url(#panah)"/>
+
+                <polygon class="fc-shape fc-decision" points="180,256 300,312 180,368 60,312"/>
+                <text class="fc-text" x="180" y="312">Jalan sudah sepi?</text>
+
+                <line class="fc-line" x1="300" y1="312" x2="350" y2="312" marker-end="url(#panah)"/>
+                <text class="fc-label" x="305" y="300">Tidak</text>
+                <rect class="fc-shape" x="352" y="287" width="116" height="50" rx="6"/>
+                <text class="fc-text" x="410" y="303">Tunggu</text>
+                <text class="fc-text" x="410" y="321">sebentar</text>
+                <path class="fc-line" d="M410 287 V199 H312" marker-end="url(#panah)"/>
+
+                <line class="fc-line" x1="180" y1="368" x2="180" y2="400" marker-end="url(#panah)"/>
+                <text class="fc-label" x="190" y="388">Ya</text>
+
+                <rect class="fc-shape" x="50" y="402" width="260" height="50" rx="6"/>
+                <text class="fc-text" x="180" y="427">Menyeberang dengan hati-hati</text>
+                <line class="fc-line" x1="180" y1="452" x2="180" y2="482" marker-end="url(#panah)"/>
+
+                <rect class="fc-shape fc-term" x="110" y="484" width="140" height="46" rx="23"/>
+                <text class="fc-text" x="180" y="507">Selesai</text>
+              </svg>
+              <figcaption>Diagram alir menyeberang jalan</figcaption>
+            </figure>
+            <ul class="fc-legend" aria-label="Arti simbol diagram alir">
+              <li><span class="sym sym-oval" aria-hidden="true"></span><span><strong>Oval:</strong> mulai atau selesai.</span></li>
+              <li><span class="sym sym-rect" aria-hidden="true"></span><span><strong>Persegi panjang:</strong> langkah atau kegiatan.</span></li>
+              <li><span class="sym sym-diamond" aria-hidden="true"></span><span><strong>Belah ketupat:</strong> pertanyaan dengan jawaban Ya atau Tidak.</span></li>
+              <li><span class="sym sym-arrow" aria-hidden="true">→</span><span><strong>Panah:</strong> arah urutan langkah.</span></li>
+            </ul>
+          </div>
+          <p>Perhatikan belah ketupat. Di situ algoritma <strong>bercabang</strong>: jalannya berbeda tergantung jawaban Ya atau Tidak. Jika jalan belum sepi, kita kembali melihat kanan dan kiri. Langkah yang diulang-ulang seperti ini disebut <strong>perulangan</strong>.</p>
+
+          <h3>Coba sendiri: susun algoritmanya</h3>
+          <div class="order js-only" data-order>
+            <div class="order-head">
+              <h3>Menanam bibit cabai di polibag</h3>
+              <p>Langkah-langkah di bawah ini masih acak. Gunakan tombol panah untuk menyusunnya, lalu tekan <strong>Periksa</strong>.</p>
+            </div>
+            <ol class="order-list">
+              <li class="order-item" data-pos="4"><span class="order-text">Masukkan bibit cabai ke dalam lubang.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: masukkan bibit">↑</button><button type="button" data-down aria-label="Turunkan: masukkan bibit">↓</button></span></li>
+              <li class="order-item" data-pos="1"><span class="order-text">Siapkan polibag, tanah gembur, dan bibit cabai.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: siapkan alat dan bahan">↑</button><button type="button" data-down aria-label="Turunkan: siapkan alat dan bahan">↓</button></span></li>
+              <li class="order-item" data-pos="6"><span class="order-text">Siram dengan air secukupnya.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: siram">↑</button><button type="button" data-down aria-label="Turunkan: siram">↓</button></span></li>
+              <li class="order-item" data-pos="3"><span class="order-text">Buat lubang kecil di tengah tanah.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: buat lubang">↑</button><button type="button" data-down aria-label="Turunkan: buat lubang">↓</button></span></li>
+              <li class="order-item" data-pos="5"><span class="order-text">Tutup lubang dengan tanah, lalu tekan perlahan.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: tutup lubang">↑</button><button type="button" data-down aria-label="Turunkan: tutup lubang">↓</button></span></li>
+              <li class="order-item" data-pos="2"><span class="order-text">Isi polibag dengan tanah sampai hampir penuh.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: isi polibag">↑</button><button type="button" data-down aria-label="Turunkan: isi polibag">↓</button></span></li>
+            </ol>
+            <div class="order-foot">
+              <p class="order-status" data-order-status aria-live="polite"></p>
+              <div class="order-actions">
+                <button type="button" class="link-btn" data-order-shuffle><i class="bi bi-shuffle" aria-hidden="true"></i> Acak lagi</button>
+                <button type="button" class="btn btn-ink" data-order-check><i class="bi bi-check2-circle" aria-hidden="true"></i> Periksa</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 8. KUIS -->
+        <section class="lesson-sec" id="cek-pemahaman" aria-labelledby="h-kuis">
+          <p class="sec-no"><span>08</span> Cek pemahaman</p>
+          <h2 id="h-kuis">Ayo uji pemahamanmu</h2>
+          <p>Setiap kejadian di bawah ini memakai salah satu bagian berpikir komputasional. Bagian yang mana?</p>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis · Termasuk bagian yang mana?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 8</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="dekomposisi" data-explain="Tugas besar membuat mading dipecah menjadi beberapa tugas kecil.">
+                <p class="quiz-text">Membagi tugas membuat mading menjadi: mencari berita, menulis, menggambar, dan menempel.</p>
+                <div class="quiz-choices"><button type="button" data-choice="dekomposisi">Dekomposisi</button><button type="button" data-choice="pola">Pola</button><button type="button" data-choice="abstraksi">Abstraksi</button><button type="button" data-choice="algoritma">Algoritma</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="pola" data-explain="Kamu memperhatikan kejadian yang selalu berulang setiap Sabtu pagi.">
+                <p class="quiz-text">Kamu sadar angkutan ke pasar selalu penuh setiap Sabtu pagi, jadi kamu berangkat lebih awal.</p>
+                <div class="quiz-choices"><button type="button" data-choice="dekomposisi">Dekomposisi</button><button type="button" data-choice="pola">Pola</button><button type="button" data-choice="abstraksi">Abstraksi</button><button type="button" data-choice="algoritma">Algoritma</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="abstraksi" data-explain="Kamu hanya menggambar hal penting dan mengabaikan detail kecil.">
+                <p class="quiz-text">Saat membuat denah rumah, kamu hanya menggambar ruangan dan pintu, tanpa perabot kecil.</p>
+                <div class="quiz-choices"><button type="button" data-choice="dekomposisi">Dekomposisi</button><button type="button" data-choice="pola">Pola</button><button type="button" data-choice="abstraksi">Abstraksi</button><button type="button" data-choice="algoritma">Algoritma</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="algoritma" data-explain="Kamu menyusun langkah-langkah berurutan dari awal sampai selesai.">
+                <p class="quiz-text">Menulis langkah-langkah memasak mi instan dari awal sampai siap dimakan.</p>
+                <div class="quiz-choices"><button type="button" data-choice="dekomposisi">Dekomposisi</button><button type="button" data-choice="pola">Pola</button><button type="button" data-choice="abstraksi">Abstraksi</button><button type="button" data-choice="algoritma">Algoritma</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="pola" data-explain="Kamu menemukan cara yang sama untuk soal-soal yang mirip.">
+                <p class="quiz-text">Kamu menyadari bahwa soal penjumlahan pecahan selalu bisa dimulai dengan menyamakan penyebutnya.</p>
+                <div class="quiz-choices"><button type="button" data-choice="dekomposisi">Dekomposisi</button><button type="button" data-choice="pola">Pola</button><button type="button" data-choice="abstraksi">Abstraksi</button><button type="button" data-choice="algoritma">Algoritma</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="abstraksi" data-explain="Kamu memilih informasi penting dan membuang yang tidak perlu.">
+                <p class="quiz-text">Saat membaca soal cerita, kamu hanya mencatat angka dan pertanyaan yang dibutuhkan.</p>
+                <div class="quiz-choices"><button type="button" data-choice="dekomposisi">Dekomposisi</button><button type="button" data-choice="pola">Pola</button><button type="button" data-choice="abstraksi">Abstraksi</button><button type="button" data-choice="algoritma">Algoritma</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="dekomposisi" data-explain="Rencana liburan yang besar dipecah menjadi beberapa bagian yang dipikirkan satu per satu.">
+                <p class="quiz-text">Merencanakan liburan keluarga dengan memikirkan transportasi, penginapan, makanan, dan biaya secara terpisah.</p>
+                <div class="quiz-choices"><button type="button" data-choice="dekomposisi">Dekomposisi</button><button type="button" data-choice="pola">Pola</button><button type="button" data-choice="abstraksi">Abstraksi</button><button type="button" data-choice="algoritma">Algoritma</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="algoritma" data-explain="Petunjuk arah adalah langkah berurutan untuk sampai ke tujuan.">
+                <p class="quiz-text">Petunjuk "Jalan lurus 100 meter, belok kiri di masjid, lalu rumah ketiga di sebelah kanan."</p>
+                <div class="quiz-choices"><button type="button" data-choice="dekomposisi">Dekomposisi</button><button type="button" data-choice="pola">Pola</button><button type="button" data-choice="abstraksi">Abstraksi</button><button type="button" data-choice="algoritma">Algoritma</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 9. TUGAS INDIVIDU -->
+        <section class="lesson-sec" id="tugas-individu" aria-labelledby="h-individu">
+          <p class="sec-no"><span>09</span> Tugas individu</p>
+          <h2 id="h-individu">Satu masalah, empat langkah</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan sendiri</p>
+            <h3>Pecahkan masalahmu sendiri!</h3>
+            <p>Pilih satu masalah yang sering kamu alami di rumah atau di sekolah. Selesaikan dengan empat bagian berpikir komputasional yang sudah kamu pelajari.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-person" aria-hidden="true"></i> <span>Dikerjakan sendiri</span></li>
+              <li><i class="bi bi-journal-text" aria-hidden="true"></i> <span>Ditulis di lembar tugas atau buku tugas</span></li>
+              <li><i class="bi bi-list-ol" aria-hidden="true"></i> <span>Algoritma minimal 6 langkah</span></li>
+              <li><i class="bi bi-star" aria-hidden="true"></i> <span>Bonus: gambar diagram alirnya</span></li>
+            </ul>
+          </div>
+
+          <h3>Pilihan masalah</h3>
+          <p>Pilih salah satu, atau tentukan masalahmu sendiri.</p>
+          <ul class="chips-row" aria-label="Pilihan masalah">
+            <li>Sering terlambat ke sekolah</li>
+            <li>Kamar selalu berantakan</li>
+            <li>Uang jajan cepat habis</li>
+            <li>Sering lupa mengerjakan PR</li>
+            <li>Membantu orang tua menyiapkan sarapan</li>
+            <li>Barang sering hilang atau lupa ditaruh</li>
+          </ul>
+
+          <h3>Yang harus kamu tulis</h3>
+          <ol class="steps">
+            <li><h4>Dekomposisi</h4><p>Pecah masalahmu menjadi minimal 3 bagian kecil.</p></li>
+            <li><h4>Pengenalan pola</h4><p>Tulis hal yang sering berulang. Kapan masalah itu biasanya terjadi? Apa penyebab yang selalu muncul?</p></li>
+            <li><h4>Abstraksi</h4><p>Tulis 3 informasi penting dan 2 informasi yang boleh diabaikan.</p></li>
+            <li><h4>Algoritma</h4><p>Susun minimal 6 langkah penyelesaian yang jelas dan berurutan, lengkap dengan awal dan akhir.</p></li>
+          </ol>
+
+          <details class="accordion">
+            <summary><span><i class="bi bi-eye" aria-hidden="true"></i> Lihat contoh jawaban: "Sering terlambat ke sekolah"</span><i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="accordion-body">
+              <div class="answer-grid">
+                <div data-el="1">
+                  <h4>1. Dekomposisi</h4>
+                  <p>Masalah terlambat terdiri atas tiga bagian: bangun kesiangan, persiapan pagi terlalu lama (mencari seragam, sarapan), dan perjalanan ke sekolah.</p>
+                </div>
+                <div data-el="2">
+                  <h4>2. Pengenalan pola</h4>
+                  <p>Aku paling sering terlambat pada hari Senin, setelah tidur larut pada Minggu malam. Aku juga hampir selalu sibuk mencari kaus kaki di pagi hari.</p>
+                </div>
+                <div data-el="3">
+                  <h4>3. Abstraksi</h4>
+                  <p><strong>Penting:</strong> jam masuk sekolah, lama perjalanan (20 menit), waktu yang dibutuhkan untuk bersiap. <strong>Diabaikan:</strong> warna tasku, acara televisi pagi.</p>
+                </div>
+                <div data-el="4">
+                  <h4>4. Algoritma</h4>
+                  <ol>
+                    <li>Mulai pada malam hari: siapkan seragam, kaus kaki, dan tas.</li>
+                    <li>Tidur paling lambat pukul 21.30.</li>
+                    <li>Pasang alarm pukul 05.00.</li>
+                    <li>Bangun, lalu mandi dan berpakaian.</li>
+                    <li>Sarapan paling lama 15 menit.</li>
+                    <li>Berangkat 30 menit sebelum jam masuk sekolah.</li>
+                    <li>Tiba di sekolah sebelum bel berbunyi. Selesai.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <h3>Lembar tugas individu</h3>
+          <div class="worksheet" id="lembar-individu">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Tugas Individu · Satu Masalah, Empat Langkah</h3>
+                <p>TP 1.2 Menerapkan Pemecahan Masalah Sederhana dalam Kehidupan Masyarakat · Kelas VII</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-individu"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar tugas</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Nama / Kelas</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Masalah yang dipilih</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">1. Dekomposisi (minimal 3 bagian)</span><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">2. Pengenalan pola</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field">
+              <span class="ws-label">3. Abstraksi</span>
+              <div class="ws-two">
+                <div><b>Informasi penting</b><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+                <div><b>Boleh diabaikan</b><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+              </div>
+            </div>
+            <div class="ws-field"><span class="ws-label">4. Algoritma (minimal 6 langkah)</span><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Bonus: diagram alir</span><span class="ws-box"></span></div>
+          </div>
+
+          <h3>Periksa tugasmu sendiri</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Masalahku dipecah menjadi minimal 3 bagian.</span></label></li>
+            <li><label><input type="checkbox"><span>Aku menemukan minimal satu pola atau hal yang berulang.</span></label></li>
+            <li><label><input type="checkbox"><span>Aku menulis 3 informasi penting dan 2 yang boleh diabaikan.</span></label></li>
+            <li><label><input type="checkbox"><span>Algoritmaku minimal 6 langkah, berurutan, dan ada awal serta akhirnya.</span></label></li>
+            <li><label><input type="checkbox"><span>Setiap langkah jelas, sehingga orang lain bisa mengikutinya.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 10. TUGAS KELOMPOK -->
+        <section class="lesson-sec" id="tugas-kelompok" aria-labelledby="h-kelompok">
+          <p class="sec-no"><span>10</span> Tugas kelompok</p>
+          <h2 id="h-kelompok">Proyek mini: Tim Pemecah Masalah Sekolah</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan bersama kelompokmu</p>
+            <h3>Temukan masalah nyata, lalu pecahkan bersama!</h3>
+            <p>Pilih satu masalah yang benar-benar terjadi di lingkungan sekolah. Selesaikan dengan empat bagian berpikir komputasional, lalu uji apakah algoritma kalian bisa diikuti oleh kelompok lain.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-people" aria-hidden="true"></i> <span>4–5 orang per kelompok</span></li>
+              <li><i class="bi bi-diagram-2" aria-hidden="true"></i> <span>Algoritma minimal 6 langkah + diagram alir</span></li>
+              <li><i class="bi bi-arrow-left-right" aria-hidden="true"></i> <span>Uji algoritma oleh kelompok lain</span></li>
+              <li><i class="bi bi-easel" aria-hidden="true"></i> <span>Poster "Kartu Solusi" + presentasi 3–5 menit</span></li>
+            </ul>
+          </div>
+
+          <h3>Langkah 1 · Pilih satu masalah</h3>
+          <p>Setiap kelompok memilih masalah yang berbeda. Kelompok boleh mengusulkan masalah lain asalkan disetujui guru.</p>
+          <div class="card-grid">
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">A</span><h4>Antrean panjang di kantin saat istirahat</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">B</span><h4>Sampah plastik menumpuk di lingkungan sekolah</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">C</span><h4>Banyak murid lupa membawa buku sesuai jadwal</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">D</span><h4>Jadwal piket kelas sering dilupakan</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">E</span><h4>Parkir sepeda di sekolah berantakan</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">F</span><h4>Keran air sering dibiarkan menyala</h4></article>
+          </div>
+
+          <h3>Langkah 2 · Bagi peran</h3>
+          <p>Semua anggota ikut berdiskusi, tetapi setiap orang punya tanggung jawab utama. Jika kelompokmu berisi 4 orang, gabungkan peran ketua dan penyaji.</p>
+          <div class="card-grid">
+            <article class="mini-card" data-el="1"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i><h4>Pengurai masalah</h4><p>Memimpin dekomposisi dan menggambar pohon masalah.</p></article>
+            <article class="mini-card" data-el="2"><i class="bi bi-arrow-repeat" aria-hidden="true"></i><h4>Pencari pola</h4><p>Mencari kapan, di mana, dan mengapa masalah terus berulang.</p></article>
+            <article class="mini-card" data-el="3"><i class="bi bi-funnel" aria-hidden="true"></i><h4>Penyaring informasi</h4><p>Memimpin abstraksi: memilah informasi penting dan yang diabaikan.</p></article>
+            <article class="mini-card" data-el="4"><i class="bi bi-list-ol" aria-hidden="true"></i><h4>Penyusun algoritma</h4><p>Menuliskan langkah solusi dan menggambar diagram alir.</p></article>
+            <article class="mini-card"><i class="bi bi-flag" aria-hidden="true"></i><h4>Ketua &amp; penyaji</h4><p>Mengatur waktu, memastikan semua bekerja, dan memimpin presentasi.</p></article>
+          </div>
+
+          <h3>Langkah 3 · Kerjakan bersama</h3>
+          <ol class="steps">
+            <li><h4>Amati masalahnya</h4><p>Amati masalah secara langsung selama 5–10 menit, misalnya saat istirahat. Catat fakta yang kalian lihat, seperti yang dipelajari di TP 1.1.</p></li>
+            <li><h4>Dekomposisi</h4><p>Gambar pohon masalah dengan minimal 3 bagian.</p></li>
+            <li><h4>Pengenalan pola</h4><p>Tulis kapan, di mana, dan mengapa masalah itu sering terjadi.</p></li>
+            <li><h4>Abstraksi</h4><p>Pisahkan informasi yang penting dan yang boleh diabaikan.</p></li>
+            <li><h4>Algoritma</h4><p>Susun solusi minimal 6 langkah, lalu gambar diagram alirnya dengan minimal satu pertanyaan Ya/Tidak.</p></li>
+            <li><h4>Uji algoritma</h4><p>Tukar algoritma dengan kelompok lain. Mereka membaca dan memeragakan langkah kalian <strong>persis seperti yang tertulis</strong>. Catat langkah yang membingungkan, lalu perbaiki.</p></li>
+            <li><h4>Presentasikan</h4><p>Tampilkan poster "Kartu Solusi" berisi keempat bagian, diagram alir, dan hasil perbaikan setelah diuji.</p></li>
+          </ol>
+          <div class="callout" data-el="4">
+            <i class="bi bi-robot" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Tips uji algoritma: jadilah "robot"</p>
+              <p>Saat menguji algoritma kelompok lain, berpura-puralah menjadi robot yang hanya melakukan apa yang tertulis, tidak lebih dan tidak kurang. Jika sebuah langkah tidak jelas, robot akan bingung. Itu tanda langkahnya perlu diperbaiki!</p>
+            </div>
+          </div>
+
+          <h3>Langkah 4 · Isi lembar kerja kelompok</h3>
+          <div class="worksheet" id="lembar-kelompok">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Kerja Kelompok · Tim Pemecah Masalah Sekolah</h3>
+                <p>TP 1.2 Menerapkan Pemecahan Masalah Sederhana dalam Kehidupan Masyarakat · Kelas VII</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-kelompok"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar kerja</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Nama kelompok / Kelas</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Anggota &amp; peran</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Masalah yang dipilih</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Fakta hasil pengamatan</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Dekomposisi (pohon masalah)</span><span class="ws-box"></span></div>
+            <div class="ws-field"><span class="ws-label">Pengenalan pola</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field">
+              <span class="ws-label">Abstraksi</span>
+              <div class="ws-two">
+                <div><b>Informasi penting</b><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+                <div><b>Boleh diabaikan</b><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+              </div>
+            </div>
+            <div class="ws-field"><span class="ws-label">Algoritma solusi</span><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Diagram alir</span><span class="ws-box"></span></div>
+            <div class="ws-field"><span class="ws-label">Hasil uji: masukan kelompok lain &amp; perbaikan</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+          </div>
+
+          <h3>Kriteria penilaian</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Rubrik penilaian tugas kelompok<small>Skor: 4 = sangat baik · 3 = baik · 2 = cukup · 1 = perlu bimbingan</small></caption>
+              <thead><tr><th scope="col">Aspek</th><th scope="col">Yang dinilai</th><th scope="col" class="num">Skor</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Dekomposisi</th><td>Masalah dipecah menjadi minimal 3 bagian yang masuk akal.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Pengenalan pola</th><td>Pola yang ditemukan sesuai dengan fakta hasil pengamatan.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Abstraksi</th><td>Informasi penting dan yang diabaikan dipilah dengan tepat.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Algoritma</th><td>Langkah jelas, berurutan, ada awal dan akhir, serta benar-benar menyelesaikan masalah.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Diagram alir</th><td>Simbol dipakai dengan benar dan ada minimal satu percabangan Ya/Tidak.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Uji &amp; perbaikan</th><td>Masukan dari kelompok lain dicatat dan dipakai untuk memperbaiki algoritma.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kerja sama &amp; presentasi</th><td>Setiap anggota berperan aktif; presentasi jelas dan runtut.</td><td class="num">1–4</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis sebelum presentasi</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Masalah yang dipilih benar-benar terjadi di sekolah.</span></label></li>
+            <li><label><input type="checkbox"><span>Pohon masalah punya minimal 3 bagian.</span></label></li>
+            <li><label><input type="checkbox"><span>Pola dan abstraksi sudah ditulis.</span></label></li>
+            <li><label><input type="checkbox"><span>Algoritma minimal 6 langkah dan sudah diuji kelompok lain.</span></label></li>
+            <li><label><input type="checkbox"><span>Diagram alir memakai simbol yang benar.</span></label></li>
+            <li><label><input type="checkbox"><span>Setiap anggota tahu bagiannya saat presentasi.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 11. RANGKUMAN -->
+        <section class="lesson-sec" id="rangkuman" aria-labelledby="h-rangkuman">
+          <p class="sec-no"><span>11</span> Rangkuman &amp; refleksi</p>
+          <h2 id="h-rangkuman">Yang perlu kamu ingat</h2>
+          <p>Berpikir komputasional adalah cara memecahkan masalah secara runtut. Cara berpikir ini bisa dipakai di mana saja, tidak harus dengan komputer.</p>
+          <div class="summary-grid">
+            <article class="mini-card" data-el="1">
+              <i class="bi bi-grid-3x3-gap" aria-hidden="true"></i>
+              <h4>Dekomposisi</h4>
+              <p>Memecah masalah besar menjadi bagian-bagian kecil yang lebih mudah diselesaikan.</p>
+            </article>
+            <article class="mini-card" data-el="2">
+              <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+              <h4>Pengenalan pola</h4>
+              <p>Mencari kesamaan atau hal yang berulang agar bisa memakai cara yang sama.</p>
+            </article>
+            <article class="mini-card" data-el="3">
+              <i class="bi bi-funnel" aria-hidden="true"></i>
+              <h4>Abstraksi</h4>
+              <p>Fokus pada informasi penting dan mengabaikan yang tidak diperlukan.</p>
+            </article>
+            <article class="mini-card" data-el="4">
+              <i class="bi bi-list-ol" aria-hidden="true"></i>
+              <h4>Algoritma</h4>
+              <p>Langkah-langkah yang jelas dan berurutan, bisa ditulis dengan kalimat atau diagram alir.</p>
+            </article>
+          </div>
+
+          <h3>Refleksi</h3>
+          <p>Jawab pertanyaan berikut di buku catatanmu:</p>
+          <ol class="question-list">
+            <li>Dari keempat bagian berpikir komputasional, mana yang paling mudah dan mana yang paling sulit bagimu? Mengapa?</li>
+            <li>Masalah apa di rumah atau di lingkunganmu yang ingin kamu selesaikan dengan cara ini?</li>
+            <li>Saat algoritma kelompokmu diuji, langkah mana yang ternyata membingungkan? Bagaimana kalian memperbaikinya?</li>
+            <li>Apa yang berjalan baik dalam kerja kelompokmu, dan apa yang bisa diperbaiki?</li>
+          </ol>
+
+          <h3>Kamus kecil</h3>
+          <dl class="glossary">
+            <div><dt>Berpikir komputasional</dt><dd>Cara berpikir untuk memecahkan masalah secara runtut dan teratur.</dd></div>
+            <div><dt>Dekomposisi</dt><dd>Memecah masalah besar menjadi bagian-bagian kecil.</dd></div>
+            <div><dt>Pengenalan pola</dt><dd>Mencari kesamaan atau hal yang berulang.</dd></div>
+            <div><dt>Abstraksi</dt><dd>Memilih informasi penting dan mengabaikan yang tidak perlu.</dd></div>
+            <div><dt>Algoritma</dt><dd>Urutan langkah yang jelas untuk menyelesaikan masalah.</dd></div>
+            <div><dt>Diagram alir</dt><dd>Gambar algoritma yang memakai simbol dan tanda panah.</dd></div>
+            <div><dt>Percabangan</dt><dd>Bagian algoritma yang jalannya berbeda tergantung jawaban Ya atau Tidak.</dd></div>
+            <div><dt>Perulangan</dt><dd>Langkah yang dikerjakan berulang-ulang sampai syaratnya terpenuhi.</dd></div>
+          </dl>
+        </section>
+
+        <kka-tp-nav code="1.2"></kka-tp-nav>
+      </div>
+    </div>
+  </main>
+
+  <kka-footer></kka-footer>
+</body>
+</html>

@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP 1.4 Pengolahan dan Penyajian Data — Koding dan KA SMPN 1 Bandar Seikijang</title>
+  <meta name="description" content="Materi TP 1.4 Koding dan Kecerdasan Artifisial Kelas VIII: mengolah dan menyajikan data dengan lembar kerja (spreadsheet), formula aritmatika dasar, dan grafik, dilengkapi lembar kerja mini dan pembuat grafik interaktif.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="TP 1.4 Menerapkan Pengolahan dan Penyajian Data dalam Konteks yang Lebih Luas">
+  <meta property="og:description" content="Spreadsheet, formula aritmatika dasar, dan visualisasi grafik data untuk murid Kelas VIII.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs: style.css (umum) + lesson.css (halaman materi) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/lesson.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lesson.js" defer></script>
+</head>
+<body>
+  <kka-header active="atp"><a href="index.html">Beranda</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <main id="konten" data-el="1">
+    <!-- =============================================== JUDUL TP -->
+    <section class="hero hero--tp" aria-labelledby="judul-tp">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Lokasi halaman">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#atp">Alur TP</a></li>
+            <li><a href="index.html#kelas-8">Kelas VIII</a></li>
+            <li><span aria-current="page">TP 1.4</span></li>
+          </ol>
+        </nav>
+        <div class="tp-badges">
+          <span class="tp-badge tp-badge--code">TP 1.4</span>
+          <span class="tp-badge"><i class="bi bi-diagram-3" aria-hidden="true"></i> Elemen 1 · Berpikir Komputasional</span>
+          <span class="tp-badge"><i class="bi bi-calendar-week" aria-hidden="true"></i> Kelas VIII · Semester 1</span>
+        </div>
+        <h1 id="judul-tp">Menerapkan Pengolahan dan Penyajian Data dalam Konteks yang Lebih Luas</h1>
+        <p class="hero-lead">Di Kelas VII kamu sudah mengumpulkan dan mencatat data dengan turus, lalu menyajikannya dalam infografis. Sekarang datanya makin banyak. Saatnya bekerja seperti pengolah data sungguhan: memakai lembar kerja, menghitung dengan formula, dan menyajikan hasilnya dalam grafik.</p>
+        <ul class="tp-meta">
+          <li><i class="bi bi-table" aria-hidden="true"></i> <span>Lembar kerja (<i lang="en">spreadsheet</i>)</span></li>
+          <li><i class="bi bi-calculator" aria-hidden="true"></i> <span>Formula aritmatika dasar</span></li>
+          <li><i class="bi bi-bar-chart-line" aria-hidden="true"></i> <span>Visualisasi grafik data</span></li>
+          <li><i class="bi bi-laptop" aria-hidden="true"></i> <span>Tugas berbasis digital</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container lesson">
+      <!-- Daftar isi -->
+      <nav class="toc" aria-labelledby="judul-toc">
+        <p class="toc-title" id="judul-toc">Daftar isi</p>
+        <ol>
+          <li><a href="#tujuan">Tujuan &amp; cara belajar</a></li>
+          <li><a href="#mengingat">Mengingat kembali</a></li>
+          <li><a href="#pemantik">Buku catatan Bu Sari</a></li>
+          <li><a href="#lembar-kerja">Mengenal lembar kerja</a></li>
+          <li><a href="#formula">Formula aritmatika</a></li>
+          <li><a href="#grafik">Visualisasi grafik</a></li>
+          <li><a href="#konteks">Data di masyarakat</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+          <li><a href="#tugas-individu">Tugas individu</a></li>
+          <li><a href="#tugas-kelompok">Tugas kelompok</a></li>
+          <li><a href="#rangkuman">Rangkuman &amp; refleksi</a></li>
+        </ol>
+      </nav>
+
+      <div class="lesson-body">
+        <!-- ========================================== 1. TUJUAN -->
+        <section class="lesson-sec" id="tujuan" aria-labelledby="h-tujuan">
+          <p class="sec-no"><span>01</span> Tujuan belajar</p>
+          <h2 id="h-tujuan">Apa yang akan kamu pelajari?</h2>
+          <p>Setelah mempelajari halaman ini, kamu diharapkan mampu:</p>
+          <ol class="goal-list">
+            <li>Menata data dengan rapi di lembar kerja (kolom, baris, dan sel).</li>
+            <li>Menulis formula aritmatika dasar dan fungsi SUM, AVERAGE, MAX, MIN, serta COUNT untuk mengolah data.</li>
+            <li>Memilih dan membuat grafik yang tepat dan jujur untuk menyajikan data.</li>
+            <li>Mengolah data dari lingkungan sekolah atau masyarakat menjadi informasi yang membantu mengambil keputusan.</li>
+          </ol>
+
+          <h3>Cara belajar di halaman ini</h3>
+          <p>Perhatikan label <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em> di setiap bagian.</p>
+          <ul class="deep-principles">
+            <li>
+              <i class="bi bi-bullseye" aria-hidden="true"></i>
+              <h4>Berkesadaran</h4>
+              <p>Kamu belajar teliti: memeriksa setiap formula dan bertanya, "Apakah hasil dan grafik ini jujur?"</p>
+            </li>
+            <li>
+              <i class="bi bi-house-heart" aria-hidden="true"></i>
+              <h4>Bermakna</h4>
+              <p>Kamu mengolah data nyata: penjualan kantin, uang saku sendiri, sampai data untuk memperbaiki sekolah.</p>
+            </li>
+            <li>
+              <i class="bi bi-emoji-laughing" aria-hidden="true"></i>
+              <h4>Menggembirakan</h4>
+              <p>Lihat sendiri bagaimana satu formula bisa menghitung puluhan data dalam sekejap, lalu ubah angka menjadi grafik yang hidup.</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 2. MENGINGAT KEMBALI -->
+        <section class="lesson-sec" id="mengingat" aria-labelledby="h-mengingat">
+          <p class="sec-no"><span>02</span> Mengingat kembali <em class="phase">Memahami</em></p>
+          <h2 id="h-mengingat">Bekal dari Kelas VII</h2>
+          <p>Materi ini menyambung beberapa hal yang sudah kamu pelajari di Kelas VII.</p>
+          <div class="card-grid">
+            <article class="mini-card recap-card" data-el="1">
+              <p class="recap-tp">TP 1.1 · Kelas VII</p>
+              <h4>Data, turus, dan tabel</h4>
+              <p>Kamu mengumpulkan data dengan angket, mencatatnya dengan turus, lalu memindahkannya ke tabel. Tabel itulah yang kini dipindahkan ke lembar kerja.</p>
+              <a href="1-1.html#mencatat">Buka lagi TP 1.1 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="1">
+              <p class="recap-tp">TP 1.2 &amp; 1.3 · Kelas VII</p>
+              <h4>Algoritma dan <i lang="en">debugging</i></h4>
+              <p>Formula adalah instruksi untuk komputer. Jika hasilnya salah atau muncul pesan galat, kamu menelusuri dan memperbaikinya, seperti di TP 1.3.</p>
+              <a href="1-3.html#debugging">Buka lagi TP 1.3 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.3 · Kelas VII</p>
+              <h4>Diagram dan infografis</h4>
+              <p>Kamu sudah mengenal diagram batang, lingkaran, dan garis. Kini grafiknya dibuat otomatis dari lembar kerja, lalu dipakai di slide atau infografis.</p>
+              <a href="2-3.html#infografis">Buka lagi TP 2.3 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.4 · Kelas VII</p>
+              <h4>Hierarki dan kontras</h4>
+              <p>Prinsip tata letak juga berlaku untuk grafik: judul yang jelas, warna yang kontras, dan satu warna aksen untuk data terpenting.</p>
+              <a href="2-4.html#kontras">Buka lagi TP 2.4 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ========================================== 3. PEMANTIK -->
+        <section class="lesson-sec" id="pemantik" aria-labelledby="h-pemantik">
+          <p class="sec-no"><span>03</span> Ayo berpikir dulu <em class="phase">Memahami</em></p>
+          <h2 id="h-pemantik">Buku catatan Bu Sari</h2>
+          <div class="story">
+            <p class="story-label"><i class="bi bi-chat-quote" aria-hidden="true"></i> Cerita</p>
+            <p>Masih ingat <strong>Bu Sari</strong>, pemilik kantin sekolah di TP 1.1? Sekarang kantinnya makin ramai karena melayani murid Kelas VII, VIII, dan IX. Setiap hari Bu Sari mencatat penjualan di buku, lalu menghitungnya dengan kalkulator.</p>
+            <p>Hari Sabtu, Bu Sari bingung. Uang di laci berjumlah <strong>Rp692.000</strong>, tetapi menurut catatannya hanya <strong>Rp682.000</strong>. Ke mana selisih Rp10.000 itu?</p>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Catatan penjualan Bu Sari selama seminggu<small>Ditulis tangan dan dihitung dengan kalkulator</small></caption>
+              <thead><tr><th scope="col">Menu</th><th scope="col" class="num">Harga (Rp)</th><th scope="col" class="num">Terjual (porsi)</th><th scope="col" class="num">Pendapatan (Rp)</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Nasi bungkus</th><td class="num">8.000</td><td class="num">35</td><td class="num">280.000</td></tr>
+                <tr><th scope="row">Gorengan</th><td class="num">1.000</td><td class="num">120</td><td class="num">120.000</td></tr>
+                <tr><th scope="row">Es teh</th><td class="num">3.000</td><td class="num">64</td><td class="num">182.000</td></tr>
+                <tr><th scope="row">Roti</th><td class="num">2.500</td><td class="num">40</td><td class="num">100.000</td></tr>
+                <tr><th scope="row">Jumlah</th><td class="num"></td><td class="num">259</td><td class="num">682.000</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ol class="question-list">
+            <li>Coba temukan kesalahan di catatan Bu Sari. Baris mana yang salah hitung?</li>
+            <li>Jika minggu depan harga gorengan naik menjadi Rp1.500, angka mana saja yang harus dihitung ulang?</li>
+            <li>Bayangkan kantin menjual 20 menu dan mencatatnya setiap hari selama satu semester. Masih sanggupkah dihitung dengan kalkulator?</li>
+          </ol>
+          <details class="accordion">
+            <summary><span><i class="bi bi-eye" aria-hidden="true"></i> Lihat jawaban</span><i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="accordion-body">
+              <p>Kesalahannya ada di baris <strong>es teh</strong>: 3.000 × 64 = <strong>192.000</strong>, bukan 182.000. Akibatnya jumlah pendapatan juga salah. Jika harga gorengan berubah, pendapatan gorengan dan jumlah seluruhnya harus dihitung ulang. Kesalahan kecil seperti ini mudah terjadi saat menghitung manual. <strong>Lembar kerja</strong> membantu kita menghitung dengan cepat, tepat, dan otomatis ikut berubah ketika datanya diubah.</p>
+            </div>
+          </details>
+        </section>
+
+        <!-- ========================================== 4. LEMBAR KERJA -->
+        <section class="lesson-sec" id="lembar-kerja" aria-labelledby="h-lembar">
+          <p class="sec-no"><span>04</span> Lembar kerja <em class="phase">Memahami</em></p>
+          <h2 id="h-lembar">Mengenal lembar kerja (<i lang="en">spreadsheet</i>)</h2>
+          <p><strong>Lembar kerja</strong> atau <strong><i lang="en">spreadsheet</i></strong> adalah aplikasi untuk mencatat, menghitung, mengolah, dan menyajikan data dalam bentuk tabel. Tabelnya tersusun dari kotak-kotak kecil yang disebut <strong>sel</strong>.</p>
+
+          <h3>Aplikasi yang bisa kamu pakai</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-google" aria-hidden="true"></i><h4>Google Spreadsheet</h4><p>Gratis dan daring. Bisa dikerjakan bersama di laptop maupun ponsel, dan tersimpan otomatis.</p></article>
+            <article class="mini-card"><i class="bi bi-file-earmark-excel" aria-hidden="true"></i><h4>Microsoft Excel</h4><p>Paling banyak dipakai di kantor dan sekolah. Ada versi komputer, daring, dan ponsel.</p></article>
+            <article class="mini-card"><i class="bi bi-phone" aria-hidden="true"></i><h4>WPS Office / LibreOffice Calc</h4><p>Alternatif gratis. WPS banyak dipakai di ponsel, LibreOffice Calc di komputer.</p></article>
+          </div>
+          <p>Tampilan aplikasinya sedikit berbeda, tetapi cara kerjanya sama. Yang kamu pelajari di sini berlaku untuk semuanya.</p>
+
+          <h3>Bagian-bagian lembar kerja</h3>
+          <div class="app-mock-wrap">
+            <div class="app-mock sheet-mock" aria-hidden="true">
+              <div class="am-title"><span class="am-dot"></span><span class="am-dot"></span><span class="am-dot"></span> Penjualan Kantin Bu Sari</div>
+              <div class="am-bar"><span>File</span><span>Edit</span><span>Tampilan</span><span>Sisipkan</span><span>Format</span><span>Data</span></div>
+              <div class="sheet-bar">
+                <span class="sheet-name am-mark" data-n="4">D2</span>
+                <span class="sheet-fx">fx</span>
+                <span class="sheet-input sheet-input-static am-mark" data-n="5">=B2*C2</span>
+              </div>
+              <table class="sheet-grid">
+                <colgroup><col class="sheet-col-head"><col style="width:30%"><col><col><col style="width:24%"></colgroup>
+                <thead><tr><th></th><th>A</th><th><span class="am-mark" data-n="1">B</span></th><th>C</th><th>D</th></tr></thead>
+                <tbody>
+                  <tr><th>1</th><td class="is-head">Menu</td><td class="is-head">Harga (Rp)</td><td class="is-head">Terjual</td><td class="is-head">Pendapatan</td></tr>
+                  <tr><th>2</th><td>Nasi bungkus</td><td class="is-num">8.000</td><td class="is-num">35</td><td class="is-num has-formula is-sel"><span class="am-mark" data-n="3">280.000</span></td></tr>
+                  <tr><th><span class="am-mark" data-n="2">3</span></th><td>Gorengan</td><td class="is-num">1.000</td><td class="is-num">120</td><td class="is-num has-formula">120.000</td></tr>
+                  <tr><th>4</th><td>Es teh</td><td class="is-num">3.000</td><td class="is-num">64</td><td class="is-num has-formula">192.000</td></tr>
+                  <tr><th>5</th><td>Roti</td><td class="is-num">2.500</td><td class="is-num">40</td><td class="is-num has-formula">100.000</td></tr>
+                  <tr><th>6</th><td>Jumlah</td><td></td><td class="is-num has-formula">259</td><td class="is-num has-formula">692.000</td></tr>
+                </tbody>
+              </table>
+              <div class="sheet-tabs"><span class="am-mark" data-n="6">Lembar1</span></div>
+            </div>
+            <ol class="am-legend">
+              <li><span><strong>Kolom:</strong> lajur tegak, diberi nama huruf (A, B, C, ...).</span></li>
+              <li><span><strong>Baris:</strong> lajur mendatar, diberi nama angka (1, 2, 3, ...).</span></li>
+              <li><span><strong>Sel:</strong> pertemuan kolom dan baris. Alamatnya ditulis huruf kolom lalu angka baris, misalnya <code class="fx">D2</code>.</span></li>
+              <li><span><strong>Kotak nama:</strong> menunjukkan alamat sel yang sedang dipilih.</span></li>
+              <li><span><strong>Bilah formula (fx):</strong> menampilkan isi asli sel, termasuk formulanya.</span></li>
+              <li><span><strong>Tab lembar (<i lang="en">sheet</i>):</strong> satu file bisa berisi banyak lembar, misalnya satu lembar untuk setiap bulan.</span></li>
+            </ol>
+          </div>
+          <p>Kumpulan beberapa sel yang berdampingan disebut <strong>rentang</strong> (<i lang="en">range</i>). Rentang ditulis dengan titik dua, misalnya <code class="fx">C2:C5</code> berarti sel C2, C3, C4, dan C5.</p>
+
+          <h3>Tiga jenis isi sel</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-fonts" aria-hidden="true"></i><h4>Teks</h4><p>Nama atau keterangan, misalnya <em>Nasi bungkus</em>. Biasanya rata kiri.</p></article>
+            <article class="mini-card"><i class="bi bi-123" aria-hidden="true"></i><h4>Angka</h4><p>Data yang bisa dihitung, misalnya <em>35</em>. Biasanya rata kanan.</p></article>
+            <article class="mini-card"><i class="bi bi-calculator" aria-hidden="true"></i><h4>Formula</h4><p>Perintah menghitung yang <strong>selalu diawali tanda =</strong>, misalnya <code class="fx">=B2*C2</code>. Sel menampilkan hasilnya.</p></article>
+          </div>
+
+          <h3>Aturan menata data agar mudah diolah</h3>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Baris pertama untuk judul kolom</strong>, misalnya Menu, Harga, Terjual.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Satu baris untuk satu data</strong> (satu menu, satu murid, atau satu hari).</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Satu kolom untuk satu jenis data.</strong> Jangan mencampur harga dan jumlah dalam satu kolom.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Tulis satuan di judul kolom</strong>, misalnya Harga (Rp) atau Berat (kg). Selnya cukup berisi angka.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Jangan sisakan baris kosong</strong> di tengah data, karena bisa membuat fungsi dan grafik terputus.</span></li>
+          </ul>
+          <div class="callout">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Ingat data kualitatif dan kuantitatif?</p>
+              <p>Di TP 1.1 kamu belajar dua jenis data. Di lembar kerja, <strong>data kuantitatif</strong> (angka hasil menghitung atau mengukur) bisa diolah dengan formula. <strong>Data kualitatif</strong> seperti nama menu dipakai sebagai label untuk mengelompokkan.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 5. FORMULA -->
+        <section class="lesson-sec" id="formula" aria-labelledby="h-formula">
+          <p class="sec-no"><span>05</span> Formula aritmatika <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-formula">Menghitung dengan formula</h2>
+          <p><strong>Formula</strong> adalah instruksi menghitung yang kita tulis di sel. Komputer menjalankannya persis seperti yang ditulis, sama seperti algoritma di TP 1.2. Setiap formula <strong>diawali tanda sama dengan (=)</strong>.</p>
+
+          <h3>Operator aritmatika</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Operator dasar di lembar kerja</caption>
+              <thead><tr><th scope="col">Operasi</th><th scope="col">Tanda</th><th scope="col">Contoh formula</th><th scope="col">Artinya</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Penjumlahan</th><td><code class="fx">+</code></td><td><code class="fx">=C2+C3</code></td><td>isi C2 ditambah isi C3</td></tr>
+                <tr><th scope="row">Pengurangan</th><td><code class="fx">-</code></td><td><code class="fx">=D2-E2</code></td><td>isi D2 dikurangi isi E2</td></tr>
+                <tr><th scope="row">Perkalian</th><td><code class="fx">*</code></td><td><code class="fx">=B2*C2</code></td><td>harga dikali jumlah terjual</td></tr>
+                <tr><th scope="row">Pembagian</th><td><code class="fx">/</code></td><td><code class="fx">=D6/5</code></td><td>jumlah dibagi 5 hari</td></tr>
+                <tr><th scope="row">Pangkat</th><td><code class="fx">^</code></td><td><code class="fx">=A2^2</code></td><td>isi A2 dikuadratkan</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout" data-el="3">
+            <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Bukan × dan ÷</p>
+              <p>Di lembar kerja, perkalian memakai tanda bintang <code class="fx">*</code> dan pembagian memakai garis miring <code class="fx">/</code>. Huruf <code class="fx">x</code> akan dibaca sebagai huruf, bukan tanda kali.</p>
+            </div>
+          </div>
+
+          <h3>Urutan operasi: kurung dulu, lalu kali-bagi, baru tambah-kurang</h3>
+          <p>Sama seperti di pelajaran Matematika, komputer mengerjakan bagian di dalam kurung lebih dulu, lalu perkalian dan pembagian, kemudian penjumlahan dan pengurangan.</p>
+          <div class="compare">
+            <div class="compare-card">
+              <p class="compare-label">Tanpa kurung</p>
+              <p><code class="fx">=2+3*4</code></p>
+              <p>Kali dulu: 3 × 4 = 12, lalu 2 + 12 = <strong>14</strong></p>
+            </div>
+            <div class="compare-arrow" aria-hidden="true"><i class="bi bi-arrow-left-right"></i></div>
+            <div class="compare-card compare-card--info">
+              <p class="compare-label">Dengan kurung</p>
+              <p><code class="fx">=(2+3)*4</code></p>
+              <p>Kurung dulu: 2 + 3 = 5, lalu 5 × 4 = <strong>20</strong></p>
+            </div>
+          </div>
+
+          <h3>Pakai alamat sel, bukan angka langsung</h3>
+          <p>Tulis <code class="fx">=B2*C2</code>, bukan <code class="fx">=8000*35</code>. Hasilnya sama, tetapi formula dengan alamat sel <strong>otomatis menghitung ulang</strong> ketika isi B2 atau C2 diubah. Inilah kekuatan lembar kerja yang menolong Bu Sari.</p>
+
+          <h3>Fungsi: formula siap pakai</h3>
+          <p><strong>Fungsi</strong> adalah formula yang sudah disiapkan aplikasi untuk tugas yang sering dilakukan. Cara menulisnya: <code class="fx">=NAMA(rentang)</code>.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Fungsi dasar yang sering dipakai<small>Excel berbahasa Indonesia memakai nama di kolom terakhir</small></caption>
+              <thead><tr><th scope="col">Fungsi</th><th scope="col">Kegunaan</th><th scope="col">Contoh</th><th scope="col">Excel bahasa Indonesia</th></tr></thead>
+              <tbody>
+                <tr><th scope="row"><code class="fx">SUM</code></th><td>Menjumlahkan semua angka</td><td><code class="fx">=SUM(D2:D5)</code></td><td><code class="fx">JUMLAH</code></td></tr>
+                <tr><th scope="row"><code class="fx">AVERAGE</code></th><td>Menghitung rata-rata</td><td><code class="fx">=AVERAGE(D2:D5)</code></td><td><code class="fx">RATA-RATA</code></td></tr>
+                <tr><th scope="row"><code class="fx">MAX</code></th><td>Mencari angka terbesar</td><td><code class="fx">=MAX(C2:C5)</code></td><td><code class="fx">MAKS</code></td></tr>
+                <tr><th scope="row"><code class="fx">MIN</code></th><td>Mencari angka terkecil</td><td><code class="fx">=MIN(C2:C5)</code></td><td><code class="fx">MIN</code></td></tr>
+                <tr><th scope="row"><code class="fx">COUNT</code></th><td>Menghitung banyaknya sel berisi angka</td><td><code class="fx">=COUNT(C2:C5)</code></td><td><code class="fx">CACAH</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="tool-note">Di beberapa pengaturan bahasa, pemisah di dalam fungsi memakai titik koma, misalnya <code class="fx">=SUM(C2;C4)</code>. Jika muncul pesan galat, coba ganti koma dengan titik koma.</p>
+
+          <h3>Isi otomatis: satu formula untuk banyak baris</h3>
+          <p>Kamu tidak perlu mengetik formula yang sama berulang-ulang. Pilih sel berformula, lalu tarik kotak kecil di pojok kanan bawahnya (<i lang="en">fill handle</i>) ke bawah. Formula <code class="fx">=B2*C2</code> otomatis berubah menjadi <code class="fx">=B3*C3</code>, <code class="fx">=B4*C4</code>, dan seterusnya. Ini disebut <strong>referensi relatif</strong>, dan inilah <strong>pengenalan pola</strong> (TP 1.2) yang dikerjakan komputer untukmu.</p>
+
+          <h3>Pesan galat: petunjuk untuk <i lang="en">debugging</i></h3>
+          <p>Jika formula keliru, sel menampilkan pesan galat. Jangan panik! Baca pesannya, lalu telusuri kesalahannya seperti di TP 1.3.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Pesan galat yang sering muncul</caption>
+              <thead><tr><th scope="col">Pesan</th><th scope="col">Artinya</th><th scope="col">Cara memperbaiki</th></tr></thead>
+              <tbody>
+                <tr><th scope="row"><code class="fx">#DIV/0!</code></th><td>Membagi dengan nol atau sel kosong</td><td>Periksa sel pembaginya.</td></tr>
+                <tr><th scope="row"><code class="fx">#NAME?</code></th><td>Nama fungsi tidak dikenal</td><td>Periksa ejaan, misalnya <code class="fx">SUM</code>, bukan <code class="fx">SUMM</code>.</td></tr>
+                <tr><th scope="row"><code class="fx">#VALUE!</code></th><td>Teks ikut dihitung</td><td>Pastikan sel yang dihitung berisi angka.</td></tr>
+                <tr><th scope="row"><code class="fx">#REF!</code></th><td>Alamat sel tidak ada atau terhapus</td><td>Periksa lagi alamat sel di formula.</td></tr>
+                <tr><th scope="row"><code class="fx">#ERROR!</code></th><td>Formula tidak bisa dibaca (di Google Spreadsheet)</td><td>Periksa tanda kurung dan operatornya.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Coba sendiri: Lembar Kerja Mini <em class="phase">Mengaplikasi</em></h3>
+          <div class="lab sheet-lab js-only" id="lk-kantin" data-sheet>
+            <script type="application/json" data-sheet-data>
+              {
+                "cols": 4, "rows": 7, "head": true, "widths": [110, 98, 70, 108],
+                "cells": {
+                  "A1": "Menu", "B1": "Harga (Rp)", "C1": "Terjual", "D1": "Pendapatan",
+                  "A2": "Nasi bungkus", "B2": "8000", "C2": "35",
+                  "A3": "Gorengan", "B3": "1000", "C3": "120",
+                  "A4": "Es teh", "B4": "3000", "C4": "64",
+                  "A5": "Roti", "B5": "2500", "C5": "40",
+                  "A6": "Jumlah", "A7": "Rata-rata"
+                },
+                "tasks": [
+                  { "cell": "D2", "text": "Pendapatan nasi bungkus = harga × terjual.", "expect": 280000, "hint": "=B2*C2" },
+                  { "cell": "D3", "text": "Pendapatan gorengan. Coba tombol <strong>Isi otomatis ke bawah</strong> dari D2!", "expect": 120000, "hint": "=B3*C3" },
+                  { "cell": "D4", "text": "Pendapatan es teh.", "expect": 192000, "hint": "=B4*C4" },
+                  { "cell": "D5", "text": "Pendapatan roti.", "expect": 100000, "hint": "=B5*C5" },
+                  { "cell": "C6", "text": "Jumlah porsi terjual dengan fungsi SUM.", "expect": 259, "fn": "SUM", "hint": "=SUM(C2:C5)" },
+                  { "cell": "D6", "text": "Jumlah pendapatan seminggu.", "expect": 692000, "fn": "SUM", "hint": "=SUM(D2:D5)" },
+                  { "cell": "D7", "text": "Rata-rata pendapatan per menu dengan fungsi AVERAGE.", "expect": 173000, "fn": "AVERAGE", "hint": "=AVERAGE(D2:D5)" }
+                ]
+              }
+            </script>
+            <div class="lab-head">
+              <i class="bi bi-table" aria-hidden="true"></i>
+              <div>
+                <h3>Lembar Kerja Mini: Kantin Bu Sari</h3>
+                <p>Klik sebuah sel, ketik isinya di bilah fx, lalu tekan Enter. Selesaikan semua tugas di sebelah kanan.</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <div data-sheet-mount></div>
+                <div class="tool-actions">
+                  <button type="button" class="link-btn" data-sheet-fill><i class="bi bi-arrow-down-square" aria-hidden="true"></i> Isi otomatis ke bawah</button>
+                  <button type="button" class="link-btn" data-sheet-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Kembali ke data awal</button>
+                </div>
+                <p class="tool-status" data-sheet-status aria-live="polite"></p>
+              </div>
+              <div class="lab-controls">
+                <p class="dl-score-row">Tugas selesai <span class="dl-score is-bad" data-sheet-score>0 / 7</span></p>
+                <ol class="sheet-tasks" data-sheet-tasks aria-live="polite"></ol>
+                <p class="tool-note"><strong>Tantangan:</strong> setelah semua selesai, ubah harga es teh di B4 menjadi 4000. Perhatikan sel mana saja yang ikut berubah sendiri!</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 6. GRAFIK -->
+        <section class="lesson-sec" id="grafik" aria-labelledby="h-grafik">
+          <p class="sec-no"><span>06</span> Visualisasi grafik <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-grafik">Dari tabel menjadi grafik</h2>
+          <p>Tabel berisi angka yang lengkap, tetapi butuh waktu untuk dibaca. <strong>Grafik</strong> (diagram) mengubah angka menjadi gambar, sehingga pola, perbandingan, dan perubahan langsung terlihat. Inilah <strong>visualisasi data</strong>.</p>
+
+          <h3>Pilih grafik sesuai pertanyaanmu</h3>
+          <div class="card-grid">
+            <article class="mini-card">
+              <div class="chart-mini" aria-hidden="true"><div class="cm-bar"><span style="height:60%"></span><span style="height:95%"></span><span style="height:40%"></span><span style="height:75%"></span></div></div>
+              <h4>Diagram batang</h4>
+              <p><strong>"Mana yang paling banyak?"</strong> Untuk membandingkan jumlah antarkelompok, misalnya penjualan tiap menu.</p>
+            </article>
+            <article class="mini-card">
+              <div class="chart-mini" aria-hidden="true"><svg viewBox="0 0 120 66"><line x1="4" y1="62" x2="116" y2="62"/><polyline points="8,50 34,40 60,44 86,22 112,12"/></svg></div>
+              <h4>Diagram garis</h4>
+              <p><strong>"Naik atau turun?"</strong> Untuk melihat perubahan dari waktu ke waktu, misalnya setoran bank sampah setiap bulan.</p>
+            </article>
+            <article class="mini-card">
+              <div class="chart-mini" aria-hidden="true"><div class="cm-pie"></div></div>
+              <h4>Diagram lingkaran</h4>
+              <p><strong>"Berapa bagiannya?"</strong> Untuk menunjukkan bagian dari keseluruhan (persen), misalnya cara murid berangkat ke sekolah.</p>
+            </article>
+          </div>
+
+          <h3>Bagian-bagian grafik yang baik</h3>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Judul</strong> yang menjelaskan data apa, siapa, dan kapan.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Sumbu mendatar dan tegak</strong> yang berlabel dan bersatuan, misalnya "Porsi" atau "kg".</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Label data</strong> (angka di atas batang) agar nilainya mudah dibaca.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Keterangan (legenda)</strong> jika ada lebih dari satu warna atau kelompok.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Sumber data</strong> agar grafik bisa dipercaya.</span></li>
+          </ul>
+
+          <h3>Langkah membuat grafik di aplikasi</h3>
+          <div class="tabs" data-tabs>
+            <div class="tab-list" role="tablist" aria-label="Pilih aplikasi lembar kerja">
+              <button type="button" role="tab" id="tab-gsheet" aria-controls="panel-gsheet" aria-selected="true"><i class="bi bi-google" aria-hidden="true"></i> Google Spreadsheet</button>
+              <button type="button" role="tab" id="tab-excel" aria-controls="panel-excel" aria-selected="false"><i class="bi bi-file-earmark-excel" aria-hidden="true"></i> Microsoft Excel</button>
+              <button type="button" role="tab" id="tab-wps" aria-controls="panel-wps" aria-selected="false"><i class="bi bi-phone" aria-hidden="true"></i> Di ponsel</button>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="panel-gsheet" aria-labelledby="tab-gsheet">
+              <ol class="steps">
+                <li><h4>Blok datanya</h4><p>Pilih label dan angkanya sekaligus, termasuk judul kolom, misalnya <code class="fx">A1:A5</code> dan <code class="fx">C1:C5</code> (tahan <code>Ctrl</code> untuk memilih kolom yang tidak berdampingan).</p></li>
+                <li><h4>Sisipkan diagram</h4><p>Klik menu <strong>Sisipkan</strong> → <strong>Diagram</strong>. Panel <strong>Editor diagram</strong> muncul di sebelah kanan.</p></li>
+                <li><h4>Pilih jenis diagram</h4><p>Di tab <strong>Penyiapan</strong>, pilih jenis diagram: batang (kolom), garis, atau lingkaran.</p></li>
+                <li><h4>Rapikan</h4><p>Di tab <strong>Sesuaikan</strong>, isi judul diagram dan judul sumbu, lalu tambahkan label data.</p></li>
+                <li><h4>Periksa kejujurannya</h4><p>Pastikan sumbu tegak diagram batang dimulai dari 0.</p></li>
+                <li><h4>Pakai di karyamu</h4><p>Klik titik tiga di pojok diagram → <strong>Unduh</strong> → PNG, atau salin ke Google Slides untuk infografis seperti di TP 2.3.</p></li>
+              </ol>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="panel-excel" aria-labelledby="tab-excel">
+              <ol class="steps">
+                <li><h4>Blok datanya</h4><p>Pilih label dan angkanya sekaligus, termasuk judul kolom. Tahan <code>Ctrl</code> untuk memilih kolom yang tidak berdampingan.</p></li>
+                <li><h4>Sisipkan bagan</h4><p>Klik tab <strong>Sisipkan</strong> (<i lang="en">Insert</i>), lalu pilih jenis bagan di grup <strong>Bagan</strong>, atau klik <strong>Bagan yang Direkomendasikan</strong>.</p></li>
+                <li><h4>Rapikan</h4><p>Klik judul bagan untuk mengubahnya. Gunakan tombol <strong>+</strong> di samping bagan untuk menambahkan judul sumbu dan label data.</p></li>
+                <li><h4>Periksa kejujurannya</h4><p>Klik dua kali sumbu tegak dan pastikan nilai <strong>Minimum</strong> adalah 0 untuk bagan batang.</p></li>
+                <li><h4>Pakai di karyamu</h4><p>Salin bagan (<code>Ctrl</code> + <code>C</code>) lalu tempel ke PowerPoint, atau klik kanan → <strong>Simpan sebagai Gambar</strong>.</p></li>
+              </ol>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="panel-wps" aria-labelledby="tab-wps">
+              <ol class="steps">
+                <li><h4>Buka aplikasinya</h4><p>Gunakan aplikasi Google Spreadsheet, Excel, atau WPS Office di ponsel, lalu buka file lembar kerjamu.</p></li>
+                <li><h4>Blok datanya</h4><p>Ketuk sel pertama, lalu geser titik biru di pojok sel untuk memperluas pilihan sampai semua data terpilih.</p></li>
+                <li><h4>Sisipkan diagram</h4><p>Ketuk ikon <strong>+</strong> atau menu <strong>Sisipkan</strong> → <strong>Diagram</strong>, lalu pilih jenisnya.</p></li>
+                <li><h4>Rapikan dan simpan</h4><p>Ketuk diagram untuk mengedit judul. Layar ponsel kecil, jadi periksa lagi di laptop atau komputer sekolah jika bisa.</p></li>
+              </ol>
+            </div>
+          </div>
+
+          <h3>Awas, grafik bisa menyesatkan!</h3>
+          <p>Data yang sama bisa terlihat sangat berbeda jika sumbunya "dipotong". Perhatikan kedua grafik kehadiran murid di bawah ini. Angkanya sama persis!</p>
+          <div class="mislead">
+            <figure>
+              <svg viewBox="0 0 260 170" role="img" aria-label="Grafik jujur: sumbu dimulai dari 0, keempat batang hampir sama tinggi">
+                <line class="cg-grid" x1="34" x2="250" y1="20" y2="20"/><line class="cg-grid" x1="34" x2="250" y1="80" y2="80"/>
+                <text class="cg-axis" x="28" y="24" text-anchor="end">100</text><text class="cg-axis" x="28" y="84" text-anchor="end">50</text><text class="cg-axis" x="28" y="144" text-anchor="end">0</text>
+                <rect class="cg-bar" x="46" y="27.2" width="34" height="112.8" rx="3"/><rect class="cg-bar" x="98" y="24.8" width="34" height="115.2" rx="3"/><rect class="cg-bar" x="150" y="26" width="34" height="114" rx="3"/><rect class="cg-bar" x="202" y="22.4" width="34" height="117.6" rx="3"/>
+                <line class="cg-base" x1="34" x2="250" y1="140" y2="140"/>
+                <text class="cg-label" x="63" y="158" text-anchor="middle">VIII-A</text><text class="cg-label" x="115" y="158" text-anchor="middle">VIII-B</text><text class="cg-label" x="167" y="158" text-anchor="middle">VIII-C</text><text class="cg-label" x="219" y="158" text-anchor="middle">VIII-D</text>
+              </svg>
+              <figcaption><b>Jujur: sumbu dimulai dari 0</b>Kehadiran keempat kelas ternyata hampir sama: 94%, 96%, 95%, dan 98%.</figcaption>
+            </figure>
+            <figure>
+              <svg viewBox="0 0 260 170" role="img" aria-label="Grafik menyesatkan: sumbu dimulai dari 93, batang VIII-D terlihat lima kali lebih tinggi dari VIII-A">
+                <line class="cg-grid" x1="34" x2="250" y1="20" y2="20"/><line class="cg-grid" x1="34" x2="250" y1="80" y2="80"/>
+                <text class="cg-axis" x="28" y="24" text-anchor="end">99</text><text class="cg-axis" x="28" y="84" text-anchor="end">96</text><text class="cg-axis" x="28" y="144" text-anchor="end">93</text>
+                <rect class="cg-bar" x="46" y="120" width="34" height="20" rx="3"/><rect class="cg-bar" x="98" y="80" width="34" height="60" rx="3"/><rect class="cg-bar" x="150" y="100" width="34" height="40" rx="3"/><rect class="cg-bar" x="202" y="40" width="34" height="100" rx="3"/>
+                <line class="cg-base" x1="34" x2="250" y1="140" y2="140"/><path class="cg-cut" d="M28,136 l12,-6 M28,142 l12,-6"/>
+                <text class="cg-label" x="63" y="158" text-anchor="middle">VIII-A</text><text class="cg-label" x="115" y="158" text-anchor="middle">VIII-B</text><text class="cg-label" x="167" y="158" text-anchor="middle">VIII-C</text><text class="cg-label" x="219" y="158" text-anchor="middle">VIII-D</text>
+              </svg>
+              <figcaption><b>Menyesatkan: sumbu dimulai dari 93</b>VIII-D seolah-olah lima kali lebih rajin daripada VIII-A, padahal selisihnya hanya 4%.</figcaption>
+            </figure>
+          </div>
+          <div class="callout" data-el="3">
+            <i class="bi bi-shield-check" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Jadilah pembuat dan pembaca grafik yang jujur</p>
+              <p>Saat membuat grafik, jangan memotong sumbu untuk membesar-besarkan perbedaan. Saat membaca grafik di berita atau media sosial, selalu periksa angka di sumbunya dan sumber datanya.</p>
+            </div>
+          </div>
+
+          <h3>Coba sendiri: Pembuat Grafik <em class="phase">Mengaplikasi</em></h3>
+          <div class="lab chart-lab js-only" data-chart-maker>
+            <div class="lab-head">
+              <i class="bi bi-bar-chart-line" aria-hidden="true"></i>
+              <div>
+                <h3>Pembuat Grafik</h3>
+                <p>Pilih data, tentukan pertanyaannya, lalu pilih jenis grafik yang paling tepat. Kamu juga bisa mengetik datamu sendiri.</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <div class="cm-chart" data-cm-chart></div>
+                <p class="dl-score-row">Skor grafik <span class="dl-score" data-cm-score aria-live="polite">0 / 5</span></p>
+                <ul class="dl-feedback" data-cm-feedback aria-live="polite"></ul>
+              </div>
+              <div class="lab-controls">
+                <p class="lab-label">Pilih contoh data</p>
+                <div class="cm-presets">
+                  <button type="button" data-cm-preset='{"title":"Penjualan Kantin Bu Sari Selama Seminggu","goal":"bandingkan","unit":"Porsi","source":"Catatan kantin Bu Sari","rows":[["Nasi bungkus",35],["Gorengan",120],["Es teh",64],["Roti",40]]}'>Kantin</button>
+                  <button type="button" data-cm-preset='{"title":"Setoran Bank Sampah Sekolah Juli–November","goal":"tren","unit":"kg","source":"Buku setoran bank sampah (contoh data)","rows":[["Jul",42],["Agu",55],["Sep",61],["Okt",58],["Nov",74]]}'>Bank sampah</button>
+                  <button type="button" data-cm-preset='{"title":"Cara Berangkat ke Sekolah Murid Kelas VII-A","goal":"bagian","unit":"Murid","source":"Angket Kelas VII-A (TP 1.1)","rows":[["Jalan kaki",8],["Bersepeda",6],["Diantar motor",13],["Angkutan/mobil",5]]}'>Cara berangkat</button>
+                  <button type="button" data-cm-preset='{"title":"Kehadiran","goal":"bandingkan","unit":"Persen","source":"","zero":false,"rows":[["VIII-A",94],["VIII-B",96],["VIII-C",95],["VIII-D",98]]}'>Kehadiran (perbaiki!)</button>
+                </div>
+                <label class="lab-label" for="cm-goal">Pertanyaan yang ingin dijawab</label>
+                <select id="cm-goal" data-cm="goal">
+                  <option value="bandingkan">Membandingkan jumlah antarkelompok</option>
+                  <option value="tren">Melihat perubahan dari waktu ke waktu</option>
+                  <option value="bagian">Menunjukkan bagian dari keseluruhan</option>
+                </select>
+                <p class="lab-label" id="cm-type-label">Jenis grafik</p>
+                <div class="dl-radios" role="radiogroup" aria-labelledby="cm-type-label">
+                  <label><input type="radio" name="cm-type" value="bar" data-cm-type checked> Batang</label>
+                  <label><input type="radio" name="cm-type" value="line" data-cm-type> Garis</label>
+                  <label><input type="radio" name="cm-type" value="pie" data-cm-type> Lingkaran</label>
+                </div>
+                <label class="lab-label" for="cm-title">Judul grafik</label>
+                <input class="cm-text" id="cm-title" data-cm="title" autocomplete="off">
+                <label class="lab-label" for="cm-source">Sumber data</label>
+                <input class="cm-text" id="cm-source" data-cm="source" autocomplete="off">
+                <label class="mb-toggle"><input type="checkbox" data-cm="zero" checked> <span>Sumbu tegak dimulai dari 0</span></label>
+                <table class="cm-table">
+                  <caption class="sr-only">Data grafik</caption>
+                  <thead><tr><th scope="col">Label</th><th scope="col">Nilai</th></tr></thead>
+                  <tbody>
+                    <tr><td><input data-cm-label aria-label="Label baris 1"></td><td><input data-cm-value inputmode="decimal" aria-label="Nilai baris 1"></td></tr>
+                    <tr><td><input data-cm-label aria-label="Label baris 2"></td><td><input data-cm-value inputmode="decimal" aria-label="Nilai baris 2"></td></tr>
+                    <tr><td><input data-cm-label aria-label="Label baris 3"></td><td><input data-cm-value inputmode="decimal" aria-label="Nilai baris 3"></td></tr>
+                    <tr><td><input data-cm-label aria-label="Label baris 4"></td><td><input data-cm-value inputmode="decimal" aria-label="Nilai baris 4"></td></tr>
+                    <tr><td><input data-cm-label aria-label="Label baris 5"></td><td><input data-cm-value inputmode="decimal" aria-label="Nilai baris 5"></td></tr>
+                    <tr><td><input data-cm-label aria-label="Label baris 6"></td><td><input data-cm-value inputmode="decimal" aria-label="Nilai baris 6"></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 7. KONTEKS LEBIH LUAS -->
+        <section class="lesson-sec" id="konteks" aria-labelledby="h-konteks">
+          <p class="sec-no"><span>07</span> Konteks yang lebih luas <em class="phase">Memahami</em> <em class="phase">Merefleksi</em></p>
+          <h2 id="h-konteks">Dari data menjadi keputusan</h2>
+          <p>Mengolah data bukan sekadar menghitung. Tujuannya adalah mengubah data menjadi <strong>informasi</strong> yang membantu orang mengambil <strong>keputusan</strong> yang lebih baik.</p>
+          <ol class="flow">
+            <li data-el="1">
+              <span class="flow-icon" aria-hidden="true"><i class="bi bi-journal-text"></i></span>
+              <p class="flow-step">Langkah 1</p>
+              <h4>Data</h4>
+              <p>Catatan penjualan setiap menu selama seminggu.</p>
+            </li>
+            <li data-el="1">
+              <span class="flow-icon" aria-hidden="true"><i class="bi bi-calculator"></i></span>
+              <p class="flow-step">Langkah 2</p>
+              <h4>Olah</h4>
+              <p>Hitung pendapatan, jumlah, dan rata-rata dengan formula.</p>
+            </li>
+            <li data-el="2">
+              <span class="flow-icon" aria-hidden="true"><i class="bi bi-bar-chart"></i></span>
+              <p class="flow-step">Langkah 3</p>
+              <h4>Informasi</h4>
+              <p>Grafik menunjukkan gorengan paling laku, tetapi nasi bungkus memberi pendapatan terbesar.</p>
+            </li>
+            <li data-el="4">
+              <span class="flow-icon" aria-hidden="true"><i class="bi bi-lightbulb"></i></span>
+              <p class="flow-step">Langkah 4</p>
+              <h4>Keputusan</h4>
+              <p>Bu Sari menambah stok gorengan dan tetap menyediakan nasi bungkus secukupnya.</p>
+            </li>
+          </ol>
+
+          <h3>Pengolahan data di sekitar kita</h3>
+          <p>Cara yang sama dipakai di banyak tempat di masyarakat, termasuk di sekitar Bandar Seikijang.</p>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-heart-pulse" aria-hidden="true"></i><h4>Posyandu</h4><p>Kader mencatat berat badan balita setiap bulan. Grafik garis di Kartu Menuju Sehat (KMS) menunjukkan apakah anak tumbuh dengan baik.</p></article>
+            <article class="mini-card"><i class="bi bi-tree" aria-hidden="true"></i><h4>Kebun dan koperasi</h4><p>Pekebun dan koperasi mencatat berat panen dan harga setiap minggu, lalu menghitung pendapatan dengan formula perkalian.</p></article>
+            <article class="mini-card"><i class="bi bi-recycle" aria-hidden="true"></i><h4>Bank sampah</h4><p>Setoran sampah setiap kelas atau warga dijumlahkan per bulan untuk melihat apakah gerakan memilah sampah berhasil.</p></article>
+            <article class="mini-card"><i class="bi bi-building" aria-hidden="true"></i><h4>Kantor desa dan BPS</h4><p>Data penduduk diolah menjadi tabel dan grafik untuk merencanakan sekolah, puskesmas, dan jalan.</p></article>
+            <article class="mini-card"><i class="bi bi-cloud-rain" aria-hidden="true"></i><h4>Cuaca</h4><p>BMKG mengolah data curah hujan dan suhu untuk memberi peringatan dini, misalnya musim kemarau atau banjir.</p></article>
+            <article class="mini-card"><i class="bi bi-wallet2" aria-hidden="true"></i><h4>Keuangan keluarga</h4><p>Mencatat pemasukan dan pengeluaran membantu keluarga berhemat dan menabung untuk kebutuhan penting.</p></article>
+          </div>
+
+          <h3>Fitur pengolahan lain yang berguna</h3>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Urutkan (<i lang="en">sort</i>):</strong> menyusun data dari terbesar ke terkecil atau sesuai abjad.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Filter:</strong> menampilkan data tertentu saja, misalnya hanya kelas VIII-A.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Format angka:</strong> menampilkan angka sebagai rupiah (Rp8.000) atau persen (95%) tanpa mengubah nilainya.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Bekukan baris:</strong> judul kolom tetap terlihat saat datanya digulir ke bawah.</span></li>
+          </ul>
+
+          <div class="callout" data-el="3">
+            <i class="bi bi-shield-lock" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Etika mengolah data</p>
+              <p>Olah data dengan <strong>jujur</strong>: jangan mengubah angka atau memotong grafik agar sesuai keinginan. Jaga <strong>data pribadi</strong>: jangan membagikan file berisi nama, nomor HP, atau alamat orang lain tanpa izin. Saat berbagi lembar kerja daring, atur aksesnya hanya untuk orang yang perlu.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 8. KUIS -->
+        <section class="lesson-sec" id="cek-pemahaman" aria-labelledby="h-kuis">
+          <p class="sec-no"><span>08</span> Cek pemahaman <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kuis">Ayo uji pemahamanmu</h2>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis A · Tebak hasil formula</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <p>Diketahui sel <code class="fx">A1</code> = 10, <code class="fx">A2</code> = 4, dan <code class="fx">A3</code> = 7.</p>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="18" data-explain="Kali dulu: 4 × 2 = 8, lalu 10 + 8 = 18.">
+                <p class="quiz-text"><code class="fx">=A1+A2*2</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="28">28</button><button type="button" data-choice="18">18</button><button type="button" data-choice="16">16</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="28" data-explain="Kurung dulu: 10 + 4 = 14, lalu 14 × 2 = 28.">
+                <p class="quiz-text"><code class="fx">=(A1+A2)*2</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="18">18</button><button type="button" data-choice="28">28</button><button type="button" data-choice="24">24</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="21" data-explain="SUM menjumlahkan semuanya: 10 + 4 + 7 = 21.">
+                <p class="quiz-text"><code class="fx">=SUM(A1:A3)</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="17">17</button><button type="button" data-choice="3">3</button><button type="button" data-choice="21">21</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="7" data-explain="Rata-rata = jumlah ÷ banyak data = 21 ÷ 3 = 7.">
+                <p class="quiz-text"><code class="fx">=AVERAGE(A1:A3)</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="7">7</button><button type="button" data-choice="21">21</button><button type="button" data-choice="10">10</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="6" data-explain="Terbesar 10, terkecil 4, jadi 10 − 4 = 6.">
+                <p class="quiz-text"><code class="fx">=MAX(A1:A3)-MIN(A1:A3)</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="3">3</button><button type="button" data-choice="6">6</button><button type="button" data-choice="14">14</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="div0" data-explain="A2 − 4 = 0, dan tidak ada bilangan yang bisa dibagi nol.">
+                <p class="quiz-text"><code class="fx">=A1/(A2-4)</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="0">0</button><button type="button" data-choice="div0">#DIV/0!</button><button type="button" data-choice="10">10</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis B · Grafik apa yang paling cocok?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="garis" data-explain="Data bulanan menunjukkan perubahan dari waktu ke waktu.">
+                <p class="quiz-text">Jumlah pengunjung perpustakaan setiap bulan selama satu semester.</p>
+                <div class="quiz-choices"><button type="button" data-choice="batang">Batang</button><button type="button" data-choice="garis">Garis</button><button type="button" data-choice="lingkaran">Lingkaran</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="batang" data-explain="Membandingkan jumlah antarkelompok (kelas) paling jelas dengan batang.">
+                <p class="quiz-text">Perbandingan berat sampah plastik yang dikumpulkan lima kelas.</p>
+                <div class="quiz-choices"><button type="button" data-choice="batang">Batang</button><button type="button" data-choice="garis">Garis</button><button type="button" data-choice="lingkaran">Lingkaran</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="lingkaran" data-explain="Persentase dari seluruh murid adalah bagian dari keseluruhan.">
+                <p class="quiz-text">Persentase murid berdasarkan cara berangkat ke sekolah.</p>
+                <div class="quiz-choices"><button type="button" data-choice="batang">Batang</button><button type="button" data-choice="garis">Garis</button><button type="button" data-choice="lingkaran">Lingkaran</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="garis" data-explain="Suhu harian berubah dari waktu ke waktu.">
+                <p class="quiz-text">Suhu udara siang hari di Pekanbaru selama seminggu.</p>
+                <div class="quiz-choices"><button type="button" data-choice="batang">Batang</button><button type="button" data-choice="garis">Garis</button><button type="button" data-choice="lingkaran">Lingkaran</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="batang" data-explain="Jenis buku adalah kelompok yang dibandingkan jumlahnya.">
+                <p class="quiz-text">Jumlah buku yang dipinjam menurut jenisnya: cerita, sains, sejarah, dan komik.</p>
+                <div class="quiz-choices"><button type="button" data-choice="batang">Batang</button><button type="button" data-choice="garis">Garis</button><button type="button" data-choice="lingkaran">Lingkaran</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="lingkaran" data-explain="Uang saku dibagi ke beberapa keperluan, jadi ini bagian dari keseluruhan.">
+                <p class="quiz-text">Pembagian uang saku seminggu untuk jajan, tabungan, dan transportasi.</p>
+                <div class="quiz-choices"><button type="button" data-choice="batang">Batang</button><button type="button" data-choice="garis">Garis</button><button type="button" data-choice="lingkaran">Lingkaran</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 9. TUGAS INDIVIDU -->
+        <section class="lesson-sec" id="tugas-individu" aria-labelledby="h-individu">
+          <p class="sec-no"><span>09</span> Tugas individu <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em></p>
+          <h2 id="h-individu">Catatan Uang Saku Seminggu</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan sendiri · berbasis digital</p>
+            <h3>Ke mana perginya uang sakuku?</h3>
+            <p>Catat uang saku dan pengeluaranmu selama 7 hari di lembar kerja. Olah dengan formula, sajikan dengan grafik, lalu tarik kesimpulan untuk dirimu sendiri.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-person" aria-hidden="true"></i> <span>Dikerjakan sendiri</span></li>
+              <li><i class="bi bi-calendar-week" aria-hidden="true"></i> <span>Data selama 7 hari</span></li>
+              <li><i class="bi bi-table" aria-hidden="true"></i> <span>Google Spreadsheet, Excel, atau WPS</span></li>
+              <li><i class="bi bi-file-earmark-spreadsheet" aria-hidden="true"></i> <span>Dikumpulkan: file lembar kerja dan gambar grafik</span></li>
+            </ul>
+          </div>
+          <div class="callout">
+            <i class="bi bi-incognito" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Privasi tetap terjaga</p>
+              <p>Jika tidak nyaman memakai angka sebenarnya, kamu boleh memakai angka perkiraan atau contoh. Yang dinilai adalah cara mengolah dan menyajikan datanya.</p>
+            </div>
+          </div>
+
+          <h3>Langkah mengerjakan</h3>
+          <ol class="steps">
+            <li><h4>Buat tabel</h4><p>Buat kolom: <strong>Hari</strong>, <strong>Uang saku (Rp)</strong>, <strong>Jajan (Rp)</strong>, <strong>Transportasi (Rp)</strong>, <strong>Lainnya (Rp)</strong>, <strong>Total keluar (Rp)</strong>, dan <strong>Sisa (Rp)</strong>. Isi tujuh baris untuk Senin sampai Minggu.</p></li>
+            <li><h4>Hitung total keluar dan sisa</h4><p>Total keluar: <code class="fx">=C2+D2+E2</code>. Sisa: <code class="fx">=B2-F2</code>. Gunakan isi otomatis untuk baris berikutnya.</p></li>
+            <li><h4>Buat ringkasan</h4><p>Di bawah tabel, hitung jumlah seminggu (<code class="fx">SUM</code>), rata-rata jajan per hari (<code class="fx">AVERAGE</code>), serta pengeluaran terbesar dan terkecil (<code class="fx">MAX</code> dan <code class="fx">MIN</code>).</p></li>
+            <li><h4>Buat dua grafik</h4><p>Grafik garis untuk <strong>sisa uang setiap hari</strong>, dan grafik lingkaran untuk <strong>pembagian pengeluaran seminggu</strong> (jajan, transportasi, lainnya). Beri judul dan sumber.</p></li>
+            <li><h4>Tulis kesimpulan</h4><p>Di lembar kerja, tulis 2–3 kalimat: kapan pengeluaranmu paling besar, untuk apa paling banyak, dan satu rencana berhematmu.</p></li>
+            <li><h4>Simpan dan kumpulkan</h4><p>Beri nama file <code>1-4_Nama_Kelas_uangsaku</code>. Kumpulkan tautan (akses "Pelihat") atau file .xlsx, beserta gambar kedua grafik.</p></li>
+          </ol>
+
+          <h3>Periksa tugasmu sendiri</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Tabelku rapi: judul kolom di baris pertama dan satuan Rp ditulis di judul.</span></label></li>
+            <li><label><input type="checkbox"><span>Total keluar dan sisa dihitung dengan formula yang memakai alamat sel.</span></label></li>
+            <li><label><input type="checkbox"><span>Ada ringkasan dengan SUM, AVERAGE, MAX, dan MIN.</span></label></li>
+            <li><label><input type="checkbox"><span>Ada grafik garis dan grafik lingkaran yang berjudul dan bersumber.</span></label></li>
+            <li><label><input type="checkbox"><span>Aku menulis kesimpulan dan satu rencana berhemat.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 10. TUGAS KELOMPOK -->
+        <section class="lesson-sec" id="tugas-kelompok" aria-labelledby="h-kelompok">
+          <p class="sec-no"><span>10</span> Tugas kelompok <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kelompok">Proyek: Data untuk Sekolahku</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan bersama kelompokmu · berbasis digital</p>
+            <h3>Olah data nyata menjadi usulan untuk sekolah</h3>
+            <p>Pilih satu masalah di sekolah. Kumpulkan datanya dari beberapa kelas, olah bersama di satu lembar kerja daring, lalu sajikan hasilnya dalam infografis atau slide berisi usulan untuk sekolah.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-people" aria-hidden="true"></i> <span>4–5 orang per kelompok</span></li>
+              <li><i class="bi bi-ui-checks" aria-hidden="true"></i> <span>Data minimal dari 30 responden atau 3 kelas</span></li>
+              <li><i class="bi bi-table" aria-hidden="true"></i> <span>1 lembar kerja bersama + 2 grafik</span></li>
+              <li><i class="bi bi-easel" aria-hidden="true"></i> <span>Infografis atau 3–5 slide, presentasi 5 menit</span></li>
+            </ul>
+          </div>
+
+          <h3>Pilihan topik</h3>
+          <ul class="chips-row" aria-label="Pilihan topik proyek">
+            <li>Jajanan kantin favorit per angkatan</li>
+            <li>Sampah plastik per kelas</li>
+            <li>Waktu tempuh ke sekolah</li>
+            <li>Pengunjung perpustakaan per hari</li>
+            <li>Lama memakai ponsel per hari</li>
+            <li>Topik lain yang disetujui guru</li>
+          </ul>
+
+          <h3>Langkah 1 · Bagi peran</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-ui-checks" aria-hidden="true"></i><h4>Koordinator data</h4><p>Menyusun pertanyaan angket di Google Formulir dan mengatur pengumpulan data.</p></article>
+            <article class="mini-card"><i class="bi bi-calculator" aria-hidden="true"></i><h4>Pengolah formula</h4><p>Merapikan tabel dan menulis formula serta fungsi.</p></article>
+            <article class="mini-card"><i class="bi bi-bar-chart-line" aria-hidden="true"></i><h4>Perancang grafik</h4><p>Memilih jenis grafik yang tepat dan memastikan grafiknya jujur.</p></article>
+            <article class="mini-card"><i class="bi bi-pencil-square" aria-hidden="true"></i><h4>Penulis kesimpulan</h4><p>Mengubah hasil olahan menjadi informasi dan usulan.</p></article>
+            <article class="mini-card"><i class="bi bi-megaphone" aria-hidden="true"></i><h4>Penyaji</h4><p>Menyusun infografis atau slide dan menyajikannya.</p></article>
+          </div>
+
+          <h3>Langkah 2 · Kerjakan bersama</h3>
+          <ol class="steps">
+            <li><h4>Rumuskan pertanyaan</h4><p>Tulis satu pertanyaan utama, misalnya "Kelas mana yang paling banyak menghasilkan sampah plastik, dan mengapa?"</p></li>
+            <li><h4>Kumpulkan data</h4><p>Gunakan Google Formulir, pengamatan, atau studi dokumen seperti di TP 1.1. Jaga etika: minta izin dan jangan mencatat data pribadi yang tidak perlu.</p></li>
+            <li><h4>Rapikan di lembar kerja bersama</h4><p>Jawaban Google Formulir bisa langsung dikirim ke Google Spreadsheet. Bagikan file ke anggota kelompok dengan akses "Editor".</p></li>
+            <li><h4>Olah dengan formula</h4><p>Gunakan minimal tiga fungsi berbeda (misalnya SUM, AVERAGE, MAX) dan satu formula aritmatika, misalnya persentase <code class="fx">=B2/B$7*100</code>.</p></li>
+            <li><h4>Buat dua grafik</h4><p>Pilih jenis yang sesuai pertanyaan. Periksa judul, label, sumber, dan sumbu yang dimulai dari 0.</p></li>
+            <li><h4>Sajikan dan beri usulan</h4><p>Buat infografis atau slide dengan prinsip tata letak TP 2.4. Tulis 2–3 informasi penting dan satu usulan nyata untuk sekolah.</p></li>
+            <li><h4>Kumpulkan</h4><p>Kirim tautan lembar kerja (akses "Pelihat") dan file infografis atau slide, misalnya <code>1-4_Kelompok2_VIIIB.pdf</code>.</p></li>
+          </ol>
+          <p class="tool-note">Tanda <code class="fx">$</code> pada <code class="fx">B$7</code> mengunci baris 7, sehingga saat formula diisi otomatis ke bawah, semua baris tetap dibagi dengan jumlah di B7. Ini disebut <strong>referensi absolut</strong>.</p>
+
+          <h3>Langkah 3 · Lembar rencana pengolahan data</h3>
+          <div class="worksheet" id="lembar-rencana">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Rencana Pengolahan Data</h3>
+                <p>TP 1.4 Menerapkan Pengolahan dan Penyajian Data · Isi bersama sebelum mulai mengolah</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-rencana"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar rencana</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Kelompok / Kelas / Anggota</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Pertanyaan utama</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Sumber data dan cara mengumpulkan</span><span class="ws-line"></span></div>
+            <div class="ws-field">
+              <span class="ws-label">Rencana kolom lembar kerja</span>
+              <table class="ws-table">
+                <caption class="sr-only">Rencana kolom lembar kerja</caption>
+                <thead><tr><th scope="col">Kolom</th><th scope="col">Judul kolom</th><th scope="col">Jenis data (teks/angka/formula)</th><th scope="col">Satuan</th></tr></thead>
+                <tbody>
+                  <tr><td>A</td><td></td><td></td><td></td></tr>
+                  <tr><td>B</td><td></td><td></td><td></td></tr>
+                  <tr><td>C</td><td></td><td></td><td></td></tr>
+                  <tr><td>D</td><td></td><td></td><td></td></tr>
+                  <tr><td>E</td><td></td><td></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ws-field"><span class="ws-label">Formula dan fungsi yang akan dipakai</span><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Grafik 1 dan 2 (jenis dan alasannya)</span><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Usulan untuk sekolah</span><span class="ws-line"></span></div>
+          </div>
+
+          <h3>Kriteria penilaian</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Rubrik penilaian tugas kelompok<small>Skor: 4 = sangat baik · 3 = baik · 2 = cukup · 1 = perlu bimbingan</small></caption>
+              <thead><tr><th scope="col">Aspek</th><th scope="col">Yang dinilai</th><th scope="col" class="num">Skor</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Pengumpulan data</th><td>Data cukup banyak, dikumpulkan dengan cara yang tepat dan etis.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Penataan lembar kerja</th><td>Judul kolom, satuan, dan satu baris untuk satu data.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Formula dan fungsi</th><td>Minimal tiga fungsi dan satu formula aritmatika dengan alamat sel, hasilnya benar.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Grafik</th><td>Jenis grafik tepat, lengkap (judul, label, sumber), dan jujur.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Informasi dan usulan</th><td>Kesimpulan sesuai data dan usulan masuk akal untuk sekolah.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kerja sama</th><td>Setiap anggota menjalankan perannya dan berkontribusi di lembar kerja bersama.</td><td class="num">1–4</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis sebelum mengumpulkan</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Lembar rencana sudah diisi bersama.</span></label></li>
+            <li><label><input type="checkbox"><span>Data rapi dan tidak memuat data pribadi yang tidak perlu.</span></label></li>
+            <li><label><input type="checkbox"><span>Semua formula sudah diperiksa dan tidak ada pesan galat.</span></label></li>
+            <li><label><input type="checkbox"><span>Dua grafik berjudul, berlabel, bersumber, dan sumbunya dimulai dari 0.</span></label></li>
+            <li><label><input type="checkbox"><span>Infografis atau slide berisi informasi penting dan satu usulan.</span></label></li>
+            <li><label><input type="checkbox"><span>Tautan lembar kerja dan file sudah dikirim dengan nama yang rapi.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 11. RANGKUMAN -->
+        <section class="lesson-sec" id="rangkuman" aria-labelledby="h-rangkuman">
+          <p class="sec-no"><span>11</span> Rangkuman &amp; refleksi <em class="phase">Merefleksi</em></p>
+          <h2 id="h-rangkuman">Yang perlu kamu ingat</h2>
+          <div class="summary-grid">
+            <article class="mini-card">
+              <i class="bi bi-table" aria-hidden="true"></i>
+              <h4>Lembar kerja</h4>
+              <p>Tersusun dari kolom (huruf), baris (angka), dan sel (alamat seperti D2). Satu baris untuk satu data.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-calculator" aria-hidden="true"></i>
+              <h4>Formula</h4>
+              <p>Diawali =, memakai + - * / dan alamat sel. Kurung dulu, lalu kali-bagi, baru tambah-kurang.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-braces" aria-hidden="true"></i>
+              <h4>Fungsi</h4>
+              <p>SUM, AVERAGE, MAX, MIN, dan COUNT untuk mengolah banyak data sekaligus.</p>
+            </article>
+            <article class="mini-card" data-el="2">
+              <i class="bi bi-bar-chart-line" aria-hidden="true"></i>
+              <h4>Grafik</h4>
+              <p>Batang untuk membandingkan, garis untuk perubahan waktu, dan lingkaran untuk bagian dari keseluruhan. Selalu jujur!</p>
+            </article>
+          </div>
+
+          <h3>Refleksi</h3>
+          <ol class="question-list">
+            <li><strong>Berkesadaran:</strong> pernahkah kamu melihat grafik di berita atau media sosial yang ternyata menyesatkan? Apa yang akan kamu periksa mulai sekarang?</li>
+            <li><strong>Bermakna:</strong> data apa di rumah, sekolah, atau lingkunganmu yang ingin kamu olah dengan lembar kerja? Keputusan apa yang bisa dibantu oleh data itu?</li>
+            <li><strong>Menggembirakan:</strong> bagian mana yang paling seru: menulis formula, melihat hasil berubah otomatis, atau membuat grafik?</li>
+          </ol>
+
+          <h3>Materi yang berhubungan</h3>
+          <p>Materi ini adalah lanjutan dari:</p>
+          <div class="card-grid" data-tp-links="1.1,2.3,2.4"></div>
+          <p>Kemampuan mengolah data akan kamu pakai lagi saat menyusun langkah sistematis, menyiapkan data latih untuk kecerdasan artifisial, dan mengolah data dengan teknologi di Kelas IX:</p>
+          <div class="card-grid" data-tp-links="1.5,4.3,1.7"></div>
+
+          <h3>Kamus kecil</h3>
+          <dl class="glossary">
+            <div><dt>Lembar kerja (<i lang="en">spreadsheet</i>)</dt><dd>Aplikasi untuk mencatat, menghitung, dan menyajikan data dalam tabel.</dd></div>
+            <div><dt>Sel</dt><dd>Kotak pertemuan kolom dan baris, beralamat seperti B3.</dd></div>
+            <div><dt>Rentang (<i lang="en">range</i>)</dt><dd>Kumpulan sel yang berdampingan, misalnya C2:C5.</dd></div>
+            <div><dt>Formula</dt><dd>Instruksi menghitung di sel yang diawali tanda =.</dd></div>
+            <div><dt>Fungsi</dt><dd>Formula siap pakai, misalnya SUM dan AVERAGE.</dd></div>
+            <div><dt>Referensi relatif</dt><dd>Alamat sel yang ikut bergeser saat formula disalin.</dd></div>
+            <div><dt>Referensi absolut</dt><dd>Alamat sel yang dikunci dengan tanda $, misalnya B$7.</dd></div>
+            <div><dt>Visualisasi data</dt><dd>Menyajikan data dalam bentuk gambar seperti grafik.</dd></div>
+          </dl>
+        </section>
+
+        <!-- Tombol TP sebelumnya/berikutnya + sumber rujukan, dibuat otomatis dari data.js -->
+        <kka-tp-nav code="1.4"></kka-tp-nav>
+      </div>
+    </div>
+  </main>
+
+  <kka-footer></kka-footer>
+</body>
+</html>

@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP 2.2 Pengembangan Ide dan Cerita Sederhana — Koding dan KA SMPN 1 Bandar Seikijang</title>
+  <meta name="description" content="Materi TP 2.2 Koding dan Kecerdasan Artifisial Kelas VII: brainstorming, alur cerita dan storyboard, serta struktur pesan digital, dilengkapi papan ide, pembuat storyboard, dan perakit pesan digital.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="TP 2.2 Menerapkan Pengembangan Ide dan Cerita Sederhana">
+  <meta property="og:description" content="Brainstorming, storyboard, dan struktur pesan digital untuk murid Kelas VII.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs: style.css (umum) + lesson.css (halaman materi) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/lesson.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lesson.js" defer></script>
+</head>
+<body>
+  <kka-header active="atp"><a href="index.html">Beranda</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <main id="konten" data-el="2">
+    <!-- =============================================== JUDUL TP -->
+    <section class="hero hero--tp" aria-labelledby="judul-tp">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Lokasi halaman">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#atp">Alur TP</a></li>
+            <li><a href="index.html#kelas-7">Kelas VII</a></li>
+            <li><span aria-current="page">TP 2.2</span></li>
+          </ol>
+        </nav>
+        <div class="tp-badges">
+          <span class="tp-badge tp-badge--code">TP 2.2</span>
+          <span class="tp-badge"><i class="bi bi-camera-reels" aria-hidden="true"></i> Elemen 2 · Literasi Digital</span>
+          <span class="tp-badge"><i class="bi bi-calendar-week" aria-hidden="true"></i> Kelas VII · Semester 1</span>
+        </div>
+        <h1 id="judul-tp">Menerapkan Pengembangan Ide dan Cerita Sederhana</h1>
+        <p class="hero-lead">Konten yang hebat tidak muncul tiba-tiba. Ia lahir dari ide yang dikumpulkan, dipilih, lalu disusun menjadi cerita yang runtut. Di sini kamu akan belajar merencanakan konten digital seperti para kreator profesional.</p>
+        <ul class="tp-meta">
+          <li><i class="bi bi-lightbulb" aria-hidden="true"></i> <span>Brainstorming</span></li>
+          <li><i class="bi bi-film" aria-hidden="true"></i> <span>Alur cerita &amp; storyboard</span></li>
+          <li><i class="bi bi-chat-text" aria-hidden="true"></i> <span>Struktur pesan digital</span></li>
+          <li><i class="bi bi-laptop" aria-hidden="true"></i> <span>Tugas berbasis digital</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container lesson">
+      <!-- Daftar isi -->
+      <nav class="toc" aria-labelledby="judul-toc">
+        <p class="toc-title" id="judul-toc">Daftar isi</p>
+        <ol>
+          <li><a href="#tujuan">Tujuan &amp; cara belajar</a></li>
+          <li><a href="#mengingat">Mengingat kembali</a></li>
+          <li><a href="#pemantik">Ayo berpikir dulu</a></li>
+          <li><a href="#brainstorming">Brainstorming</a></li>
+          <li><a href="#storyboard">Alur cerita &amp; storyboard</a></li>
+          <li><a href="#struktur-pesan">Struktur pesan digital</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+          <li><a href="#tugas-individu">Tugas individu</a></li>
+          <li><a href="#tugas-kelompok">Tugas kelompok</a></li>
+          <li><a href="#rangkuman">Rangkuman &amp; refleksi</a></li>
+        </ol>
+      </nav>
+
+      <div class="lesson-body">
+        <!-- ========================================== 1. TUJUAN -->
+        <section class="lesson-sec" id="tujuan" aria-labelledby="h-tujuan">
+          <p class="sec-no"><span>01</span> Tujuan belajar</p>
+          <h2 id="h-tujuan">Apa yang akan kamu pelajari?</h2>
+          <p>Setelah mempelajari halaman ini, kamu diharapkan mampu:</p>
+          <ol class="goal-list">
+            <li>Melakukan brainstorming untuk mengumpulkan banyak ide konten digital.</li>
+            <li>Memilih ide terbaik dengan kriteria yang jelas.</li>
+            <li>Menyusun alur cerita sederhana (awal, tengah, akhir) dan menuangkannya ke dalam storyboard.</li>
+            <li>Menulis pesan digital dengan struktur pembuka, isi, dan penutup yang jelas.</li>
+          </ol>
+
+          <h3>Cara belajar di halaman ini</h3>
+          <p>Seperti di TP 2.1, perhatikan label <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em> di setiap bagian.</p>
+          <ul class="deep-principles">
+            <li>
+              <i class="bi bi-bullseye" aria-hidden="true"></i>
+              <h4>Berkesadaran</h4>
+              <p>Kamu akan menyadari mengapa konten perlu direncanakan, dan mengatur waktu brainstorming-mu sendiri dengan pengatur waktu.</p>
+            </li>
+            <li>
+              <i class="bi bi-house-heart" aria-hidden="true"></i>
+              <h4>Bermakna</h4>
+              <p>Ide dan cerita yang kamu rancang ditujukan untuk kampanye nyata di sekolah dan lingkungan sekitarmu.</p>
+            </li>
+            <li>
+              <i class="bi bi-emoji-laughing" aria-hidden="true"></i>
+              <h4>Menggembirakan</h4>
+              <p>Kamu akan menempel ide di papan digital, menggambar storyboard dengan jari, dan merakit pesan seperti di aplikasi chat.</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 2. MENGINGAT KEMBALI -->
+        <section class="lesson-sec" id="mengingat" aria-labelledby="h-mengingat">
+          <p class="sec-no"><span>02</span> Mengingat kembali <em class="phase">Memahami</em></p>
+          <h2 id="h-mengingat">Dari mengenal konten ke merencanakan konten</h2>
+          <p>Di TP 2.1 kamu sudah <strong>mengenal</strong> konten digital. Sekarang kamu belajar <strong>merencanakannya</strong> sebelum dibuat.</p>
+          <div class="card-grid">
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.1 · Konten digital</p>
+              <h4>Format dan karakteristik</h4>
+              <p>Kamu sudah mengenal format teks, gambar, dan audio. Di storyboard nanti, kamu akan memilih format untuk setiap adegan. Karakteristik "cepat menyebar" juga membuat pesan digital harus direncanakan dengan baik.</p>
+              <a href="2-1.html">Buka lagi TP 2.1 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.1 · Satu Pesan, Tiga Format</p>
+              <h4>Dari langsung membuat ke merencanakan</h4>
+              <p>Di proyek TP 2.1 kamu langsung membuat pesan. Kali ini kamu belajar mengumpulkan ide dan menyusun rencananya dulu, agar hasilnya lebih rapi dan menarik.</p>
+              <a href="2-1.html#tugas-kelompok">Lihat proyeknya <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="1">
+              <p class="recap-tp">TP 1.2 &amp; 1.3 · Berpikir komputasional</p>
+              <h4>Memecah, memilih, mengurutkan</h4>
+              <p>Cerita dipecah menjadi adegan (dekomposisi), pesan inti dipilih (abstraksi), lalu adegan disusun berurutan (algoritma sekuensial) dan diuji ke teman.</p>
+              <a href="1-2.html">Buka lagi TP 1.2 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ========================================== 3. PEMANTIK -->
+        <section class="lesson-sec" id="pemantik" aria-labelledby="h-pemantik">
+          <p class="sec-no"><span>03</span> Ayo berpikir dulu <em class="phase">Memahami</em></p>
+          <h2 id="h-pemantik">Dua kelas, dua video</h2>
+          <div class="story">
+            <p class="story-label"><i class="bi bi-chat-quote" aria-hidden="true"></i> Cerita</p>
+            <p>Kelas VII-B dan VII-C sama-sama ditugasi membuat video ajakan membuang sampah pada tempatnya.</p>
+            <p><strong>Kelas VII-B</strong> langsung merekam tanpa rencana. Hasilnya video berdurasi 5 menit yang berputar-putar, ada adegan yang terulang, dan mereka lupa menyebutkan ajakannya. Penonton bosan sebelum videonya selesai.</p>
+            <p><strong>Kelas VII-C</strong> berdiskusi 10 menit untuk mengumpulkan ide, memilih satu ide terbaik, lalu menggambar rencana adegan di 6 kotak. Videonya hanya 1 menit, tetapi jelas, seru, dan pesannya diingat semua orang.</p>
+          </div>
+          <ol class="question-list">
+            <li>Apa yang membuat hasil kedua kelas sangat berbeda?</li>
+            <li>Apa saja yang dilakukan Kelas VII-C sebelum merekam?</li>
+            <li>Pernahkah kamu membuat sesuatu tanpa rencana? Bagaimana hasilnya?</li>
+          </ol>
+
+          <h3>Proses kreatif membuat konten digital</h3>
+          <p>Kelas VII-C melalui empat langkah berikut. Di halaman ini kamu akan mempelajari semuanya.</p>
+          <ol class="flow">
+            <li data-el="1">
+              <span class="flow-icon" aria-hidden="true"><i class="bi bi-lightbulb"></i></span>
+              <p class="flow-step">Langkah 1</p>
+              <h4>Kumpulkan ide</h4>
+              <p>Brainstorming: tulis ide sebanyak-banyaknya.</p>
+            </li>
+            <li data-el="2">
+              <span class="flow-icon" aria-hidden="true"><i class="bi bi-star"></i></span>
+              <p class="flow-step">Langkah 2</p>
+              <h4>Pilih ide terbaik</h4>
+              <p>Nilai ide dengan kriteria yang jelas.</p>
+            </li>
+            <li data-el="3">
+              <span class="flow-icon" aria-hidden="true"><i class="bi bi-film"></i></span>
+              <p class="flow-step">Langkah 3</p>
+              <h4>Susun alur cerita</h4>
+              <p>Tuangkan ke dalam storyboard adegan demi adegan.</p>
+            </li>
+            <li data-el="4">
+              <span class="flow-icon" aria-hidden="true"><i class="bi bi-chat-text"></i></span>
+              <p class="flow-step">Langkah 4</p>
+              <h4>Tulis pesannya</h4>
+              <p>Buat pesan pengantar dengan struktur yang jelas.</p>
+            </li>
+          </ol>
+          <p>Setelah itu, rencana kalian siap diproduksi menjadi slide dan infografis (TP 2.3), atau audio dan video (TP 2.6).</p>
+        </section>
+
+        <!-- ========================================== 4. BRAINSTORMING -->
+        <section class="lesson-sec" id="brainstorming" aria-labelledby="h-brain">
+          <p class="sec-no"><span>04</span> Brainstorming <em class="phase">Memahami</em></p>
+          <h2 id="h-brain">Brainstorming: mengumpulkan banyak ide</h2>
+          <p><strong>Brainstorming</strong> atau <strong>curah gagasan</strong> adalah kegiatan mengumpulkan ide sebanyak-banyaknya dalam waktu singkat, tanpa langsung menilai baik atau buruknya. Dari banyak ide itu, nanti kita pilih yang terbaik.</p>
+
+          <h3>Lima aturan brainstorming</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-hand-thumbs-up" aria-hidden="true"></i><h4>1. Jangan menilai dulu</h4><p>Tidak ada ide yang salah saat brainstorming. Penilaian dilakukan nanti.</p></article>
+            <article class="mini-card"><i class="bi bi-stack" aria-hidden="true"></i><h4>2. Utamakan jumlah</h4><p>Makin banyak ide, makin besar peluang menemukan ide yang hebat.</p></article>
+            <article class="mini-card"><i class="bi bi-stars" aria-hidden="true"></i><h4>3. Ide unik boleh</h4><p>Ide yang terdengar aneh justru sering menjadi awal ide yang kreatif.</p></article>
+            <article class="mini-card"><i class="bi bi-diagram-2" aria-hidden="true"></i><h4>4. Kembangkan ide teman</h4><p>Gabungkan atau tambahkan ide teman: "Bagaimana kalau…"</p></article>
+            <article class="mini-card"><i class="bi bi-people" aria-hidden="true"></i><h4>5. Semua dapat giliran</h4><p>Setiap anggota berhak menyampaikan ide, termasuk yang pendiam.</p></article>
+          </div>
+
+          <h3>Teknik 1: peta pikiran</h3>
+          <p>Tulis topik di tengah, lalu buat cabang-cabang pertanyaan. Ide akan bermunculan dari setiap cabang. Teknik ini mirip dekomposisi di TP 1.2.</p>
+          <div class="tree" data-el="2">
+            <p class="tree-root"><i class="bi bi-trash3" aria-hidden="true"></i> Sampah plastik di sekolah</p>
+            <ul class="tree-branches">
+              <li><p class="tree-node">Penyebab</p><ul class="tree-leaves"><li>Malas mencari tempat sampah</li><li>Jajanan berbungkus plastik</li></ul></li>
+              <li><p class="tree-node">Dampak</p><ul class="tree-leaves"><li>Selokan tersumbat</li><li>Halaman tergenang</li></ul></li>
+              <li><p class="tree-node">Solusi</p><ul class="tree-leaves"><li>Bawa botol minum sendiri</li><li>Tempat sampah terpilah</li></ul></li>
+              <li><p class="tree-node">Tokoh</p><ul class="tree-leaves"><li>Murid yang berubah</li><li>Penjaga sekolah</li></ul></li>
+              <li><p class="tree-node">Bentuk konten</p><ul class="tree-leaves"><li>Video drama pendek</li><li>Poster atau siaran audio</li></ul></li>
+            </ul>
+          </div>
+
+          <h3>Teknik 2: pertanyaan pemantik 5W+1H</h3>
+          <p>Ajukan enam pertanyaan ini tentang topikmu. Setiap jawaban bisa menjadi ide baru.</p>
+          <ul class="chips-row" aria-label="Pertanyaan pemantik">
+            <li>Apa masalahnya?</li>
+            <li>Siapa yang terdampak?</li>
+            <li>Kapan sering terjadi?</li>
+            <li>Di mana terjadinya?</li>
+            <li>Mengapa bisa terjadi?</li>
+            <li>Bagaimana cara mengatasinya?</li>
+          </ul>
+
+          <h3>Memilih ide terbaik <em class="phase">Mengaplikasi</em></h3>
+          <p>Setelah brainstorming, saatnya menilai. Beri skor 1–3 untuk setiap kriteria, lalu jumlahkan. Ide dengan skor tertinggi yang dipilih.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Contoh penilaian ide<small>Skor: 3 = sangat sesuai · 2 = cukup · 1 = kurang</small></caption>
+              <thead><tr><th scope="col">Ide</th><th scope="col" class="num">Menarik</th><th scope="col" class="num">Bermanfaat</th><th scope="col" class="num">Bisa dibuat</th><th scope="col" class="num">Cukup waktu</th><th scope="col" class="num">Total</th></tr></thead>
+              <tbody>
+                <tr><td>Video drama pendek "Satu Botol, Seribu Masalah"</td><td class="num">3</td><td class="num">3</td><td class="num">3</td><td class="num">2</td><td class="num"><strong>11</strong></td></tr>
+                <tr><td>Siaran audio di jam istirahat</td><td class="num">2</td><td class="num">3</td><td class="num">3</td><td class="num">2</td><td class="num">10</td></tr>
+                <tr><td>Patung raksasa dari tutup botol</td><td class="num">3</td><td class="num">2</td><td class="num">1</td><td class="num">1</td><td class="num">7</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Coba sendiri: Papan Ide Digital <em class="phase">Mengaplikasi</em></h3>
+          <div class="ideaboard js-only" data-ideaboard data-store="kka-2-2-papan-ide" data-minutes="5">
+            <div class="lab-head">
+              <i class="bi bi-sticky" aria-hidden="true"></i>
+              <div>
+                <h3>Papan Ide Digital</h3>
+                <p>Tulis topik, tekan <strong>Mulai</strong>, lalu tulis ide sebanyak-banyaknya dalam 5 menit. Setelah itu, beri bintang pada ide terbaik.</p>
+              </div>
+            </div>
+            <div class="tool-body">
+              <div class="tool-row">
+                <label class="tool-field"><span>Topik</span><input type="text" data-ib-topic maxlength="80" placeholder="Mis. Sampah plastik di sekolah"></label>
+                <div class="ib-timer" role="timer" aria-label="Pengatur waktu brainstorming">
+                  <b class="ib-time" data-ib-time>05:00</b>
+                  <button type="button" class="btn btn-ink" data-ib-start><i class="bi bi-play-fill" aria-hidden="true"></i> Mulai</button>
+                  <button type="button" class="link-btn" data-ib-reset aria-label="Atur ulang waktu"><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i></button>
+                </div>
+              </div>
+              <form class="ib-add" data-ib-form>
+                <label class="sr-only" for="ib-ide">Tulis satu ide</label>
+                <input id="ib-ide" type="text" maxlength="120" placeholder="Tulis satu ide, lalu tekan Enter" autocomplete="off">
+                <button type="submit" class="btn btn-ink"><i class="bi bi-plus-lg" aria-hidden="true"></i> Tempel ide</button>
+              </form>
+              <p class="tool-status" data-ib-status aria-live="polite"></p>
+              <ul class="ib-notes" aria-label="Ide yang sudah ditempel"></ul>
+              <div class="tool-row">
+                <p class="sb-summary"><span><i class="bi bi-sticky" aria-hidden="true"></i> <b data-ib-count>0</b>&nbsp;ide</span></p>
+                <div class="tool-actions">
+                  <button type="button" class="link-btn" data-ib-sort><i class="bi bi-sort-down" aria-hidden="true"></i> Urutkan menurut bintang</button>
+                  <button type="button" class="link-btn" data-ib-download><i class="bi bi-download" aria-hidden="true"></i> Unduh (.txt)</button>
+                  <button type="button" class="link-btn" data-ib-clear><i class="bi bi-trash3" aria-hidden="true"></i> <span data-label>Kosongkan</span></button>
+                </div>
+              </div>
+              <p class="tool-note"><i class="bi bi-info-circle" aria-hidden="true"></i> Ide tersimpan otomatis di peramban perangkat ini saja. Jika memakai perangkat sekolah bergantian, unduh hasilnya atau buat tangkapan layar.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 5. ALUR CERITA & STORYBOARD -->
+        <section class="lesson-sec" id="storyboard" aria-labelledby="h-story">
+          <p class="sec-no"><span>05</span> Alur cerita &amp; storyboard <em class="phase">Memahami</em></p>
+          <h2 id="h-story">Menyusun alur cerita</h2>
+          <p>Ide terpilih perlu disusun menjadi cerita yang runtut. Cerita sederhana punya <strong>alur</strong> tiga bagian:</p>
+          <div class="card-grid">
+            <article class="mini-card" data-el="1">
+              <i class="bi bi-1-circle" aria-hidden="true"></i>
+              <h4>Awal: perkenalan</h4>
+              <p>Kenalkan tokoh, tempat, dan waktu. <em>Contoh: pagi yang cerah di sekolah, Dodi baru datang.</em></p>
+            </article>
+            <article class="mini-card" data-el="2">
+              <i class="bi bi-2-circle" aria-hidden="true"></i>
+              <h4>Tengah: masalah</h4>
+              <p>Munculkan masalah. Bagian ini membuat penonton penasaran. <em>Contoh: Dodi membuang botol sembarangan, lalu sekolah tergenang saat hujan.</em></p>
+            </article>
+            <article class="mini-card" data-el="3">
+              <i class="bi bi-3-circle" aria-hidden="true"></i>
+              <h4>Akhir: penyelesaian</h4>
+              <p>Tunjukkan penyelesaian dan pesan yang ingin disampaikan. <em>Contoh: Dodi dan teman-teman memungut sampah. "Ayo mulai dari kita!"</em></p>
+            </article>
+          </div>
+
+          <h3>Apa itu storyboard?</h3>
+          <p><strong>Storyboard</strong> (papan cerita) adalah rangkaian kotak berisi sketsa sederhana yang menggambarkan adegan demi adegan sebuah konten sebelum dibuat, mirip komik. Storyboard dipakai oleh pembuat film, animasi, iklan, dan gim untuk merencanakan karyanya.</p>
+          <p>Setiap kotak storyboard biasanya berisi:</p>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Nomor adegan</strong>, agar urutannya jelas.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Sketsa visual</strong>: gambaran apa yang terlihat.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Teks</strong>: narasi, dialog, atau tulisan di layar.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Suara</strong>: musik atau efek bunyi.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Durasi</strong>: berapa detik adegan itu berlangsung.</span></li>
+          </ul>
+
+          <h3>Contoh storyboard: "Satu Botol, Seribu Masalah"</h3>
+          <p>Video ajakan berdurasi 60 detik buatan Kelas VII-C.</p>
+          <ol class="sb-example">
+            <li class="sb-card" data-el="1">
+              <div class="sb-card-visual"><span class="sb-card-alur">Awal</span><i class="bi bi-brightness-high" aria-hidden="true"></i></div>
+              <dl><dt>Visual</dt><dd>Halaman sekolah yang bersih di pagi hari. Murid berdatangan.</dd><dt>Teks</dt><dd>Narasi: "Pagi yang cerah di sekolah kita."</dd><dt>Suara · Durasi</dt><dd>Musik ceria pelan · 6 detik</dd></dl>
+            </li>
+            <li class="sb-card" data-el="2">
+              <div class="sb-card-visual"><span class="sb-card-alur">Tengah</span><i class="bi bi-cup-straw" aria-hidden="true"></i></div>
+              <dl><dt>Visual</dt><dd>Dodi minum dari botol plastik, lalu melemparnya ke semak-semak.</dd><dt>Teks</dt><dd>(tanpa dialog)</dd><dt>Suara · Durasi</dt><dd>Bunyi botol jatuh · 8 detik</dd></dl>
+            </li>
+            <li class="sb-card" data-el="2">
+              <div class="sb-card-visual"><span class="sb-card-alur">Tengah</span><i class="bi bi-trash3" aria-hidden="true"></i></div>
+              <dl><dt>Visual</dt><dd>Setelah istirahat, sampah berserakan dan selokan tersumbat.</dd><dt>Teks</dt><dd>Narasi: "Kalau semua berpikir 'cuma satu botol'…"</dd><dt>Suara · Durasi</dt><dd>Musik berubah tegang · 10 detik</dd></dl>
+            </li>
+            <li class="sb-card" data-el="2">
+              <div class="sb-card-visual"><span class="sb-card-alur">Tengah</span><i class="bi bi-cloud-rain-heavy" aria-hidden="true"></i></div>
+              <dl><dt>Visual</dt><dd>Hujan deras. Halaman sekolah tergenang air.</dd><dt>Teks</dt><dd>Narasi: "…inilah akibatnya."</dd><dt>Suara · Durasi</dt><dd>Bunyi hujan · 10 detik</dd></dl>
+            </li>
+            <li class="sb-card" data-el="3">
+              <div class="sb-card-visual"><span class="sb-card-alur">Akhir</span><i class="bi bi-recycle" aria-hidden="true"></i></div>
+              <dl><dt>Visual</dt><dd>Dodi memungut botolnya dan membuangnya ke tempat sampah. Teman-teman ikut.</dd><dt>Teks</dt><dd>Dodi: "Ayo mulai dari kita!"</dd><dt>Suara · Durasi</dt><dd>Musik ceria kembali · 14 detik</dd></dl>
+            </li>
+            <li class="sb-card" data-el="3">
+              <div class="sb-card-visual"><span class="sb-card-alur">Akhir</span><i class="bi bi-megaphone" aria-hidden="true"></i></div>
+              <dl><dt>Visual</dt><dd>Tulisan besar di layar: "Buang sampah pada tempatnya" dan nama kelas.</dd><dt>Teks</dt><dd>Ajakan: "Sekolah bersih, kita sehat!"</dd><dt>Suara · Durasi</dt><dd>Musik penutup · 12 detik</dd></dl>
+            </li>
+          </ol>
+
+          <div class="callout" data-el="1">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Tips membuat storyboard</p>
+              <ul class="bullets">
+                <li><strong>Tidak harus pandai menggambar.</strong> Gambar orang lidi dan kotak sederhana sudah cukup.</li>
+                <li><strong>Satu kotak, satu adegan.</strong> Ini sama dengan dekomposisi di TP 1.2.</li>
+                <li><strong>Urutan adegan adalah algoritma sekuensial</strong> (TP 1.3). Jika urutannya tertukar, ceritanya membingungkan.</li>
+                <li><strong>Hitung durasinya.</strong> Untuk media sosial, usahakan video ajakan cukup 30–60 detik agar ditonton sampai habis.</li>
+                <li><strong>Storyboard tidak hanya untuk video.</strong> Untuk slide, satu kotak = satu slide. Untuk siaran audio, isi kolom suara dan teksnya saja.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Coba sendiri: Pembuat Storyboard Digital <em class="phase">Mengaplikasi</em></h3>
+          <div class="sb js-only" id="storyboard-digital" data-storyboard data-store="kka-2-2-storyboard">
+            <div class="lab-head">
+              <i class="bi bi-film" aria-hidden="true"></i>
+              <div>
+                <h3>Pembuat Storyboard Digital</h3>
+                <p>Gambar sketsa di kotak putih dengan jari atau tetikus, lalu isi keterangannya. Belum punya ide? Tekan <strong>Muat contoh</strong>.</p>
+              </div>
+            </div>
+            <div class="tool-body">
+              <div class="tool-row">
+                <label class="tool-field"><span>Judul konten</span><input type="text" data-sb-meta="judul" maxlength="80" placeholder="Mis. Satu Botol, Seribu Masalah"></label>
+                <label class="tool-field"><span>Format (TP 2.1)</span>
+                  <select data-sb-meta="format">
+                    <option>Video</option>
+                    <option>Slide presentasi</option>
+                    <option>Poster berseri</option>
+                    <option>Siaran audio</option>
+                  </select>
+                </label>
+                <label class="tool-field"><span>Penonton/pendengar</span><input type="text" data-sb-meta="audiens" maxlength="60" placeholder="Mis. Murid kelas VII"></label>
+              </div>
+              <ol class="sb-panels" aria-label="Adegan storyboard"></ol>
+              <div class="tool-row">
+                <p class="sb-summary" data-sb-summary aria-live="polite"></p>
+                <div class="tool-actions">
+                  <button type="button" class="btn btn-ink" data-sb-add><i class="bi bi-plus-lg" aria-hidden="true"></i> Tambah adegan</button>
+                  <button type="button" class="link-btn" data-sb-example><i class="bi bi-magic" aria-hidden="true"></i> <span data-label>Muat contoh</span></button>
+                  <button type="button" class="link-btn" data-sb-download><i class="bi bi-download" aria-hidden="true"></i> Unduh (.txt)</button>
+                  <button type="button" class="link-btn" data-print="#storyboard-digital"><i class="bi bi-printer" aria-hidden="true"></i> Cetak / PDF</button>
+                  <button type="button" class="link-btn" data-sb-clear><i class="bi bi-trash3" aria-hidden="true"></i> <span data-label>Kosongkan</span></button>
+                </div>
+              </div>
+              <p class="tool-status" data-sb-status aria-live="polite"></p>
+              <p class="tool-note"><i class="bi bi-info-circle" aria-hidden="true"></i> Storyboard tersimpan otomatis di peramban perangkat ini. Untuk menyimpan beserta sketsanya, tekan <strong>Cetak / PDF</strong>, lalu pilih "Simpan sebagai PDF".</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 6. STRUKTUR PESAN -->
+        <section class="lesson-sec" id="struktur-pesan" aria-labelledby="h-pesan">
+          <p class="sec-no"><span>06</span> Struktur pesan digital <em class="phase">Memahami</em></p>
+          <h2 id="h-pesan">Menulis pesan digital yang jelas</h2>
+          <p><strong>Pesan digital</strong> adalah tulisan singkat yang dikirim lewat aplikasi pesan, media sosial, atau surel. Contohnya pengumuman di grup kelas atau keterangan (<i lang="en">caption</i>) sebuah unggahan. Konten sebagus apa pun perlu pesan pengantar yang jelas agar orang mau melihatnya.</p>
+          <p>Pesan digital yang baik punya <strong>tiga bagian</strong>:</p>
+
+          <div class="anatomy">
+            <div class="phone" aria-hidden="true">
+              <div class="phone-bar">
+                <span class="phone-avatar"><i class="bi bi-people-fill"></i></span>
+                <div><strong>Grup SMP Negeri 1</strong><small>512 anggota</small></div>
+              </div>
+              <div class="phone-chat">
+                <div class="msg-bubble anat">
+                  <p class="seg" data-el="1"><em>Pembuka</em>Halo, teman-teman! 👋<br><strong>Tonton Video Kampanye Kelas VII-C!</strong></p>
+                  <p class="seg" data-el="2"><em>Isi</em>Kami membuat video pendek tentang bahaya membuang sampah sembarangan.<br>🗓️ Kapan: Jumat, jam istirahat<br>📍 Di mana: layar aula dan grup sekolah<br>💡 Mengapa: agar sekolah bersih dan bebas genangan</p>
+                  <p class="seg" data-el="3"><em>Penutup</em>Yuk tonton, lalu ajak temanmu buang sampah pada tempatnya!<br>Salam, Kelas VII-C</p>
+                  <span class="msg-time">07.15</span>
+                </div>
+                <div class="msg-bubble msg-bubble--in">Keren! Aku ajak adik kelas juga ya 👍<span class="msg-time">07.16</span></div>
+              </div>
+            </div>
+            <ul class="anat-legend">
+              <li class="mini-card" data-el="1">
+                <i class="bi bi-door-open" aria-hidden="true"></i>
+                <h4>1. Pembuka</h4>
+                <p>Sapaan dan judul atau kalimat pemikat yang membuat orang mau membaca.</p>
+              </li>
+              <li class="mini-card" data-el="2">
+                <i class="bi bi-card-text" aria-hidden="true"></i>
+                <h4>2. Isi</h4>
+                <p>Inti informasi dengan <strong>5W+1H</strong>: apa, siapa, kapan, di mana, mengapa, dan bagaimana. Pilih yang penting saja (abstraksi, TP 1.2).</p>
+              </li>
+              <li class="mini-card" data-el="3">
+                <i class="bi bi-flag" aria-hidden="true"></i>
+                <h4>3. Penutup</h4>
+                <p>Ajakan bertindak (apa yang harus dilakukan pembaca) dan nama pengirim sebagai sumber pesan.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="callout" data-el="3">
+            <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Temukan polanya</p>
+              <p>Alur cerita punya <strong>awal–tengah–akhir</strong>. Pesan digital punya <strong>pembuka–isi–penutup</strong>. Keduanya sama-sama punya permulaan, inti, dan bagian akhir yang meninggalkan kesan.</p>
+            </div>
+          </div>
+
+          <h3>Etika pesan digital: belajar dari karakteristik di TP 2.1</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Karakteristik konten digital dan artinya bagi penulis pesan</caption>
+              <thead><tr><th scope="col">Karakteristik (TP 2.1)</th><th scope="col">Artinya saat menulis pesan</th></tr></thead>
+              <tbody>
+                <tr><td>Cepat menyebar</td><td>Periksa kebenaran informasinya sebelum mengirim. Pesan yang salah sulit ditarik kembali.</td></tr>
+                <tr><td>Tersimpan lama</td><td>Gunakan bahasa yang santun. Pesanmu bisa dibaca orang bertahun-tahun kemudian.</td></tr>
+                <tr><td>Mudah disalin</td><td>Cantumkan nama pengirim dan sumber, agar pesan yang diteruskan tetap jelas asalnya.</td></tr>
+                <tr><td>Mudah diubah</td><td>Baca ulang dan perbaiki ejaannya sebelum mengirim, seperti menguji instruksi di TP 1.3.</td></tr>
+                <tr><td>Interaktif</td><td>Bersiaplah menjawab pertanyaan penerima dengan sopan.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Singkat:</strong> untuk pesan grup, usahakan tidak lebih dari 50 kata.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Hindari huruf kapital semua.</strong> PESAN SEPERTI INI terkesan berteriak.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Emoji secukupnya</strong>, sebagai penanda saja, bukan pengganti kata.</span></li>
+          </ul>
+
+          <h3>Coba sendiri: susun pesannya <em class="phase">Mengaplikasi</em></h3>
+          <div class="order js-only" data-order>
+            <div class="order-head">
+              <h3>Pengumuman lomba di grup kelas</h3>
+              <p>Susun baris-baris pesan berikut agar strukturnya runtut dari pembuka sampai penutup, lalu tekan <strong>Periksa</strong>.</p>
+            </div>
+            <ol class="order-list">
+              <li class="order-item" data-pos="4"><span class="order-text">Poster dikumpulkan paling lambat Jumat depan di ruang OSIS.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: waktu dan tempat pengumpulan">↑</button><button type="button" data-down aria-label="Turunkan: waktu dan tempat pengumpulan">↓</button></span></li>
+              <li class="order-item" data-pos="6"><span class="order-text">Salam, Sekretaris Kelas VII-A</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: nama pengirim">↑</button><button type="button" data-down aria-label="Turunkan: nama pengirim">↓</button></span></li>
+              <li class="order-item" data-pos="2"><span class="order-text"><strong>Ayo Ikut Lomba Poster Hemat Air!</strong></span><span class="order-move"><button type="button" data-up aria-label="Naikkan: judul pemikat">↑</button><button type="button" data-down aria-label="Turunkan: judul pemikat">↓</button></span></li>
+              <li class="order-item" data-pos="5"><span class="order-text">Yuk, daftar ke ketua kelas sebelum hari Rabu!</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: ajakan">↑</button><button type="button" data-down aria-label="Turunkan: ajakan">↓</button></span></li>
+              <li class="order-item" data-pos="1"><span class="order-text">Selamat siang, teman-teman Kelas VII-A!</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: sapaan">↑</button><button type="button" data-down aria-label="Turunkan: sapaan">↓</button></span></li>
+              <li class="order-item" data-pos="3"><span class="order-text">OSIS mengadakan lomba poster hemat air agar warga sekolah lebih peduli menghemat air.</span><span class="order-move"><button type="button" data-up aria-label="Naikkan: isi lomba">↑</button><button type="button" data-down aria-label="Turunkan: isi lomba">↓</button></span></li>
+            </ol>
+            <div class="order-foot">
+              <p class="order-status" data-order-status aria-live="polite"></p>
+              <div class="order-actions">
+                <button type="button" class="link-btn" data-order-shuffle><i class="bi bi-shuffle" aria-hidden="true"></i> Acak lagi</button>
+                <button type="button" class="btn btn-ink" data-order-check><i class="bi bi-check2-circle" aria-hidden="true"></i> Periksa</button>
+              </div>
+            </div>
+          </div>
+
+          <h3>Coba sendiri: Perakit Pesan Digital <em class="phase">Mengaplikasi</em></h3>
+          <div class="msg-builder js-only" data-msg-builder data-store="kka-2-2-pesan">
+            <div class="lab-head">
+              <i class="bi bi-chat-text" aria-hidden="true"></i>
+              <div>
+                <h3>Perakit Pesan Digital</h3>
+                <p>Isi setiap bagian. Pratinjau pesan, jumlah kata, dan kelengkapan 5W+1H akan muncul otomatis.</p>
+              </div>
+            </div>
+            <div class="tool-body">
+              <div class="mb-grid">
+                <div class="mb-form">
+                  <label class="tool-field tool-field--wide"><span>Pembuka: sapaan</span><input type="text" data-m="sapaan" maxlength="80" placeholder="Mis. Selamat pagi, teman-teman!"></label>
+                  <label class="tool-field tool-field--wide"><span>Pembuka: judul atau kalimat pemikat</span><input type="text" data-m="judul" maxlength="80" placeholder="Mis. Ayo Ikut Kerja Bakti!"></label>
+                  <label class="tool-field tool-field--wide"><span>Isi: apa yang ingin disampaikan?</span><textarea data-m="apa" rows="2" maxlength="200" placeholder="Inti informasinya dalam satu kalimat"></textarea></label>
+                  <label class="tool-field"><span>Isi: untuk siapa?</span><input type="text" data-m="siapa" maxlength="60"></label>
+                  <label class="tool-field"><span>Isi: kapan?</span><input type="text" data-m="kapan" maxlength="60"></label>
+                  <label class="tool-field"><span>Isi: di mana?</span><input type="text" data-m="dimana" maxlength="60"></label>
+                  <label class="tool-field"><span>Penutup: nama pengirim</span><input type="text" data-m="pengirim" maxlength="60"></label>
+                  <label class="tool-field tool-field--wide"><span>Isi: mengapa penting?</span><input type="text" data-m="mengapa" maxlength="120"></label>
+                  <label class="tool-field tool-field--wide"><span>Penutup: bagaimana / ajakan bertindak</span><textarea data-m="ajakan" rows="2" maxlength="160" placeholder="Apa yang harus dilakukan pembaca?"></textarea></label>
+                  <label class="mb-toggle tool-field--wide"><input type="checkbox" data-m-emoji checked> Tambahkan emoji penanda (🗓️ 📍 💡)</label>
+                </div>
+                <div class="mb-side">
+                  <div class="phone">
+                    <div class="phone-bar">
+                      <span class="phone-avatar" aria-hidden="true"><i class="bi bi-people-fill"></i></span>
+                      <div><strong>Grup Kelas VII-A</strong><small>32 anggota</small></div>
+                    </div>
+                    <div class="phone-chat">
+                      <div class="msg-bubble"><span data-m-bubble></span><span class="msg-time" data-m-time></span></div>
+                    </div>
+                  </div>
+                  <p class="mb-meter">Jumlah kata: <b data-m-count>0</b> <span class="mb-level" data-m-level></span></p>
+                  <ul class="mb-checks" data-m-checks aria-label="Kelengkapan 5W+1H"></ul>
+                  <p class="mb-warn" data-m-warn hidden></p>
+                  <div class="tool-actions">
+                    <button type="button" class="btn btn-ink" data-m-copy><i class="bi bi-clipboard" aria-hidden="true"></i> Salin pesan</button>
+                    <button type="button" class="link-btn" data-m-example><i class="bi bi-magic" aria-hidden="true"></i> <span data-label>Muat contoh</span></button>
+                    <button type="button" class="link-btn" data-m-clear><i class="bi bi-trash3" aria-hidden="true"></i> <span data-label>Kosongkan</span></button>
+                  </div>
+                  <p class="tool-status" data-m-status aria-live="polite"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 7. KUIS -->
+        <section class="lesson-sec" id="cek-pemahaman" aria-labelledby="h-kuis">
+          <p class="sec-no"><span>07</span> Cek pemahaman <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kuis">Ayo uji pemahamanmu</h2>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis A · Sesuai aturan brainstorming?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="langgar" data-explain="Saat brainstorming, ide belum boleh dinilai. Penilaian dilakukan nanti.">
+                <p class="quiz-text">Saat temannya menyampaikan ide, Rani langsung berkata, "Idemu jelek!"</p>
+                <div class="quiz-choices"><button type="button" data-choice="sesuai">Sesuai aturan</button><button type="button" data-choice="langgar">Melanggar aturan</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="sesuai" data-explain="Ide unik boleh ditulis. Ide aneh sering menjadi awal ide yang kreatif.">
+                <p class="quiz-text">Kelompok menulis semua ide, termasuk yang terdengar aneh.</p>
+                <div class="quiz-choices"><button type="button" data-choice="sesuai">Sesuai aturan</button><button type="button" data-choice="langgar">Melanggar aturan</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="sesuai" data-explain="Mengembangkan ide teman adalah salah satu aturan brainstorming.">
+                <p class="quiz-text">Budi menanggapi ide temannya: "Bagaimana kalau posternya dibuat bersambung?"</p>
+                <div class="quiz-choices"><button type="button" data-choice="sesuai">Sesuai aturan</button><button type="button" data-choice="langgar">Melanggar aturan</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="langgar" data-explain="Brainstorming mengutamakan jumlah ide. Satu ide belum cukup untuk dipilih.">
+                <p class="quiz-text">Kelompok langsung berhenti setelah mendapat satu ide.</p>
+                <div class="quiz-choices"><button type="button" data-choice="sesuai">Sesuai aturan</button><button type="button" data-choice="langgar">Melanggar aturan</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="langgar" data-explain="Semua anggota berhak menyampaikan ide, bukan hanya ketua.">
+                <p class="quiz-text">Hanya ketua kelompok yang boleh menyampaikan ide.</p>
+                <div class="quiz-choices"><button type="button" data-choice="sesuai">Sesuai aturan</button><button type="button" data-choice="langgar">Melanggar aturan</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="sesuai" data-explain="Batas waktu membuat semua orang fokus menulis ide sebanyak-banyaknya.">
+                <p class="quiz-text">Kelompok memasang pengatur waktu 5 menit untuk menulis ide sebanyak-banyaknya.</p>
+                <div class="quiz-choices"><button type="button" data-choice="sesuai">Sesuai aturan</button><button type="button" data-choice="langgar">Melanggar aturan</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis B · Bagian alur cerita yang mana?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <p class="quiz-intro">Kalimat-kalimat berikut berasal dari cerita "Pesan Berantai di Grup Keluarga".</p>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="awal" data-explain="Kalimat ini memperkenalkan tempat dan suasana cerita.">
+                <p class="quiz-text">Di sebuah desa yang sejuk, setiap pagi terdengar kicau burung.</p>
+                <div class="quiz-choices"><button type="button" data-choice="awal">Awal</button><button type="button" data-choice="tengah">Tengah</button><button type="button" data-choice="akhir">Akhir</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="tengah" data-explain="Di sini masalah mulai muncul.">
+                <p class="quiz-text">Suatu sore, Nenek menerima pesan berantai tentang "obat ajaib" dan ingin meneruskannya ke semua kerabat.</p>
+                <div class="quiz-choices"><button type="button" data-choice="awal">Awal</button><button type="button" data-choice="tengah">Tengah</button><button type="button" data-choice="akhir">Akhir</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="akhir" data-explain="Masalahnya terselesaikan: kebenaran pesan sudah diperiksa.">
+                <p class="quiz-text">Ayu dan Nenek memeriksa berita itu di situs resmi. Ternyata pesan itu hoaks.</p>
+                <div class="quiz-choices"><button type="button" data-choice="awal">Awal</button><button type="button" data-choice="tengah">Tengah</button><button type="button" data-choice="akhir">Akhir</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="awal" data-explain="Kalimat ini memperkenalkan tokoh cerita.">
+                <p class="quiz-text">Ayu tinggal bersama neneknya dan sering membantu Nenek memakai ponsel.</p>
+                <div class="quiz-choices"><button type="button" data-choice="awal">Awal</button><button type="button" data-choice="tengah">Tengah</button><button type="button" data-choice="akhir">Akhir</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="akhir" data-explain="Bagian akhir berisi pesan atau pelajaran dari cerita.">
+                <p class="quiz-text">Nenek berterima kasih dan berjanji selalu bertanya dulu sebelum meneruskan pesan.</p>
+                <div class="quiz-choices"><button type="button" data-choice="awal">Awal</button><button type="button" data-choice="tengah">Tengah</button><button type="button" data-choice="akhir">Akhir</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="tengah" data-explain="Ketegangan cerita memuncak: Ayu harus memutuskan sesuatu.">
+                <p class="quiz-text">Ayu ragu karena pesan itu tidak menyebutkan sumbernya, padahal Nenek sudah siap menekan tombol kirim.</p>
+                <div class="quiz-choices"><button type="button" data-choice="awal">Awal</button><button type="button" data-choice="tengah">Tengah</button><button type="button" data-choice="akhir">Akhir</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 8. TUGAS INDIVIDU -->
+        <section class="lesson-sec" id="tugas-individu" aria-labelledby="h-individu">
+          <p class="sec-no"><span>08</span> Tugas individu <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em></p>
+          <h2 id="h-individu">Pesan Digital Pertamaku</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan sendiri · berbasis digital</p>
+            <h3>Dari ide menjadi pesan yang siap dikirim</h3>
+            <p>Kumpulkan ide dengan Papan Ide Digital, pilih satu ide terbaik, lalu rakit menjadi pesan digital yang jelas dengan Perakit Pesan Digital di halaman ini.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-person" aria-hidden="true"></i> <span>Dikerjakan sendiri</span></li>
+              <li><i class="bi bi-sticky" aria-hidden="true"></i> <span>Minimal 8 ide dalam 5 menit</span></li>
+              <li><i class="bi bi-chat-text" aria-hidden="true"></i> <span>Pesan lengkap 5W+1H, maksimal 50 kata</span></li>
+              <li><i class="bi bi-images" aria-hidden="true"></i> <span>Dikumpulkan berupa 2 tangkapan layar</span></li>
+            </ul>
+          </div>
+
+          <h3>Pilihan situasi</h3>
+          <ul class="chips-row" aria-label="Pilihan situasi pesan">
+            <li>Pengingat latihan ekstrakurikuler</li>
+            <li>Ajakan menjaga kebersihan kelas</li>
+            <li>Informasi lomba antarkelas</li>
+            <li>Undangan menonton karya kelas</li>
+            <li>Ajakan menabung sampah di bank sampah</li>
+          </ul>
+
+          <h3>Langkah mengerjakan</h3>
+          <ol class="steps">
+            <li><h4>Brainstorming</h4><p>Buka <a href="#brainstorming">Papan Ide Digital</a>. Tulis topikmu, tekan <strong>Mulai</strong>, lalu tempel minimal 8 ide pesan dalam 5 menit.</p></li>
+            <li><h4>Pilih ide terbaik</h4><p>Beri bintang pada ide terbaik menurut kriteria menarik, bermanfaat, bisa dibuat, dan cukup waktu. Tekan <strong>Urutkan menurut bintang</strong>.</p></li>
+            <li><h4>Rakit pesannya</h4><p>Buka <a href="#struktur-pesan">Perakit Pesan Digital</a>. Lengkapi pembuka, isi (5W+1H), dan penutup. Pastikan semua tanda 5W+1H tercentang dan jumlah kata tidak lebih dari 50.</p></li>
+            <li><h4>Uji pesanmu</h4><p>Tunjukkan pesanmu kepada satu anggota keluarga atau teman. Tanyakan apakah mereka paham <em>apa</em>, <em>kapan</em>, dan <em>di mana</em>. Perbaiki jika masih membingungkan (seperti di TP 1.3).</p></li>
+            <li><h4>Simpan dan kumpulkan</h4><p>Buat dua tangkapan layar: Papan Ide dan pratinjau pesan. Beri nama file yang rapi, lalu kirim lewat kanal yang ditentukan guru.</p></li>
+          </ol>
+
+          <div class="card-grid">
+            <article class="mini-card">
+              <i class="bi bi-phone" aria-hidden="true"></i>
+              <h4>Cara membuat tangkapan layar</h4>
+              <ul class="bullets">
+                <li><strong>Ponsel Android:</strong> tekan tombol daya dan volume bawah bersamaan.</li>
+                <li><strong>iPhone:</strong> tekan tombol samping dan volume atas bersamaan.</li>
+                <li><strong>Laptop Windows:</strong> tekan <code>Windows</code> + <code>Shift</code> + <code>S</code>.</li>
+                <li><strong>Chromebook:</strong> tekan <code>Ctrl</code> + tombol tampilkan jendela.</li>
+              </ul>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-file-earmark-image" aria-hidden="true"></i>
+              <h4>Contoh nama file</h4>
+              <p><code>2-2_Ayu_VIIA_ide.png</code><br><code>2-2_Ayu_VIIA_pesan.png</code></p>
+              <p>Nama file yang rapi memudahkan guru menemukan tugasmu. Ingat ekstensi file di TP 2.1: <code>.png</code> dan <code>.jpg</code> adalah format gambar.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-pc-display" aria-hidden="true"></i>
+              <h4>Tidak punya perangkat?</h4>
+              <p>Kerjakan di perangkat sekolah saat jam pelajaran, atau tulis ide dan pesanmu di kertas. Guru akan membantu memotretnya.</p>
+            </article>
+          </div>
+
+          <h3>Periksa tugasmu sendiri</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Papan ideku berisi minimal 8 ide, dan ide terbaik diberi bintang.</span></label></li>
+            <li><label><input type="checkbox"><span>Pesanku punya pembuka, isi, dan penutup.</span></label></li>
+            <li><label><input type="checkbox"><span>Keenam tanda 5W+1H sudah tercentang.</span></label></li>
+            <li><label><input type="checkbox"><span>Pesanku tidak lebih dari 50 kata dan tidak memakai huruf kapital semua.</span></label></li>
+            <li><label><input type="checkbox"><span>Pesanku sudah diuji ke satu orang dan diperbaiki.</span></label></li>
+            <li><label><input type="checkbox"><span>Kedua tangkapan layar sudah diberi nama file yang rapi dan dikirim.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 9. TUGAS KELOMPOK -->
+        <section class="lesson-sec" id="tugas-kelompok" aria-labelledby="h-kelompok">
+          <p class="sec-no"><span>09</span> Tugas kelompok <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kelompok">Proyek: Storyboard Kampanye Sekolah</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan bersama kelompokmu · berbasis digital</p>
+            <h3>Rancang konten kampanye untuk sekolahmu!</h3>
+            <p>Kumpulkan ide bersama, pilih yang terbaik, lalu rancang storyboard dan pesan pengantarnya secara digital. Simpan baik-baik filenya: storyboard ini akan kalian wujudkan menjadi konten nyata di TP 2.3 atau TP 2.6.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-people" aria-hidden="true"></i> <span>4–5 orang per kelompok</span></li>
+              <li><i class="bi bi-sticky" aria-hidden="true"></i> <span>Minimal 12 ide dari semua anggota</span></li>
+              <li><i class="bi bi-film" aria-hidden="true"></i> <span>Storyboard digital 6–8 adegan</span></li>
+              <li><i class="bi bi-chat-text" aria-hidden="true"></i> <span>Pesan pengantar + presentasi 3–5 menit</span></li>
+            </ul>
+          </div>
+
+          <h3>Langkah 1 · Pilih tema kampanye</h3>
+          <p>Setiap kelompok memilih tema yang berbeda. Kelompok boleh mengusulkan tema lain asalkan disetujui guru.</p>
+          <div class="card-grid">
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">A</span><h4>Buang sampah pada tempatnya</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">B</span><h4>Hemat air dan listrik di sekolah</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">C</span><h4>Stop perundungan, jadilah teman yang baik</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">D</span><h4>Saring sebelum sharing: lawan hoaks (TP 2.1)</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">E</span><h4>Bangga dengan makanan khas daerah kita</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">F</span><h4>Ayo berkunjung ke perpustakaan sekolah</h4></article>
+          </div>
+
+          <h3>Langkah 2 · Bagi peran</h3>
+          <div class="card-grid">
+            <article class="mini-card" data-el="1"><i class="bi bi-lightbulb" aria-hidden="true"></i><h4>Pemandu ide</h4><p>Memandu brainstorming, mengatur waktu, dan memastikan aturan brainstorming dipatuhi.</p></article>
+            <article class="mini-card" data-el="2"><i class="bi bi-book" aria-hidden="true"></i><h4>Penulis cerita</h4><p>Menyusun alur awal–tengah–akhir serta narasi dan dialognya.</p></article>
+            <article class="mini-card" data-el="3"><i class="bi bi-brush" aria-hidden="true"></i><h4>Ilustrator</h4><p>Menggambar sketsa setiap adegan di storyboard digital.</p></article>
+            <article class="mini-card" data-el="4"><i class="bi bi-chat-text" aria-hidden="true"></i><h4>Penulis pesan</h4><p>Menulis pesan pengantar dengan Perakit Pesan Digital.</p></article>
+            <article class="mini-card"><i class="bi bi-folder-check" aria-hidden="true"></i><h4>Pengelola file &amp; penyaji</h4><p>Menyimpan, memberi nama, dan mengirim file, lalu memimpin presentasi.</p></article>
+          </div>
+
+          <h3>Langkah 3 · Kerjakan bersama</h3>
+          <ol class="steps">
+            <li><h4>Brainstorming bersama</h4><p>Gunakan Papan Ide Digital di satu perangkat secara bergantian, atau setiap anggota menulis 3 ide di catatan ponselnya lalu digabungkan. Kumpulkan minimal 12 ide.</p></li>
+            <li><h4>Pilih ide terbaik</h4><p>Setiap anggota memberi bintang pada 2 ide favoritnya. Nilai 2–3 ide teratas dengan tabel kriteria, lalu pilih satu.</p></li>
+            <li><h4>Susun alur cerita</h4><p>Tulis alurnya dalam 3 kalimat: awal, tengah, dan akhir.</p></li>
+            <li><h4>Buat storyboard digital</h4><p>Gunakan Pembuat Storyboard Digital, atau aplikasi slide seperti Google Slides, PowerPoint, atau Canva dengan aturan satu slide untuk satu adegan. Isi visual, teks, suara, dan durasinya, lalu gambar sketsa sederhana.</p></li>
+            <li><h4>Tulis pesan pengantar</h4><p>Gunakan Perakit Pesan Digital untuk menulis pesan yang akan menemani konten kalian saat dibagikan nanti.</p></li>
+            <li><h4>Uji storyboard</h4><p>Tukar storyboard dengan kelompok lain. Mereka memberi umpan balik "dua pujian, satu saran" lewat komentar di file atau lembar umpan balik.</p></li>
+            <li><h4>Perbaiki dan kumpulkan</h4><p>Perbaiki storyboard berdasarkan saran. Kumpulkan storyboard (PDF dari tombol Cetak, atau file .txt), tangkapan layar Papan Ide, dan pesan pengantar dengan nama file yang rapi, mis. <code>2-2_Kelompok3_VIIA_storyboard.pdf</code>.</p></li>
+            <li><h4>Presentasikan</h4><p>Ceritakan ide-ide kalian, alasan memilih ide, storyboard, dan perbaikan setelah diuji.</p></li>
+          </ol>
+          <div class="callout">
+            <i class="bi bi-pc-display" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Jika perangkat terbatas</p>
+              <p>Gunakan templat storyboard kertas di bawah. Setelah selesai, potret storyboard dengan ponsel dan kirim fotonya dalam format <code>.jpg</code>. Tetap digital, bukan?</p>
+            </div>
+          </div>
+
+          <h3>Langkah 4 · Lembar kerja pendukung</h3>
+          <div class="worksheet" id="lembar-storyboard">
+            <div class="ws-head">
+              <div>
+                <h3>Templat Storyboard Kertas</h3>
+                <p>TP 2.2 Menerapkan Pengembangan Ide dan Cerita Sederhana · Kelas VII</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-storyboard"><i class="bi bi-printer" aria-hidden="true"></i> Cetak templat</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Kelompok / Kelas</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Judul &amp; format konten</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Alur: awal / tengah / akhir</span><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-sb-grid">
+              <div class="ws-sb-cell"><b>Adegan 1</b><span class="ws-sb-draw"></span><small>Teks / narasi</small><span class="ws-line"></span><small>Suara · durasi</small><span class="ws-line"></span></div>
+              <div class="ws-sb-cell"><b>Adegan 2</b><span class="ws-sb-draw"></span><small>Teks / narasi</small><span class="ws-line"></span><small>Suara · durasi</small><span class="ws-line"></span></div>
+              <div class="ws-sb-cell"><b>Adegan 3</b><span class="ws-sb-draw"></span><small>Teks / narasi</small><span class="ws-line"></span><small>Suara · durasi</small><span class="ws-line"></span></div>
+              <div class="ws-sb-cell"><b>Adegan 4</b><span class="ws-sb-draw"></span><small>Teks / narasi</small><span class="ws-line"></span><small>Suara · durasi</small><span class="ws-line"></span></div>
+              <div class="ws-sb-cell"><b>Adegan 5</b><span class="ws-sb-draw"></span><small>Teks / narasi</small><span class="ws-line"></span><small>Suara · durasi</small><span class="ws-line"></span></div>
+              <div class="ws-sb-cell"><b>Adegan 6</b><span class="ws-sb-draw"></span><small>Teks / narasi</small><span class="ws-line"></span><small>Suara · durasi</small><span class="ws-line"></span></div>
+            </div>
+          </div>
+
+          <div class="worksheet" id="lembar-umpan-balik">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Umpan Balik: Dua Pujian, Satu Saran</h3>
+                <p>Diisi oleh kelompok penguji setelah membaca storyboard kelompok lain.</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-umpan-balik"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Kelompok penguji</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Kelompok yang diuji &amp; judul konten</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Alur awal–tengah–akhir jelas?</span><span class="ws-options"><span>Ya</span><span>Belum</span></span></div>
+            <div class="ws-field"><span class="ws-label">Pesan inti mudah ditangkap?</span><span class="ws-options"><span>Ya</span><span>Belum</span></span></div>
+            <div class="ws-field"><span class="ws-label">Jumlah adegan dan durasi sesuai?</span><span class="ws-options"><span>Ya</span><span>Belum</span></span></div>
+            <div class="ws-field"><span class="ws-label">Pujian 1</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Pujian 2</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Saran</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+          </div>
+
+          <h3>Kriteria penilaian</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Rubrik penilaian tugas kelompok<small>Skor: 4 = sangat baik · 3 = baik · 2 = cukup · 1 = perlu bimbingan</small></caption>
+              <thead><tr><th scope="col">Aspek</th><th scope="col">Yang dinilai</th><th scope="col" class="num">Skor</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Brainstorming</th><td>Minimal 12 ide yang beragam dan aturan brainstorming dipatuhi.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Pemilihan ide</th><td>Ide dipilih dengan kriteria yang jelas dan alasannya masuk akal.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Alur cerita</th><td>Bagian awal, tengah, dan akhir jelas dan runtut.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Storyboard</th><td>6–8 adegan lengkap dengan sketsa, teks, suara, dan durasi.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Pesan pengantar</th><td>Punya pembuka, isi 5W+1H, dan penutup; singkat dan santun.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Uji &amp; perbaikan</th><td>Umpan balik kelompok lain dicatat dan dipakai untuk memperbaiki storyboard.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kerja sama &amp; pengelolaan file</th><td>Setiap anggota berperan aktif; file diberi nama rapi dan dikumpulkan tepat waktu.</td><td class="num">1–4</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis sebelum mengumpulkan</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Papan ide berisi minimal 12 ide dari semua anggota.</span></label></li>
+            <li><label><input type="checkbox"><span>Ide terpilih dinilai dengan tabel kriteria.</span></label></li>
+            <li><label><input type="checkbox"><span>Storyboard berisi 6–8 adegan dengan alur awal–tengah–akhir.</span></label></li>
+            <li><label><input type="checkbox"><span>Pesan pengantar sudah dirakit dan lengkap 5W+1H.</span></label></li>
+            <li><label><input type="checkbox"><span>Storyboard sudah diuji kelompok lain dan diperbaiki.</span></label></li>
+            <li><label><input type="checkbox"><span>Semua file diberi nama rapi dan sudah dikirim.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 10. RANGKUMAN -->
+        <section class="lesson-sec" id="rangkuman" aria-labelledby="h-rangkuman">
+          <p class="sec-no"><span>10</span> Rangkuman &amp; refleksi <em class="phase">Merefleksi</em></p>
+          <h2 id="h-rangkuman">Yang perlu kamu ingat</h2>
+          <div class="summary-grid">
+            <article class="mini-card" data-el="1">
+              <i class="bi bi-lightbulb" aria-hidden="true"></i>
+              <h4>Brainstorming</h4>
+              <p>Kumpulkan ide sebanyak-banyaknya tanpa menilai dulu, lalu pilih yang terbaik dengan kriteria yang jelas.</p>
+            </article>
+            <article class="mini-card" data-el="2">
+              <i class="bi bi-signpost-split" aria-hidden="true"></i>
+              <h4>Alur cerita</h4>
+              <p>Awal (perkenalan), tengah (masalah), dan akhir (penyelesaian serta pesan).</p>
+            </article>
+            <article class="mini-card" data-el="3">
+              <i class="bi bi-film" aria-hidden="true"></i>
+              <h4>Storyboard</h4>
+              <p>Rencana adegan demi adegan berisi sketsa, teks, suara, dan durasi.</p>
+            </article>
+            <article class="mini-card" data-el="4">
+              <i class="bi bi-chat-text" aria-hidden="true"></i>
+              <h4>Struktur pesan</h4>
+              <p>Pembuka, isi (5W+1H), dan penutup berisi ajakan serta nama pengirim.</p>
+            </article>
+          </div>
+
+          <h3>Refleksi</h3>
+          <p>Jawab pertanyaan berikut di buku catatanmu:</p>
+          <ol class="question-list">
+            <li><strong>Berkesadaran:</strong> berapa banyak ide yang berhasil kamu kumpulkan dalam 5 menit? Apa yang membantumu, dan apa yang menghambatmu?</li>
+            <li><strong>Bermakna:</strong> konten kampanye apa yang paling dibutuhkan sekolah atau lingkungan rumahmu saat ini? Mengapa?</li>
+            <li><strong>Menggembirakan:</strong> alat digital mana yang paling seru kamu pakai: Papan Ide, Pembuat Storyboard, atau Perakit Pesan?</li>
+            <li>Apa bedanya membuat konten dengan rencana dan tanpa rencana, menurut pengalamanmu sendiri?</li>
+          </ol>
+
+          <h3>Peta perjalanan berikutnya</h3>
+          <p>Storyboard dan pesan yang kamu rancang akan diwujudkan di materi-materi berikut:</p>
+          <div class="card-grid" data-tp-links="2.3,2.4,2.6,2.7,2.9"></div>
+
+          <h3>Kamus kecil</h3>
+          <dl class="glossary">
+            <div><dt>Brainstorming (curah gagasan)</dt><dd>Kegiatan mengumpulkan ide sebanyak-banyaknya tanpa langsung menilainya.</dd></div>
+            <div><dt>Peta pikiran</dt><dd>Teknik mencatat ide dengan topik di tengah dan cabang-cabang di sekelilingnya.</dd></div>
+            <div><dt>Alur cerita</dt><dd>Rangkaian peristiwa dalam cerita: awal, tengah, dan akhir.</dd></div>
+            <div><dt>Storyboard</dt><dd>Rencana konten berupa kotak-kotak sketsa adegan beserta keterangannya.</dd></div>
+            <div><dt>Adegan</dt><dd>Satu bagian kejadian dalam cerita, biasanya di satu tempat dan waktu.</dd></div>
+            <div><dt>Narasi</dt><dd>Kalimat penjelas yang dibacakan atau ditulis untuk menceritakan adegan.</dd></div>
+            <div><dt>5W+1H</dt><dd>Apa, siapa, kapan, di mana, mengapa, dan bagaimana.</dd></div>
+            <div><dt>Ajakan bertindak</dt><dd>Kalimat yang meminta pembaca melakukan sesuatu setelah membaca pesan.</dd></div>
+          </dl>
+        </section>
+
+        <!-- Tombol TP sebelumnya/berikutnya + sumber rujukan, dibuat otomatis dari data.js -->
+        <kka-tp-nav code="2.2"></kka-tp-nav>
+      </div>
+    </div>
+  </main>
+
+  <kka-footer></kka-footer>
+</body>
+</html>

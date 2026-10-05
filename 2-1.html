@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP 2.1 Konsep Dasar Konten Digital — Koding dan KA SMPN 1 Bandar Seikijang</title>
+  <meta name="description" content="Materi TP 2.1 Koding dan Kecerdasan Artifisial Kelas VII: format media digital (teks, gambar, audio) dan karakteristik konten digital, dilengkapi lab media interaktif, kuis, tugas individu, dan tugas kelompok.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="TP 2.1 Memahami Konsep Dasar Konten Digital">
+  <meta property="og:description" content="Format media digital (teks, gambar, audio) dan karakteristik konten digital untuk murid Kelas VII.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs: style.css (umum) + lesson.css (halaman materi) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/lesson.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lesson.js" defer></script>
+</head>
+<body>
+  <kka-header active="atp"><a href="index.html">Beranda</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <main id="konten" data-el="2">
+    <!-- =============================================== JUDUL TP -->
+    <section class="hero hero--tp" aria-labelledby="judul-tp">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Lokasi halaman">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#atp">Alur TP</a></li>
+            <li><a href="index.html#kelas-7">Kelas VII</a></li>
+            <li><span aria-current="page">TP 2.1</span></li>
+          </ol>
+        </nav>
+        <div class="tp-badges">
+          <span class="tp-badge tp-badge--code">TP 2.1</span>
+          <span class="tp-badge"><i class="bi bi-camera-reels" aria-hidden="true"></i> Elemen 2 · Literasi Digital</span>
+          <span class="tp-badge"><i class="bi bi-calendar-week" aria-hidden="true"></i> Kelas VII · Semester 1</span>
+        </div>
+        <h1 id="judul-tp">Memahami Konsep Dasar Konten Digital</h1>
+        <p class="hero-lead">Pesan chat, foto di galeri, lagu favorit, sampai pesan suara dari nenek: semuanya adalah konten digital. Yuk, kenali bentuk-bentuknya dan sifat-sifat uniknya, supaya kamu bisa menjadi penikmat yang cerdas sekaligus pembuat konten yang bertanggung jawab.</p>
+        <ul class="tp-meta">
+          <li><i class="bi bi-collection-play" aria-hidden="true"></i> <span>Format teks, gambar, audio</span></li>
+          <li><i class="bi bi-stars" aria-hidden="true"></i> <span>Karakteristik konten digital</span></li>
+          <li><i class="bi bi-sliders" aria-hidden="true"></i> <span>Lab media interaktif</span></li>
+          <li><i class="bi bi-people" aria-hidden="true"></i> <span>Tugas individu &amp; kelompok</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container lesson">
+      <!-- Daftar isi -->
+      <nav class="toc" aria-labelledby="judul-toc">
+        <p class="toc-title" id="judul-toc">Daftar isi</p>
+        <ol>
+          <li><a href="#tujuan">Tujuan &amp; cara belajar</a></li>
+          <li><a href="#mengingat">Mengingat kembali</a></li>
+          <li><a href="#pemantik">Ayo berpikir dulu</a></li>
+          <li><a href="#konten-digital">Apa itu konten digital?</a></li>
+          <li><a href="#format">Format media digital</a></li>
+          <li><a href="#lab">Lab media</a></li>
+          <li><a href="#karakteristik">Karakteristik</a></li>
+          <li><a href="#memilih">Memilih format</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+          <li><a href="#tugas-individu">Tugas individu</a></li>
+          <li><a href="#tugas-kelompok">Tugas kelompok</a></li>
+          <li><a href="#rangkuman">Rangkuman &amp; refleksi</a></li>
+        </ol>
+      </nav>
+
+      <div class="lesson-body">
+        <!-- ========================================== 1. TUJUAN -->
+        <section class="lesson-sec" id="tujuan" aria-labelledby="h-tujuan">
+          <p class="sec-no"><span>01</span> Tujuan belajar</p>
+          <h2 id="h-tujuan">Apa yang akan kamu pelajari?</h2>
+          <p>Setelah mempelajari halaman ini, kamu diharapkan mampu:</p>
+          <ol class="goal-list">
+            <li>Menjelaskan apa itu konten digital dan membedakannya dengan konten non-digital.</li>
+            <li>Mengenali tiga format media digital, yaitu teks, gambar, dan audio, beserta contoh format filenya.</li>
+            <li>Menjelaskan karakteristik konten digital beserta manfaat dan hal yang perlu diwaspadai.</li>
+            <li>Memilih format konten yang tepat sesuai penerima dan tujuan pesan.</li>
+          </ol>
+
+          <h3>Cara belajar di halaman ini</h3>
+          <p>Materi ini dirancang dengan pendekatan <strong>pembelajaran mendalam</strong>. Perhatikan label <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em> di setiap bagian untuk mengetahui tahap belajarmu.</p>
+          <ul class="deep-principles">
+            <li>
+              <i class="bi bi-bullseye" aria-hidden="true"></i>
+              <h4>Berkesadaran</h4>
+              <p>Kamu akan memeriksa kebiasaan digitalmu sendiri: konten apa yang kamu nikmati dan buat setiap hari.</p>
+            </li>
+            <li>
+              <i class="bi bi-house-heart" aria-hidden="true"></i>
+              <h4>Bermakna</h4>
+              <p>Contoh dan tugasnya diambil dari kehidupan di sekitarmu, seperti pengumuman di lingkungan rumah dan sekolah.</p>
+            </li>
+            <li>
+              <i class="bi bi-emoji-laughing" aria-hidden="true"></i>
+              <h4>Menggembirakan</h4>
+              <p>Kamu akan bereksperimen di Lab Media, menyebarkan "pesan berantai" tiruan, dan berkarya bersama teman.</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 2. MENGINGAT KEMBALI -->
+        <section class="lesson-sec" id="mengingat" aria-labelledby="h-mengingat">
+          <p class="sec-no"><span>02</span> Mengingat kembali <em class="phase">Memahami</em></p>
+          <h2 id="h-mengingat">Bekal dari Elemen Berpikir Komputasional</h2>
+          <p>Ini TP pertama di Elemen <strong>Literasi Digital</strong>. Bekal dari tiga TP sebelumnya akan sangat berguna di sini.</p>
+          <div class="card-grid">
+            <article class="mini-card recap-card" data-el="1">
+              <p class="recap-tp">TP 1.1 · Data</p>
+              <h4>Data bisa berupa kata, gambar, atau suara</h4>
+              <p>Data yang diolah menjadi informasi. Konten digital adalah informasi yang dikemas agar mudah dipahami dan dibagikan.</p>
+              <a href="1-1.html">Buka lagi TP 1.1 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="1">
+              <p class="recap-tp">TP 1.2 · Abstraksi</p>
+              <h4>Memilih informasi penting</h4>
+              <p>Saat membuat konten, kita memilih pesan penting agar tidak bertele-tele.</p>
+              <a href="1-2.html">Buka lagi TP 1.2 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="1">
+              <p class="recap-tp">TP 1.3 · Menguji</p>
+              <h4>Uji dulu sebelum dibagikan</h4>
+              <p>Seperti instruksi, konten juga perlu diuji: apakah penerimanya memahami pesannya?</p>
+              <a href="1-3.html">Buka lagi TP 1.3 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ========================================== 3. PEMANTIK -->
+        <section class="lesson-sec" id="pemantik" aria-labelledby="h-pemantik">
+          <p class="sec-no"><span>03</span> Ayo berpikir dulu <em class="phase">Memahami</em></p>
+          <h2 id="h-pemantik">Satu pengumuman, banyak warga</h2>
+          <div class="story">
+            <p class="story-label"><i class="bi bi-chat-quote" aria-hidden="true"></i> Cerita</p>
+            <p>Pak RT di lingkungan rumah Dimas ingin semua warga ikut <strong>kerja bakti membersihkan selokan</strong> pada hari Minggu pukul 07.00. Ingat pola genangan air saat musim hujan di TP 1.2? Kerja bakti ini untuk mencegahnya!</p>
+            <p>Masalahnya, warganya beragam: <strong>Nek Ijah</strong> sudah sepuh dan sulit membaca tulisan kecil. <strong>Kak Rina</strong> bekerja dan selalu memeriksa ponselnya. <strong>Anak-anak</strong> lebih suka melihat gambar. <strong>Pak Udin</strong> seorang sopir yang sering di jalan dan hanya sempat mendengarkan pesan.</p>
+          </div>
+          <ol class="question-list">
+            <li>Bentuk pengumuman apa yang cocok untuk Nek Ijah, Kak Rina, anak-anak, dan Pak Udin?</li>
+            <li>Mengapa satu pesan yang sama perlu dibuat dalam beberapa bentuk?</li>
+            <li>Jika pengumumannya dikirim lewat grup chat warga, seberapa cepat pengumuman itu bisa sampai ke semua orang?</li>
+          </ol>
+
+          <h3>Cek kebiasaan digitalmu</h3>
+          <p>Sejak bangun tidur sampai sekarang, apa saja yang sudah kamu lakukan? Centang yang sesuai. Tidak ada jawaban benar atau salah.</p>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Membaca pesan atau tulisan di ponsel.</span></label></li>
+            <li><label><input type="checkbox"><span>Melihat foto, gambar, atau stiker.</span></label></li>
+            <li><label><input type="checkbox"><span>Mendengarkan musik, siaran, atau pesan suara.</span></label></li>
+            <li><label><input type="checkbox"><span>Menonton video.</span></label></li>
+            <li><label><input type="checkbox"><span>Membuat konten sendiri: memotret, menulis, atau merekam.</span></label></li>
+            <li><label><input type="checkbox"><span>Membagikan ulang konten milik orang lain.</span></label></li>
+          </ul>
+          <div class="callout">
+            <i class="bi bi-person-check" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Sadari peranmu</p>
+              <p>Setiap hari kita bukan hanya <strong>penikmat</strong> konten digital, tetapi juga <strong>pembuat</strong> dan <strong>penyebar</strong>. Karena itu, kita perlu memahami konten digital dengan baik.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 4. KONTEN DIGITAL -->
+        <section class="lesson-sec" id="konten-digital" aria-labelledby="h-konten">
+          <p class="sec-no"><span>04</span> Pengertian <em class="phase">Memahami</em></p>
+          <h2 id="h-konten">Apa itu konten digital?</h2>
+          <p><strong>Konten</strong> artinya isi atau informasi yang ingin disampaikan. <strong>Digital</strong> artinya disimpan dan diolah oleh perangkat elektronik, seperti ponsel dan komputer, dalam bentuk angka.</p>
+          <p>Jadi, <strong>konten digital adalah informasi berbentuk teks, gambar, audio, atau video yang dibuat, disimpan, dan dibagikan menggunakan perangkat digital.</strong></p>
+
+          <div class="compare">
+            <div class="compare-card">
+              <p class="compare-label">Konten non-digital</p>
+              <ul>
+                <li>Surat di atas kertas</li>
+                <li>Foto cetak di album</li>
+                <li>Pengumuman di papan kayu</li>
+                <li>Lagu di kaset</li>
+              </ul>
+            </div>
+            <div class="compare-arrow" aria-hidden="true"><i class="bi bi-arrow-right-circle"></i></div>
+            <div class="compare-card compare-card--info">
+              <p class="compare-label">Konten digital</p>
+              <ul>
+                <li>Pesan chat</li>
+                <li>Foto di galeri ponsel</li>
+                <li>Poster di grup warga</li>
+                <li>Lagu di aplikasi musik</li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout" data-el="1">
+            <i class="bi bi-link-45deg" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Hubungannya dengan data (TP 1.1)</p>
+              <p>Di TP 1.1 kamu belajar bahwa data bisa berupa angka, kata, gambar, atau suara, lalu diolah menjadi informasi. <strong>Konten digital adalah informasi yang sudah dikemas</strong> agar mudah dipahami dan dibagikan kepada orang lain.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 5. FORMAT -->
+        <section class="lesson-sec" id="format" aria-labelledby="h-format">
+          <p class="sec-no"><span>05</span> Format media <em class="phase">Memahami</em></p>
+          <h2 id="h-format">Tiga format media digital</h2>
+          <p>Konten digital hadir dalam beberapa bentuk yang disebut <strong>format media</strong>. Tiga format dasarnya adalah teks, gambar, dan audio. Setiap format disimpan dalam file dengan akhiran nama tertentu yang disebut <strong>ekstensi</strong>, misalnya <code>.jpg</code> pada <code>foto.jpg</code>.</p>
+
+          <div class="type-grid">
+            <article class="type-card" data-el="1">
+              <h4><i class="bi bi-fonts" aria-hidden="true"></i> Teks</h4>
+              <p>Tulisan berupa huruf, angka, dan tanda baca.</p>
+              <ul class="chips-row" aria-label="Contoh konten teks"><li>Pesan chat</li><li>Berita daring</li><li>Pengumuman</li><li>Artikel</li></ul>
+              <p><strong>Format file:</strong> <code>.txt</code> <code>.docx</code> <code>.pdf</code></p>
+              <p><strong>Kelebihan:</strong> ukuran file kecil, mudah dibaca ulang, dicari, dan disalin.</p>
+              <p><strong>Perlu diperhatikan:</strong> kurang menarik jika terlalu panjang, dan penerimanya harus bisa membaca.</p>
+            </article>
+            <article class="type-card" data-el="3">
+              <h4><i class="bi bi-image" aria-hidden="true"></i> Gambar</h4>
+              <p>Tampilan visual seperti foto, ilustrasi, poster, dan infografis.</p>
+              <ul class="chips-row" aria-label="Contoh konten gambar"><li>Foto kegiatan</li><li>Poster</li><li>Stiker</li><li>Peta</li></ul>
+              <p><strong>Format file:</strong> <code>.jpg</code> (foto) <code>.png</code> (grafis) <code>.gif</code> (animasi pendek)</p>
+              <p><strong>Kelebihan:</strong> cepat dipahami sekilas dan menarik perhatian.</p>
+              <p><strong>Perlu diperhatikan:</strong> ukuran file lebih besar, mudah diedit, dan bisa disalahartikan tanpa keterangan.</p>
+            </article>
+            <article class="type-card" data-el="4">
+              <h4><i class="bi bi-music-note-beamed" aria-hidden="true"></i> Audio</h4>
+              <p>Suara seperti ucapan, musik, atau bunyi.</p>
+              <ul class="chips-row" aria-label="Contoh konten audio"><li>Pesan suara</li><li>Siniar (<i lang="en">podcast</i>)</li><li>Lagu</li><li>Rekaman pengumuman</li></ul>
+              <p><strong>Format file:</strong> <code>.mp3</code> <code>.m4a</code> (rekaman ponsel) <code>.wav</code> (kualitas tinggi)</p>
+              <p><strong>Kelebihan:</strong> bisa dinikmati sambil beraktivitas dan ramah bagi yang sulit membaca.</p>
+              <p><strong>Perlu diperhatikan:</strong> harus didengar sampai selesai dan kurang jelas di tempat bising.</p>
+            </article>
+            <article class="type-card" data-el="2">
+              <h4><i class="bi bi-collection-play" aria-hidden="true"></i> Gabungan (multimedia)</h4>
+              <p>Konten yang menggabungkan beberapa format. <strong>Video</strong> adalah gabungan gambar bergerak dan audio.</p>
+              <ul class="chips-row" aria-label="Contoh multimedia"><li>Video</li><li>Slide presentasi</li><li>Infografis</li></ul>
+              <p><strong>Format file:</strong> <code>.mp4</code> <code>.pptx</code></p>
+              <p>Kamu akan membuat slide dan infografis di <strong>TP 2.3</strong>, serta audio dan video di <strong>TP 2.6</strong>.</p>
+            </article>
+          </div>
+
+          <h3>Ukuran file: mengapa penting?</h3>
+          <p>Setiap konten digital punya <strong>ukuran file</strong>, diukur dalam <strong>byte</strong>. Kira-kira 1.000 byte = 1 kilobyte (KB), 1.000 KB = 1 megabyte (MB), dan 1.000 MB = 1 gigabyte (GB). Ukuran file memengaruhi <strong>kuota internet</strong> dan <strong>memori ponsel</strong> kita.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Perkiraan ukuran file<small>Ukuran sebenarnya bisa berbeda, tergantung kualitas dan aplikasinya.</small></caption>
+              <thead><tr><th scope="col">Konten</th><th scope="col">Format</th><th scope="col">Perkiraan ukuran</th></tr></thead>
+              <tbody>
+                <tr><td>Satu pesan chat pendek</td><td><span class="tag-pill" data-el="1">Teks</span></td><td>Kurang dari 1 KB</td></tr>
+                <tr><td>Satu halaman tulisan</td><td><span class="tag-pill" data-el="1">Teks</span></td><td>Sekitar 2–5 KB</td></tr>
+                <tr><td>Satu foto dari kamera ponsel</td><td><span class="tag-pill" data-el="3">Gambar</span></td><td>Sekitar 2–5 MB</td></tr>
+                <tr><td>Satu lagu berdurasi 3 menit</td><td><span class="tag-pill" data-el="4">Audio</span></td><td>Sekitar 3–7 MB</td></tr>
+                <tr><td>Video 1 menit dari kamera ponsel</td><td><span class="tag-pill" data-el="2">Video</span></td><td>Puluhan sampai ratusan MB</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout" data-el="1">
+            <i class="bi bi-reception-2" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Bermakna dalam kehidupan sehari-hari</p>
+              <p>Kalau sinyal sedang lemah atau kuota tinggal sedikit, pesan teks tetap bisa terkirim cepat, sedangkan video bisa lama sekali. Memilih format yang tepat berarti juga menghargai kuota dan waktu penerimanya.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 6. LAB MEDIA -->
+        <section class="lesson-sec" id="lab" aria-labelledby="h-lab">
+          <p class="sec-no"><span>06</span> Lab media <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-lab">Bereksperimen di Lab Media</h2>
+          <p>Bagaimana komputer menyimpan teks, gambar, dan suara? Ayo cari tahu sendiri lewat tiga percobaan berikut!</p>
+
+          <div class="lab js-only" data-lab-text data-el="1">
+            <div class="lab-head">
+              <i class="bi bi-fonts" aria-hidden="true"></i>
+              <div>
+                <h3>Lab Teks: huruf adalah angka</h3>
+                <p>Komputer menyimpan setiap huruf sebagai angka, lalu angka itu disimpan sebagai deretan 0 dan 1 (bit).</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <label class="lab-label" for="lab-teks">Ketik namamu atau sebuah kata</label>
+                <input class="lab-input" id="lab-teks" type="text" value="KKA" maxlength="16" autocomplete="off">
+                <p class="lab-out" data-lab-out aria-live="polite"></p>
+                <p class="lab-note">Coba bandingkan huruf <strong>A</strong> dan <strong>a</strong>. Lalu coba ketik sebuah emoji. Berapa byte yang dibutuhkan?</p>
+              </div>
+              <ul class="char-list" aria-label="Kode setiap karakter"></ul>
+            </div>
+          </div>
+
+          <div class="lab js-only" data-lab-image data-el="3">
+            <div class="lab-head">
+              <i class="bi bi-image" aria-hidden="true"></i>
+              <div>
+                <h3>Lab Gambar: titik-titik bernama piksel</h3>
+                <p>Gambar digital tersusun dari kotak-kotak warna kecil yang disebut <strong>piksel</strong>.</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <canvas class="is-pixel" role="img" aria-label="Gambar pemandangan sekolah dengan bendera merah putih, rumah, pohon, dan matahari"></canvas>
+              <div class="lab-controls">
+                <label class="lab-label" for="lab-gambar">Jumlah piksel</label>
+                <input id="lab-gambar" type="range" min="0" max="5" step="1" value="1">
+                <div class="lab-scale" aria-hidden="true"><span>Sedikit</span><span>Banyak</span></div>
+                <p class="lab-out" data-lab-out aria-live="polite"></p>
+                <p class="lab-note">Geser perlahan. Pada ukuran berapa kamu mulai bisa mengenali bendera, rumah, dan pohonnya? Perhatikan juga ukuran filenya.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lab js-only" data-lab-audio data-el="4">
+            <div class="lab-head">
+              <i class="bi bi-soundwave" aria-hidden="true"></i>
+              <div>
+                <h3>Lab Audio: suara yang "dicicil"</h3>
+                <p>Suara asli berbentuk gelombang. Perangkat digital mencatatnya dengan mengukur gelombang berkali-kali. Setiap ukuran disebut <strong>sampel</strong>.</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <canvas role="img" aria-label="Gelombang suara asli bergaris putus-putus dan hasil sampel digital berbentuk tangga"></canvas>
+              <div class="lab-controls">
+                <label class="lab-label" for="lab-audio">Jumlah sampel</label>
+                <input id="lab-audio" type="range" min="0" max="5" step="1" value="1">
+                <div class="lab-scale" aria-hidden="true"><span>Sedikit</span><span>Banyak</span></div>
+                <p class="lab-out" data-lab-out aria-live="polite"></p>
+                <button type="button" class="btn btn-ink" data-lab-play><i class="bi bi-play-fill" aria-hidden="true"></i> Putar nada</button>
+                <p class="lab-note">Geser ke paling kiri lalu tekan <strong>Putar nada</strong>, kemudian ulangi di paling kanan. Terdengar bedanya?</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout" data-el="1">
+            <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Temukan polanya (ingat TP 1.2)</p>
+              <p>Di ketiga lab, polanya sama: <strong>semua konten digital disimpan sebagai angka</strong>. Makin tinggi kualitasnya (makin banyak piksel atau sampel), makin besar ukuran filenya.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 7. KARAKTERISTIK -->
+        <section class="lesson-sec" id="karakteristik" aria-labelledby="h-karakter">
+          <p class="sec-no"><span>07</span> Karakteristik <em class="phase">Memahami</em></p>
+          <h2 id="h-karakter">Sifat-sifat unik konten digital</h2>
+          <p>Konten digital punya sifat yang berbeda dari konten di atas kertas. Setiap sifat membawa <strong>manfaat</strong>, tetapi juga hal yang perlu kita <strong>waspadai</strong>.</p>
+          <div class="card-grid">
+            <article class="mini-card">
+              <i class="bi bi-cpu" aria-hidden="true"></i>
+              <h4>1. Tersimpan sebagai angka</h4>
+              <p>Semua konten digital disimpan sebagai data angka, seperti yang kamu lihat di Lab Media.</p>
+              <dl><dt>Manfaat</dt><dd>Bisa diolah komputer, dicari, dan diurutkan dengan cepat.</dd><dt>Waspadai</dt><dd>Butuh perangkat dan daya untuk membukanya.</dd></dl>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-files" aria-hidden="true"></i>
+              <h4>2. Mudah disalin</h4>
+              <p>Salinannya sama persis dengan aslinya, tanpa berkurang kualitasnya.</p>
+              <dl><dt>Manfaat</dt><dd>Satu file materi bisa dibagikan ke seluruh kelas tanpa mencetak kertas.</dd><dt>Waspadai</dt><dd>Karya orang lain mudah dijiplak. Hormati hak cipta (TP 2.8).</dd></dl>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-pencil-square" aria-hidden="true"></i>
+              <h4>3. Mudah diubah</h4>
+              <p>Konten bisa dipotong, diberi filter, ditambah, atau diperbaiki.</p>
+              <dl><dt>Manfaat</dt><dd>Tugas bisa diperbaiki tanpa menulis ulang dari awal.</dd><dt>Waspadai</dt><dd>Foto dan video bisa dimanipulasi, termasuk <i lang="en">deep fake</i> (TP 3.9).</dd></dl>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-broadcast" aria-hidden="true"></i>
+              <h4>4. Cepat dan luas menyebar</h4>
+              <p>Dalam hitungan detik, konten bisa sampai ke banyak orang di banyak tempat.</p>
+              <dl><dt>Manfaat</dt><dd>Informasi penting, seperti peringatan banjir, cepat sampai ke warga.</dd><dt>Waspadai</dt><dd>Hoaks juga menyebar sama cepatnya.</dd></dl>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-clock-history" aria-hidden="true"></i>
+              <h4>5. Tersimpan lama (jejak digital)</h4>
+              <p>Konten yang pernah diunggah bisa tetap ada bertahun-tahun.</p>
+              <dl><dt>Manfaat</dt><dd>Kenangan dan catatan penting tidak mudah hilang.</dd><dt>Waspadai</dt><dd>Unggahan yang sudah dihapus mungkin sudah disalin orang lain. Pikir dulu sebelum mengunggah.</dd></dl>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-chat-heart" aria-hidden="true"></i>
+              <h4>6. Bisa digabung dan interaktif</h4>
+              <p>Teks, gambar, dan audio bisa digabung. Penerima juga bisa membalas, menyukai, dan berkomentar.</p>
+              <dl><dt>Manfaat</dt><dd>Konten lebih menarik dan bisa memancing percakapan.</dd><dt>Waspadai</dt><dd>Komentar juga konten. Gunakan bahasa yang santun.</dd></dl>
+            </article>
+          </div>
+
+          <h3>Coba sendiri: seberapa cepat pesan menyebar? <em class="phase">Mengaplikasi</em></h3>
+          <div class="spread js-only" data-spread data-fanout="5">
+            <div class="lab-head">
+              <i class="bi bi-broadcast" aria-hidden="true"></i>
+              <div>
+                <h3>Simulasi pesan berantai</h3>
+                <p>Setiap orang yang menerima pesan meneruskannya ke <strong>5 orang</strong> lain. Tekan <strong>Teruskan</strong> berkali-kali.</p>
+              </div>
+            </div>
+            <div class="spread-body">
+              <div class="spread-stats">
+                <p class="spread-stat"><b data-spread-round>0</b>Putaran</p>
+                <p class="spread-stat"><b data-spread-total>1</b>Orang yang sudah menerima</p>
+              </div>
+              <ul class="spread-rounds" aria-label="Jumlah penerima baru setiap putaran"></ul>
+              <p class="spread-note" data-spread-note aria-live="polite"></p>
+              <div class="spread-actions">
+                <button type="button" class="btn btn-ink" data-spread-next><i class="bi bi-send" aria-hidden="true"></i> Teruskan</button>
+                <button type="button" class="link-btn" data-spread-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi</button>
+              </div>
+            </div>
+          </div>
+          <div class="callout" data-el="3">
+            <i class="bi bi-shield-check" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Saring sebelum <i lang="en">sharing</i></p>
+              <ul class="bullets">
+                <li><strong>Cek sumbernya:</strong> dari siapa pesan ini berasal? Apakah sumbernya jelas?</li>
+                <li><strong>Cek tanggalnya:</strong> apakah ini berita lama yang disebarkan ulang?</li>
+                <li><strong>Cek kebenarannya:</strong> bandingkan dengan sumber lain yang terpercaya.</li>
+                <li><strong>Tanyakan:</strong> jika ragu, tanyakan kepada guru atau orang tua sebelum meneruskannya.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 8. MEMILIH FORMAT -->
+        <section class="lesson-sec" id="memilih" aria-labelledby="h-memilih">
+          <p class="sec-no"><span>08</span> Memilih format <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-memilih">Format apa yang paling tepat?</h2>
+          <p>Tidak ada format yang selalu paling baik. Sebelum membuat konten, jawab dulu tiga pertanyaan ini:</p>
+          <ol class="steps">
+            <li><h4>Siapa penerimanya?</h4><p>Anak-anak, teman sebaya, atau lansia? Apa yang mudah bagi mereka?</p></li>
+            <li><h4>Apa pesan pentingnya?</h4><p>Pilih informasi yang paling penting saja, seperti abstraksi di TP 1.2.</p></li>
+            <li><h4>Di mana dan kapan mereka menerimanya?</h4><p>Sambil berkendara, di papan pengumuman, atau di grup chat?</p></li>
+          </ol>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Contoh memilih format<small>Kembali ke cerita Pak RT dan situasi lain di sekitar kita.</small></caption>
+              <thead><tr><th scope="col">Situasi</th><th scope="col">Format yang cocok</th><th scope="col">Alasan</th></tr></thead>
+              <tbody>
+                <tr><td>Jadwal ujian dan nomor ruangan</td><td><span class="tag-pill" data-el="1">Teks</span></td><td>Mudah dibaca ulang dan dicari kapan saja.</td></tr>
+                <tr><td>Cara mencuci tangan yang benar</td><td><span class="tag-pill" data-el="3">Gambar</span></td><td>Langkah-langkahnya lebih mudah dipahami dengan melihat.</td></tr>
+                <tr><td>Pengumuman untuk Nek Ijah</td><td><span class="tag-pill" data-el="4">Audio</span></td><td>Cukup didengarkan, tidak perlu membaca tulisan kecil.</td></tr>
+                <tr><td>Ajakan hemat air di toilet sekolah</td><td><span class="tag-pill" data-el="3">Gambar</span></td><td>Poster di dekat keran terlihat tepat saat dibutuhkan.</td></tr>
+                <tr><td>Hasil survei kelas (TP 1.1)</td><td><span class="tag-pill" data-el="1">Teks</span> <span class="tag-pill" data-el="3">Gambar</span></td><td>Angka dijelaskan dengan tulisan dan diagram.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ========================================== 9. KUIS -->
+        <section class="lesson-sec" id="cek-pemahaman" aria-labelledby="h-kuis">
+          <p class="sec-no"><span>09</span> Cek pemahaman <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kuis">Ayo uji pemahamanmu</h2>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis A · Tebak format filenya</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 8</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="gambar" data-explain=".jpg adalah format umum untuk foto.">
+                <p class="quiz-text"><code>kerja-bakti.jpg</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="teks">Teks</button><button type="button" data-choice="gambar">Gambar</button><button type="button" data-choice="audio">Audio</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="audio" data-explain=".mp3 adalah format audio yang banyak dipakai untuk lagu.">
+                <p class="quiz-text"><code>lagu-daerah.mp3</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="teks">Teks</button><button type="button" data-choice="gambar">Gambar</button><button type="button" data-choice="audio">Audio</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="teks" data-explain=".docx adalah format dokumen tulisan dari aplikasi pengolah kata.">
+                <p class="quiz-text"><code>laporan-survei.docx</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="teks">Teks</button><button type="button" data-choice="gambar">Gambar</button><button type="button" data-choice="audio">Audio</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="gambar" data-explain=".png sering dipakai untuk grafis, logo, dan tangkapan layar.">
+                <p class="quiz-text"><code>logo-sekolah.png</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="teks">Teks</button><button type="button" data-choice="gambar">Gambar</button><button type="button" data-choice="audio">Audio</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="audio" data-explain=".m4a adalah format yang sering dihasilkan aplikasi perekam suara di ponsel.">
+                <p class="quiz-text"><code>rekaman-wawancara.m4a</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="teks">Teks</button><button type="button" data-choice="gambar">Gambar</button><button type="button" data-choice="audio">Audio</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="teks" data-explain=".pdf adalah format dokumen yang tampilannya tetap sama di perangkat mana pun.">
+                <p class="quiz-text"><code>jadwal-pelajaran.pdf</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="teks">Teks</button><button type="button" data-choice="gambar">Gambar</button><button type="button" data-choice="audio">Audio</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="audio" data-explain=".wav adalah format audio berkualitas tinggi, tetapi ukurannya besar.">
+                <p class="quiz-text"><code>bel-sekolah.wav</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="teks">Teks</button><button type="button" data-choice="gambar">Gambar</button><button type="button" data-choice="audio">Audio</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="teks" data-explain=".txt adalah format teks paling sederhana, tanpa hiasan.">
+                <p class="quiz-text"><code>catatan.txt</code></p>
+                <div class="quiz-choices"><button type="button" data-choice="teks">Teks</button><button type="button" data-choice="gambar">Gambar</button><button type="button" data-choice="audio">Audio</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis B · Karakteristik yang mana?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 8</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="menyebar" data-explain="Dalam sehari foto itu sampai ke banyak orang.">
+                <p class="quiz-text">Foto pemandangan yang kamu unggah dibagikan ulang oleh 100 orang dalam sehari.</p>
+                <div class="quiz-choices"><button type="button" data-choice="disalin">Mudah disalin</button><button type="button" data-choice="diubah">Mudah diubah</button><button type="button" data-choice="menyebar">Cepat menyebar</button><button type="button" data-choice="lama">Tersimpan lama</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="diubah" data-explain="Memotong dan memberi filter adalah mengubah konten.">
+                <p class="quiz-text">Kamu memotong foto liburan dan memberinya filter di ponsel.</p>
+                <div class="quiz-choices"><button type="button" data-choice="disalin">Mudah disalin</button><button type="button" data-choice="diubah">Mudah diubah</button><button type="button" data-choice="menyebar">Cepat menyebar</button><button type="button" data-choice="lama">Tersimpan lama</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="disalin" data-explain="Semua murid mendapat salinan yang sama persis tanpa ada yang rusak.">
+                <p class="quiz-text">File PDF buku pelajaran dibagikan ke 32 murid dan semuanya sama persis dengan aslinya.</p>
+                <div class="quiz-choices"><button type="button" data-choice="disalin">Mudah disalin</button><button type="button" data-choice="diubah">Mudah diubah</button><button type="button" data-choice="menyebar">Cepat menyebar</button><button type="button" data-choice="lama">Tersimpan lama</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="lama" data-explain="Inilah jejak digital: konten lama masih bisa ditemukan.">
+                <p class="quiz-text">Unggahan ejekan yang dibuat seseorang tiga tahun lalu masih bisa ditemukan orang lain.</p>
+                <div class="quiz-choices"><button type="button" data-choice="disalin">Mudah disalin</button><button type="button" data-choice="diubah">Mudah diubah</button><button type="button" data-choice="menyebar">Cepat menyebar</button><button type="button" data-choice="lama">Tersimpan lama</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="diubah" data-explain="Mengganti wajah di video adalah bentuk manipulasi. Kamu akan mempelajarinya di TP 3.9.">
+                <p class="quiz-text">Wajah seseorang di sebuah video diganti dengan wajah orang lain.</p>
+                <div class="quiz-choices"><button type="button" data-choice="disalin">Mudah disalin</button><button type="button" data-choice="diubah">Mudah diubah</button><button type="button" data-choice="menyebar">Cepat menyebar</button><button type="button" data-choice="lama">Tersimpan lama</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="menyebar" data-explain="Pesan berantai bisa sampai ke banyak grup dalam waktu singkat.">
+                <p class="quiz-text">Pesan berantai tentang "obat ajaib" sampai ke grup keluarga hanya dalam beberapa jam.</p>
+                <div class="quiz-choices"><button type="button" data-choice="disalin">Mudah disalin</button><button type="button" data-choice="diubah">Mudah diubah</button><button type="button" data-choice="menyebar">Cepat menyebar</button><button type="button" data-choice="lama">Tersimpan lama</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="disalin" data-explain="Sebuah lagu bisa diunduh berkali-kali dan setiap salinannya identik.">
+                <p class="quiz-text">Satu lagu bisa diunduh oleh jutaan orang dengan kualitas yang sama persis.</p>
+                <div class="quiz-choices"><button type="button" data-choice="disalin">Mudah disalin</button><button type="button" data-choice="diubah">Mudah diubah</button><button type="button" data-choice="menyebar">Cepat menyebar</button><button type="button" data-choice="lama">Tersimpan lama</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="lama" data-explain="Walau sudah dihapus dari akunmu, salinannya masih ada di ponsel teman.">
+                <p class="quiz-text">Foto yang sudah kamu hapus ternyata masih tersimpan di ponsel teman yang sempat mengunduhnya.</p>
+                <div class="quiz-choices"><button type="button" data-choice="disalin">Mudah disalin</button><button type="button" data-choice="diubah">Mudah diubah</button><button type="button" data-choice="menyebar">Cepat menyebar</button><button type="button" data-choice="lama">Tersimpan lama</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 10. TUGAS INDIVIDU -->
+        <section class="lesson-sec" id="tugas-individu" aria-labelledby="h-individu">
+          <p class="sec-no"><span>10</span> Tugas individu <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em></p>
+          <h2 id="h-individu">Jurnal Konten Digitalku</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan sendiri</p>
+            <h3>Kenali dirimu sebagai pengguna konten digital</h3>
+            <p>Selama satu hari, catat konten digital yang kamu temui atau buat. Lalu olah catatanmu seperti di TP 1.1 untuk mengenali kebiasaan digitalmu sendiri.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-person" aria-hidden="true"></i> <span>Dikerjakan sendiri</span></li>
+              <li><i class="bi bi-journal-text" aria-hidden="true"></i> <span>Minimal 10 catatan konten</span></li>
+              <li><i class="bi bi-bar-chart" aria-hidden="true"></i> <span>Dihitung dengan turus per format</span></li>
+              <li><i class="bi bi-chat-square-heart" aria-hidden="true"></i> <span>Diakhiri refleksi diri</span></li>
+            </ul>
+          </div>
+
+          <h3>Langkah mengerjakan</h3>
+          <ol class="steps">
+            <li><h4>Catat</h4><p>Setiap kali menemui atau membuat konten digital, catat waktunya, jenis kontennya, formatnya, aplikasinya, dan peranmu (penikmat atau pembuat).</p></li>
+            <li><h4>Tentukan karakteristiknya</h4><p>Tulis satu karakteristik yang paling terlihat, misalnya "cepat menyebar" untuk pesan berantai.</p></li>
+            <li><h4>Hitung</h4><p>Gunakan turus untuk menghitung berapa konten teks, gambar, audio, dan video yang kamu catat.</p></li>
+            <li><h4>Renungkan</h4><p>Jawab pertanyaan refleksi di lembar tugas dengan jujur.</p></li>
+          </ol>
+          <div class="callout" data-el="3">
+            <i class="bi bi-lock" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Jaga privasi</p>
+              <p>Cukup tulis jenis kontennya, misalnya "foto makanan dari teman". Jangan menyalin isi pesan pribadi, nama lengkap, atau nomor ponsel orang lain.</p>
+            </div>
+          </div>
+
+          <div class="worksheet" id="lembar-individu">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Tugas Individu · Jurnal Konten Digitalku</h3>
+                <p>TP 2.1 Memahami Konsep Dasar Konten Digital · Kelas VII</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-individu"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar tugas</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Nama / Kelas / Tanggal</span><span class="ws-line"></span></div>
+            <div class="ws-field">
+              <span class="ws-label">Catatan konten</span>
+              <table class="ws-table">
+                <caption class="sr-only">Tabel catatan konten digital</caption>
+                <thead><tr><th scope="col">No</th><th scope="col">Waktu</th><th scope="col">Jenis konten</th><th scope="col">Format</th><th scope="col">Aplikasi</th><th scope="col">Peranku</th><th scope="col">Karakteristik</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>9</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>10</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ws-field">
+              <span class="ws-label">Rekap per format</span>
+              <table class="ws-table">
+                <caption class="sr-only">Rekap jumlah konten per format</caption>
+                <thead><tr><th scope="col">Format</th><th scope="col">Turus</th><th scope="col">Jumlah</th></tr></thead>
+                <tbody>
+                  <tr><td>Teks</td><td></td><td></td></tr>
+                  <tr><td>Gambar</td><td></td><td></td></tr>
+                  <tr><td>Audio</td><td></td><td></td></tr>
+                  <tr><td>Video / gabungan</td><td></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ws-field"><span class="ws-label">1. Format apa yang paling sering kutemui? Mengapa?</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">2. Aku lebih sering menjadi penikmat atau pembuat konten?</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">3. Konten mana yang paling bermanfaat bagiku, dan mana yang perlu dicek kebenarannya?</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+          </div>
+
+          <h3>Periksa tugasmu sendiri</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Aku mencatat minimal 10 konten digital.</span></label></li>
+            <li><label><input type="checkbox"><span>Setiap catatan punya format dan karakteristiknya.</span></label></li>
+            <li><label><input type="checkbox"><span>Rekap per format sudah dihitung dengan turus.</span></label></li>
+            <li><label><input type="checkbox"><span>Ketiga pertanyaan refleksi sudah kujawab dengan jujur.</span></label></li>
+            <li><label><input type="checkbox"><span>Aku tidak menuliskan data pribadi orang lain.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 11. TUGAS KELOMPOK -->
+        <section class="lesson-sec" id="tugas-kelompok" aria-labelledby="h-kelompok">
+          <p class="sec-no"><span>11</span> Tugas kelompok <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kelompok">Proyek mini: Satu Pesan, Tiga Format</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan bersama kelompokmu</p>
+            <h3>Bantu warga mendapat informasi penting!</h3>
+            <p>Pilih satu informasi yang berguna bagi warga sekolah atau masyarakat. Buat pesan itu dalam bentuk <strong>teks</strong>, <strong>gambar</strong>, dan <strong>audio</strong>, lalu uji bentuk mana yang paling mudah dipahami.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-people" aria-hidden="true"></i> <span>4–5 orang per kelompok</span></li>
+              <li><i class="bi bi-collection" aria-hidden="true"></i> <span>3 versi: teks, gambar, audio</span></li>
+              <li><i class="bi bi-clipboard-check" aria-hidden="true"></i> <span>Diuji kepada 3 teman dari kelompok lain</span></li>
+              <li><i class="bi bi-easel" aria-hidden="true"></i> <span>Pameran "Galeri Format" 3–5 menit</span></li>
+            </ul>
+          </div>
+
+          <h3>Langkah 1 · Pilih satu informasi</h3>
+          <p>Setiap kelompok memilih topik yang berbeda. Kelompok boleh mengusulkan topik lain asalkan disetujui guru.</p>
+          <div class="card-grid">
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">A</span><h4>Jadwal posyandu balita</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">B</span><h4>Ajakan kerja bakti membersihkan selokan</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">C</span><h4>Ajakan hemat air di sekolah</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">D</span><h4>Promosi warung atau usaha kecil tetangga (dengan izin pemiliknya)</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">E</span><h4>Cara mencuci tangan yang benar</h4></article>
+            <article class="mini-card topic-card"><span class="topic-code" aria-hidden="true">F</span><h4>Jadwal piket dan aturan kebersihan kelas</h4></article>
+          </div>
+
+          <h3>Langkah 2 · Bagi peran</h3>
+          <div class="card-grid">
+            <article class="mini-card" data-el="1"><i class="bi bi-fonts" aria-hidden="true"></i><h4>Penulis naskah</h4><p>Menulis versi teks dan naskah untuk rekaman audio.</p></article>
+            <article class="mini-card" data-el="3"><i class="bi bi-palette" aria-hidden="true"></i><h4>Desainer</h4><p>Membuat versi gambar, berupa poster sederhana.</p></article>
+            <article class="mini-card" data-el="4"><i class="bi bi-mic" aria-hidden="true"></i><h4>Pengisi suara</h4><p>Merekam versi audio dengan suara yang jelas.</p></article>
+            <article class="mini-card"><i class="bi bi-clipboard-check" aria-hidden="true"></i><h4>Penguji pesan</h4><p>Menguji ketiga versi kepada teman dan mencatat hasilnya.</p></article>
+            <article class="mini-card"><i class="bi bi-flag" aria-hidden="true"></i><h4>Ketua &amp; penyaji</h4><p>Mengatur waktu, memastikan semua bekerja, dan memimpin pameran.</p></article>
+          </div>
+
+          <h3>Langkah 3 · Kerjakan bersama</h3>
+          <ol class="steps">
+            <li><h4>Tentukan pesan inti dan penerimanya</h4><p>Gunakan abstraksi (TP 1.2): pilih maksimal 3 informasi terpenting, misalnya <em>apa</em>, <em>kapan</em>, dan <em>di mana</em>. Tentukan juga siapa penerimanya.</p></li>
+            <li><h4>Buat versi teks</h4><p>Tulis pesan singkat paling banyak 50 kata, seperti pesan di grup chat.</p></li>
+            <li><h4>Buat versi gambar</h4><p>Gambar poster sederhana di kertas lalu potret dengan ponsel, atau buat langsung di ponsel atau komputer.</p></li>
+            <li><h4>Buat versi audio</h4><p>Rekam pengumuman berdurasi 20–30 detik dengan ponsel di tempat yang tenang.</p></li>
+            <li><h4>Periksa format dan ukurannya</h4><p>Lihat informasi file di ponsel atau komputer. Catat nama file, format, dan ukurannya.</p></li>
+            <li><h4>Uji pesannya</h4><p>Seperti menguji instruksi di TP 1.3, tunjukkan atau perdengarkan setiap versi kepada 3 teman dari kelompok lain. Tanyakan: "Apa, kapan, dan di mana?" Catat berapa yang menjawab dengan benar.</p></li>
+            <li><h4>Bandingkan dan simpulkan</h4><p>Format mana yang paling cocok untuk penerima kalian? Apa kelebihan dan kekurangan setiap format?</p></li>
+            <li><h4>Pameran "Galeri Format"</h4><p>Tampilkan ketiga versi dan ceritakan hasil uji serta kesimpulan kelompok.</p></li>
+          </ol>
+          <div class="callout" data-el="3">
+            <i class="bi bi-shield-check" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Etika membuat konten</p>
+              <ul class="bullets">
+                <li>Minta izin sebelum memotret atau merekam suara orang lain.</li>
+                <li>Jangan mencantumkan nomor ponsel atau alamat pribadi.</li>
+                <li>Buat karya sendiri. Jika memakai gambar orang lain, sebutkan sumbernya. Kamu akan belajar lebih dalam tentang hak cipta di TP 2.8.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Langkah 4 · Isi lembar kerja kelompok</h3>
+          <div class="worksheet" id="lembar-kelompok">
+            <div class="ws-head">
+              <div>
+                <h3>Lembar Kerja Kelompok · Satu Pesan, Tiga Format</h3>
+                <p>TP 2.1 Memahami Konsep Dasar Konten Digital · Kelas VII</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-kelompok"><i class="bi bi-printer" aria-hidden="true"></i> Cetak lembar kerja</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Nama kelompok / Kelas</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Anggota &amp; peran</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Topik &amp; penerima pesan</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Pesan inti (maksimal 3 informasi)</span><span class="ws-num"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Versi teks (maksimal 50 kata)</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field"><span class="ws-label">Sketsa versi gambar</span><span class="ws-box"></span></div>
+            <div class="ws-field"><span class="ws-label">Naskah versi audio</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span><span class="ws-line"></span></span></div>
+            <div class="ws-field">
+              <span class="ws-label">Perbandingan format</span>
+              <table class="ws-table">
+                <caption class="sr-only">Tabel perbandingan tiga format</caption>
+                <thead><tr><th scope="col">Format</th><th scope="col">Nama file &amp; ukuran</th><th scope="col">Kelebihan</th><th scope="col">Kekurangan</th><th scope="col">Hasil uji (paham/3)</th></tr></thead>
+                <tbody>
+                  <tr><td>Teks</td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>Gambar</td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>Audio</td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ws-field"><span class="ws-label">Kesimpulan: format paling cocok untuk penerima kami</span><span class="ws-lines"><span class="ws-line"></span><span class="ws-line"></span></span></div>
+          </div>
+
+          <h3>Kriteria penilaian</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Rubrik penilaian tugas kelompok<small>Skor: 4 = sangat baik · 3 = baik · 2 = cukup · 1 = perlu bimbingan</small></caption>
+              <thead><tr><th scope="col">Aspek</th><th scope="col">Yang dinilai</th><th scope="col" class="num">Skor</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Pesan inti</th><td>Informasi penting dipilih dengan tepat (abstraksi) dan penerimanya jelas.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Versi teks</th><td>Singkat, jelas, dan memuat pesan inti.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Versi gambar</th><td>Menarik, mudah dipahami sekilas, dan memuat pesan inti.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Versi audio</th><td>Suara jelas, runtut, dan memuat pesan inti.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Analisis format</th><td>Format, ukuran file, kelebihan, dan kekurangan dicatat dengan benar.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Uji pesan</th><td>Pesan diuji kepada 3 teman dan hasilnya dipakai untuk menarik kesimpulan.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Etika &amp; kerja sama</th><td>Karya sendiri, menjaga privasi, dan setiap anggota berperan aktif.</td><td class="num">1–4</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis sebelum pameran</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Ketiga versi (teks, gambar, audio) sudah selesai.</span></label></li>
+            <li><label><input type="checkbox"><span>Format dan ukuran setiap file sudah dicatat.</span></label></li>
+            <li><label><input type="checkbox"><span>Setiap versi sudah diuji kepada 3 teman.</span></label></li>
+            <li><label><input type="checkbox"><span>Tidak ada data pribadi yang dicantumkan.</span></label></li>
+            <li><label><input type="checkbox"><span>Setiap anggota tahu bagiannya saat pameran.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 12. RANGKUMAN -->
+        <section class="lesson-sec" id="rangkuman" aria-labelledby="h-rangkuman">
+          <p class="sec-no"><span>12</span> Rangkuman &amp; refleksi <em class="phase">Merefleksi</em></p>
+          <h2 id="h-rangkuman">Yang perlu kamu ingat</h2>
+          <div class="summary-grid">
+            <article class="mini-card">
+              <i class="bi bi-phone" aria-hidden="true"></i>
+              <h4>Konten digital</h4>
+              <p>Informasi berbentuk teks, gambar, audio, atau video yang dibuat, disimpan, dan dibagikan dengan perangkat digital.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-collection-play" aria-hidden="true"></i>
+              <h4>Format media</h4>
+              <p>Teks, gambar, dan audio, masing-masing dengan format file (ekstensi) serta kelebihan dan kekurangannya.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-sliders" aria-hidden="true"></i>
+              <h4>Kualitas dan ukuran</h4>
+              <p>Semua konten disimpan sebagai angka. Makin tinggi kualitasnya, makin besar ukuran filenya.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-stars" aria-hidden="true"></i>
+              <h4>Karakteristik</h4>
+              <p>Mudah disalin, mudah diubah, cepat menyebar, tersimpan lama, serta bisa digabung dan interaktif.</p>
+            </article>
+          </div>
+
+          <h3>Refleksi</h3>
+          <p>Jawab pertanyaan berikut di buku catatanmu:</p>
+          <ol class="question-list">
+            <li><strong>Berkesadaran:</strong> setelah mengisi jurnal, apa yang kamu sadari tentang kebiasaan digitalmu? Adakah yang ingin kamu ubah?</li>
+            <li><strong>Bermakna:</strong> konten digital apa yang bisa kamu buat untuk membantu keluarga atau warga di sekitarmu?</li>
+            <li><strong>Menggembirakan:</strong> bagian mana yang paling seru bagimu? Lab mana yang membuatmu paling penasaran?</li>
+            <li>Apa yang akan kamu lakukan sebelum meneruskan sebuah pesan berantai?</li>
+          </ol>
+
+          <h3>Peta perjalanan Literasi Digital</h3>
+          <p>Konsep dasar konten digital adalah bekal untuk banyak materi berikutnya. Inilah yang akan kamu pelajari selanjutnya:</p>
+          <div class="card-grid" data-tp-links="2.2,2.3,2.4,2.6,2.8,2.9,3.9"></div>
+
+          <h3>Kamus kecil</h3>
+          <dl class="glossary">
+            <div><dt>Konten digital</dt><dd>Informasi berbentuk teks, gambar, audio, atau video yang dibuat dan dibagikan dengan perangkat digital.</dd></div>
+            <div><dt>Format media</dt><dd>Bentuk konten, seperti teks, gambar, atau audio.</dd></div>
+            <div><dt>Ekstensi file</dt><dd>Akhiran nama file yang menunjukkan formatnya, misalnya .jpg atau .mp3.</dd></div>
+            <div><dt>Piksel</dt><dd>Titik warna terkecil penyusun gambar digital.</dd></div>
+            <div><dt>Sampel</dt><dd>Hasil satu kali pengukuran gelombang suara saat direkam secara digital.</dd></div>
+            <div><dt>Byte</dt><dd>Satuan ukuran data digital. 1.000 byte kira-kira sama dengan 1 KB.</dd></div>
+            <div><dt>Multimedia</dt><dd>Konten yang menggabungkan beberapa format, misalnya video.</dd></div>
+            <div><dt>Jejak digital</dt><dd>Rekam jejak aktivitas dan konten kita yang tersimpan di dunia digital.</dd></div>
+            <div><dt>Hoaks</dt><dd>Informasi bohong yang dibuat seolah-olah benar.</dd></div>
+          </dl>
+        </section>
+
+        <!-- Tombol TP sebelumnya/berikutnya + sumber rujukan, dibuat otomatis dari data.js -->
+        <kka-tp-nav code="2.1"></kka-tp-nav>
+      </div>
+    </div>
+  </main>
+
+  <kka-footer></kka-footer>
+</body>
+</html>

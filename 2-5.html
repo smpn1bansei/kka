@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP 2.5 Teknik Produksi dan Editing — Koding dan KA SMPN 1 Bandar Seikijang</title>
+  <meta name="description" content="Materi TP 2.5 Koding dan Kecerdasan Artifisial Kelas VIII: pengambilan bahan audio visual, teknik trimming, cutting, dan mixing sederhana, dilengkapi jendela kamera, meja editing, dan meja mixing interaktif.">
+  <meta name="theme-color" content="#1a3668">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="KKA SMP Negeri 1 Bandar Seikijang">
+  <meta property="og:title" content="TP 2.5 Menerapkan Teknik Produksi dan Editing">
+  <meta property="og:description" content="Pengambilan bahan audio visual, trimming, cutting, dan mixing sederhana untuk murid Kelas VIII.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Font & ikon dari CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Gaya & skrip situs: style.css (umum) + lesson.css (halaman materi) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/lesson.css">
+  <script>
+    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
+    (function () {
+      var root = document.documentElement;
+      root.className = root.className.replace('no-js', 'js');
+      try {
+        var tema = localStorage.getItem('kka-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lesson.js" defer></script>
+</head>
+<body>
+  <kka-header active="atp"><a href="index.html">Beranda</a></kka-header>
+  <script src="assets/js/layout.js"></script>
+
+  <!-- Adegan halaman sekolah: dipakai ulang oleh jendela kamera dan contoh ukuran shot -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <g id="adegan-sekolah">
+        <rect x="-200" y="-100" width="2000" height="880" fill="#bfe3ff"/>
+        <circle cx="1400" cy="130" r="62" fill="#ffd43b"/>
+        <ellipse cx="380" cy="150" rx="110" ry="34" fill="#fff"/><ellipse cx="450" cy="130" rx="70" ry="30" fill="#fff"/>
+        <ellipse cx="1080" cy="200" rx="95" ry="28" fill="#fff"/>
+        <polygon points="100,425 390,330 680,425" fill="#c92a2a"/>
+        <rect x="120" y="420" width="540" height="345" fill="#f1f3f5" stroke="#ced4da" stroke-width="4"/>
+        <rect x="200" y="440" width="380" height="34" rx="4" fill="#1a3668"/>
+        <text x="390" y="463" fill="#fff" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle">SMP NEGERI 1 BANDAR SEIKIJANG</text>
+        <g fill="#74c0fc" stroke="#495057" stroke-width="3">
+          <rect x="160" y="500" width="80" height="70"/><rect x="270" y="500" width="80" height="70"/><rect x="430" y="500" width="80" height="70"/><rect x="540" y="500" width="80" height="70"/>
+          <rect x="160" y="610" width="80" height="70"/><rect x="540" y="610" width="80" height="70"/>
+        </g>
+        <rect x="350" y="610" width="80" height="155" fill="#8d5524"/>
+        <line x1="1010" y1="300" x2="1010" y2="765" stroke="#868e96" stroke-width="7"/>
+        <rect x="1013" y="302" width="96" height="30" fill="#e03131"/><rect x="1013" y="332" width="96" height="30" fill="#fff"/>
+        <rect x="1255" y="560" width="42" height="205" fill="#8d5524"/>
+        <circle cx="1276" cy="520" r="95" fill="#2f9e44"/><circle cx="1210" cy="560" r="62" fill="#37b24d"/><circle cx="1345" cy="565" r="62" fill="#37b24d"/>
+        <rect x="-200" y="760" width="2000" height="240" fill="#8fd16a"/>
+        <rect x="-200" y="790" width="2000" height="40" fill="#dee2e6"/>
+        <!-- Murid -->
+        <rect x="768" y="640" width="26" height="125" fill="#1f3a6e"/><rect x="806" y="640" width="26" height="125" fill="#1f3a6e"/>
+        <rect x="760" y="758" width="38" height="16" rx="7" fill="#212529"/><rect x="802" y="758" width="38" height="16" rx="7" fill="#212529"/>
+        <rect x="758" y="555" width="84" height="95" rx="10" fill="#1f3a6e"/>
+        <rect x="716" y="400" width="26" height="160" rx="13" fill="#c68642"/><rect x="858" y="400" width="26" height="160" rx="13" fill="#c68642"/>
+        <rect x="788" y="366" width="24" height="30" fill="#c68642"/>
+        <rect x="742" y="388" width="116" height="182" rx="26" fill="#fff" stroke="#ced4da" stroke-width="3"/>
+        <rect x="712" y="396" width="36" height="58" rx="14" fill="#fff" stroke="#ced4da" stroke-width="3"/><rect x="852" y="396" width="36" height="58" rx="14" fill="#fff" stroke="#ced4da" stroke-width="3"/>
+        <polygon points="778,388 800,414 822,388" fill="#e9ecef" stroke="#ced4da" stroke-width="3"/>
+        <rect x="818" y="440" width="22" height="24" rx="3" fill="#1a3668"/>
+        <circle cx="752" cy="334" r="10" fill="#b8763e"/><circle cx="848" cy="334" r="10" fill="#b8763e"/>
+        <circle cx="800" cy="330" r="48" fill="#d19a6a"/>
+        <path d="M752 332 Q748 274 800 272 Q852 274 848 332 Q842 300 800 298 Q758 300 752 332Z" fill="#1b1b1b"/>
+        <path d="M772 312 Q782 306 792 312 M808 312 Q818 306 828 312" stroke="#1b1b1b" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <ellipse cx="782" cy="326" rx="9" ry="6.5" fill="#fff"/><ellipse cx="818" cy="326" rx="9" ry="6.5" fill="#fff"/>
+        <circle cx="783" cy="326" r="4.6" fill="#3b2412"/><circle cx="819" cy="326" r="4.6" fill="#3b2412"/>
+        <circle cx="784.6" cy="324.4" r="1.5" fill="#fff"/><circle cx="820.6" cy="324.4" r="1.5" fill="#fff"/>
+        <path d="M800 330 Q796 340 801 342" stroke="#a86b3c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <circle cx="772" cy="345" r="7" fill="#e8590c" opacity=".22"/><circle cx="828" cy="345" r="7" fill="#e8590c" opacity=".22"/>
+        <path d="M786 351 Q800 363 814 351" stroke="#8a3b2a" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </g>
+    </defs>
+  </svg>
+
+  <main id="konten" data-el="2">
+    <!-- =============================================== JUDUL TP -->
+    <section class="hero hero--tp" aria-labelledby="judul-tp">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Lokasi halaman">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#atp">Alur TP</a></li>
+            <li><a href="index.html#kelas-8">Kelas VIII</a></li>
+            <li><span aria-current="page">TP 2.5</span></li>
+          </ol>
+        </nav>
+        <div class="tp-badges">
+          <span class="tp-badge tp-badge--code">TP 2.5</span>
+          <span class="tp-badge"><i class="bi bi-camera-reels" aria-hidden="true"></i> Elemen 2 · Literasi Digital</span>
+          <span class="tp-badge"><i class="bi bi-calendar-week" aria-hidden="true"></i> Kelas VIII · Semester 1</span>
+        </div>
+        <h1 id="judul-tp">Menerapkan Teknik Produksi dan <i lang="en">Editing</i></h1>
+        <p class="hero-lead">Video yang enak ditonton tidak lahir dari satu kali rekam. Ia dimulai dari bahan yang diambil dengan baik, lalu dipangkas, dipotong, dan suaranya dipadukan dengan seimbang. Di sini kamu belajar menjadi juru kamera sekaligus editor.</p>
+        <ul class="tp-meta">
+          <li><i class="bi bi-camera-video" aria-hidden="true"></i> <span>Pengambilan bahan audio visual</span></li>
+          <li><i class="bi bi-scissors" aria-hidden="true"></i> <span><i lang="en">Trimming</i> &amp; <i lang="en">cutting</i></span></li>
+          <li><i class="bi bi-sliders" aria-hidden="true"></i> <span><i lang="en">Mixing</i> sederhana</span></li>
+          <li><i class="bi bi-laptop" aria-hidden="true"></i> <span>Tugas berbasis digital</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container lesson">
+      <!-- Daftar isi -->
+      <nav class="toc" aria-labelledby="judul-toc">
+        <p class="toc-title" id="judul-toc">Daftar isi</p>
+        <ol>
+          <li><a href="#tujuan">Tujuan &amp; cara belajar</a></li>
+          <li><a href="#mengingat">Mengingat kembali</a></li>
+          <li><a href="#pemantik">Video yang tak ditonton</a></li>
+          <li><a href="#bahan">Mengenal bahan</a></li>
+          <li><a href="#pengambilan">Pengambilan gambar</a></li>
+          <li><a href="#perekaman">Perekaman suara</a></li>
+          <li><a href="#trimming-cutting">Trimming &amp; cutting</a></li>
+          <li><a href="#mixing">Mixing sederhana</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+          <li><a href="#tugas-individu">Tugas individu</a></li>
+          <li><a href="#tugas-kelompok">Tugas kelompok</a></li>
+          <li><a href="#rangkuman">Rangkuman &amp; refleksi</a></li>
+        </ol>
+      </nav>
+
+      <div class="lesson-body">
+        <!-- ========================================== 1. TUJUAN -->
+        <section class="lesson-sec" id="tujuan" aria-labelledby="h-tujuan">
+          <p class="sec-no"><span>01</span> Tujuan belajar</p>
+          <h2 id="h-tujuan">Apa yang akan kamu pelajari?</h2>
+          <p>Setelah mempelajari halaman ini, kamu diharapkan mampu:</p>
+          <ol class="goal-list">
+            <li>Mengambil bahan video dan foto dengan ukuran shot, sudut, dan komposisi yang tepat.</li>
+            <li>Merekam suara (narasi dan wawancara) yang jernih.</li>
+            <li>Memangkas (<i lang="en">trimming</i>) dan memotong (<i lang="en">cutting</i>) klip agar video ringkas dan nyaman ditonton.</li>
+            <li>Memadukan (<i lang="en">mixing</i>) narasi, musik, dan suara lain dengan volume yang seimbang.</li>
+          </ol>
+
+          <h3>Cara belajar di halaman ini</h3>
+          <p>Perhatikan label <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em> di setiap bagian.</p>
+          <ul class="deep-principles">
+            <li>
+              <i class="bi bi-bullseye" aria-hidden="true"></i>
+              <h4>Berkesadaran</h4>
+              <p>Kamu merekam dengan sadar: meminta izin orang yang direkam, menghormati privasi, dan memakai musik yang boleh digunakan.</p>
+            </li>
+            <li>
+              <i class="bi bi-house-heart" aria-hidden="true"></i>
+              <h4>Bermakna</h4>
+              <p>Bahan yang kamu ambil berasal dari sekolah dan lingkunganmu sendiri, lalu diolah menjadi video profil yang berguna.</p>
+            </li>
+            <li>
+              <i class="bi bi-emoji-laughing" aria-hidden="true"></i>
+              <h4>Menggembirakan</h4>
+              <p>Bidik dengan jendela kamera, potong klip di meja editing, lalu dengarkan hasil racikan suaramu di meja mixing.</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 2. MENGINGAT KEMBALI -->
+        <section class="lesson-sec" id="mengingat" aria-labelledby="h-mengingat">
+          <p class="sec-no"><span>02</span> Mengingat kembali <em class="phase">Memahami</em></p>
+          <h2 id="h-mengingat">Bekal dari Kelas VII</h2>
+          <div class="card-grid">
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.1 · Kelas VII</p>
+              <h4>Format media digital</h4>
+              <p>Video tersusun dari banyak gambar per detik, dan suara digital tersusun dari sampel. Kini kamu mengolah keduanya.</p>
+              <a href="2-1.html#format">Buka lagi TP 2.1 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.2 · Kelas VII</p>
+              <h4><i lang="en">Storyboard</i></h4>
+              <p><i lang="en">Storyboard</i> menjadi peta saat mengambil gambar: adegan apa, ukuran shot apa, dan suara apa.</p>
+              <a href="2-2.html#storyboard">Buka lagi TP 2.2 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+            <article class="mini-card recap-card" data-el="2">
+              <p class="recap-tp">TP 2.4 · Kelas VII</p>
+              <h4>Hierarki dan sepertiga</h4>
+              <p>Prinsip tata letak berlaku juga untuk bingkai kamera: subjek utama harus menonjol dan diletakkan dengan seimbang.</p>
+              <a href="2-4.html#hierarki">Buka lagi TP 2.4 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ========================================== 3. PEMANTIK -->
+        <section class="lesson-sec" id="pemantik" aria-labelledby="h-pemantik">
+          <p class="sec-no"><span>03</span> Ayo berpikir dulu <em class="phase">Memahami</em></p>
+          <h2 id="h-pemantik">Video yang tidak pernah ditonton sampai habis</h2>
+          <div class="story">
+            <p class="story-label"><i class="bi bi-chat-quote" aria-hidden="true"></i> Cerita</p>
+            <p>Kelompok <strong>Nadia</strong> membuat video profil perpustakaan sekolah. Mereka merekam satu kali selama 5 menit, lalu langsung mengunggahnya ke grup kelas.</p>
+            <p>Teman-teman berhenti menonton di menit pertama. Gambarnya goyang di awal, ada bagian saat Nadia lupa naskah dan tertawa, wajah petugas perpustakaan gelap karena membelakangi jendela, dan musiknya lebih keras daripada suara narasi.</p>
+          </div>
+          <ol class="question-list">
+            <li>Masalah mana yang terjadi saat <strong>pengambilan</strong> gambar dan suara?</li>
+            <li>Masalah mana yang bisa diperbaiki saat <strong><i lang="en">editing</i></strong>?</li>
+            <li>Pernahkah kamu berhenti menonton sebuah video? Apa penyebabnya?</li>
+          </ol>
+          <div class="callout">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Dua tahap yang saling menentukan</p>
+              <p><strong>Produksi</strong> adalah tahap mengambil bahan: merekam video, memotret, dan merekam suara. <strong><i lang="en">Editing</i></strong> (pascaproduksi) adalah tahap mengolah bahan itu menjadi karya. Bahan yang baik membuat <i lang="en">editing</i> mudah, dan <i lang="en">editing</i> yang baik membuat bahan biasa terasa istimewa.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 4. BAHAN -->
+        <section class="lesson-sec" id="bahan" aria-labelledby="h-bahan">
+          <p class="sec-no"><span>04</span> Bahan audio visual <em class="phase">Memahami</em></p>
+          <h2 id="h-bahan">Mengenal bahan audio visual</h2>
+          <p><strong>Bahan audio visual</strong> adalah semua rekaman gambar dan suara yang akan diolah menjadi video.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Jenis bahan dan format filenya</caption>
+              <thead><tr><th scope="col">Bahan</th><th scope="col">Contoh</th><th scope="col">Format umum</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Video utama</th><td>Wawancara, kegiatan inti</td><td>MP4, MOV</td></tr>
+                <tr><th scope="row">Video pendukung (<i lang="en">B-roll</i>)</th><td>Suasana lorong, tangan membuka buku, papan nama</td><td>MP4</td></tr>
+                <tr><th scope="row">Foto</th><td>Foto kegiatan, dokumen lama</td><td>JPG, PNG</td></tr>
+                <tr><th scope="row">Narasi dan wawancara</th><td>Suara narator, jawaban narasumber</td><td>MP3, M4A, WAV</td></tr>
+                <tr><th scope="row">Musik latar</th><td>Musik instrumen yang membangun suasana</td><td>MP3</td></tr>
+                <tr><th scope="row">Efek suara dan suara sekitar</th><td>Bunyi bel, langkah kaki, suasana kelas</td><td>MP3, WAV</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Dari mana bahan diperoleh?</h3>
+          <div class="compare">
+            <div class="compare-card compare-card--info">
+              <p class="compare-label">Rekam sendiri (paling dianjurkan)</p>
+              <p>Bahan asli dari sekolah dan lingkunganmu. Kamu bebas memakainya, asalkan orang yang direkam sudah memberi izin.</p>
+            </div>
+            <div class="compare-arrow" aria-hidden="true"><i class="bi bi-arrow-left-right"></i></div>
+            <div class="compare-card">
+              <p class="compare-label">Bahan dari pihak lain</p>
+              <p>Musik dan efek suara dari pustaka bebas royalti atau dari koleksi bawaan aplikasi <i lang="en">editing</i>. <strong>Periksa lisensinya</strong> dan cantumkan sumbernya. Materi hak cipta dibahas lebih dalam di TP 2.8.</p>
+            </div>
+          </div>
+          <div class="callout" data-el="3">
+            <i class="bi bi-shield-check" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Etika merekam (berkesadaran)</p>
+              <p>Jelaskan tujuanmu dan <strong>minta izin</strong> sebelum merekam seseorang. Jangan merekam diam-diam, jangan merekam di tempat pribadi seperti toilet atau ruang ganti, dan hapus rekaman jika orang tersebut keberatan.</p>
+            </div>
+          </div>
+
+          <h3>Kelola bahanmu dengan rapi</h3>
+          <p>Satu video pendek bisa membutuhkan puluhan file. Simpan dengan rapi agar mudah dicari, seperti mencatat data di TP 1.1.</p>
+          <div class="pseudo" role="figure" aria-label="Contoh susunan folder bahan video">
+            <span class="pl"><b>Video_Profil_Perpustakaan/</b></span>
+            <span class="pl">├── 01_video/     S01_LS_lorong.mp4, S02_MS_wawancara.mp4</span>
+            <span class="pl">├── 02_foto/      F01_rak_buku.jpg</span>
+            <span class="pl">├── 03_audio/     A01_narasi.m4a</span>
+            <span class="pl">├── 04_musik/     M01_latar_ceria.mp3  <i>(+ catatan sumber)</i></span>
+            <span class="pl">└── 05_ekspor/    Profil_Perpustakaan_v1.mp4</span>
+          </div>
+          <p class="pseudo-caption">Nama file memuat nomor adegan, ukuran shot, dan isinya, misalnya <code class="fx">S02_MS_wawancara</code>.</p>
+        </section>
+
+        <!-- ========================================== 5. PENGAMBILAN GAMBAR -->
+        <section class="lesson-sec" id="pengambilan" aria-labelledby="h-ambil">
+          <p class="sec-no"><span>05</span> Pengambilan gambar <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-ambil">Mengambil gambar seperti juru kamera</h2>
+
+          <h3>Lima ukuran shot</h3>
+          <p><strong>Ukuran shot</strong> menunjukkan seberapa luas atau sempit bingkai kamera. Setiap ukuran punya tugasnya sendiri.</p>
+          <div class="shot-strip">
+            <figure><svg viewBox="0 0 1600 900" role="img" aria-label="Extreme long shot"><use href="#adegan-sekolah"/></svg><figcaption>ELS<small>suasana lokasi</small></figcaption></figure>
+            <figure><svg viewBox="468 235 996 560" role="img" aria-label="Long shot"><use href="#adegan-sekolah"/></svg><figcaption>LS<small>seluruh tubuh</small></figcaption></figure>
+            <figure><svg viewBox="604 255 587 330" role="img" aria-label="Medium shot"><use href="#adegan-sekolah"/></svg><figcaption>MS<small>pinggang ke atas</small></figcaption></figure>
+            <figure><svg viewBox="693 260 320 180" role="img" aria-label="Close up"><use href="#adegan-sekolah"/></svg><figcaption>CU<small>wajah dan ekspresi</small></figcaption></figure>
+            <figure><svg viewBox="757 290 128 72" role="img" aria-label="Extreme close up"><use href="#adegan-sekolah"/></svg><figcaption>ECU<small>detail</small></figcaption></figure>
+          </div>
+
+          <h3>Sudut kamera</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-eye" aria-hidden="true"></i><h4>Sejajar mata (<i lang="en">eye level</i>)</h4><p>Kamera setinggi mata subjek. Terasa wajar dan akrab. Paling sering dipakai untuk wawancara.</p></article>
+            <article class="mini-card"><i class="bi bi-arrow-down-circle" aria-hidden="true"></i><h4>Dari atas (<i lang="en">high angle</i>)</h4><p>Kamera di atas, menghadap ke bawah. Subjek terlihat kecil atau lemah.</p></article>
+            <article class="mini-card"><i class="bi bi-arrow-up-circle" aria-hidden="true"></i><h4>Dari bawah (<i lang="en">low angle</i>)</h4><p>Kamera di bawah, menghadap ke atas. Subjek terlihat besar, gagah, atau berwibawa.</p></article>
+          </div>
+
+          <h3>Komposisi: aturan sepertiga</h3>
+          <p>Bayangkan bingkai kamera dibagi oleh dua garis tegak dan dua garis mendatar menjadi 9 kotak. Letakkan subjek di salah satu garis atau titik potongnya, bukan selalu di tengah. Inilah <strong>aturan sepertiga</strong> (<i lang="en">rule of thirds</i>). Hampir semua kamera ponsel punya pilihan <strong>garis kisi</strong> (<i lang="en">grid</i>) untuk membantumu.</p>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Ruang kepala</strong> (<i lang="en">headroom</i>): sisakan sedikit ruang di atas kepala. Jangan terlalu banyak, dan jangan sampai kepala terpotong.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Ruang pandang</strong> (<i lang="en">lead room</i>): beri ruang kosong di arah subjek memandang atau berjalan.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Latar yang bersih</strong>: periksa benda di belakang subjek. Jangan sampai ada tiang yang seolah "tumbuh" dari kepala.</span></li>
+          </ul>
+
+          <h3>Coba sendiri: Jendela Kamera <em class="phase">Mengaplikasi</em></h3>
+          <div class="lab camera-lab js-only" data-camera-lab>
+            <div class="lab-head">
+              <i class="bi bi-camera-video" aria-hidden="true"></i>
+              <div>
+                <h3>Jendela Kamera</h3>
+                <p>Atur ukuran shot dan letak subjek, lalu selesaikan misi pengambilan gambar.</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <div class="cam-frame">
+                  <svg data-cam-svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Tampilan kamera: murid berseragam di halaman sekolah"><use href="#adegan-sekolah"/></svg>
+                  <div class="cam-grid" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                  <span class="cam-rec" aria-hidden="true">REC</span>
+                </div>
+                <div class="cam-info" data-cam-info aria-live="polite"></div>
+              </div>
+              <div class="lab-controls">
+                <p class="lab-label" id="cam-shot-label">Ukuran shot</p>
+                <div class="dl-radios" role="radiogroup" aria-labelledby="cam-shot-label">
+                  <label><input type="radio" name="cam-shot" value="els" data-cam-shot> ELS</label>
+                  <label><input type="radio" name="cam-shot" value="ls" data-cam-shot checked> LS</label>
+                  <label><input type="radio" name="cam-shot" value="ms" data-cam-shot> MS</label>
+                  <label><input type="radio" name="cam-shot" value="cu" data-cam-shot> CU</label>
+                  <label><input type="radio" name="cam-shot" value="ecu" data-cam-shot> ECU</label>
+                </div>
+                <p class="lab-label" id="cam-pos-label">Letak subjek di bingkai</p>
+                <div class="dl-radios" role="radiogroup" aria-labelledby="cam-pos-label">
+                  <label><input type="radio" name="cam-pos" value="kiri" data-cam-pos> Sepertiga kiri</label>
+                  <label><input type="radio" name="cam-pos" value="tengah" data-cam-pos checked> Tengah</label>
+                  <label><input type="radio" name="cam-pos" value="kanan" data-cam-pos> Sepertiga kanan</label>
+                </div>
+                <label class="mb-toggle"><input type="checkbox" data-cam-grid checked> Tampilkan garis kisi sepertiga</label>
+                <label class="lab-label" for="cam-mission">Misi pengambilan gambar</label>
+                <div class="cam-mission">
+                  <select id="cam-mission" data-cam-mission>
+                    <option value="lokasi">1. Perkenalkan suasana sekolah</option>
+                    <option value="jalan">2. Tunjukkan murid yang sedang berjalan</option>
+                    <option value="wawancara">3. Wawancara sambil menggerakkan tangan</option>
+                    <option value="ekspresi">4. Perlihatkan ekspresi senang</option>
+                    <option value="detail">5. Detail mata yang fokus membaca</option>
+                  </select>
+                  <button type="button" class="btn btn-ink" data-cam-check><i class="bi bi-record-circle" aria-hidden="true"></i> Ambil gambar</button>
+                </div>
+                <p class="tool-status" data-cam-result aria-live="polite"></p>
+              </div>
+            </div>
+          </div>
+
+          <h3>Tips merekam video dengan ponsel</h3>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Bersihkan lensa</strong> dengan kain lembut sebelum merekam.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Pegang ponsel mendatar</strong> (lanskap 16:9) untuk video profil. Pakai posisi tegak hanya jika videonya untuk layar tegak.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Jaga kestabilan</strong>: pegang dengan dua tangan, rapatkan siku ke badan, sandarkan ke dinding, atau pakai tripod.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Perhatikan cahaya</strong>: sumber cahaya sebaiknya di depan subjek. Jika subjek membelakangi jendela, wajahnya akan gelap.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Hindari zoom digital</strong>. Lebih baik mendekat ke subjek agar gambar tetap tajam.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Rekam lebih lama</strong> 3–5 detik sebelum dan sesudah adegan. Kelebihan ini nanti dipangkas saat <i lang="en">trimming</i>.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Ambil <i lang="en">B-roll</i></strong>: gambar pendukung seperti suasana, tangan, dan benda, untuk menutupi bagian wawancara yang dipotong.</span></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 6. PEREKAMAN SUARA -->
+        <section class="lesson-sec" id="perekaman" aria-labelledby="h-rekam">
+          <p class="sec-no"><span>06</span> Perekaman suara <em class="phase">Memahami</em></p>
+          <h2 id="h-rekam">Merekam suara yang jernih</h2>
+          <p>Penonton masih memaafkan gambar yang kurang bagus, tetapi akan segera berhenti menonton jika suaranya tidak jelas. Suara adalah separuh dari video!</p>
+          <ol class="steps">
+            <li><h4>Pilih tempat yang tenang</h4><p>Jauhi jalan raya, kipas angin, dan keramaian. Ruangan yang banyak berisi benda lunak (gorden, kasur, lemari pakaian) membuat suara tidak bergema.</p></li>
+            <li><h4>Dekatkan mikrofon</h4><p>Jarak mikrofon ponsel atau mikrofon klip sekitar sejengkal (15–20 cm) dari mulut. Jaga jaraknya tetap sama selama merekam.</p></li>
+            <li><h4>Rekam percobaan</h4><p>Rekam 5 detik, lalu dengarkan dengan earphone. Apakah ada dengung, gema, atau suara angin?</p></li>
+            <li><h4>Diam 3 detik di awal</h4><p>Sebelum mulai bicara, diamlah 3 detik. Jeda ini memudahkan <i lang="en">trimming</i> dan bisa dipakai untuk meredam derau.</p></li>
+            <li><h4>Bicara jelas dan tidak terburu-buru</h4><p>Jika salah ucap, berhenti sebentar lalu ulangi kalimatnya dari awal. Bagian yang salah nanti dibuang dengan <i lang="en">cutting</i>.</p></li>
+          </ol>
+          <div class="callout" data-el="1">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Ingat sampel suara di TP 2.1?</p>
+              <p>Suara direkam sebagai ribuan sampel per detik. Jika suara terlalu keras sampai melewati batas, sampelnya "terpotong" dan suara terdengar pecah (<i lang="en">clipping</i>). Bagian yang pecah tidak bisa diperbaiki saat <i lang="en">editing</i>, jadi atur jarak dan kerasnya suara sejak merekam.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 7. TRIMMING & CUTTING -->
+        <section class="lesson-sec" id="trimming-cutting" aria-labelledby="h-potong">
+          <p class="sec-no"><span>07</span> Trimming &amp; cutting <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-potong">Memangkas dan memotong klip</h2>
+          <p>Di aplikasi <i lang="en">editing</i>, bahan disusun di <strong>linimasa</strong> (<i lang="en">timeline</i>): jalur memanjang yang menunjukkan urutan klip dari kiri (awal) ke kanan (akhir). Garis penunjuk waktu di linimasa disebut <strong><i lang="en">playhead</i></strong>.</p>
+          <div class="compare">
+            <div class="compare-card">
+              <p class="compare-label"><i lang="en">Trimming</i> (memangkas)</p>
+              <p>Membuang bagian <strong>awal atau akhir</strong> klip dengan menggeser tepi klip ke dalam.</p>
+              <p>Contoh: membuang 3 detik awal saat kamera masih goyang.</p>
+            </div>
+            <div class="compare-arrow" aria-hidden="true"><i class="bi bi-arrow-left-right"></i></div>
+            <div class="compare-card compare-card--info">
+              <p class="compare-label"><i lang="en">Cutting</i> (memotong)</p>
+              <p>Membelah klip di <strong>tengah</strong> (<i lang="en">split</i>), lalu menghapus atau memindahkan salah satu bagiannya.</p>
+              <p>Contoh: membuang bagian batuk di tengah wawancara.</p>
+            </div>
+          </div>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Potong di jeda</strong>: belah klip saat pembicara berhenti sejenak, bukan di tengah kata.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Tutup sambungan dengan <i lang="en">B-roll</i></strong>: jika potongan wawancara terlihat "melompat", letakkan gambar pendukung di atasnya.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Potong langsung lebih baik</strong> daripada terlalu banyak transisi. Pakai transisi seperlunya, misalnya memudar ke hitam di akhir video.</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span><strong>Simpan file asli</strong>. Aplikasi <i lang="en">editing</i> tidak merusak file asli, tetapi jangan menghapus bahan sebelum video selesai.</span></li>
+          </ul>
+
+          <h3>Coba sendiri: Meja Editing <em class="phase">Mengaplikasi</em></h3>
+          <p>Klip wawancara Pak Darto, penjaga sekolah, berdurasi 20 detik. Ada tiga bagian yang mengganggu (bergaris merah). Buang ketiganya dengan <i lang="en">trimming</i> dan <i lang="en">cutting</i>, tanpa membuang bagian penting.</p>
+          <div class="lab timeline-lab js-only" data-timeline-lab>
+            <div class="lab-head">
+              <i class="bi bi-film" aria-hidden="true"></i>
+              <div>
+                <h3>Meja Editing: Wawancara Pak Darto</h3>
+                <p><strong><i lang="en">Trimming</i>:</strong> geser penggeser awal dan akhir klip. <strong><i lang="en">Cutting</i>:</strong> geser <i lang="en">playhead</i>, tekan "Belah", klik potongan, lalu tekan "Hapus".</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <div class="tl-monitor" data-tl-monitor aria-live="polite"></div>
+                <div class="tl-wrap">
+                  <div class="tl-ruler" aria-hidden="true"><span>0:00</span><span>0:04</span><span>0:08</span><span>0:12</span><span>0:16</span><span>0:20</span></div>
+                  <div class="tl-track" data-tl-track aria-label="Linimasa klip"></div>
+                  <span class="tl-head" data-tl-head aria-hidden="true"></span>
+                </div>
+                <label class="lab-label" for="tl-play">Playhead</label>
+                <input id="tl-play" type="range" min="0" max="20" step="0.5" value="0" data-tl-play>
+                <div class="tool-actions">
+                  <button type="button" class="btn btn-ink" data-tl-run><i class="bi bi-play-fill" aria-hidden="true"></i> Putar</button>
+                  <button type="button" class="link-btn" data-tl-split><i class="bi bi-scissors" aria-hidden="true"></i> Belah di playhead</button>
+                  <button type="button" class="link-btn" data-tl-delete><i class="bi bi-trash3" aria-hidden="true"></i> Hapus potongan</button>
+                  <button type="button" class="link-btn" data-tl-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Klip asli</button>
+                </div>
+                <ul class="tl-legend">
+                  <li><i aria-hidden="true"></i> Bagian penting</li>
+                  <li><i class="is-bad" aria-hidden="true"></i> Bagian mengganggu</li>
+                </ul>
+              </div>
+              <div class="lab-controls">
+                <div class="tl-trims">
+                  <div>
+                    <label class="lab-label" for="tl-in">Trimming awal klip</label>
+                    <input id="tl-in" type="range" min="0" max="20" step="0.5" value="0" data-tl-trim="in">
+                  </div>
+                  <div>
+                    <label class="lab-label" for="tl-out">Trimming akhir klip</label>
+                    <input id="tl-out" type="range" min="0" max="20" step="0.5" value="20" data-tl-trim="out">
+                  </div>
+                </div>
+                <p class="dl-score-row">Durasi hasil <span class="dl-score" data-tl-dur>20 detik</span></p>
+                <p class="dl-score-row">Hasil editing <span class="dl-score" data-tl-score aria-live="polite">0 / 4</span></p>
+                <ul class="dl-feedback" data-tl-feedback aria-live="polite"></ul>
+                <p class="tool-status" data-tl-status aria-live="polite"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 8. MIXING -->
+        <section class="lesson-sec" id="mixing" aria-labelledby="h-mixing">
+          <p class="sec-no"><span>08</span> Mixing sederhana <em class="phase">Memahami</em> <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-mixing">Memadukan suara dengan seimbang</h2>
+          <p><strong><i lang="en">Mixing</i></strong> adalah memadukan beberapa lapisan suara (<i lang="en">track</i>) menjadi satu hasil yang enak didengar. Di linimasa, setiap lapisan berada di jalurnya sendiri: narasi, musik latar, efek suara, dan suara sekitar.</p>
+          <div class="card-grid">
+            <article class="mini-card" data-el="1"><i class="bi bi-volume-up" aria-hidden="true"></i><h4>Volume dan keseimbangan</h4><p>Narasi adalah yang terpenting, jadi buat paling keras. Musik latar cukup sekitar 20–30% saat ada narasi.</p></article>
+            <article class="mini-card" data-el="4"><i class="bi bi-graph-up" aria-hidden="true"></i><h4><i lang="en">Fade in</i> dan <i lang="en">fade out</i></h4><p>Suara muncul perlahan di awal dan menghilang perlahan di akhir, sehingga tidak mengagetkan.</p></article>
+            <article class="mini-card" data-el="3"><i class="bi bi-arrow-down-up" aria-hidden="true"></i><h4><i lang="en">Ducking</i></h4><p>Musik otomatis mengecil saat ada suara orang berbicara, lalu membesar lagi saat jeda.</p></article>
+            <article class="mini-card" data-el="2"><i class="bi bi-exclamation-octagon" aria-hidden="true"></i><h4><i lang="en">Clipping</i></h4><p>Jika gabungan semua suara terlalu keras, hasilnya pecah. Turunkan volume lapisan yang paling keras.</p></article>
+          </div>
+          <div class="callout">
+            <i class="bi bi-headphones" aria-hidden="true"></i>
+            <div>
+              <p class="callout-title">Dengarkan di dua tempat</p>
+              <p>Periksa hasil <i lang="en">mixing</i> dengan earphone <strong>dan</strong> pengeras suara ponsel. Musik yang terdengar pas di earphone bisa terlalu keras di pengeras suara.</p>
+            </div>
+          </div>
+
+          <h3>Coba sendiri: Meja Mixing <em class="phase">Mengaplikasi</em></h3>
+          <p>Campuran suara video profil sekolah masih berantakan: musiknya terlalu keras dan suaranya pecah. Atur volume setiap lapisan dan pilih efek yang tepat sampai skornya 5/5. Lalu dengarkan hasilnya!</p>
+          <div class="lab mixer-lab js-only" data-mixer-lab>
+            <div class="lab-head">
+              <i class="bi bi-sliders" aria-hidden="true"></i>
+              <div>
+                <h3>Meja Mixing: Video Profil Sekolah</h3>
+                <p>Bentuk gelombang menunjukkan kerasnya setiap lapisan. Batang merah pada hasil campuran berarti suara pecah.</p>
+              </div>
+            </div>
+            <div class="lab-body">
+              <div class="lab-controls">
+                <div class="mx-controls">
+                  <div class="mx-row"><label for="mx-narasi">Narasi</label><input id="mx-narasi" type="range" min="0" max="100" step="5" value="50" data-mx="narasi"><output data-mx-out="narasi"></output></div>
+                  <div class="mx-row"><label for="mx-musik">Musik latar</label><input id="mx-musik" type="range" min="0" max="100" step="5" value="100" data-mx="musik"><output data-mx-out="musik"></output></div>
+                  <div class="mx-row"><label for="mx-sekitar">Suara sekitar</label><input id="mx-sekitar" type="range" min="0" max="100" step="5" value="70" data-mx="sekitar"><output data-mx-out="sekitar"></output></div>
+                  <div class="mx-row"><label for="mx-efek">Efek bel</label><input id="mx-efek" type="range" min="0" max="100" step="5" value="70" data-mx="efek"><output data-mx-out="efek"></output></div>
+                </div>
+                <label class="mb-toggle"><input type="checkbox" data-mx-opt="fade"> Fade in dan fade out pada musik</label>
+                <label class="mb-toggle"><input type="checkbox" data-mx-opt="duck"> Ducking: kecilkan musik saat ada narasi</label>
+                <div class="tool-actions">
+                  <button type="button" class="btn btn-ink" data-mx-listen><i class="bi bi-headphones" aria-hidden="true"></i> Dengarkan hasil mix</button>
+                  <button type="button" class="link-btn" data-mx-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Campuran awal</button>
+                </div>
+                <p class="tool-status" data-mx-status aria-live="polite"></p>
+              </div>
+              <div class="lab-controls">
+                <div class="mx-lanes" data-mx-lanes role="img" aria-label="Bentuk gelombang setiap lapisan suara dan hasil campurannya"></div>
+                <p class="dl-score-row">Skor mixing <span class="dl-score" data-mx-score aria-live="polite">0 / 5</span></p>
+                <ul class="dl-feedback" data-mx-feedback aria-live="polite"></ul>
+              </div>
+            </div>
+          </div>
+          <p class="tool-note">Musik, suara sekitar, dan bel di meja ini dibuat langsung oleh peramban. Narasi dibacakan oleh suara sintetis peramban, jadi bunyinya bisa berbeda di setiap perangkat.</p>
+
+          <h3>Langkah di aplikasi <i lang="en">editing</i></h3>
+          <div class="tabs" data-tabs>
+            <div class="tab-list" role="tablist" aria-label="Pilih aplikasi editing">
+              <button type="button" role="tab" id="tab-capcut" aria-controls="panel-capcut" aria-selected="true"><i class="bi bi-phone" aria-hidden="true"></i> CapCut</button>
+              <button type="button" role="tab" id="tab-clipchamp" aria-controls="panel-clipchamp" aria-selected="false"><i class="bi bi-windows" aria-hidden="true"></i> Clipchamp</button>
+              <button type="button" role="tab" id="tab-audacity" aria-controls="panel-audacity" aria-selected="false"><i class="bi bi-soundwave" aria-hidden="true"></i> Audacity (khusus audio)</button>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="panel-capcut" aria-labelledby="tab-capcut">
+              <ol class="steps">
+                <li><h4>Buat proyek dan impor bahan</h4><p>Ketuk <strong>Proyek baru</strong>, pilih klip video dan foto sesuai urutan <i lang="en">storyboard</i>, lalu ketuk <strong>Tambah</strong>.</p></li>
+                <li><h4><i lang="en">Trimming</i></h4><p>Ketuk klip di linimasa, lalu geser tepi putih di awal atau akhir klip ke arah dalam.</p></li>
+                <li><h4><i lang="en">Cutting</i></h4><p>Geser linimasa sampai garis putih (<i lang="en">playhead</i>) berada di titik potong, ketuk <strong>Pisahkan</strong> (<i lang="en">Split</i>), pilih bagian yang tidak perlu, lalu ketuk <strong>Hapus</strong>.</p></li>
+                <li><h4>Tambahkan suara</h4><p>Ketuk <strong>Audio</strong> untuk menambahkan musik atau rekaman narasi. Setiap suara muncul di jalurnya sendiri.</p></li>
+                <li><h4><i lang="en">Mixing</i></h4><p>Ketuk klip audio, lalu pilih <strong>Volume</strong> untuk mengatur kerasnya dan <strong>Fade</strong> untuk memudar di awal dan akhir.</p></li>
+                <li><h4>Ekspor</h4><p>Ketuk tombol ekspor di kanan atas, pilih resolusi 720p atau 1080p, lalu simpan.</p></li>
+              </ol>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="panel-clipchamp" aria-labelledby="tab-clipchamp">
+              <ol class="steps">
+                <li><h4>Buat video baru</h4><p>Buka Clipchamp (bawaan Windows atau di peramban), pilih <strong>Buat video baru</strong>, lalu seret bahan ke panel media.</p></li>
+                <li><h4>Susun di linimasa</h4><p>Seret klip dari panel media ke linimasa sesuai urutan <i lang="en">storyboard</i>.</p></li>
+                <li><h4><i lang="en">Trimming</i></h4><p>Pilih klip, lalu seret pegangan di tepi kiri atau kanan klip ke arah dalam.</p></li>
+                <li><h4><i lang="en">Cutting</i></h4><p>Letakkan <i lang="en">playhead</i> di titik potong, klik ikon gunting (<strong>Pisahkan</strong>), pilih bagian yang tidak perlu, lalu tekan <code>Delete</code>.</p></li>
+                <li><h4><i lang="en">Mixing</i></h4><p>Pilih klip audio, buka panel <strong>Audio</strong> di kanan untuk mengatur volume, dan panel <strong>Pudar</strong> (<i lang="en">Fade</i>) untuk memudar.</p></li>
+                <li><h4>Ekspor</h4><p>Klik <strong>Ekspor</strong>, pilih 720p atau 1080p, lalu simpan file MP4.</p></li>
+              </ol>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="panel-audacity" aria-labelledby="tab-audacity">
+              <ol class="steps">
+                <li><h4>Impor rekaman</h4><p>Buka Audacity (gratis untuk komputer), lalu pilih <strong>File</strong> → <strong>Impor</strong> → <strong>Audio</strong>. Setiap file menjadi satu jalur.</p></li>
+                <li><h4><i lang="en">Trimming</i> dan <i lang="en">cutting</i></h4><p>Blok bagian yang tidak perlu dengan menyeret mouse di gelombang suara, lalu tekan <code>Delete</code>.</p></li>
+                <li><h4>Atur volume</h4><p>Gunakan penggeser <strong>Gain</strong> di kiri setiap jalur untuk menyeimbangkan narasi dan musik.</p></li>
+                <li><h4><i lang="en">Fade</i></h4><p>Blok beberapa detik awal musik, lalu pilih <strong>Efek</strong> → <strong>Fade In</strong>. Lakukan hal yang sama di akhir dengan <strong>Fade Out</strong>.</p></li>
+                <li><h4>Periksa <i lang="en">clipping</i></h4><p>Perhatikan pengukur suara saat diputar. Jika menyentuh ujung merah, turunkan volumenya.</p></li>
+                <li><h4>Ekspor</h4><p>Pilih <strong>File</strong> → <strong>Ekspor</strong> → <strong>Ekspor sebagai MP3</strong>, lalu masukkan file audionya ke aplikasi video.</p></li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 9. KUIS -->
+        <section class="lesson-sec" id="cek-pemahaman" aria-labelledby="h-kuis">
+          <p class="sec-no"><span>09</span> Cek pemahaman <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kuis">Ayo uji pemahamanmu</h2>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis A · Teknik pengambilan bahan</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="cu" data-explain="Close up memperlihatkan wajah sehingga ekspresi terlihat jelas.">
+                <p class="quiz-text">Kamu ingin memperlihatkan wajah sedih tokoh. Ukuran shot yang paling tepat adalah…</p>
+                <div class="quiz-choices"><button type="button" data-choice="els">ELS</button><button type="button" data-choice="ms">MS</button><button type="button" data-choice="cu">CU</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="els" data-explain="Extreme long shot memperlihatkan lokasi secara luas, cocok untuk pembuka.">
+                <p class="quiz-text">Adegan pembuka memperkenalkan suasana pasar tradisional. Ukuran shot yang tepat adalah…</p>
+                <div class="quiz-choices"><button type="button" data-choice="els">ELS</button><button type="button" data-choice="cu">CU</button><button type="button" data-choice="ecu">ECU</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="ms" data-explain="Medium shot memperlihatkan wajah dan gerak tangan, sehingga paling umum untuk wawancara.">
+                <p class="quiz-text">Merekam wawancara dengan kepala sekolah paling umum memakai…</p>
+                <div class="quiz-choices"><button type="button" data-choice="ms">MS</button><button type="button" data-choice="ecu">ECU</button><button type="button" data-choice="els">ELS</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="low" data-explain="Kamera di bawah yang menghadap ke atas membuat subjek tampak besar dan gagah.">
+                <p class="quiz-text">Kamera diletakkan rendah dan menghadap ke atas sehingga tokoh terlihat gagah. Sudut kamera ini disebut…</p>
+                <div class="quiz-choices"><button type="button" data-choice="high"><i lang="en">High angle</i></button><button type="button" data-choice="eye"><i lang="en">Eye level</i></button><button type="button" data-choice="low"><i lang="en">Low angle</i></button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="tenang" data-explain="Benda lunak meredam pantulan suara sehingga rekaman tidak bergema.">
+                <p class="quiz-text">Tempat terbaik untuk merekam narasi adalah…</p>
+                <div class="quiz-choices"><button type="button" data-choice="jalan">Pinggir jalan agar terdengar alami</button><button type="button" data-choice="tenang">Ruang tenang yang banyak berisi benda lunak</button><button type="button" data-choice="kosong">Ruang kosong yang luas</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="sepertiga" data-explain="Aturan sepertiga membagi bingkai menjadi 9 kotak dan meletakkan subjek di garisnya.">
+                <p class="quiz-text">Meletakkan subjek di salah satu garis yang membagi bingkai menjadi 9 kotak disebut…</p>
+                <div class="quiz-choices"><button type="button" data-choice="headroom">Ruang kepala</button><button type="button" data-choice="sepertiga">Aturan sepertiga</button><button type="button" data-choice="zoom">Zoom digital</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+
+          <div class="quiz" data-quiz>
+            <div class="quiz-head">
+              <h3>Kuis B · Trimming, cutting, atau mixing?</h3>
+              <p class="quiz-score" aria-live="polite">Skor: <b data-score>0</b> / 6</p>
+            </div>
+            <ol class="quiz-list">
+              <li class="quiz-q" data-answer="trim" data-explain="Bagian yang dibuang ada di awal klip, jadi cukup dipangkas.">
+                <p class="quiz-text">Membuang 3 detik awal klip saat kamera masih goyang.</p>
+                <div class="quiz-choices"><button type="button" data-choice="trim">Trimming</button><button type="button" data-choice="cut">Cutting</button><button type="button" data-choice="mix">Mixing</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="cut" data-explain="Bagian batuk ada di tengah klip, jadi klip harus dibelah lalu bagiannya dihapus.">
+                <p class="quiz-text">Membuang bagian narasumber batuk di tengah wawancara.</p>
+                <div class="quiz-choices"><button type="button" data-choice="trim">Trimming</button><button type="button" data-choice="cut">Cutting</button><button type="button" data-choice="mix">Mixing</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="mix" data-explain="Mengatur keseimbangan volume antarlapisan suara adalah mixing (ducking).">
+                <p class="quiz-text">Mengecilkan musik latar saat narator berbicara.</p>
+                <div class="quiz-choices"><button type="button" data-choice="trim">Trimming</button><button type="button" data-choice="cut">Cutting</button><button type="button" data-choice="mix">Mixing</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="mix" data-explain="Fade out adalah pengaturan volume yang perlahan mengecil, bagian dari mixing.">
+                <p class="quiz-text">Membuat musik perlahan menghilang di akhir video.</p>
+                <div class="quiz-choices"><button type="button" data-choice="trim">Trimming</button><button type="button" data-choice="cut">Cutting</button><button type="button" data-choice="mix">Mixing</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="cut" data-explain="Membelah klip di tengah (split) adalah teknik cutting.">
+                <p class="quiz-text">Membelah klip panjang menjadi dua, lalu menyisipkan foto di antaranya.</p>
+                <div class="quiz-choices"><button type="button" data-choice="trim">Trimming</button><button type="button" data-choice="cut">Cutting</button><button type="button" data-choice="mix">Mixing</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+              <li class="quiz-q" data-answer="trim" data-explain="Memendekkan bagian akhir klip cukup dengan menggeser tepinya.">
+                <p class="quiz-text">Memendekkan akhir klip yang terlalu lama setelah pembicara selesai bicara.</p>
+                <div class="quiz-choices"><button type="button" data-choice="trim">Trimming</button><button type="button" data-choice="cut">Cutting</button><button type="button" data-choice="mix">Mixing</button></div>
+                <p class="quiz-feedback" hidden></p>
+              </li>
+            </ol>
+            <div class="quiz-foot">
+              <p class="quiz-done" data-quiz-done aria-live="polite" hidden></p>
+              <button type="button" class="link-btn" data-quiz-reset><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Ulangi kuis</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== 10. TUGAS INDIVIDU -->
+        <section class="lesson-sec" id="tugas-individu" aria-labelledby="h-individu">
+          <p class="sec-no"><span>10</span> Tugas individu <em class="phase">Mengaplikasi</em> <em class="phase">Merefleksi</em></p>
+          <h2 id="h-individu">Klip 30 Detik: Satu Sudut Sekolahku</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan sendiri · berbasis digital</p>
+            <h3>Rekam, pangkas, potong, dan padukan</h3>
+            <p>Pilih satu sudut sekolah yang kamu sukai, misalnya kantin, taman, lapangan, atau perpustakaan. Buat klip pendek yang memperkenalkan sudut itu dengan narasi suaramu sendiri.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-person" aria-hidden="true"></i> <span>Dikerjakan sendiri</span></li>
+              <li><i class="bi bi-camera-video" aria-hidden="true"></i> <span>Minimal 5 shot berbeda</span></li>
+              <li><i class="bi bi-stopwatch" aria-hidden="true"></i> <span>Durasi 25–35 detik</span></li>
+              <li><i class="bi bi-file-earmark-play" aria-hidden="true"></i> <span>Dikumpulkan: MP4 + catatan editing</span></li>
+            </ul>
+          </div>
+          <ol class="steps">
+            <li><h4>Rencanakan</h4><p>Tulis 5 shot yang akan diambil, misalnya ELS halaman kantin, MS penjual, CU makanan, ECU tangan memberi uang, dan LS antrean. Tulis juga naskah narasi 3–4 kalimat.</p></li>
+            <li><h4>Ambil bahan</h4><p>Rekam setiap shot 3–5 detik lebih lama dari yang dibutuhkan. Pakai garis kisi kamera, jaga kestabilan, dan minta izin orang yang direkam.</p></li>
+            <li><h4>Rekam narasi</h4><p>Rekam narasimu di tempat tenang dengan aplikasi perekam suara di ponsel.</p></li>
+            <li><h4><i lang="en">Trimming</i> dan <i lang="en">cutting</i></h4><p>Di CapCut atau Clipchamp, pangkas setiap klip dan potong minimal satu bagian yang tidak perlu.</p></li>
+            <li><h4><i lang="en">Mixing</i></h4><p>Padukan narasi dengan musik latar bebas royalti atau musik bawaan aplikasi. Pastikan narasi paling jelas, dan beri <i lang="en">fade in</i> serta <i lang="en">fade out</i> pada musik.</p></li>
+            <li><h4>Ekspor dan kumpulkan</h4><p>Ekspor dalam 720p dengan nama <code>2-5_Nama_Kelas_klip.mp4</code>. Lampirkan catatan editing di Google Docs: durasi bahan sebelum dan sesudah, bagian yang dipotong dan alasannya, serta sumber musik.</p></li>
+          </ol>
+          <h3>Periksa tugasmu sendiri</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Ada minimal 5 shot dengan ukuran yang berbeda-beda.</span></label></li>
+            <li><label><input type="checkbox"><span>Gambar stabil, cukup terang, dan subjek ditata dengan aturan sepertiga.</span></label></li>
+            <li><label><input type="checkbox"><span>Setiap klip sudah dipangkas, dan minimal ada satu bagian yang dipotong.</span></label></li>
+            <li><label><input type="checkbox"><span>Narasi terdengar jelas di atas musik, dan musik memakai fade in serta fade out.</span></label></li>
+            <li><label><input type="checkbox"><span>Orang yang direkam sudah memberi izin, dan sumber musik dicantumkan.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 11. TUGAS KELOMPOK -->
+        <section class="lesson-sec" id="tugas-kelompok" aria-labelledby="h-kelompok">
+          <p class="sec-no"><span>11</span> Tugas kelompok <em class="phase">Mengaplikasi</em></p>
+          <h2 id="h-kelompok">Proyek: Video Profil 60 Detik</h2>
+          <div class="task">
+            <p class="task-label">Kerjakan bersama kelompokmu · berbasis digital</p>
+            <h3>Kenalkan tempat atau orang yang berjasa di sekitarmu</h3>
+            <p>Buat video profil berdurasi 60–90 detik tentang satu tempat atau sosok di sekolah atau di sekitar Bandar Seikijang, misalnya penjaga sekolah, petugas perpustakaan, kantin, atau usaha kecil di dekat rumah.</p>
+            <ul class="task-facts">
+              <li><i class="bi bi-people" aria-hidden="true"></i> <span>4–5 orang per kelompok</span></li>
+              <li><i class="bi bi-list-ol" aria-hidden="true"></i> <span><i lang="en">Storyboard</i> + daftar shot</span></li>
+              <li><i class="bi bi-mic" aria-hidden="true"></i> <span>Wawancara + narasi + musik</span></li>
+              <li><i class="bi bi-film" aria-hidden="true"></i> <span>MP4 60–90 detik</span></li>
+            </ul>
+          </div>
+
+          <h3>Langkah 1 · Bagi peran</h3>
+          <div class="card-grid">
+            <article class="mini-card"><i class="bi bi-megaphone" aria-hidden="true"></i><h4>Sutradara</h4><p>Memimpin perencanaan, memastikan semua shot di daftar sudah diambil.</p></article>
+            <article class="mini-card"><i class="bi bi-camera-video" aria-hidden="true"></i><h4>Juru kamera</h4><p>Mengambil gambar dengan ukuran shot, sudut, dan komposisi yang tepat.</p></article>
+            <article class="mini-card"><i class="bi bi-mic" aria-hidden="true"></i><h4>Penata suara</h4><p>Merekam wawancara dan narasi, serta memilih musik yang boleh dipakai.</p></article>
+            <article class="mini-card"><i class="bi bi-scissors" aria-hidden="true"></i><h4>Editor</h4><p>Memangkas, memotong, menyusun, dan memadukan suara di aplikasi.</p></article>
+            <article class="mini-card"><i class="bi bi-folder-check" aria-hidden="true"></i><h4>Pengelola bahan dan izin</h4><p>Menamai dan menyimpan file dengan rapi, serta mencatat izin orang yang direkam.</p></article>
+          </div>
+
+          <h3>Langkah 2 · Kerjakan bersama</h3>
+          <ol class="steps">
+            <li><h4>Praproduksi</h4><p>Buat <i lang="en">storyboard</i> seperti di TP 2.2, lalu isi Daftar Pengambilan Gambar di bawah. Minta izin narasumber dan tentukan jadwal merekam.</p></li>
+            <li><h4>Produksi</h4><p>Ambil semua shot di daftar, termasuk <i lang="en">B-roll</i>. Rekam wawancara di tempat tenang dan narasi secara terpisah.</p></li>
+            <li><h4>Kelola bahan</h4><p>Simpan di folder bersama (misalnya Google Drive kelompok) dengan susunan dan nama file yang rapi.</p></li>
+            <li><h4>Pascaproduksi</h4><p>Susun sesuai <i lang="en">storyboard</i>, lalu lakukan <i lang="en">trimming</i>, <i lang="en">cutting</i>, dan <i lang="en">mixing</i>. Tambahkan judul dengan prinsip tipografi TP 2.4.</p></li>
+            <li><h4>Uji tonton</h4><p>Minta kelompok lain menonton dan memberi masukan: bagian mana yang membosankan, kurang jelas, atau suaranya tidak seimbang?</p></li>
+            <li><h4>Perbaiki dan ekspor</h4><p>Perbaiki sesuai masukan, lalu ekspor sebagai <code>2-5_Kelompok1_VIIIA_profil.mp4</code>. Tunjukkan hasilnya kepada narasumber sebagai ucapan terima kasih.</p></li>
+          </ol>
+
+          <h3>Langkah 3 · Daftar pengambilan gambar</h3>
+          <div class="worksheet" id="lembar-shot">
+            <div class="ws-head">
+              <div>
+                <h3>Daftar Pengambilan Gambar (<i lang="en">Shot List</i>)</h3>
+                <p>TP 2.5 Menerapkan Teknik Produksi dan <i lang="en">Editing</i> · Centang setiap shot yang sudah direkam</p>
+              </div>
+              <button type="button" class="btn btn-ink js-only" data-print="#lembar-shot"><i class="bi bi-printer" aria-hidden="true"></i> Cetak daftar shot</button>
+            </div>
+            <div class="ws-field"><span class="ws-label">Kelompok / Kelas / Judul video / Narasumber</span><span class="ws-line"></span></div>
+            <div class="ws-field">
+              <span class="ws-label">Daftar shot</span>
+              <table class="ws-table">
+                <caption class="sr-only">Daftar pengambilan gambar</caption>
+                <thead><tr><th scope="col">No</th><th scope="col">Isi adegan</th><th scope="col">Ukuran shot</th><th scope="col">Sudut</th><th scope="col">Lokasi</th><th scope="col">Suara</th><th scope="col">✓</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  <tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ws-field"><span class="ws-label">Izin narasumber (nama dan tanda tangan atau persetujuan lisan)</span><span class="ws-line"></span></div>
+            <div class="ws-field"><span class="ws-label">Musik dan efek suara (judul dan sumber)</span><span class="ws-line"></span></div>
+          </div>
+
+          <h3>Kriteria penilaian</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Rubrik penilaian tugas kelompok<small>Skor: 4 = sangat baik · 3 = baik · 2 = cukup · 1 = perlu bimbingan</small></caption>
+              <thead><tr><th scope="col">Aspek</th><th scope="col">Yang dinilai</th><th scope="col" class="num">Skor</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Perencanaan</th><td><i lang="en">Storyboard</i> dan daftar shot lengkap dan diikuti.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Pengambilan gambar</th><td>Ukuran shot bervariasi, gambar stabil, terang, dan tertata.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Kualitas suara</th><td>Wawancara dan narasi jernih, tanpa gema atau derau yang mengganggu.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row"><i lang="en">Trimming</i> dan <i lang="en">cutting</i></th><td>Tidak ada bagian yang bertele-tele atau mengganggu, dan potongannya rapi.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row"><i lang="en">Mixing</i></th><td>Volume seimbang, narasi jelas, musik memudar, dan tidak ada suara pecah.</td><td class="num">1–4</td></tr>
+                <tr><th scope="row">Etika dan kerja sama</th><td>Izin tercatat, sumber musik dicantumkan, dan setiap anggota berperan.</td><td class="num">1–4</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ceklis sebelum mengumpulkan</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox"><span>Semua shot di daftar sudah direkam dan dicentang.</span></label></li>
+            <li><label><input type="checkbox"><span>Bahan tersimpan rapi di folder bersama dengan nama yang jelas.</span></label></li>
+            <li><label><input type="checkbox"><span>Video sudah dipangkas, dipotong, dan suaranya dipadukan.</span></label></li>
+            <li><label><input type="checkbox"><span>Video sudah diuji tonton oleh kelompok lain dan diperbaiki.</span></label></li>
+            <li><label><input type="checkbox"><span>Izin narasumber dan sumber musik sudah dicatat.</span></label></li>
+            <li><label><input type="checkbox"><span>File MP4 berdurasi 60–90 detik sudah dikirim dengan nama yang rapi.</span></label></li>
+          </ul>
+        </section>
+
+        <!-- ========================================== 12. RANGKUMAN -->
+        <section class="lesson-sec" id="rangkuman" aria-labelledby="h-rangkuman">
+          <p class="sec-no"><span>12</span> Rangkuman &amp; refleksi <em class="phase">Merefleksi</em></p>
+          <h2 id="h-rangkuman">Yang perlu kamu ingat</h2>
+          <div class="summary-grid">
+            <article class="mini-card">
+              <i class="bi bi-camera-video" aria-hidden="true"></i>
+              <h4>Pengambilan bahan</h4>
+              <p>Pilih ukuran shot dan sudut yang tepat, pakai aturan sepertiga, jaga kestabilan dan cahaya, serta rekam suara di tempat tenang.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-scissors" aria-hidden="true"></i>
+              <h4><i lang="en">Trimming</i></h4>
+              <p>Memangkas bagian awal dan akhir klip yang tidak perlu.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-layout-split" aria-hidden="true"></i>
+              <h4><i lang="en">Cutting</i></h4>
+              <p>Membelah klip di tengah, lalu menghapus atau memindahkan bagiannya.</p>
+            </article>
+            <article class="mini-card">
+              <i class="bi bi-sliders" aria-hidden="true"></i>
+              <h4><i lang="en">Mixing</i></h4>
+              <p>Narasi paling jelas, musik pelan dengan fade dan ducking, dan tanpa suara pecah.</p>
+            </article>
+          </div>
+
+          <h3>Refleksi</h3>
+          <ol class="question-list">
+            <li><strong>Berkesadaran:</strong> mengapa kita perlu meminta izin sebelum merekam seseorang? Bagaimana perasaanmu jika direkam tanpa izin?</li>
+            <li><strong>Bermakna:</strong> tempat atau orang mana di sekitarmu yang layak dikenal banyak orang melalui sebuah video?</li>
+            <li><strong>Menggembirakan:</strong> bagian mana yang paling seru: membidik kamera, memotong klip, atau meracik suara?</li>
+          </ol>
+
+          <h3>Materi yang berhubungan</h3>
+          <p>Materi ini adalah lanjutan dari:</p>
+          <div class="card-grid" data-tp-links="2.1,2.2,2.4"></div>
+          <p>Keterampilan produksi dan <i lang="en">editing</i> akan kamu pakai untuk membuat konten audio dan video yang utuh, bercerita dengan menarik, dan menghormati hak cipta:</p>
+          <div class="card-grid" data-tp-links="2.6,2.7,2.8"></div>
+
+          <h3>Kamus kecil</h3>
+          <dl class="glossary">
+            <div><dt>Shot</dt><dd>Satu rekaman tanpa terputus dari saat kamera mulai sampai berhenti merekam.</dd></div>
+            <div><dt>Aturan sepertiga</dt><dd>Meletakkan subjek pada garis yang membagi bingkai menjadi 9 kotak.</dd></div>
+            <div><dt><i lang="en">B-roll</i></dt><dd>Gambar pendukung yang memperkaya atau menutupi potongan video utama.</dd></div>
+            <div><dt>Linimasa (<i lang="en">timeline</i>)</dt><dd>Jalur di aplikasi editing tempat klip disusun menurut waktu.</dd></div>
+            <div><dt><i lang="en">Trimming</i></dt><dd>Memangkas bagian awal atau akhir klip.</dd></div>
+            <div><dt><i lang="en">Cutting</i></dt><dd>Membelah klip di tengah lalu menghapus atau memindahkan bagiannya.</dd></div>
+            <div><dt><i lang="en">Mixing</i></dt><dd>Memadukan beberapa lapisan suara dengan volume yang seimbang.</dd></div>
+            <div><dt><i lang="en">Ducking</i></dt><dd>Mengecilkan musik secara otomatis saat ada suara orang berbicara.</dd></div>
+            <div><dt><i lang="en">Clipping</i></dt><dd>Suara pecah karena terlalu keras melewati batas.</dd></div>
+          </dl>
+        </section>
+
+        <!-- Tombol TP sebelumnya/berikutnya + sumber rujukan, dibuat otomatis dari data.js -->
+        <kka-tp-nav code="2.5"></kka-tp-nav>
+      </div>
+    </div>
+  </main>
+
+  <kka-footer></kka-footer>
+</body>
+</html>
